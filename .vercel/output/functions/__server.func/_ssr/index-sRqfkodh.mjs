@@ -1,12 +1,9 @@
-import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
+import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
+import { L as Link } from "../_libs/tanstack__react-router.mjs";
 import { u as useEmblaCarousel } from "../_libs/embla-carousel-react.mjs";
-import { i as iconUrl } from "./router-C6YVBH_G.mjs";
-import { M as Menu, V as Volume2, S as Star, A as ArrowRight, P as Play, X, C as Crown, N as Newspaper, a as Megaphone, b as Camera, B as BookOpen, E as Earth, c as ChevronLeft, d as ChevronRight, U as UtensilsCrossed, T as TrendingUp, e as ShieldCheck, H as Heart, f as Building2, g as Scale, h as MicVocal, i as Sparkles, Q as Quote, j as Minus, k as Plus, I as Instagram, L as Linkedin, Y as Youtube } from "../_libs/lucide-react.mjs";
-import "../_libs/embla-carousel-reactive-utils.mjs";
-import "../_libs/embla-carousel.mjs";
-import "../_libs/tanstack__query-core.mjs";
-import "../_libs/tanstack__react-query.mjs";
-import "../_libs/tanstack__react-router.mjs";
+import { l as logoUrl, N as NavigationMenu, a as NavigationMenuList, b as NavigationMenuItem, c as NavigationMenuTrigger, d as cn, e as NavigationMenuContent, f as NavigationMenuLink, s as svcExec, g as svcMedia, h as svcContent, i as svcCreative, j as svcAuthor, k as svcDigital, m as iconUrl, n as fahhhSound } from "./router-BPzvVt1Z.mjs";
+import { l as lionUrl, p as portfolio1, a as portfolio2, b as portfolio3, c as portfolio4 } from "./portfolio-4-BO7tfZAO.mjs";
+import { c as Menu, V as Volume2, C as ChevronDown, a as Crown, N as Newspaper, M as Megaphone, b as Camera, B as BookOpen, E as Earth, S as Star, A as ArrowRight, P as Play, X, d as ChevronLeft, e as ChevronRight, U as UtensilsCrossed, T as TrendingUp, f as ShieldCheck, H as Heart, g as Building2, h as Scale, i as MicVocal, j as Sparkles, Q as Quote, k as Minus, l as Plus, I as Instagram, L as Linkedin, Y as Youtube } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -20,14 +17,31 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const logoUrl = "/assets/roar-logo-CMkcPbVP.png";
+import "../_libs/embla-carousel-reactive-utils.mjs";
+import "../_libs/embla-carousel.mjs";
+import "../_libs/tanstack__query-core.mjs";
+import "../_libs/tanstack__react-query.mjs";
+import "../_libs/@radix-ui/react-navigation-menu+[...].mjs";
+import "../_libs/radix-ui__react-context.mjs";
+import "../_libs/radix-ui__primitive.mjs";
+import "../_libs/radix-ui__react-primitive.mjs";
+import "../_libs/radix-ui__react-slot.mjs";
+import "../_libs/radix-ui__react-compose-refs.mjs";
+import "../_libs/@radix-ui/react-use-controllable-state+[...].mjs";
+import "../_libs/@radix-ui/react-use-layout-effect+[...].mjs";
+import "../_libs/radix-ui__react-direction.mjs";
+import "../_libs/radix-ui__react-presence.mjs";
+import "../_libs/radix-ui__react-id.mjs";
+import "../_libs/radix-ui__react-collection.mjs";
+import "../_libs/@radix-ui/react-dismissable-layer+[...].mjs";
+import "../_libs/@radix-ui/react-use-callback-ref+[...].mjs";
+import "../_libs/@radix-ui/react-use-escape-keydown+[...].mjs";
+import "../_libs/radix-ui__react-use-previous.mjs";
+import "../_libs/@radix-ui/react-visually-hidden+[...].mjs";
+import "../_libs/class-variance-authority.mjs";
+import "../_libs/clsx.mjs";
+import "../_libs/tailwind-merge.mjs";
 const heroImg = "/assets/hero-executive-CsILrxf-.jpg";
-const lionUrl = "/assets/lion-roar-B3uRBoxB.png";
-const fahhhSound = "/assets/fahhh-CWFzza6U.mp3";
-const portfolio1 = "/assets/portfolio-1-Cj02A87F.jpg";
-const portfolio2 = "/assets/portfolio-2-Ba3V3yrG.jpg";
-const portfolio3 = "/assets/portfolio-3-pndcqWvT.jpg";
-const portfolio4 = "/assets/portfolio-4-BSryjSUn.jpg";
 const indFnb = "/assets/ind-fnb-BvEjor4e.jpg";
 const indTech = "/assets/ind-tech-BZPbKI0U.jpg";
 const indFinance = "/assets/ind-finance-CiuS03JR.jpg";
@@ -37,12 +51,6 @@ const indLaw = "/assets/ind-law-RPyU1j4D.jpg";
 const indSpeakers = "/assets/ind-speakers-DficSQ7x.jpg";
 const indLifestyle = "/assets/ind-lifestyle-8hL1XKLR.jpg";
 const storyThumb = "/assets/story-video-thumb-D9mvnfKh.jpg";
-const svcExec = "/assets/svc-exec-CgeueX-H.jpg";
-const svcMedia = "/assets/svc-media-BVQiErHf.jpg";
-const svcContent = "/assets/svc-content-w8NtlzHA.jpg";
-const svcCreative = "/assets/svc-creative-ByGrirYD.jpg";
-const svcAuthor = "/assets/svc-author-CrX2owMu.jpg";
-const svcDigital = "/assets/svc-digital-C8Oj_1n5.jpg";
 const reel1 = "/assets/reel-1-R7clLLaA.jpg";
 const reel2 = "/assets/reel-2-CusUaaJe.jpg";
 const reel3 = "/assets/reel-3-BIow4rdS.jpg";
@@ -112,6 +120,7 @@ function MouthMark({
 function SiteHeader() {
   const [scrolled, setScrolled] = reactExports.useState(false);
   const [open, setOpen] = reactExports.useState(false);
+  const [servicesOpen, setServicesOpen] = reactExports.useState(false);
   reactExports.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, {
@@ -120,9 +129,6 @@ function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   const links = [{
-    href: "#services",
-    label: "Services"
-  }, {
     href: "#story",
     label: "Our Story"
   }, {
@@ -135,19 +141,48 @@ function SiteHeader() {
     href: "#faq",
     label: "FAQ"
   }];
+  const navItemClass = "rounded-full px-4 py-2 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream cursor-pointer";
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `fixed inset-x-0 top-0 z-[80] transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto flex max-w-7xl items-center gap-3 px-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-1 items-center justify-between rounded-full bg-navy-deep px-5 py-2.5 shadow-luxe", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/", className: "flex items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: logoUrl, alt: "The Big Mouth PR", className: "h-8 w-auto md:h-9" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "button", onClick: () => setOpen((v) => !v), className: "rounded-full bg-cream/10 p-2 text-cream lg:hidden", "aria-label": "Toggle menu", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { className: "h-4 w-4" }) })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "hidden flex-1 items-center justify-center gap-1 rounded-full bg-white px-3 py-2 shadow-luxe lg:flex", children: links.map((l) => /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: l.href, className: "rounded-full px-4 py-2 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream", children: l.label }, l.href)) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(NavigationMenu, { className: "hidden max-w-none flex-1 items-center justify-center rounded-full bg-white px-3 py-2 shadow-luxe lg:flex", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(NavigationMenuList, { className: "flex-1 items-center justify-center gap-1", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(NavigationMenuItem, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(NavigationMenuTrigger, { className: cn(navItemClass, "data-[state=open]:bg-navy-deep data-[state=open]:text-cream"), children: "Services" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(NavigationMenuContent, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid w-[280px] gap-1 p-3 md:w-[480px] md:grid-cols-2", children: serviceLinks.map((s) => {
+            const Icon = s.icon;
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: s.href, className: "flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-navy-deep transition hover:bg-navy-deep hover:text-cream", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { className: "h-4 w-4 shrink-0 text-gold" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: s.label })
+            ] }, s.href);
+          }) }) })
+        ] }),
+        links.map((l) => /* @__PURE__ */ jsxRuntimeExports.jsx(NavigationMenuItem, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(NavigationMenuLink, { href: l.href, className: navItemClass, children: l.label }) }, l.href))
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "hidden items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03] hover:bg-gold-soft md:inline-flex", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { className: "h-4 w-4" }),
         " Get Loud"
       ] })
     ] }),
     open && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mx-4 mt-2 rounded-2xl bg-white p-4 shadow-luxe lg:hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid gap-1", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { onClick: () => setServicesOpen((v) => !v), className: "flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream", children: [
+          "Services",
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: `h-4 w-4 transition duration-200 ${servicesOpen ? "rotate-180" : ""}` })
+        ] }),
+        servicesOpen && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "ml-3 mt-1 grid gap-0.5 border-l-2 border-navy-deep/10 pl-3", children: serviceLinks.map((s) => {
+          const Icon = s.icon;
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: s.href, onClick: () => {
+            setOpen(false);
+            setServicesOpen(false);
+          }, className: "flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-navy-deep transition hover:bg-navy-deep hover:text-cream", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Icon, { className: "h-3.5 w-3.5 shrink-0 text-gold" }),
+            s.label
+          ] }, s.href);
+        }) })
+      ] }),
       links.map((l) => /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: l.href, onClick: () => setOpen(false), className: "rounded-xl px-4 py-3 text-sm font-semibold text-navy-deep hover:bg-navy-deep hover:text-cream", children: l.label }, l.href)),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", onClick: () => setOpen(false), className: "mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3 text-sm font-bold uppercase tracking-wider text-navy-deep", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { className: "h-4 w-4" }),
@@ -359,6 +394,15 @@ const serviceGroups = [{
   tags: ["Media Buying", "Web Design", "Public Affairs", "Translation"],
   img: svcDigital
 }];
+const slugOverrides = {
+  "Executive & Personal Branding": "executive-personal-branding"
+};
+const serviceSlug = (title) => slugOverrides[title] ?? title.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const serviceLinks = serviceGroups.map((s) => ({
+  label: s.title,
+  href: `/services/${serviceSlug(s.title)}`,
+  icon: s.icon
+}));
 function Services() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "services", className: "relative overflow-hidden bg-white py-24 text-navy-deep md:py-32", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: iconUrl, alt: "", "aria-hidden": true, className: "pointer-events-none absolute -right-20 top-10 hidden h-[560px] w-auto opacity-[0.04] lg:block" }),
@@ -881,5 +925,12 @@ function Home() {
   ] });
 }
 export {
+  ClientsRibbon,
+  DotMark,
+  FloatingCTA,
+  Footer,
+  LionInteractions,
+  MouthMark,
+  SiteHeader,
   Home as component
 };

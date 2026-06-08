@@ -10,33 +10,44 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesExecutivePersonalBrandingRouteImport } from './routes/services.executive-personal-branding'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesExecutivePersonalBrandingRoute =
+  ServicesExecutivePersonalBrandingRouteImport.update({
+    id: '/services/executive-personal-branding',
+    path: '/services/executive-personal-branding',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/services/executive-personal-branding'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/services/executive-personal-branding'
+  id: '__root__' | '/' | '/services/executive-personal-branding'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ServicesExecutivePersonalBrandingRoute: typeof ServicesExecutivePersonalBrandingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +59,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/executive-personal-branding': {
+      id: '/services/executive-personal-branding'
+      path: '/services/executive-personal-branding'
+      fullPath: '/services/executive-personal-branding'
+      preLoaderRoute: typeof ServicesExecutivePersonalBrandingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ServicesExecutivePersonalBrandingRoute:
+    ServicesExecutivePersonalBrandingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

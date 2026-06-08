@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
@@ -25,12 +25,23 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Instagram,
   Linkedin,
   Youtube,
   Volume2,
   Menu,
 } from "lucide-react";
+
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 import heroImg from "@/assets/hero-executive.jpg";
 import logoUrl from "@/assets/roar-logo.png";
@@ -106,7 +117,7 @@ function playRoar() {
 /* =====================================================================
    Lion cursor + click roar wrapper
 ===================================================================== */
-function LionInteractions() {
+export function LionInteractions() {
   const [bursts, setBursts] = useState<{ id: number; x: number; y: number }[]>([]);
   const idRef = useRef(0);
   useEffect(() => {
@@ -154,7 +165,7 @@ function BrandLockupDark({ className = "" }: { className?: string }) {
   );
 }
 
-function DotMark({ className = "" }: { className?: string }) {
+export function DotMark({ className = "" }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-1.5 ${className}`}>
       <span className="h-2.5 w-2.5 rounded-full bg-bm-blue" />
@@ -163,7 +174,7 @@ function DotMark({ className = "" }: { className?: string }) {
   );
 }
 
-function MouthMark({ className = "" }: { className?: string }) {
+export function MouthMark({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 64" className={className} aria-hidden>
       <path d="M8 14h36a12 12 0 0112 12v10a12 12 0 01-12 12H26l-12 10V14z" fill="currentColor" />
@@ -177,9 +188,10 @@ function MouthMark({ className = "" }: { className?: string }) {
 /* =====================================================================
    Sticky navigation header — split black/white contrast
 ===================================================================== */
-function SiteHeader() {
+export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -187,12 +199,14 @@ function SiteHeader() {
   }, []);
 
   const links = [
-    { href: "#services", label: "Services" },
     { href: "#story", label: "Our Story" },
     { href: "#industries", label: "Industries" },
     { href: "#portfolio", label: "Work" },
     { href: "#faq", label: "FAQ" },
   ];
+
+  const navItemClass =
+    "rounded-full px-4 py-2 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream cursor-pointer";
 
   return (
     <div
@@ -221,17 +235,47 @@ function SiteHeader() {
         </div>
 
         {/* White panel — nav links */}
-        <nav className="hidden flex-1 items-center justify-center gap-1 rounded-full bg-white px-3 py-2 shadow-luxe lg:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="rounded-full px-4 py-2 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream"
-            >
-              {l.label}
-            </a>
-          ))}
-        </nav>
+        <NavigationMenu className="hidden max-w-none flex-1 items-center justify-center rounded-full bg-white px-3 py-2 shadow-luxe lg:flex">
+          <NavigationMenuList className="flex-1 items-center justify-center gap-1">
+            <NavigationMenuItem>
+              <NavigationMenuTrigger
+                className={cn(
+                  navItemClass,
+                  "data-[state=open]:bg-navy-deep data-[state=open]:text-cream",
+                )}
+              >
+                Services
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="grid w-[280px] gap-1 p-3 md:w-[480px] md:grid-cols-2">
+                  {serviceLinks.map((s) => {
+                    const Icon = s.icon;
+                    return (
+                      <Link
+                        key={s.href}
+                        to={s.href}
+                        className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-navy-deep transition hover:bg-navy-deep hover:text-cream"
+                      >
+                        <Icon className="h-4 w-4 shrink-0 text-gold" />
+                        <span>{s.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            {links.map((l) => (
+              <NavigationMenuItem key={l.href}>
+                <NavigationMenuLink
+                  href={l.href}
+                  className={navItemClass}
+                >
+                  {l.label}
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
 
         {/* Orange CTA panel */}
         <a
@@ -246,6 +290,40 @@ function SiteHeader() {
       {open && (
         <div className="mx-4 mt-2 rounded-2xl bg-white p-4 shadow-luxe lg:hidden">
           <div className="grid gap-1">
+            <div>
+              <button
+                onClick={() => setServicesOpen((v) => !v)}
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream"
+              >
+                Services
+                <ChevronDown
+                  className={`h-4 w-4 transition duration-200 ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {servicesOpen && (
+                <div className="ml-3 mt-1 grid gap-0.5 border-l-2 border-navy-deep/10 pl-3">
+                  {serviceLinks.map((s) => {
+                    const Icon = s.icon;
+                    return (
+                      <Link
+                        key={s.href}
+                        to={s.href}
+                        onClick={() => {
+                          setOpen(false);
+                          setServicesOpen(false);
+                        }}
+                        className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-navy-deep transition hover:bg-navy-deep hover:text-cream"
+                      >
+                        <Icon className="h-3.5 w-3.5 shrink-0 text-gold" />
+                        {s.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
             {links.map((l) => (
               <a
                 key={l.href}
@@ -444,7 +522,7 @@ const clients = [
   "ENTREPRENEUR", "BUSINESS INSIDER", "HBR", "CNBC", "TECHCRUNCH", "VOGUE",
 ];
 
-function ClientsRibbon() {
+export function ClientsRibbon() {
   return (
     <section className="relative overflow-hidden bg-white py-8 border-y border-navy-deep/10">
       <p className="mb-6 text-center text-[11px] uppercase tracking-[0.4em] text-navy/55">
@@ -594,6 +672,24 @@ const serviceGroups = [
     img: svcDigital,
   },
 ];
+
+const slugOverrides: Record<string, string> = {
+  "Executive & Personal Branding": "executive-personal-branding",
+};
+
+const serviceSlug = (title: string) =>
+  slugOverrides[title] ??
+  title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+const serviceLinks = serviceGroups.map((s) => ({
+  label: s.title,
+  href: `/services/${serviceSlug(s.title)}`,
+  icon: s.icon,
+}));
 
 function Services() {
   return (
@@ -1058,7 +1154,7 @@ function FinalCTA() {
 /* =====================================================================
    12. FOOTER
 ===================================================================== */
-function Footer() {
+export function Footer() {
   return (
     <footer className="bg-navy-deep pb-10 pt-20 text-cream/70">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-4">
@@ -1100,7 +1196,7 @@ function FooterCol({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-function FloatingCTA() {
+export function FloatingCTA() {
   const [shown, setShown] = useState(false);
   useEffect(() => {
     const onScroll = () => setShown(window.scrollY > 600);
