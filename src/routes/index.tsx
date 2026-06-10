@@ -387,7 +387,7 @@ function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-navy-deep pt-24 text-cream">
+    <section className="relative w-full overflow-hidden bg-navy-deep py-20 text-cream md:py-28 lg:py-32 xl:min-h-[650px]">
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -421,7 +421,7 @@ function Hero() {
       </div>
 
       {/* Main grid */}
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-10 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-12 lg:pt-12">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16 xl:gap-20">
         {/* LEFT — bold copy + lion */}
         <div className="animate-reveal relative">
           <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-gold/30 bg-navy/50 px-4 py-2 text-[11px] uppercase tracking-[0.3em] text-gold backdrop-blur">
@@ -453,7 +453,7 @@ function Hero() {
             className="pointer-events-none absolute -right-6 -top-10 hidden h-[260px] w-auto animate-lion-roar drop-shadow-[0_20px_50px_rgba(253,95,8,0.45)] md:block lg:-right-16 lg:top-0 lg:h-[340px]"
           />
 
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/90 md:text-xl">
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/90 md:text-xl">
             The Big Mouth PR is the studio your competitors quietly hope you never find.
             Personal branding, press & reputation — turned up to <span className="text-gold font-semibold">eleven</span>.
           </p>
@@ -605,7 +605,7 @@ function Story() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
         <div className="relative">
           <button onClick={() => setOpen(true)} className="group relative block w-full overflow-hidden rounded-2xl shadow-luxe" aria-label="Play our story">
-            <img src={storyThumb} alt="The Big Mouth PR story" loading="lazy" className="h-[520px] w-full object-cover transition duration-700 group-hover:scale-105" />
+            <img src={storyThumb} alt="The Big Mouth PR story" loading="lazy" className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105 md:h-[400px] lg:h-[520px]" />
             <div className="absolute inset-0 bg-gradient-to-tr from-navy-deep/70 via-navy-deep/20 to-transparent" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="relative">
@@ -921,7 +921,7 @@ function Portfolio() {
           {items.map((it, i) => (
             <a key={it.title} href="#" className={`group relative block overflow-hidden rounded-2xl shadow-luxe ${
               i === 0 ? "md:col-span-7 md:row-span-2" : i === 1 ? "md:col-span-5" : "md:col-span-5 md:col-start-8"
-            }`} style={{ minHeight: i === 0 ? 620 : 300 }}>
+            }`} style={{ minHeight: i === 0 ? 480 : 220 }}>
               <img src={it.img} alt={it.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-transparent" />
               <div className="absolute bottom-0 p-8 text-cream">
