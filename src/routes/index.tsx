@@ -681,7 +681,7 @@ const serviceSlug = (title: string) =>
   slugOverrides[title] ??
   title
     .toLowerCase()
-    .replace(/&/g, "and")
+    .replace(/&/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
@@ -1173,8 +1173,8 @@ export function Footer() {
           © {new Date().getFullYear()} The Big Mouth PR. <DotMark /> Loud on purpose.
         </p>
         <div className="flex gap-6">
-          <a href="#" className="hover:text-gold">Privacy</a>
-          <a href="#" className="hover:text-gold">Terms</a>
+          <a href="/privacy-policy" className="hover:text-gold">Privacy</a>
+          <a href="/terms" className="hover:text-gold">Terms</a>
           <a href="#" className="hover:text-gold">LinkedIn</a>
           <a href="#" className="hover:text-gold">Instagram</a>
         </div>

@@ -36,7 +36,7 @@ import "../_libs/@radix-ui/react-use-callback-ref+[...].mjs";
 import "../_libs/@radix-ui/react-use-escape-keydown+[...].mjs";
 import "../_libs/radix-ui__react-use-previous.mjs";
 import "../_libs/@radix-ui/react-visually-hidden+[...].mjs";
-const appCss = "/assets/styles-DtEzN3hv.css";
+const appCss = "/assets/styles-DlqtYLu5.css";
 const iconUrl = "/assets/favicon-CkT_K0fm.png";
 function reportLovableError(error, context = {}) {
   if (typeof window === "undefined") return;
@@ -101,7 +101,7 @@ function ErrorComponent({ error, reset }) {
     ] })
   ] }) });
 }
-const Route$2 = createRootRouteWithContext()({
+const Route$b = createRootRouteWithContext()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -139,9 +139,81 @@ function RootShell({ children }) {
   ] });
 }
 function RootComponent() {
-  const { queryClient } = Route$2.useRouteContext();
+  const { queryClient } = Route$b.useRouteContext();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
+const $$splitComponentImporter$a = () => import("./terms-fhbeE1OV.mjs");
+const Route$a = createFileRoute("/terms")({
+  head: () => ({
+    meta: [{
+      title: "Terms & Conditions — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "Terms and conditions for using The Big Mouth PR website and services. Please read these terms carefully before engaging with our studio."
+    }, {
+      property: "og:title",
+      content: "Terms & Conditions — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "Please review the terms and conditions that govern your use of The Big Mouth PR website and services."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$a, "component")
+});
+const $$splitComponentImporter$9 = () => import("./privacy-policy-Cl4xJaXh.mjs");
+const Route$9 = createFileRoute("/privacy-policy")({
+  head: () => ({
+    meta: [{
+      title: "Privacy Policy — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "The Big Mouth PR privacy policy. Learn how we collect, use, and protect your personal information when you use our website and services."
+    }, {
+      property: "og:title",
+      content: "Privacy Policy — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "Your privacy matters. Read about how The Big Mouth PR collects, uses, and safeguards your information."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$9, "component")
+});
+const $$splitComponentImporter$8 = () => import("./contact-us-NMgsJ5cc.mjs");
+const Route$8 = createFileRoute("/contact-us")({
+  head: () => ({
+    meta: [{
+      title: "Contact Us — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "Get in touch with The Big Mouth PR. Book a strategy call, reach our team, or find our studio. We reply within one business day."
+    }, {
+      property: "og:title",
+      content: "Contact Us — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "Ready to make some noise? Contact The Big Mouth PR and let's build a brand the world can't ignore."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$8, "component")
+});
+const $$splitComponentImporter$7 = () => import("./about-Cog54coO.mjs");
+const Route$7 = createFileRoute("/about")({
+  head: () => ({
+    meta: [{
+      title: "About — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "The Big Mouth PR is a loud, fearless personal branding & PR studio for founders, executives and disruptors who refuse to be ignored."
+    }, {
+      property: "og:title",
+      content: "About — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "We turn quiet leaders into category-defining voices. Learn the story behind The Big Mouth PR."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$7, "component")
+});
 function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
@@ -237,8 +309,8 @@ const svcContent = "/assets/svc-content-w8NtlzHA.jpg";
 const svcCreative = "/assets/svc-creative-ByGrirYD.jpg";
 const svcAuthor = "/assets/svc-author-CrX2owMu.jpg";
 const svcDigital = "/assets/svc-digital-C8Oj_1n5.jpg";
-const $$splitComponentImporter$1 = () => import("./index-sRqfkodh.mjs");
-const Route$1 = createFileRoute("/")({
+const $$splitComponentImporter$6 = () => import("./index-BarjHKP5.mjs");
+const Route$6 = createFileRoute("/")({
   head: () => ({
     meta: [{
       title: "The Big Mouth PR — We Don't Whisper. We Roar."
@@ -263,7 +335,7 @@ const Route$1 = createFileRoute("/")({
       href: "/"
     }]
   }),
-  component: lazyRouteComponent($$splitComponentImporter$1, "component")
+  component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
 let fahhhAudio = null;
 function playRoar() {
@@ -451,7 +523,7 @@ const serviceGroups = [{
 const slugOverrides = {
   "Executive & Personal Branding": "executive-personal-branding"
 };
-const serviceSlug = (title) => slugOverrides[title] ?? title.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const serviceSlug = (title) => slugOverrides[title] ?? title.toLowerCase().replace(/&/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const serviceLinks = serviceGroups.map((s) => ({
   label: s.title,
   href: `/services/${serviceSlug(s.title)}`,
@@ -477,8 +549,8 @@ function Footer() {
         " Loud on purpose."
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-gold", children: "Privacy" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-gold", children: "Terms" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/privacy-policy", className: "hover:text-gold", children: "Privacy" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/terms", className: "hover:text-gold", children: "Terms" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-gold", children: "LinkedIn" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-gold", children: "Instagram" })
       ] })
@@ -506,8 +578,26 @@ function FloatingCTA() {
     "Get Loud"
   ] });
 }
-const $$splitComponentImporter = () => import("./services.executive-personal-branding-D6z3nmgR.mjs");
-const Route = createFileRoute("/services/executive-personal-branding")({
+const $$splitComponentImporter$5 = () => import("./services.reputation-media-BEb81zTr.mjs");
+const Route$5 = createFileRoute("/services/reputation-media")({
+  head: () => ({
+    meta: [{
+      title: "Reputation & Media — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "PR & press distribution, crisis communications, Wikipedia profiles, Times Square features and online review management — all under one roar."
+    }, {
+      property: "og:title",
+      content: "Reputation & Media — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "We manage your reputation across every channel. Press, Wikipedia, crisis comms, Times Square, reviews — engineered to build trust at scale."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$5, "component")
+});
+const $$splitComponentImporter$4 = () => import("./services.executive-personal-branding-B5kc9L9U.mjs");
+const Route$4 = createFileRoute("/services/executive-personal-branding")({
   head: () => ({
     meta: [{
       title: "Executive & Personal Branding — The Big Mouth PR"
@@ -522,23 +612,149 @@ const Route = createFileRoute("/services/executive-personal-branding")({
       content: "We turn quiet leaders into category-defining voices. Brand strategy, identity, thought leadership, media, speaker kits."
     }]
   }),
+  component: lazyRouteComponent($$splitComponentImporter$4, "component")
+});
+const $$splitComponentImporter$3 = () => import("./services.digital-public-affairs-VS9JCOsN.mjs");
+const Route$3 = createFileRoute("/services/digital-public-affairs")({
+  head: () => ({
+    meta: [{
+      title: "Digital & Public Affairs — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "Digital marketing, media buying, web design, public & community affairs and multilingual translation for brands that operate in the public square."
+    }, {
+      property: "og:title",
+      content: "Digital & Public Affairs — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "Command the digital and public square with integrated campaigns, media buying and advocacy."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$3, "component")
+});
+const $$splitComponentImporter$2 = () => import("./services.creative-production-BzW8pzu_.mjs");
+const Route$2 = createFileRoute("/services/creative-production")({
+  head: () => ({
+    meta: [{
+      title: "Creative Production — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "Photography, videography, print design, experiential marketing and custom merchandise — all produced in-house by The Big Mouth PR."
+    }, {
+      property: "og:title",
+      content: "Creative Production — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "In-house creative production that turns brand strategy into visual reality."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$2, "component")
+});
+const $$splitComponentImporter$1 = () => import("./services.content-social-C0q5Fs2y.mjs");
+const Route$1 = createFileRoute("/services/content-social")({
+  head: () => ({
+    meta: [{
+      title: "Content & Social — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "LinkedIn authority content, UGC, podcasts, influencer marketing and an always-on content engine that never sleeps. We make your feed your best salesperson."
+    }, {
+      property: "og:title",
+      content: "Content & Social — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "We build content engines that turn followers into fans and fans into opportunities. LinkedIn, Instagram, YouTube, podcasts, UGC and influencer programmes."
+    }]
+  }),
+  component: lazyRouteComponent($$splitComponentImporter$1, "component")
+});
+const $$splitComponentImporter = () => import("./services.author-publishing-Bv-4U9Lr.mjs");
+const Route = createFileRoute("/services/author-publishing")({
+  head: () => ({
+    meta: [{
+      title: "Author & Publishing — The Big Mouth PR"
+    }, {
+      name: "description",
+      content: "Audiobooks, ISBN & copyright, Kirkus reviews, book fairs, signings and 700+ platform distribution for authors and publishers."
+    }, {
+      property: "og:title",
+      content: "Author & Publishing — The Big Mouth PR"
+    }, {
+      property: "og:description",
+      content: "Full-service publishing support — from manuscript to audiobook to worldwide distribution."
+    }]
+  }),
   component: lazyRouteComponent($$splitComponentImporter, "component")
 });
-const IndexRoute = Route$1.update({
+const TermsRoute = Route$a.update({
+  id: "/terms",
+  path: "/terms",
+  getParentRoute: () => Route$b
+});
+const PrivacyPolicyRoute = Route$9.update({
+  id: "/privacy-policy",
+  path: "/privacy-policy",
+  getParentRoute: () => Route$b
+});
+const ContactUsRoute = Route$8.update({
+  id: "/contact-us",
+  path: "/contact-us",
+  getParentRoute: () => Route$b
+});
+const AboutRoute = Route$7.update({
+  id: "/about",
+  path: "/about",
+  getParentRoute: () => Route$b
+});
+const IndexRoute = Route$6.update({
   id: "/",
   path: "/",
-  getParentRoute: () => Route$2
+  getParentRoute: () => Route$b
 });
-const ServicesExecutivePersonalBrandingRoute = Route.update({
+const ServicesReputationMediaRoute = Route$5.update({
+  id: "/services/reputation-media",
+  path: "/services/reputation-media",
+  getParentRoute: () => Route$b
+});
+const ServicesExecutivePersonalBrandingRoute = Route$4.update({
   id: "/services/executive-personal-branding",
   path: "/services/executive-personal-branding",
-  getParentRoute: () => Route$2
+  getParentRoute: () => Route$b
+});
+const ServicesDigitalPublicAffairsRoute = Route$3.update({
+  id: "/services/digital-public-affairs",
+  path: "/services/digital-public-affairs",
+  getParentRoute: () => Route$b
+});
+const ServicesCreativeProductionRoute = Route$2.update({
+  id: "/services/creative-production",
+  path: "/services/creative-production",
+  getParentRoute: () => Route$b
+});
+const ServicesContentSocialRoute = Route$1.update({
+  id: "/services/content-social",
+  path: "/services/content-social",
+  getParentRoute: () => Route$b
+});
+const ServicesAuthorPublishingRoute = Route.update({
+  id: "/services/author-publishing",
+  path: "/services/author-publishing",
+  getParentRoute: () => Route$b
 });
 const rootRouteChildren = {
   IndexRoute,
-  ServicesExecutivePersonalBrandingRoute
+  AboutRoute,
+  ContactUsRoute,
+  PrivacyPolicyRoute,
+  TermsRoute,
+  ServicesAuthorPublishingRoute,
+  ServicesContentSocialRoute,
+  ServicesCreativeProductionRoute,
+  ServicesDigitalPublicAffairsRoute,
+  ServicesExecutivePersonalBrandingRoute,
+  ServicesReputationMediaRoute
 };
-const routeTree = Route$2._addFileChildren(rootRouteChildren)._addFileTypes();
+const routeTree = Route$b._addFileChildren(rootRouteChildren)._addFileTypes();
 const getRouter = () => {
   const queryClient = new QueryClient();
   const router2 = createRouter({
@@ -561,21 +777,21 @@ export {
   MouthMark as M,
   NavigationMenu as N,
   SiteHeader as S,
-  NavigationMenuList as a,
-  NavigationMenuItem as b,
-  NavigationMenuTrigger as c,
-  cn as d,
-  NavigationMenuContent as e,
-  NavigationMenuLink as f,
-  svcMedia as g,
-  svcContent as h,
-  svcCreative as i,
-  svcAuthor as j,
-  svcDigital as k,
+  FloatingCTA as a,
+  NavigationMenuList as b,
+  NavigationMenuItem as c,
+  NavigationMenuTrigger as d,
+  cn as e,
+  NavigationMenuContent as f,
+  NavigationMenuLink as g,
+  svcMedia as h,
+  iconUrl as i,
+  svcContent as j,
+  svcCreative as k,
   logoUrl as l,
-  iconUrl as m,
-  fahhhSound as n,
-  FloatingCTA as o,
+  svcAuthor as m,
+  svcDigital as n,
+  fahhhSound as o,
   router as r,
   svcExec as s
 };

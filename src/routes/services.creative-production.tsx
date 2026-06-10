@@ -2,13 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
-  Crown,
-  Mic2,
-  Newspaper,
-  BookOpen,
   Camera,
+  Film,
+  Palette,
   Sparkles,
-  Megaphone,
+  Image,
   Plus,
   Minus,
   Check,
@@ -23,6 +21,11 @@ import {
   MessageSquareHeart,
   Volume2,
   ArrowUpRight,
+  Printer,
+  Gift,
+  Scissors,
+  Monitor,
+  Crown,
 } from "lucide-react";
 
 import {
@@ -37,6 +40,7 @@ import {
 
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
+import heroImg from "@/assets/svc-creative.jpg";
 import svcExec from "@/assets/svc-exec.jpg";
 import svcAuthor from "@/assets/svc-author.jpg";
 import portfolio1 from "@/assets/portfolio-1.jpg";
@@ -47,31 +51,29 @@ import portfolio4 from "@/assets/portfolio-4.jpg";
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
 
-export const Route = createFileRoute("/services/executive-personal-branding")({
+export const Route = createFileRoute("/services/creative-production")({
   head: () => ({
     meta: [
-      { title: "Executive & Personal Branding — The Big Mouth PR" },
+      { title: "Creative Production — The Big Mouth PR" },
       {
         name: "description",
         content:
-          "Executive & personal branding for founders, CEOs and leaders who refuse to be ignored. Strategy, identity, thought leadership, media & speaker kits — all under one roar.",
+          "Photography, videography, print design, experiential marketing and custom merchandise — all produced in-house by The Big Mouth PR.",
       },
-      { property: "og:title", content: "Executive & Personal Branding — The Big Mouth PR" },
+      { property: "og:title", content: "Creative Production — The Big Mouth PR" },
       {
         property: "og:description",
-        content:
-          "We turn quiet leaders into category-defining voices. Brand strategy, identity, thought leadership, media, speaker kits.",
+        content: "In-house creative production that turns brand strategy into visual reality.",
       },
     ],
   }),
-  component: ExecutiveBrandingPage,
+  component: CreativeProductionPage,
 });
 
 /* ===================== HERO ===================== */
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-deep pt-20 text-cream md:pt-28">
-      {/* watermark pattern */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -92,19 +94,19 @@ function Hero() {
           <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5">
             <DotMark />
             <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75">
-              Service · Executive & Personal Branding
+              Service · Creative Production
             </span>
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-            Quiet leaders <span className="italic text-cream/60">don't</span>
+            Your brand is a <span className="text-gold">production.</span>
             <br />
-            change <span className="text-gold">industries.</span>
+            <span className="italic text-cream/60">We</span> stage it.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
-            We build personal brands that <span className="text-gold font-semibold">roar</span> —
-            not whisper. Strategy, identity, thought leadership, media coverage and speaker kits,
-            engineered so every room knows your name <em>before</em> you walk in.
+            Photography, videography, print design, experiential marketing and custom merchandise —
+            all produced in-house with the same obsessive attention to detail that makes every frame,
+            every page and every activation feel <span className="text-gold font-semibold">unforgettable.</span>
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -112,7 +114,7 @@ function Hero() {
               href="#consult"
               className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03]"
             >
-              <Volume2 className="h-4 w-4" /> Book a strategy call
+              <Volume2 className="h-4 w-4" /> Book a production call
             </a>
             <a
               href="#process"
@@ -124,9 +126,9 @@ function Hero() {
 
           <div className="mt-10 grid max-w-md grid-cols-1 gap-6 sm:grid-cols-3">
             {[
-              { k: "+340%", v: "Avg. inbound growth" },
-              { k: "120+", v: "Leaders branded" },
-              { k: "60d", v: "From quiet to quoted" },
+              { k: "+280", v: "Projects produced" },
+              { k: "60+", v: "Brands brought to life" },
+              { k: "48h", v: "Avg. turnaround time" },
             ].map((s) => (
               <div key={s.v}>
                 <p className="font-display text-3xl font-black text-gold">{s.k}</p>
@@ -136,7 +138,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Lion */}
         <div className="relative">
           <div className="absolute -inset-10 rounded-full bg-gold/20 blur-3xl" aria-hidden />
           <img
@@ -145,7 +146,7 @@ function Hero() {
             className="relative mx-auto w-full max-w-[520px] animate-lion-roar drop-shadow-[0_30px_60px_rgba(253,95,8,0.35)]"
           />
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe">
-            Be unmissable.
+            Made to be seen.
           </div>
         </div>
       </div>
@@ -156,10 +157,10 @@ function Hero() {
 /* ===================== OVERVIEW / WHAT IS IT ===================== */
 function Overview() {
   const pillars = [
-    { icon: Crown, t: "Authority", d: "Position you as the inevitable expert in your category." },
-    { icon: Megaphone, t: "Visibility", d: "Get you in the rooms, feeds and front pages that matter." },
-    { icon: BookOpen, t: "Narrative", d: "A signature story that compounds across every channel." },
-    { icon: Sparkles, t: "Magnetism", d: "Inbound that converts: deals, speaking, talent, capital." },
+    { icon: Camera, t: "Photography", d: "Studio-grade portraits, product shots and campaign visuals that stop the scroll." },
+    { icon: Film, t: "Videography", d: "Cinematic brand films, reels, testimonials and event coverage that tell your story in motion." },
+    { icon: Palette, t: "Print & Design", d: "Magazines, brochures, packaging and signage that feel premium in hand — not just on screen." },
+    { icon: Sparkles, t: "Experiential", d: "Pop-ups, activations, launch events and merch drops that people line up for." },
   ];
   return (
     <section className="relative bg-white py-20 md:py-28">
@@ -168,13 +169,13 @@ function Overview() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — What it is</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              A personal brand engineered like a <span className="text-gold">flagship product.</span>
+              A full-service creative studio <span className="text-gold">under one</span> roof.
             </h2>
           </div>
           <p className="text-base text-navy-deep/70 md:text-lg">
-            Executive & Personal Branding isn't a logo and a LinkedIn refresh. It's a 360° system —
-            positioning, narrative, identity, content, media, social, speaking — built so your name
-            travels faster than your résumé.
+            Creative Production at The Big Mouth PR is more than a photoshoot. It's an integrated
+            engine — photography, video, print, experiential and merch — designed so every asset
+            your brand touches feels cohesive, crafted and calibrated to convert.
           </p>
         </div>
 
@@ -199,69 +200,75 @@ function Overview() {
 /* ===================== SUB-SERVICES (expandable) ===================== */
 const subServices = [
   {
-    icon: Crown,
-    title: "Brand Strategy",
-    short: "Positioning, audience, narrative architecture.",
-    details: [
-      "Competitor & whitespace audit",
-      "Positioning statement + signature POV",
-      "Audience personas & message map",
-      "Annual brand roadmap with KPIs",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Brand Identity",
-    short: "Visual & verbal system that looks unmistakably you.",
-    details: [
-      "Logo lockups, type & color system",
-      "Tone-of-voice + signature vocabulary",
-      "Templates for decks, socials, press",
-      "Photo & art direction guidelines",
-    ],
-  },
-  {
-    icon: Newspaper,
-    title: "Thought Leadership",
-    short: "Articles, op-eds and POVs that get circulated.",
-    details: [
-      "Topic pillars & editorial calendar",
-      "Ghostwritten essays + bylined articles",
-      "Distribution to Forbes, Inc., HBR, Entrepreneur",
-      "Repackaging into carousels, reels, threads",
-    ],
-  },
-  {
-    icon: Mic2,
-    title: "Speaker Kits",
-    short: "Land paid stages with a kit that closes.",
-    details: [
-      "Signature talk titles & abstracts",
-      "Speaker one-pager + sizzle reel",
-      "Outreach lists for conferences & podcasts",
-      "Stage coaching + green-room playbook",
-    ],
-  },
-  {
-    icon: Megaphone,
-    title: "Media & PR",
-    short: "Get quoted. Get covered. Get remembered.",
-    details: [
-      "Press strategy + media list build",
-      "Pitches, press releases, embargo plays",
-      "Journalist relationships & exclusives",
-      "Crisis response & reputation defense",
-    ],
-  },
-  {
     icon: Camera,
-    title: "Content & Social",
-    short: "Always-on content engine across every feed.",
+    title: "Photography",
+    short: "Studio, location, product, event and portrait photography.",
     details: [
-      "Monthly shoot day (photo + video)",
-      "Reels, shorts, carousels & podcast clips",
-      "LinkedIn, Instagram, X & YouTube cadence",
-      "Community + DM strategy that converts",
+      "Brand portrait sessions & headshot suites",
+      "Product & packaging photography",
+      "Event & activation coverage",
+      "Campaign & lookbook shoots",
+      "Retouching & colour grading",
+    ],
+  },
+  {
+    icon: Film,
+    title: "Videography",
+    short: "Brand films, reels, testimonials and sizzle reels.",
+    details: [
+      "Cinematic brand films & TVCs",
+      "Social-first reels & shorts",
+      "Client testimonials & case study videos",
+      "Event highlight reels & recaps",
+      "Animation & motion graphics",
+    ],
+  },
+  {
+    icon: Printer,
+    title: "Print Production",
+    short: "Magazines, brochures, signage and premium print.",
+    details: [
+      "Magazines, annual reports & coffee-table books",
+      "Brochures, sell-sheets & one-pagers",
+      "Signage, banners & trade-show materials",
+      "Packaging design & structural prototypes",
+      "Pre-press, proofing & vendor management",
+    ],
+  },
+  {
+    icon: Gift,
+    title: "Custom Merchandise",
+    short: "Apparel, swag, premium goods and branded packaging.",
+    details: [
+      "Custom apparel & streetwear drops",
+      "Conference & event swag packs",
+      "Premium corporate gifts & packaging",
+      "Sustainable & ethically sourced options",
+      "Fulfilment & inventory management",
+    ],
+  },
+  {
+    icon: Monitor,
+    title: "Experiential Marketing",
+    short: "Pop-ups, activations, launch events and immersive experiences.",
+    details: [
+      "Pop-up shops & brand activations",
+      "Product launch events & after-parties",
+      "Immersive brand installations",
+      "Touring activations & roadshows",
+      "Measurement & post-event reporting",
+    ],
+  },
+  {
+    icon: Scissors,
+    title: "Post-Production",
+    short: "Editing, grading, sound design, retouching and finishing.",
+    details: [
+      "Video editing & colour grading",
+      "Sound design & audio mixing",
+      "Photo retouching & compositing",
+      "Transcription & captioning",
+      "Format mastering for all platforms",
     ],
   },
 ];
@@ -275,12 +282,12 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six sub-services. <span className="text-gold">One unmissable</span> leader.
+              Six production disciplines. <span className="text-gold">One</span> creative partner.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
-            Pick à la carte or take the full package. Each sub-service is a future Big Mouth page of
-            its own — preview them below.
+            Pick à la carte or bundle them all. Each discipline is a future Big Mouth page of its
+            own — preview them below.
           </p>
         </div>
 
@@ -362,33 +369,33 @@ function WhyUs() {
   const reasons = [
     {
       n: "01",
-      t: "Loud by design.",
-      d: "We refuse the polite PR playbook. Every campaign is built to provoke, not to please.",
+      t: "In-house studio.",
+      d: "No rental costs, no third-party markups. Our studio is your studio — lights, lenses and all.",
     },
     {
       n: "02",
-      t: "Senior strategists, no juniors.",
-      d: "Your account is run by ex-newsroom, ex-agency leads — not interns reading scripts.",
+      t: "Same-day edits.",
+      d: "Shoot at 9 AM. Polished deliverables by 5 PM. Every single time.",
     },
     {
       n: "03",
-      t: "Press relationships, not press lists.",
-      d: "Journalists at Forbes, Bloomberg, WSJ, TechCrunch already know our pitch lands.",
+      t: "A-list talent.",
+      d: "Cinematographers, designers and producers who've worked with Netflix, Nike and Spotify.",
     },
     {
       n: "04",
-      t: "Data-led, gut-checked.",
-      d: "We adjust narrative weekly using share-of-voice, sentiment and conversion data.",
+      t: "End-to-end delivery.",
+      d: "Concept to final asset under one roof. No handoffs, no dropped balls, no excuses.",
     },
     {
       n: "05",
-      t: "Built for the long game.",
-      d: "Personal brands compound. We engineer 12-month flywheels, not one-off stunts.",
+      t: "Data-driven creative.",
+      d: "We test what converts. A/B-optimised thumbnails, heat-mapped layouts and performance-informed edits.",
     },
     {
       n: "06",
-      t: "Receipts everywhere.",
-      d: "100+ leaders branded, 1,400+ placements, $80M+ in inbound pipeline created.",
+      t: "Scalable for any budget.",
+      d: "One social reel or a multi-city activation — we flex without compromising quality.",
     },
   ];
   return (
@@ -399,9 +406,9 @@ function WhyUs() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">03 — Why The Big Mouth PR</p>
             <h2 className="mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl">
-              Other agencies <span className="italic text-cream/55">whisper.</span>
+              Other agencies <span className="italic text-cream/55">outsource.</span>
               <br />
-              We hand you the <span className="text-gold">microphone.</span>
+              We build it in <span className="text-gold">house.</span>
             </h2>
           </div>
           <a
@@ -447,7 +454,7 @@ function Process() {
         <div className="mb-14 max-w-3xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — The Process</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            From first hello to <span className="text-gold">"who is that?"</span>
+            From brief to <span className="text-gold">"wrap."</span>
           </h2>
           <p className="mt-5 text-base text-navy-deep/70 md:text-lg">
             A nine-step system that's repeatable, transparent and obsessed with measurable outcomes.
@@ -455,7 +462,6 @@ function Process() {
         </div>
 
         <div className="relative">
-          {/* connecting line */}
           <div
             className="pointer-events-none absolute left-0 right-0 top-[36px] hidden h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent md:block"
             aria-hidden
@@ -498,12 +504,12 @@ function Process() {
 
 /* ===================== PORTFOLIO ===================== */
 const portfolioItems = [
-  { img: portfolio1, name: "Maya Chen", role: "CEO, Atlas Ventures", win: "Featured in Forbes 40U40 + 3 keynote bookings" },
-  { img: portfolio2, name: "David Okonkwo", role: "Founder, NorthStar Health", win: "TEDx talk + 12M LinkedIn impressions in 90 days" },
-  { img: portfolio3, name: "Priya Raman", role: "Partner, Hexa Capital", win: "Bloomberg cover + $40M new LP pipeline" },
-  { img: portfolio4, name: "Jordan Vega", role: "Chef & Restaurateur", win: "WSJ feature + 4 city expansion" },
-  { img: svcExec, role: "Tech Founder", name: "Alina Petrov", win: "TechCrunch Disrupt mainstage + Series B momentum" },
-  { img: svcAuthor, role: "Bestselling Author", name: "Marcus Hale", win: "NYT bestseller + 80-stop book tour" },
+  { img: portfolio1, name: "Sara Mehta", role: "Creative Director", win: "Viral campaign with 5M+ organic views in 72 hours" },
+  { img: portfolio2, name: "James Wright", role: "Photographer", win: "Album art & campaign for Grammy-nominated artist" },
+  { img: portfolio3, name: "Anya Kapoor", role: "Event Producer", win: "NYFW activation with 2,000+ attendees and 40+ media hits" },
+  { img: portfolio4, name: "Luis Torres", role: "Director of Photography", win: "Cinematography for Sundance-selected short film" },
+  { img: svcExec, role: "Video Director", name: "Raj Patel", win: "3 brand films for Fortune 500 client — 12M combined views" },
+  { img: svcAuthor, role: "Print Designer", name: "Mia Chen", win: "Award-winning annual report redesign for public company" },
 ];
 
 function Portfolio() {
@@ -514,7 +520,7 @@ function Portfolio() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">05 — Receipts</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Leaders we made <span className="text-gold">loud.</span>
+              Work we're proud <span className="text-gold">to show.</span>
             </h2>
           </div>
           <Link
@@ -561,7 +567,7 @@ function CTAStrip() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 md:flex-row">
         <p className="flex items-center gap-4 text-center font-display text-2xl font-black md:text-left md:text-3xl">
           <MouthMark className="h-7 w-7" />
-          Ready to stop being the best-kept secret in your industry?
+          Ready to make something people remember?
         </p>
         <a
           href="#consult"
@@ -577,28 +583,28 @@ function CTAStrip() {
 /* ===================== FAQ ===================== */
 const faqs = [
   {
-    q: "Who is Executive & Personal Branding for?",
-    a: "Founders, CEOs, C-suite operators, investors, authors and category-defining experts who want their name to travel faster than their résumé.",
+    q: "What kind of projects do you produce?",
+    a: "Everything from single photography assets to full-scale experiential activations. Photography, video, print, merchandise and events — if it's brand-facing, we build it.",
   },
   {
-    q: "How long does it take to see results?",
-    a: "Most clients see their first tier-1 placement within 45–60 days. Compounding inbound, speaking and authority typically kicks in around month 3.",
+    q: "Do we need to come to your studio?",
+    a: "Not necessarily. For location shoots we come to you. For studio work, our in-house space is fully equipped and available exclusively for clients.",
   },
   {
-    q: "Do I have to commit to all six sub-services?",
-    a: "No. You can engage à la carte (e.g. just Thought Leadership or just Speaker Kit), but the full package is where the flywheel really roars.",
+    q: "How fast can you turn a project around?",
+    a: "Standard turnaround is 48 hours for edited photography and 5–7 business days for video. Rush options are available — we've delivered same-day edits for time-sensitive campaigns.",
   },
   {
-    q: "How is The Big Mouth PR different from a traditional PR firm?",
-    a: "Traditional PR sends press releases and hopes. We engineer narrative, identity, content and media as one system — measured weekly, optimized continuously.",
+    q: "Can you handle large-scale events?",
+    a: "Yes. Our experiential team has produced launch events for 1,000+ guests, multi-city activations and immersive brand installations — end to end.",
   },
   {
     q: "What's the investment?",
-    a: "Personal branding engagements start in the low five-figures per month. We'll scope and price transparently after the discovery call.",
+    a: "Production engagements start at $5,000 for a single project. Retainer packages for ongoing content production begin at $8,500/month. We'll scope transparently after the discovery call.",
   },
   {
-    q: "Do you ghostwrite?",
-    a: "Yes. Articles, books, op-eds, LinkedIn posts and keynotes — all in your voice, approved by you, never robotic.",
+    q: "Do you handle distribution too?",
+    a: "We can recommend distribution partners, but production is our specialty. Deliverables come formatted for every channel — web, social, print, broadcast and OOH.",
   },
 ];
 
@@ -610,7 +616,7 @@ function FAQ() {
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">06 — Questions</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            Loud answers to <span className="text-gold">quiet doubts.</span>
+            Answers you can <span className="text-gold">take to set.</span>
           </h2>
           <p className="mt-5 text-sm text-navy-deep/65">
             Didn't find what you needed? Ask us directly — we reply within one business day.
@@ -667,18 +673,18 @@ function Consult() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's roar</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's produce</p>
           <h2 className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
-            Your industry already <span className="text-gold">talks.</span>
+            Your brand deserves <span className="text-gold">better</span> than
             <br />
-            Time it talked about <em>you.</em>
+            stock photos and <em>good enough.</em>
           </h2>
           <p className="mt-6 max-w-md text-cream/75">
-            Drop your details. A senior strategist (not a chatbot) replies within 24 hours with a
-            tailored game plan.
+            Tell us about the project. A senior producer (not a chatbot) replies within 24 hours with a
+            tailored scope.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em] text-cream/55">
-            <DotMark /> No spam · No interns · No whispers
+            <DotMark /> No spam · No interns · No outsourcing
           </div>
         </div>
 
@@ -699,22 +705,22 @@ function Consult() {
             </div>
           ) : (
             <>
-              <p className="font-display text-2xl font-bold">Book your strategy call</p>
+              <p className="font-display text-2xl font-bold">Book a production consultation</p>
               <p className="mt-1 text-sm text-cream/65">Takes 45 seconds.</p>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <Field label="Full name" name="name" placeholder="Jane Roar" />
                 <Field label="Work email" name="email" type="email" placeholder="jane@company.com" />
                 <Field label="Company" name="company" placeholder="Atlas Ventures" />
-                <Field label="Role" name="role" placeholder="CEO / Founder" />
+                <Field label="Role" name="role" placeholder="Creative Director" />
               </div>
               <div className="mt-4">
                 <label className="text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60">
-                  What do you want to be known for?
+                  Tell us about your project
                 </label>
                 <textarea
-                  name="goal"
+                  name="project"
                   rows={4}
-                  placeholder="The category I want to own…"
+                  placeholder="Photography, video, print, merch or experiential — give us the brief…"
                   className="mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none"
                 />
               </div>
@@ -722,7 +728,7 @@ function Consult() {
                 type="submit"
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02]"
               >
-                <Volume2 className="h-4 w-4" /> Make me unmissable
+                <Volume2 className="h-4 w-4" /> Let's make it
               </button>
               <p className="mt-3 text-center text-[11px] text-cream/50">
                 By submitting, you agree to a follow-up from The Big Mouth PR team.
@@ -763,7 +769,7 @@ function Field({
 }
 
 /* ===================== PAGE ===================== */
-function ExecutiveBrandingPage() {
+function CreativeProductionPage() {
   return (
     <main className="lion-cursor bg-white text-navy-deep">
       <SiteHeader />

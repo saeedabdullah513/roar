@@ -2,20 +2,20 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
-  Crown,
-  Mic2,
-  Newspaper,
-  BookOpen,
-  Camera,
-  Sparkles,
+  Globe,
+  Share2,
+  BarChart3,
+  Monitor,
   Megaphone,
+  MessageSquare,
+  Users,
+  Map,
   Plus,
   Minus,
   Check,
   Phone,
   ClipboardList,
   FileSignature,
-  Users,
   Map as MapIcon,
   Rocket,
   LineChart,
@@ -23,6 +23,9 @@ import {
   MessageSquareHeart,
   Volume2,
   ArrowUpRight,
+  Crown,
+  Languages,
+  Radio,
 } from "lucide-react";
 
 import {
@@ -37,6 +40,7 @@ import {
 
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
+import heroImg from "@/assets/svc-digital.jpg";
 import svcExec from "@/assets/svc-exec.jpg";
 import svcAuthor from "@/assets/svc-author.jpg";
 import portfolio1 from "@/assets/portfolio-1.jpg";
@@ -47,31 +51,29 @@ import portfolio4 from "@/assets/portfolio-4.jpg";
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
 
-export const Route = createFileRoute("/services/executive-personal-branding")({
+export const Route = createFileRoute("/services/digital-public-affairs")({
   head: () => ({
     meta: [
-      { title: "Executive & Personal Branding — The Big Mouth PR" },
+      { title: "Digital & Public Affairs — The Big Mouth PR" },
       {
         name: "description",
         content:
-          "Executive & personal branding for founders, CEOs and leaders who refuse to be ignored. Strategy, identity, thought leadership, media & speaker kits — all under one roar.",
+          "Digital marketing, media buying, web design, public & community affairs and multilingual translation for brands that operate in the public square.",
       },
-      { property: "og:title", content: "Executive & Personal Branding — The Big Mouth PR" },
+      { property: "og:title", content: "Digital & Public Affairs — The Big Mouth PR" },
       {
         property: "og:description",
-        content:
-          "We turn quiet leaders into category-defining voices. Brand strategy, identity, thought leadership, media, speaker kits.",
+        content: "Command the digital and public square with integrated campaigns, media buying and advocacy.",
       },
     ],
   }),
-  component: ExecutiveBrandingPage,
+  component: DigitalPublicAffairsPage,
 });
 
 /* ===================== HERO ===================== */
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-deep pt-20 text-cream md:pt-28">
-      {/* watermark pattern */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -92,19 +94,20 @@ function Hero() {
           <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5">
             <DotMark />
             <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75">
-              Service · Executive & Personal Branding
+              Service · Digital & Public Affairs
             </span>
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-            Quiet leaders <span className="italic text-cream/60">don't</span>
+            Digital is the new <span className="text-gold">public square.</span>
             <br />
-            change <span className="text-gold">industries.</span>
+            <span className="italic text-cream/60">We</span> command it.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
-            We build personal brands that <span className="text-gold font-semibold">roar</span> —
-            not whisper. Strategy, identity, thought leadership, media coverage and speaker kits,
-            engineered so every room knows your name <em>before</em> you walk in.
+            Digital marketing, media buying, web design, public affairs, community engagement and
+            multilingual translation — built for brands that need to win <span className="text-gold font-semibold">every</span> audience,
+            <span className="text-gold font-semibold"> every</span> platform,
+            <span className="text-gold font-semibold"> every</span> language.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -124,9 +127,9 @@ function Hero() {
 
           <div className="mt-10 grid max-w-md grid-cols-1 gap-6 sm:grid-cols-3">
             {[
-              { k: "+340%", v: "Avg. inbound growth" },
-              { k: "120+", v: "Leaders branded" },
-              { k: "60d", v: "From quiet to quoted" },
+              { k: "200+", v: "Campaigns deployed" },
+              { k: "40+", v: "Markets reached" },
+              { k: "14x", v: "Avg. ROAS delivered" },
             ].map((s) => (
               <div key={s.v}>
                 <p className="font-display text-3xl font-black text-gold">{s.k}</p>
@@ -136,7 +139,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Lion */}
         <div className="relative">
           <div className="absolute -inset-10 rounded-full bg-gold/20 blur-3xl" aria-hidden />
           <img
@@ -145,7 +147,7 @@ function Hero() {
             className="relative mx-auto w-full max-w-[520px] animate-lion-roar drop-shadow-[0_30px_60px_rgba(253,95,8,0.35)]"
           />
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe">
-            Be unmissable.
+            Every channel.
           </div>
         </div>
       </div>
@@ -156,10 +158,10 @@ function Hero() {
 /* ===================== OVERVIEW / WHAT IS IT ===================== */
 function Overview() {
   const pillars = [
-    { icon: Crown, t: "Authority", d: "Position you as the inevitable expert in your category." },
-    { icon: Megaphone, t: "Visibility", d: "Get you in the rooms, feeds and front pages that matter." },
-    { icon: BookOpen, t: "Narrative", d: "A signature story that compounds across every channel." },
-    { icon: Sparkles, t: "Magnetism", d: "Inbound that converts: deals, speaking, talent, capital." },
+    { icon: Monitor, t: "Digital Marketing", d: "Full-funnel campaigns across search, social, programmatic and email." },
+    { icon: BarChart3, t: "Media Buying", d: "Strategic placement, negotiation and optimisation across every channel." },
+    { icon: Users, t: "Public & Community Affairs", d: "Government relations, community engagement and advocacy campaigns." },
+    { icon: Globe, t: "Multilingual Translation", d: "Professional translation and localisation for 40+ languages and markets." },
   ];
   return (
     <section className="relative bg-white py-20 md:py-28">
@@ -168,13 +170,13 @@ function Overview() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — What it is</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              A personal brand engineered like a <span className="text-gold">flagship product.</span>
+              The intersection of digital <span className="text-gold">reach</span> and public <span className="text-gold">influence.</span>
             </h2>
           </div>
           <p className="text-base text-navy-deep/70 md:text-lg">
-            Executive & Personal Branding isn't a logo and a LinkedIn refresh. It's a 360° system —
-            positioning, narrative, identity, content, media, social, speaking — built so your name
-            travels faster than your résumé.
+            Digital & Public Affairs is where marketing meets advocacy. We build integrated campaigns
+            that move both consumers and policy — spanning paid media, organic content, government
+            relations and multilingual localisation.
           </p>
         </div>
 
@@ -199,69 +201,75 @@ function Overview() {
 /* ===================== SUB-SERVICES (expandable) ===================== */
 const subServices = [
   {
-    icon: Crown,
-    title: "Brand Strategy",
-    short: "Positioning, audience, narrative architecture.",
+    icon: Monitor,
+    title: "Digital Marketing",
+    short: "Search, social, programmatic, email — full-funnel campaigns.",
     details: [
-      "Competitor & whitespace audit",
-      "Positioning statement + signature POV",
-      "Audience personas & message map",
-      "Annual brand roadmap with KPIs",
+      "Paid search & SEO strategy",
+      "Social media advertising (Meta, LinkedIn, X, TikTok)",
+      "Programmatic display & video",
+      "Email marketing & marketing automation",
+      "Conversion rate optimisation & landing page design",
     ],
   },
   {
-    icon: Sparkles,
-    title: "Brand Identity",
-    short: "Visual & verbal system that looks unmistakably you.",
+    icon: BarChart3,
+    title: "Media Buying",
+    short: "Strategic placement, negotiation and performance management.",
     details: [
-      "Logo lockups, type & color system",
-      "Tone-of-voice + signature vocabulary",
-      "Templates for decks, socials, press",
-      "Photo & art direction guidelines",
+      "Media strategy & audience planning",
+      "Rate negotiation & insertion orders",
+      "Cross-channel campaign management",
+      "Attribution modelling & incrementality testing",
+      "Weekly pacing & performance reporting",
     ],
   },
   {
-    icon: Newspaper,
-    title: "Thought Leadership",
-    short: "Articles, op-eds and POVs that get circulated.",
+    icon: Globe,
+    title: "Web Design & Development",
+    short: "High-performance websites built for conversion and impact.",
     details: [
-      "Topic pillars & editorial calendar",
-      "Ghostwritten essays + bylined articles",
-      "Distribution to Forbes, Inc., HBR, Entrepreneur",
-      "Repackaging into carousels, reels, threads",
+      "Custom website design & development",
+      "Landing page optimisation & A/B testing",
+      "CMS integration (WordPress, Webflow, HubSpot)",
+      "SEO architecture & technical audits",
+      "Ongoing maintenance & performance monitoring",
     ],
   },
   {
-    icon: Mic2,
-    title: "Speaker Kits",
-    short: "Land paid stages with a kit that closes.",
+    icon: Users,
+    title: "Public Affairs",
+    short: "Government relations, stakeholder engagement and policy campaigns.",
     details: [
-      "Signature talk titles & abstracts",
-      "Speaker one-pager + sizzle reel",
-      "Outreach lists for conferences & podcasts",
-      "Stage coaching + green-room playbook",
+      "Legislative monitoring & policy analysis",
+      "Coalition building & stakeholder mapping",
+      "Grassroots advocacy & digital organising",
+      "Hill briefings & testimony preparation",
+      "Issue campaign creative & messaging",
     ],
   },
   {
     icon: Megaphone,
-    title: "Media & PR",
-    short: "Get quoted. Get covered. Get remembered.",
+    title: "Community Affairs",
+    short: "Local engagement, corporate citizenship and community investment.",
     details: [
-      "Press strategy + media list build",
-      "Pitches, press releases, embargo plays",
-      "Journalist relationships & exclusives",
-      "Crisis response & reputation defense",
+      "Community needs assessment & strategy",
+      "Local partnership development",
+      "Corporate volunteering & grant programmes",
+      "Town halls, roundtables & public meetings",
+      "Community impact measurement & reporting",
     ],
   },
   {
-    icon: Camera,
-    title: "Content & Social",
-    short: "Always-on content engine across every feed.",
+    icon: Languages,
+    title: "Translation & Localisation",
+    short: "Professional translation for 40+ languages and cultural adaptation.",
     details: [
-      "Monthly shoot day (photo + video)",
-      "Reels, shorts, carousels & podcast clips",
-      "LinkedIn, Instagram, X & YouTube cadence",
-      "Community + DM strategy that converts",
+      "Professional human translation + AI-assisted workflows",
+      "Marketing & creative localisation",
+      "Website, app & software localisation",
+      "Subtitling, voice-over & multimedia translation",
+      "Cultural consultancy & market entry support",
     ],
   },
 ];
@@ -275,12 +283,12 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six sub-services. <span className="text-gold">One unmissable</span> leader.
+              Six disciplines. <span className="text-gold">Every</span> channel.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
-            Pick à la carte or take the full package. Each sub-service is a future Big Mouth page of
-            its own — preview them below.
+            Pick à la carte or take the full suite. Each discipline is a future Big Mouth page of its
+            own — preview them below.
           </p>
         </div>
 
@@ -362,33 +370,33 @@ function WhyUs() {
   const reasons = [
     {
       n: "01",
-      t: "Loud by design.",
-      d: "We refuse the polite PR playbook. Every campaign is built to provoke, not to please.",
+      t: "Full-funnel fluency.",
+      d: "Awareness to advocacy — we cover every stage of the digital and public affairs funnel.",
     },
     {
       n: "02",
-      t: "Senior strategists, no juniors.",
-      d: "Your account is run by ex-newsroom, ex-agency leads — not interns reading scripts.",
+      t: "40+ market capability.",
+      d: "Campaigns, content and communications adapted and delivered across 40+ languages and regions.",
     },
     {
       n: "03",
-      t: "Press relationships, not press lists.",
-      d: "Journalists at Forbes, Bloomberg, WSJ, TechCrunch already know our pitch lands.",
+      t: "Paid + earned + owned.",
+      d: "We don't just buy media. We earn it through public affairs and own it through web design and content.",
     },
     {
       n: "04",
-      t: "Data-led, gut-checked.",
-      d: "We adjust narrative weekly using share-of-voice, sentiment and conversion data.",
+      t: "Data-obsessed.",
+      d: "Real-time dashboards, attribution modelling and weekly optimisation against your KPIs.",
     },
     {
       n: "05",
-      t: "Built for the long game.",
-      d: "Personal brands compound. We engineer 12-month flywheels, not one-off stunts.",
+      t: "Policy + digital together.",
+      d: "We bridge the gap between government relations and digital marketing — a rare combination.",
     },
     {
       n: "06",
-      t: "Receipts everywhere.",
-      d: "100+ leaders branded, 1,400+ placements, $80M+ in inbound pipeline created.",
+      t: "14x average ROAS.",
+      d: "Proven returns across industries. We only keep spending if the numbers work.",
     },
   ];
   return (
@@ -399,9 +407,9 @@ function WhyUs() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">03 — Why The Big Mouth PR</p>
             <h2 className="mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl">
-              Other agencies <span className="italic text-cream/55">whisper.</span>
+              Most agencies <span className="italic text-cream/55">post.</span>
               <br />
-              We hand you the <span className="text-gold">microphone.</span>
+              We build <span className="text-gold">movements.</span>
             </h2>
           </div>
           <a
@@ -447,7 +455,7 @@ function Process() {
         <div className="mb-14 max-w-3xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — The Process</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            From first hello to <span className="text-gold">"who is that?"</span>
+            From brief to <span className="text-gold">omnipresence.</span>
           </h2>
           <p className="mt-5 text-base text-navy-deep/70 md:text-lg">
             A nine-step system that's repeatable, transparent and obsessed with measurable outcomes.
@@ -455,7 +463,6 @@ function Process() {
         </div>
 
         <div className="relative">
-          {/* connecting line */}
           <div
             className="pointer-events-none absolute left-0 right-0 top-[36px] hidden h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent md:block"
             aria-hidden
@@ -498,12 +505,12 @@ function Process() {
 
 /* ===================== PORTFOLIO ===================== */
 const portfolioItems = [
-  { img: portfolio1, name: "Maya Chen", role: "CEO, Atlas Ventures", win: "Featured in Forbes 40U40 + 3 keynote bookings" },
-  { img: portfolio2, name: "David Okonkwo", role: "Founder, NorthStar Health", win: "TEDx talk + 12M LinkedIn impressions in 90 days" },
-  { img: portfolio3, name: "Priya Raman", role: "Partner, Hexa Capital", win: "Bloomberg cover + $40M new LP pipeline" },
-  { img: portfolio4, name: "Jordan Vega", role: "Chef & Restaurateur", win: "WSJ feature + 4 city expansion" },
-  { img: svcExec, role: "Tech Founder", name: "Alina Petrov", win: "TechCrunch Disrupt mainstage + Series B momentum" },
-  { img: svcAuthor, role: "Bestselling Author", name: "Marcus Hale", win: "NYT bestseller + 80-stop book tour" },
+  { img: portfolio1, name: "NexGen Energy", role: "Digital Campaign", win: "14x ROAS across 6 markets with 2M+ impressions" },
+  { img: portfolio2, name: "City of Oakland", role: "Public Affairs", win: "Passed 3 ballot measures through community organising" },
+  { img: portfolio3, name: "Lumina Health", role: "Media Buying", win: "Reduced CPA by 40% while scaling spend 3x" },
+  { img: portfolio4, name: "GlobalEd Foundation", role: "Translation & Localisation", win: "Programme materials localised for 18 languages" },
+  { img: svcExec, role: "Web Redesign", name: "Apex Financial", win: "60% improvement in conversion rate post-launch" },
+  { img: svcAuthor, role: "Community Affairs", name: "Denver Transit Authority", win: "70% increase in community meeting attendance" },
 ];
 
 function Portfolio() {
@@ -514,7 +521,7 @@ function Portfolio() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">05 — Receipts</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Leaders we made <span className="text-gold">loud.</span>
+              Campaigns that <span className="text-gold">moved</span> people.
             </h2>
           </div>
           <Link
@@ -561,7 +568,7 @@ function CTAStrip() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 md:flex-row">
         <p className="flex items-center gap-4 text-center font-display text-2xl font-black md:text-left md:text-3xl">
           <MouthMark className="h-7 w-7" />
-          Ready to stop being the best-kept secret in your industry?
+          Ready to own every channel that matters?
         </p>
         <a
           href="#consult"
@@ -577,28 +584,28 @@ function CTAStrip() {
 /* ===================== FAQ ===================== */
 const faqs = [
   {
-    q: "Who is Executive & Personal Branding for?",
-    a: "Founders, CEOs, C-suite operators, investors, authors and category-defining experts who want their name to travel faster than their résumé.",
+    q: "What's the difference between Digital Marketing and Media Buying?",
+    a: "Digital Marketing covers the full strategy — creative, targeting, channel mix and optimisation. Media Buying focuses specifically on placement negotiation, rate management and cross-channel spend allocation. We often do both together.",
   },
   {
-    q: "How long does it take to see results?",
-    a: "Most clients see their first tier-1 placement within 45–60 days. Compounding inbound, speaking and authority typically kicks in around month 3.",
+    q: "Do you work with government agencies?",
+    a: "Yes. Our Public Affairs practice works with municipal, state and federal agencies on communications, community engagement and advocacy campaigns. We understand procurement, compliance and stakeholder sensitivity.",
   },
   {
-    q: "Do I have to commit to all six sub-services?",
-    a: "No. You can engage à la carte (e.g. just Thought Leadership or just Speaker Kit), but the full package is where the flywheel really roars.",
+    q: "How many languages can you translate into?",
+    a: "Over 40 languages, including European, Asian, Middle Eastern and African language pairs. We use professional human translators combined with AI-assisted workflows for speed and consistency.",
   },
   {
-    q: "How is The Big Mouth PR different from a traditional PR firm?",
-    a: "Traditional PR sends press releases and hopes. We engineer narrative, identity, content and media as one system — measured weekly, optimized continuously.",
+    q: "What's your minimum media spend?",
+    a: "We manage campaigns from $10K/month to $1M+/month. Our approach scales with your budget — we focus on efficiency first, then scale what works.",
+  },
+  {
+    q: "Can you help with a specific market entry?",
+    a: "Absolutely. Our Translation & Localisation team, combined with digital marketing and public affairs, is designed to help brands enter new markets with cultural competence and strategic positioning.",
   },
   {
     q: "What's the investment?",
-    a: "Personal branding engagements start in the low five-figures per month. We'll scope and price transparently after the discovery call.",
-  },
-  {
-    q: "Do you ghostwrite?",
-    a: "Yes. Articles, books, op-eds, LinkedIn posts and keynotes — all in your voice, approved by you, never robotic.",
+    a: "Digital marketing retainers start at $8,500/month. Media buying engagements are scoped based on ad spend. Public affairs and translation projects are quoted per scope. We provide transparent pricing after the discovery call.",
   },
 ];
 
@@ -610,7 +617,7 @@ function FAQ() {
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">06 — Questions</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            Loud answers to <span className="text-gold">quiet doubts.</span>
+            Clear answers for a <span className="text-gold">connected</span> world.
           </h2>
           <p className="mt-5 text-sm text-navy-deep/65">
             Didn't find what you needed? Ask us directly — we reply within one business day.
@@ -667,18 +674,18 @@ function Consult() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's roar</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's connect</p>
           <h2 className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
-            Your industry already <span className="text-gold">talks.</span>
+            The digital world is <span className="text-gold">loud.</span>
             <br />
-            Time it talked about <em>you.</em>
+            Let's make sure <em>you're</em> heard.
           </h2>
           <p className="mt-6 max-w-md text-cream/75">
             Drop your details. A senior strategist (not a chatbot) replies within 24 hours with a
             tailored game plan.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em] text-cream/55">
-            <DotMark /> No spam · No interns · No whispers
+            <DotMark /> No spam · No hidden fees · No generic playbooks
           </div>
         </div>
 
@@ -699,22 +706,22 @@ function Consult() {
             </div>
           ) : (
             <>
-              <p className="font-display text-2xl font-bold">Book your strategy call</p>
+              <p className="font-display text-2xl font-bold">Book your digital strategy call</p>
               <p className="mt-1 text-sm text-cream/65">Takes 45 seconds.</p>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <Field label="Full name" name="name" placeholder="Jane Roar" />
                 <Field label="Work email" name="email" type="email" placeholder="jane@company.com" />
                 <Field label="Company" name="company" placeholder="Atlas Ventures" />
-                <Field label="Role" name="role" placeholder="CEO / Founder" />
+                <Field label="Role" name="role" placeholder="CMO / Director" />
               </div>
               <div className="mt-4">
                 <label className="text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60">
-                  What do you want to be known for?
+                  What's your biggest opportunity?
                 </label>
                 <textarea
-                  name="goal"
+                  name="opportunity"
                   rows={4}
-                  placeholder="The category I want to own…"
+                  placeholder="Digital marketing, media buying, public affairs, translation — describe your goal…"
                   className="mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none"
                 />
               </div>
@@ -722,7 +729,7 @@ function Consult() {
                 type="submit"
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02]"
               >
-                <Volume2 className="h-4 w-4" /> Make me unmissable
+                <Volume2 className="h-4 w-4" /> Make me heard
               </button>
               <p className="mt-3 text-center text-[11px] text-cream/50">
                 By submitting, you agree to a follow-up from The Big Mouth PR team.
@@ -763,7 +770,7 @@ function Field({
 }
 
 /* ===================== PAGE ===================== */
-function ExecutiveBrandingPage() {
+function DigitalPublicAffairsPage() {
   return (
     <main className="lion-cursor bg-white text-navy-deep">
       <SiteHeader />

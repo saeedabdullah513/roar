@@ -23,6 +23,14 @@ import {
   MessageSquareHeart,
   Volume2,
   ArrowUpRight,
+  Star,
+  Quote,
+  Target,
+  Eye,
+  Heart,
+  Zap,
+  ShieldCheck,
+  Globe2,
 } from "lucide-react";
 
 import {
@@ -37,8 +45,7 @@ import {
 
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
-import svcExec from "@/assets/svc-exec.jpg";
-import svcAuthor from "@/assets/svc-author.jpg";
+import founderImg from "@/assets/founder.jpg";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -47,31 +54,30 @@ import portfolio4 from "@/assets/portfolio-4.jpg";
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
 
-export const Route = createFileRoute("/services/executive-personal-branding")({
+export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Executive & Personal Branding — The Big Mouth PR" },
+      { title: "About — The Big Mouth PR" },
       {
         name: "description",
         content:
-          "Executive & personal branding for founders, CEOs and leaders who refuse to be ignored. Strategy, identity, thought leadership, media & speaker kits — all under one roar.",
+          "The Big Mouth PR is a loud, fearless personal branding & PR studio for founders, executives and disruptors who refuse to be ignored.",
       },
-      { property: "og:title", content: "Executive & Personal Branding — The Big Mouth PR" },
+      { property: "og:title", content: "About — The Big Mouth PR" },
       {
         property: "og:description",
         content:
-          "We turn quiet leaders into category-defining voices. Brand strategy, identity, thought leadership, media, speaker kits.",
+          "We turn quiet leaders into category-defining voices. Learn the story behind The Big Mouth PR.",
       },
     ],
   }),
-  component: ExecutiveBrandingPage,
+  component: AboutPage,
 });
 
 /* ===================== HERO ===================== */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep pt-20 text-cream md:pt-28">
-      {/* watermark pattern */}
+    <section className="relative overflow-hidden bg-navy-deep pt-28 text-cream">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -92,19 +98,19 @@ function Hero() {
           <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5">
             <DotMark />
             <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75">
-              Service · Executive & Personal Branding
+              About · The Studio
             </span>
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-            Quiet leaders <span className="italic text-cream/60">don't</span>
+            We don't just build <span className="text-gold">brands.</span>
             <br />
-            change <span className="text-gold">industries.</span>
+            <span className="italic text-cream/60">We build</span> noise.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
-            We build personal brands that <span className="text-gold font-semibold">roar</span> —
-            not whisper. Strategy, identity, thought leadership, media coverage and speaker kits,
-            engineered so every room knows your name <em>before</em> you walk in.
+            A personal branding & PR studio for leaders who'd rather be talked
+            about than tip-toed around. Twelve years. Three continents.{" "}
+            <span className="text-gold font-semibold">One roar.</span>
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -115,18 +121,18 @@ function Hero() {
               <Volume2 className="h-4 w-4" /> Book a strategy call
             </a>
             <a
-              href="#process"
+              href="#story"
               className="inline-flex items-center gap-2 rounded-full border border-cream/25 px-7 py-4 text-sm font-bold uppercase tracking-wider text-cream hover:border-gold hover:text-gold"
             >
-              See how we work <ArrowRight className="h-4 w-4" />
+              Our story <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
           <div className="mt-10 grid max-w-md grid-cols-1 gap-6 sm:grid-cols-3">
             {[
-              { k: "+340%", v: "Avg. inbound growth" },
+              { k: "340%", v: "Avg. inbound growth" },
               { k: "120+", v: "Leaders branded" },
-              { k: "60d", v: "From quiet to quoted" },
+              { k: "12yr", v: "Global experience" },
             ].map((s) => (
               <div key={s.v}>
                 <p className="font-display text-3xl font-black text-gold">{s.k}</p>
@@ -136,7 +142,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Lion */}
         <div className="relative">
           <div className="absolute -inset-10 rounded-full bg-gold/20 blur-3xl" aria-hidden />
           <img
@@ -153,240 +158,109 @@ function Hero() {
   );
 }
 
-/* ===================== OVERVIEW / WHAT IS IT ===================== */
-function Overview() {
-  const pillars = [
-    { icon: Crown, t: "Authority", d: "Position you as the inevitable expert in your category." },
-    { icon: Megaphone, t: "Visibility", d: "Get you in the rooms, feeds and front pages that matter." },
-    { icon: BookOpen, t: "Narrative", d: "A signature story that compounds across every channel." },
-    { icon: Sparkles, t: "Magnetism", d: "Inbound that converts: deals, speaking, talent, capital." },
-  ];
+/* ===================== OUR STORY ===================== */
+function Story() {
   return (
-    <section className="relative bg-white py-20 md:py-28">
+    <section id="story" className="relative bg-white py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — What it is</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — Our story</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              A personal brand engineered like a <span className="text-gold">flagship product.</span>
+              Born from the belief that{" "}
+              <span className="text-gold">quiet is a liability.</span>
             </h2>
           </div>
           <p className="text-base text-navy-deep/70 md:text-lg">
-            Executive & Personal Branding isn't a logo and a LinkedIn refresh. It's a 360° system —
-            positioning, narrative, identity, content, media, social, speaking — built so your name
-            travels faster than your résumé.
+            The Big Mouth PR wasn't born in a boardroom. It was born in newsrooms,
+            green rooms, and backstage conversations where we watched brilliant
+            leaders get overlooked — not because they lacked talent, but because
+            they lacked a voice.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {pillars.map((p) => (
-            <div
-              key={p.t}
-              className="group relative overflow-hidden rounded-2xl border border-navy-deep/10 bg-white p-7 transition hover:-translate-y-1 hover:border-gold hover:shadow-luxe"
-            >
-              <img src={ICON_URL} aria-hidden alt="" className="absolute -right-6 -top-6 h-24 opacity-[0.06] transition group-hover:opacity-[0.12]" />
-              <p.icon className="h-7 w-7 text-gold" />
-              <p className="mt-5 font-display text-2xl font-bold text-navy-deep">{p.t}</p>
-              <p className="mt-2 text-sm text-navy-deep/65">{p.d}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ===================== SUB-SERVICES (expandable) ===================== */
-const subServices = [
-  {
-    icon: Crown,
-    title: "Brand Strategy",
-    short: "Positioning, audience, narrative architecture.",
-    details: [
-      "Competitor & whitespace audit",
-      "Positioning statement + signature POV",
-      "Audience personas & message map",
-      "Annual brand roadmap with KPIs",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Brand Identity",
-    short: "Visual & verbal system that looks unmistakably you.",
-    details: [
-      "Logo lockups, type & color system",
-      "Tone-of-voice + signature vocabulary",
-      "Templates for decks, socials, press",
-      "Photo & art direction guidelines",
-    ],
-  },
-  {
-    icon: Newspaper,
-    title: "Thought Leadership",
-    short: "Articles, op-eds and POVs that get circulated.",
-    details: [
-      "Topic pillars & editorial calendar",
-      "Ghostwritten essays + bylined articles",
-      "Distribution to Forbes, Inc., HBR, Entrepreneur",
-      "Repackaging into carousels, reels, threads",
-    ],
-  },
-  {
-    icon: Mic2,
-    title: "Speaker Kits",
-    short: "Land paid stages with a kit that closes.",
-    details: [
-      "Signature talk titles & abstracts",
-      "Speaker one-pager + sizzle reel",
-      "Outreach lists for conferences & podcasts",
-      "Stage coaching + green-room playbook",
-    ],
-  },
-  {
-    icon: Megaphone,
-    title: "Media & PR",
-    short: "Get quoted. Get covered. Get remembered.",
-    details: [
-      "Press strategy + media list build",
-      "Pitches, press releases, embargo plays",
-      "Journalist relationships & exclusives",
-      "Crisis response & reputation defense",
-    ],
-  },
-  {
-    icon: Camera,
-    title: "Content & Social",
-    short: "Always-on content engine across every feed.",
-    details: [
-      "Monthly shoot day (photo + video)",
-      "Reels, shorts, carousels & podcast clips",
-      "LinkedIn, Instagram, X & YouTube cadence",
-      "Community + DM strategy that converts",
-    ],
-  },
-];
-
-function SubServices() {
-  const [open, setOpen] = useState<number | null>(0);
-  return (
-    <section id="sub-services" className="relative bg-[oklch(0.98_0.005_240)] py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
-            <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six sub-services. <span className="text-gold">One unmissable</span> leader.
-            </h2>
+        <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1.2fr]">
+          <div className="relative overflow-hidden rounded-2xl">
+            <img
+              src={founderImg}
+              alt="The Big Mouth PR founder"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-xs uppercase tracking-[0.25em] text-cream/80">
+              <DotMark /> Our founder in the wild
+            </p>
           </div>
-          <p className="max-w-sm text-sm text-navy-deep/65">
-            Pick à la carte or take the full package. Each sub-service is a future Big Mouth page of
-            its own — preview them below.
-          </p>
-        </div>
-
-        <div className="grid gap-4">
-          {subServices.map((s, i) => {
-            const isOpen = open === i;
-            return (
-              <div
-                key={s.title}
-                className={`overflow-hidden rounded-2xl border transition ${
-                  isOpen
-                    ? "border-gold bg-white shadow-luxe"
-                    : "border-navy-deep/10 bg-white hover:border-navy-deep/30"
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center gap-5 px-6 py-5 text-left md:px-8"
-                  aria-expanded={isOpen}
-                >
-                  <span
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition ${
-                      isOpen ? "bg-gold text-navy-deep" : "bg-navy-deep/5 text-navy-deep"
-                    }`}
-                  >
-                    <s.icon className="h-5 w-5" />
-                  </span>
-                  <div className="flex-1">
-                    <p className="font-display text-xl font-bold text-navy-deep md:text-2xl">
-                      {s.title}
-                    </p>
-                    <p className="mt-1 text-sm text-navy-deep/60">{s.short}</p>
-                  </div>
-                  <span
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition ${
-                      isOpen ? "bg-navy-deep text-cream" : "bg-navy-deep/5 text-navy-deep"
-                    }`}
-                  >
-                    {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-                  </span>
-                </button>
-
-                {isOpen && (
-                  <div className="grid gap-6 border-t border-navy-deep/10 px-6 py-7 md:grid-cols-[1.4fr_1fr] md:px-8">
-                    <ul className="grid gap-3 sm:grid-cols-2">
-                      {s.details.map((d) => (
-                        <li key={d} className="flex items-start gap-3 text-sm text-navy-deep/80">
-                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                          {d}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
-                      <p className="text-sm text-cream/75">
-                        A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        coming soon — full deliverables, samples and pricing.
-                      </p>
-                      <a
-                        href="#consult"
-                        className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-navy-deep transition hover:scale-[1.03]"
-                      >
-                        Explore more <ArrowUpRight className="h-3.5 w-3.5" />
-                      </a>
-                    </div>
-                  </div>
-                )}
+          <div className="flex flex-col justify-center gap-6">
+            <p className="text-lg leading-relaxed text-navy-deep/80">
+              We've spent twelve years across three continents building brands
+              that don't blend in. From Times Square billboards to TEDx stages,
+              from Forbes bylines to sold-out book tours — we know what it takes
+              to make a leader unmissable.
+            </p>
+            <p className="text-lg leading-relaxed text-navy-deep/80">
+              Most agencies polish you until you're palatable. We do the opposite.
+              We find the loudest, truest, most magnetic version of you — and we
+              hand the world a megaphone.
+            </p>
+            <div className="mt-4 grid grid-cols-1 gap-6 border-t border-navy-deep/10 pt-6 sm:grid-cols-3">
+              <div>
+                <p className="font-display text-3xl font-bold text-navy-deep">12+</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-navy/60">Years in the arena</p>
               </div>
-            );
-          })}
+              <div>
+                <p className="font-display text-3xl font-bold text-navy-deep">3</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-navy/60">Continents</p>
+              </div>
+              <div>
+                <p className="font-display text-3xl font-bold text-navy-deep">700+</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-navy/60">Platforms reached</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-/* ===================== WHY US ===================== */
-function WhyUs() {
-  const reasons = [
+/* ===================== MISSION & VALUES ===================== */
+function Values() {
+  const items = [
     {
       n: "01",
+      icon: Zap,
       t: "Loud by design.",
       d: "We refuse the polite PR playbook. Every campaign is built to provoke, not to please.",
     },
     {
       n: "02",
-      t: "Senior strategists, no juniors.",
+      icon: Users,
+      t: "Senior talent only.",
       d: "Your account is run by ex-newsroom, ex-agency leads — not interns reading scripts.",
     },
     {
       n: "03",
-      t: "Press relationships, not press lists.",
-      d: "Journalists at Forbes, Bloomberg, WSJ, TechCrunch already know our pitch lands.",
+      icon: Globe2,
+      t: "Global reach, local feel.",
+      d: "We've operated across three continents and know how to make a story travel.",
     },
     {
       n: "04",
+      icon: Target,
       t: "Data-led, gut-checked.",
       d: "We adjust narrative weekly using share-of-voice, sentiment and conversion data.",
     },
     {
       n: "05",
+      icon: ShieldCheck,
       t: "Built for the long game.",
       d: "Personal brands compound. We engineer 12-month flywheels, not one-off stunts.",
     },
     {
       n: "06",
+      icon: Heart,
       t: "Receipts everywhere.",
       d: "100+ leaders branded, 1,400+ placements, $80M+ in inbound pipeline created.",
     },
@@ -397,11 +271,12 @@ function WhyUs() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">03 — Why The Big Mouth PR</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Philosophy</p>
             <h2 className="mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl">
-              Other agencies <span className="italic text-cream/55">whisper.</span>
+              What we believe.
               <br />
-              We hand you the <span className="text-gold">microphone.</span>
+              <span className="italic text-cream/55">And what we won't</span>
+              <span className="text-gold"> compromise.</span>
             </h2>
           </div>
           <a
@@ -413,22 +288,26 @@ function WhyUs() {
         </div>
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-cream/10 bg-cream/10 md:grid-cols-2 lg:grid-cols-3">
-          {reasons.map((r) => (
-            <div key={r.n} className="group relative bg-navy-deep p-8 transition hover:bg-navy">
-              <span className="font-display text-5xl font-black text-gold/30 transition group-hover:text-gold">
-                {r.n}
-              </span>
-              <p className="mt-4 font-display text-xl font-bold text-cream">{r.t}</p>
-              <p className="mt-2 text-sm text-cream/65">{r.d}</p>
-            </div>
-          ))}
+          {items.map((r) => {
+            const Icon = r.icon;
+            return (
+              <div key={r.n} className="group relative bg-navy-deep p-8 transition hover:bg-navy">
+                <Icon className="mb-3 h-6 w-6 text-gold" />
+                <span className="font-display text-5xl font-black text-gold/30 transition group-hover:text-gold">
+                  {r.n}
+                </span>
+                <p className="mt-4 font-display text-xl font-bold text-cream">{r.t}</p>
+                <p className="mt-2 text-sm text-cream/65">{r.d}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
 
-/* ===================== PROCESS MAP ===================== */
+/* ===================== PROCESS ===================== */
 function Process() {
   const steps = [
     { icon: Phone, t: "Discovery Call", d: "60-min strategy kickoff. We listen, you roar." },
@@ -445,17 +324,16 @@ function Process() {
     <section id="process" className="relative bg-white py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-3xl">
-          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — The Process</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">03 — How we work</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            From first hello to <span className="text-gold">"who is that?"</span>
+            A nine-step system <span className="text-gold">that roars.</span>
           </h2>
           <p className="mt-5 text-base text-navy-deep/70 md:text-lg">
-            A nine-step system that's repeatable, transparent and obsessed with measurable outcomes.
+            Repeatable, transparent and obsessed with measurable outcomes.
           </p>
         </div>
 
         <div className="relative">
-          {/* connecting line */}
           <div
             className="pointer-events-none absolute left-0 right-0 top-[36px] hidden h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent md:block"
             aria-hidden
@@ -496,55 +374,68 @@ function Process() {
   );
 }
 
-/* ===================== PORTFOLIO ===================== */
-const portfolioItems = [
-  { img: portfolio1, name: "Maya Chen", role: "CEO, Atlas Ventures", win: "Featured in Forbes 40U40 + 3 keynote bookings" },
-  { img: portfolio2, name: "David Okonkwo", role: "Founder, NorthStar Health", win: "TEDx talk + 12M LinkedIn impressions in 90 days" },
-  { img: portfolio3, name: "Priya Raman", role: "Partner, Hexa Capital", win: "Bloomberg cover + $40M new LP pipeline" },
-  { img: portfolio4, name: "Jordan Vega", role: "Chef & Restaurateur", win: "WSJ feature + 4 city expansion" },
-  { img: svcExec, role: "Tech Founder", name: "Alina Petrov", win: "TechCrunch Disrupt mainstage + Series B momentum" },
-  { img: svcAuthor, role: "Bestselling Author", name: "Marcus Hale", win: "NYT bestseller + 80-stop book tour" },
+/* ===================== TEAM ===================== */
+const teamMembers = [
+  {
+    img: portfolio1,
+    name: "Alex Rivera",
+    role: "Founder & Chief Strategist",
+    bio: "Ex-newsroom, ex-TEDx curator. Twelve years building category-defining brands across three continents.",
+  },
+  {
+    img: portfolio2,
+    name: "Simone Chen",
+    role: "Director of Media Relations",
+    bio: "Former Bloomberg journalist with a contact list that spans every major newsroom in North America.",
+  },
+  {
+    img: portfolio3,
+    name: "Marcus Okafor",
+    role: "Head of Creative",
+    bio: "Award-winning designer and filmmaker. His work has graced Times Square, Sundance and your FYP.",
+  },
+  {
+    img: portfolio4,
+    name: "Priya Desai",
+    role: "Lead Strategist",
+    bio: "Brand strategist who's built personal-brand systems for Fortune 50 CEOs and YC-backed founders alike.",
+  },
 ];
 
-function Portfolio() {
+function Team() {
   return (
-    <section id="portfolio" className="relative bg-[oklch(0.98_0.005_240)] py-20 md:py-28">
+    <section className="relative bg-[oklch(0.98_0.005_240)] py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">05 — Receipts</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — The team</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Leaders we made <span className="text-gold">loud.</span>
+              The voices behind <span className="text-gold">the roar.</span>
             </h2>
           </div>
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-navy-deep hover:text-gold"
-          >
-            See full portfolio <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          <p className="max-w-sm text-sm text-navy-deep/65">
+            Senior talent only. Every account is led by an experienced strategist — no juniors, no scripts.
+          </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {portfolioItems.map((p) => (
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {teamMembers.map((m) => (
             <article
-              key={p.name}
+              key={m.name}
               className="group relative overflow-hidden rounded-2xl bg-navy-deep shadow-luxe"
             >
               <img
-                src={p.img}
-                alt={p.name}
+                src={m.img}
+                alt={m.name}
                 loading="lazy"
-                className="h-[240px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[320px] md:h-[420px]"
+                className="h-[240px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[320px] md:h-[400px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 text-cream">
                 <DotMark />
-                <p className="mt-3 font-display text-2xl font-bold">{p.name}</p>
-                <p className="text-xs uppercase tracking-[0.25em] text-cream/70">{p.role}</p>
-                <p className="mt-4 border-t border-cream/20 pt-3 text-sm text-cream/85">
-                  <span className="font-bold text-gold">Win:</span> {p.win}
-                </p>
+                <p className="mt-3 font-display text-2xl font-bold">{m.name}</p>
+                <p className="text-xs uppercase tracking-[0.25em] text-cream/70">{m.role}</p>
+                <p className="mt-3 border-t border-cream/20 pt-3 text-sm text-cream/80">{m.bio}</p>
               </div>
             </article>
           ))}
@@ -574,31 +465,110 @@ function CTAStrip() {
   );
 }
 
+/* ===================== TESTIMONIALS ===================== */
+const testimonials = [
+  {
+    name: "Sarah Lin",
+    role: "VP, BlackRock",
+    quote: "I went from invisible to invited to the keynote stage. The Big Mouth PR just gets it.",
+    img: portfolio1,
+  },
+  {
+    name: "Jordan Pierce",
+    role: "Tech Founder",
+    quote: "They built a personal brand that closes deals while I sleep. Worth every penny.",
+    img: portfolio2,
+  },
+  {
+    name: "Priya Anand",
+    role: "Author & Speaker",
+    quote: "Kirkus review, audiobook, Times Square — I felt the literal noise.",
+    img: portfolio3,
+  },
+  {
+    name: "Marcus Webb",
+    role: "CMO",
+    quote: "Sophisticated, witty, ruthlessly strategic. The studio I tell every CEO friend about.",
+    img: portfolio4,
+  },
+];
+
+function Testimonials() {
+  return (
+    <section className="relative overflow-hidden bg-navy-deep py-20 text-cream md:py-28">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
+        style={{ backgroundImage: `url("${ICON_URL}")`, backgroundSize: "160px", backgroundRepeat: "space" }}
+      />
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="flex items-end justify-between flex-wrap gap-4">
+          <div>
+            <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
+              <DotMark /> Client love
+            </p>
+            <h2 className="mt-5 font-display text-4xl font-black uppercase leading-[0.95] text-cream md:text-5xl">
+              They <span className="text-gold italic">said it</span> better.
+            </h2>
+          </div>
+          <div className="hidden items-center gap-1 md:flex">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-5 w-5 fill-gold text-gold" />
+            ))}
+            <span className="ml-3 text-sm text-cream/70">4.9 / 5 across 120+ clients</span>
+          </div>
+        </div>
+
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {testimonials.map((t) => (
+            <article key={t.name} className="group relative aspect-[4/5] overflow-hidden rounded-3xl bg-black shadow-luxe">
+              <img src={t.img} alt={t.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
+              <div className="absolute inset-x-0 top-0 p-5">
+                <Quote className="h-5 w-5 text-gold" />
+                <p className="mt-2 font-display text-base italic leading-snug text-cream drop-shadow">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </div>
+              <div className="absolute inset-x-0 bottom-0 flex items-center gap-3 p-5">
+                <img src={t.img} alt="" className="h-10 w-10 rounded-full border-2 border-gold object-cover" />
+                <div>
+                  <p className="text-sm font-bold text-cream">{t.name}</p>
+                  <p className="text-[11px] text-cream/70">{t.role}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ===================== FAQ ===================== */
 const faqs = [
   {
-    q: "Who is Executive & Personal Branding for?",
+    q: "Who is The Big Mouth PR for?",
     a: "Founders, CEOs, C-suite operators, investors, authors and category-defining experts who want their name to travel faster than their résumé.",
-  },
-  {
-    q: "How long does it take to see results?",
-    a: "Most clients see their first tier-1 placement within 45–60 days. Compounding inbound, speaking and authority typically kicks in around month 3.",
-  },
-  {
-    q: "Do I have to commit to all six sub-services?",
-    a: "No. You can engage à la carte (e.g. just Thought Leadership or just Speaker Kit), but the full package is where the flywheel really roars.",
   },
   {
     q: "How is The Big Mouth PR different from a traditional PR firm?",
     a: "Traditional PR sends press releases and hopes. We engineer narrative, identity, content and media as one system — measured weekly, optimized continuously.",
   },
   {
-    q: "What's the investment?",
+    q: "Do you work with startups or only established leaders?",
+    a: "Both. We've built brands for YC-backed startups and Fortune 50 executives alike. The entry point differs, but the intensity doesn't.",
+  },
+  {
+    q: "Who will I be working with directly?",
+    a: "A senior strategist with agency or newsroom experience — never an intern. You'll have a dedicated pod, not a rotating cast of juniors.",
+  },
+  {
+    q: "What does a typical engagement cost?",
     a: "Personal branding engagements start in the low five-figures per month. We'll scope and price transparently after the discovery call.",
   },
   {
-    q: "Do you ghostwrite?",
-    a: "Yes. Articles, books, op-eds, LinkedIn posts and keynotes — all in your voice, approved by you, never robotic.",
+    q: "How do I get started?",
+    a: "Book a free 30-minute strategy call. You'll leave with a custom 90-day roadmap whether or not we work together.",
   },
 ];
 
@@ -608,7 +578,7 @@ function FAQ() {
     <section id="faq" className="relative bg-white py-20 md:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">06 — Questions</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">05 — Questions</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
             Loud answers to <span className="text-gold">quiet doubts.</span>
           </h2>
@@ -653,7 +623,7 @@ function FAQ() {
   );
 }
 
-/* ===================== CONSULT / CONTACT CTA ===================== */
+/* ===================== CONSULT ===================== */
 function Consult() {
   const [submitted, setSubmitted] = useState(false);
   return (
@@ -667,7 +637,7 @@ function Consult() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's roar</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">06 — Let's roar</p>
           <h2 className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
             Your industry already <span className="text-gold">talks.</span>
             <br />
@@ -763,17 +733,17 @@ function Field({
 }
 
 /* ===================== PAGE ===================== */
-function ExecutiveBrandingPage() {
+function AboutPage() {
   return (
     <main className="lion-cursor bg-white text-navy-deep">
       <SiteHeader />
       <Hero />
-      <Overview />
-      <SubServices />
-      <WhyUs />
+      <Story />
+      <Values />
       <Process />
       <CTAStrip />
-      <Portfolio />
+      <Team />
+      <Testimonials />
       <ClientsRibbon />
       <FAQ />
       <Consult />

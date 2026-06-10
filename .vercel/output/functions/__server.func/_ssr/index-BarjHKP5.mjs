@@ -1,9 +1,10 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
 import { u as useEmblaCarousel } from "../_libs/embla-carousel-react.mjs";
-import { l as logoUrl, N as NavigationMenu, a as NavigationMenuList, b as NavigationMenuItem, c as NavigationMenuTrigger, d as cn, e as NavigationMenuContent, f as NavigationMenuLink, s as svcExec, g as svcMedia, h as svcContent, i as svcCreative, j as svcAuthor, k as svcDigital, m as iconUrl, n as fahhhSound } from "./router-BPzvVt1Z.mjs";
-import { l as lionUrl, p as portfolio1, a as portfolio2, b as portfolio3, c as portfolio4 } from "./portfolio-4-BO7tfZAO.mjs";
-import { c as Menu, V as Volume2, C as ChevronDown, a as Crown, N as Newspaper, M as Megaphone, b as Camera, B as BookOpen, E as Earth, S as Star, A as ArrowRight, P as Play, X, d as ChevronLeft, e as ChevronRight, U as UtensilsCrossed, T as TrendingUp, f as ShieldCheck, H as Heart, g as Building2, h as Scale, i as MicVocal, j as Sparkles, Q as Quote, k as Minus, l as Plus, I as Instagram, L as Linkedin, Y as Youtube } from "../_libs/lucide-react.mjs";
+import { l as logoUrl, N as NavigationMenu, b as NavigationMenuList, c as NavigationMenuItem, d as NavigationMenuTrigger, e as cn, f as NavigationMenuContent, g as NavigationMenuLink, s as svcExec, h as svcMedia, j as svcContent, k as svcCreative, m as svcAuthor, n as svcDigital, i as iconUrl, o as fahhhSound } from "./router-CisfMEll.mjs";
+import { l as lionUrl } from "./lion-roar-IYwTvOU2.mjs";
+import { p as portfolio1, a as portfolio2, b as portfolio3, c as portfolio4 } from "./portfolio-4-DpIQKQrJ.mjs";
+import { c as Menu, V as Volume2, C as ChevronDown, a as Crown, N as Newspaper, M as Megaphone, b as Camera, B as BookOpen, E as Earth, n as Star, A as ArrowRight, o as Play, X, p as ChevronLeft, q as ChevronRight, r as UtensilsCrossed, s as TrendingUp, S as ShieldCheck, H as Heart, t as Building2, u as Scale, v as MicVocal, w as Sparkles, Q as Quote, h as Minus, i as Plus, I as Instagram, x as Linkedin, Y as Youtube } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -397,7 +398,7 @@ const serviceGroups = [{
 const slugOverrides = {
   "Executive & Personal Branding": "executive-personal-branding"
 };
-const serviceSlug = (title) => slugOverrides[title] ?? title.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const serviceSlug = (title) => slugOverrides[title] ?? title.toLowerCase().replace(/&/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const serviceLinks = serviceGroups.map((s) => ({
   label: s.title,
   href: `/services/${serviceSlug(s.title)}`,
@@ -866,8 +867,8 @@ function Footer() {
         " Loud on purpose."
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-gold", children: "Privacy" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-gold", children: "Terms" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/privacy-policy", className: "hover:text-gold", children: "Privacy" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "/terms", className: "hover:text-gold", children: "Terms" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-gold", children: "LinkedIn" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "hover:text-gold", children: "Instagram" })
       ] })

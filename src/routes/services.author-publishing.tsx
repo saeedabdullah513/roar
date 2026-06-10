@@ -2,12 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
-  Crown,
-  Mic2,
-  Newspaper,
   BookOpen,
-  Camera,
-  Sparkles,
+  PenTool,
+  Headphones,
+  Globe,
+  Library,
+  BookMarked,
   Megaphone,
   Plus,
   Minus,
@@ -23,6 +23,8 @@ import {
   MessageSquareHeart,
   Volume2,
   ArrowUpRight,
+  Crown,
+  Star,
 } from "lucide-react";
 
 import {
@@ -37,8 +39,9 @@ import {
 
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
+import heroImg from "@/assets/svc-author.jpg";
 import svcExec from "@/assets/svc-exec.jpg";
-import svcAuthor from "@/assets/svc-author.jpg";
+import svcCreative from "@/assets/svc-creative.jpg";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -47,31 +50,29 @@ import portfolio4 from "@/assets/portfolio-4.jpg";
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
 
-export const Route = createFileRoute("/services/executive-personal-branding")({
+export const Route = createFileRoute("/services/author-publishing")({
   head: () => ({
     meta: [
-      { title: "Executive & Personal Branding — The Big Mouth PR" },
+      { title: "Author & Publishing — The Big Mouth PR" },
       {
         name: "description",
         content:
-          "Executive & personal branding for founders, CEOs and leaders who refuse to be ignored. Strategy, identity, thought leadership, media & speaker kits — all under one roar.",
+          "Audiobooks, ISBN & copyright, Kirkus reviews, book fairs, signings and 700+ platform distribution for authors and publishers.",
       },
-      { property: "og:title", content: "Executive & Personal Branding — The Big Mouth PR" },
+      { property: "og:title", content: "Author & Publishing — The Big Mouth PR" },
       {
         property: "og:description",
-        content:
-          "We turn quiet leaders into category-defining voices. Brand strategy, identity, thought leadership, media, speaker kits.",
+        content: "Full-service publishing support — from manuscript to audiobook to worldwide distribution.",
       },
     ],
   }),
-  component: ExecutiveBrandingPage,
+  component: AuthorPublishingPage,
 });
 
 /* ===================== HERO ===================== */
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-deep pt-20 text-cream md:pt-28">
-      {/* watermark pattern */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -92,19 +93,19 @@ function Hero() {
           <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5">
             <DotMark />
             <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75">
-              Service · Executive & Personal Branding
+              Service · Author & Publishing
             </span>
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-            Quiet leaders <span className="italic text-cream/60">don't</span>
+            Every author needs <span className="text-gold">a publisher.</span>
             <br />
-            change <span className="text-gold">industries.</span>
+            Every message needs <span className="italic text-cream/60">a platform.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
-            We build personal brands that <span className="text-gold font-semibold">roar</span> —
-            not whisper. Strategy, identity, thought leadership, media coverage and speaker kits,
-            engineered so every room knows your name <em>before</em> you walk in.
+            We turn manuscripts into <span className="text-gold font-semibold">movements.</span> From
+            audiobook production and Kirkus reviews to 700+ distribution platforms, book fairs and
+            signing tours — your story deserves more than a shelf.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -112,7 +113,7 @@ function Hero() {
               href="#consult"
               className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03]"
             >
-              <Volume2 className="h-4 w-4" /> Book a strategy call
+              <Volume2 className="h-4 w-4" /> Book a publishing call
             </a>
             <a
               href="#process"
@@ -124,9 +125,9 @@ function Hero() {
 
           <div className="mt-10 grid max-w-md grid-cols-1 gap-6 sm:grid-cols-3">
             {[
-              { k: "+340%", v: "Avg. inbound growth" },
-              { k: "120+", v: "Leaders branded" },
-              { k: "60d", v: "From quiet to quoted" },
+              { k: "700+", v: "Distribution platforms" },
+              { k: "120+", v: "Titles published" },
+              { k: "30+", v: "Audiobooks produced" },
             ].map((s) => (
               <div key={s.v}>
                 <p className="font-display text-3xl font-black text-gold">{s.k}</p>
@@ -136,7 +137,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Lion */}
         <div className="relative">
           <div className="absolute -inset-10 rounded-full bg-gold/20 blur-3xl" aria-hidden />
           <img
@@ -145,7 +145,7 @@ function Hero() {
             className="relative mx-auto w-full max-w-[520px] animate-lion-roar drop-shadow-[0_30px_60px_rgba(253,95,8,0.35)]"
           />
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe">
-            Be unmissable.
+            Write your legacy.
           </div>
         </div>
       </div>
@@ -156,10 +156,10 @@ function Hero() {
 /* ===================== OVERVIEW / WHAT IS IT ===================== */
 function Overview() {
   const pillars = [
-    { icon: Crown, t: "Authority", d: "Position you as the inevitable expert in your category." },
-    { icon: Megaphone, t: "Visibility", d: "Get you in the rooms, feeds and front pages that matter." },
-    { icon: BookOpen, t: "Narrative", d: "A signature story that compounds across every channel." },
-    { icon: Sparkles, t: "Magnetism", d: "Inbound that converts: deals, speaking, talent, capital." },
+    { icon: BookOpen, t: "Publishing", d: "ISBN registration, copyright protection and global distribution in print, digital and audio." },
+    { icon: Headphones, t: "Audiobooks", d: "Professional narration, studio recording, editing and mastering for Audible, Spotify and more." },
+    { icon: Globe, t: "Distribution", d: "Your book live on 700+ platforms — Amazon, Barnes & Noble, Apple Books and every major retailer." },
+    { icon: Megaphone, t: "Book Marketing", d: "Kirkus reviews, press outreach, book fair placement and signing tour logistics." },
   ];
   return (
     <section className="relative bg-white py-20 md:py-28">
@@ -168,13 +168,13 @@ function Overview() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — What it is</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              A personal brand engineered like a <span className="text-gold">flagship product.</span>
+              A publishing partner that <span className="text-gold">doesn't stop</span> at the press.
             </h2>
           </div>
           <p className="text-base text-navy-deep/70 md:text-lg">
-            Executive & Personal Branding isn't a logo and a LinkedIn refresh. It's a 360° system —
-            positioning, narrative, identity, content, media, social, speaking — built so your name
-            travels faster than your résumé.
+            Author & Publishing at The Big Mouth PR takes your manuscript and turns it into a
+            multi-format, globally distributed, professionally marketed product — audiobook, print,
+            ebook and beyond. We handle the parts you didn't know existed.
           </p>
         </div>
 
@@ -199,69 +199,75 @@ function Overview() {
 /* ===================== SUB-SERVICES (expandable) ===================== */
 const subServices = [
   {
-    icon: Crown,
-    title: "Brand Strategy",
-    short: "Positioning, audience, narrative architecture.",
+    icon: Headphones,
+    title: "Audiobook Production",
+    short: "Professional narration, studio recording and mastering.",
     details: [
-      "Competitor & whitespace audit",
-      "Positioning statement + signature POV",
-      "Audience personas & message map",
-      "Annual brand roadmap with KPIs",
+      "Professional voice talent casting",
+      "In-studio & remote recording options",
+      "Audio editing, proofing & mastering",
+      "ACX / Audible, Spotify, Apple Books upload",
+      "Multi-language narration support",
     ],
   },
   {
-    icon: Sparkles,
-    title: "Brand Identity",
-    short: "Visual & verbal system that looks unmistakably you.",
+    icon: Library,
+    title: "ISBN & Copyright",
+    short: "Registration, legal protection and cataloguing.",
     details: [
-      "Logo lockups, type & color system",
-      "Tone-of-voice + signature vocabulary",
-      "Templates for decks, socials, press",
-      "Photo & art direction guidelines",
+      "ISBN assignment (print & digital)",
+      "Copyright registration with Library of Congress",
+      "CIP block & catalogue data management",
+      "Barcode generation & metadata setup",
+      "International ISBN coordination",
     ],
   },
   {
-    icon: Newspaper,
-    title: "Thought Leadership",
-    short: "Articles, op-eds and POVs that get circulated.",
+    icon: Star,
+    title: "Kirkus Reviews",
+    short: "Catalogue listing, review submission and promotion.",
     details: [
-      "Topic pillars & editorial calendar",
-      "Ghostwritten essays + bylined articles",
-      "Distribution to Forbes, Inc., HBR, Entrepreneur",
-      "Repackaging into carousels, reels, threads",
+      "Kirkus Indie review submission & management",
+      "Editorial selection & follow-up strategy",
+      "Kirkus catalogue inclusion & marketing",
+      "Starred review coaching & positioning",
+      "Media leveraging for cover quotes & blurbs",
     ],
   },
   {
-    icon: Mic2,
-    title: "Speaker Kits",
-    short: "Land paid stages with a kit that closes.",
+    icon: Globe,
+    title: "Book Fairs",
+    short: "Placement at Frankfurt, Bologna, ALA and regional fairs.",
     details: [
-      "Signature talk titles & abstracts",
-      "Speaker one-pager + sizzle reel",
-      "Outreach lists for conferences & podcasts",
-      "Stage coaching + green-room playbook",
+      "Exhibitor registration & booth procurement",
+      "Title catalogue & promotional materials",
+      "Rights-negotiation support & pitch decks",
+      "Author appearance scheduling",
+      "Post-fair lead follow-up & reporting",
+    ],
+  },
+  {
+    icon: BookMarked,
+    title: "Book Signings & Tours",
+    short: "End-to-end tour logistics and event production.",
+    details: [
+      "Venue booking & itinerary planning",
+      "Local media & press outreach per city",
+      "Bookstore & indie shop partnerships",
+      "Livestream & hybrid event production",
+      "Merchandise & book inventory management",
     ],
   },
   {
     icon: Megaphone,
-    title: "Media & PR",
-    short: "Get quoted. Get covered. Get remembered.",
+    title: "Distribution (700+ Platforms)",
+    short: "Global distribution to every major retailer and library.",
     details: [
-      "Press strategy + media list build",
-      "Pitches, press releases, embargo plays",
-      "Journalist relationships & exclusives",
-      "Crisis response & reputation defense",
-    ],
-  },
-  {
-    icon: Camera,
-    title: "Content & Social",
-    short: "Always-on content engine across every feed.",
-    details: [
-      "Monthly shoot day (photo + video)",
-      "Reels, shorts, carousels & podcast clips",
-      "LinkedIn, Instagram, X & YouTube cadence",
-      "Community + DM strategy that converts",
+      "Amazon, Barnes & Noble, Apple Books, Kobo",
+      "IngramSpark & Baker & Taylor wholesale",
+      "Library channels: OverDrive, Hoopla, Bibliotheca",
+      "International retailers across EU, APAC & LATAM",
+      "Sales tracking & royalty reporting dashboard",
     ],
   },
 ];
@@ -275,12 +281,12 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six sub-services. <span className="text-gold">One unmissable</span> leader.
+              Six publishing pillars. <span className="text-gold">One</span> global launch.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
-            Pick à la carte or take the full package. Each sub-service is a future Big Mouth page of
-            its own — preview them below.
+            Pick à la carte or take the full publishing package. Each pillar is a future Big Mouth
+            page of its own — preview them below.
           </p>
         </div>
 
@@ -362,33 +368,33 @@ function WhyUs() {
   const reasons = [
     {
       n: "01",
-      t: "Loud by design.",
-      d: "We refuse the polite PR playbook. Every campaign is built to provoke, not to please.",
+      t: "End-to-end publishing.",
+      d: "Manuscript to audiobook to global distribution — we do it all under one roof.",
     },
     {
       n: "02",
-      t: "Senior strategists, no juniors.",
-      d: "Your account is run by ex-newsroom, ex-agency leads — not interns reading scripts.",
+      t: "700+ platform reach.",
+      d: "Your book appears on every major retailer and library worldwide — not just Amazon.",
     },
     {
       n: "03",
-      t: "Press relationships, not press lists.",
-      d: "Journalists at Forbes, Bloomberg, WSJ, TechCrunch already know our pitch lands.",
+      t: "Professional audiobook production.",
+      d: "Studio-grade narration, editing and mastering that meets Audible's strictest specs.",
     },
     {
       n: "04",
-      t: "Data-led, gut-checked.",
-      d: "We adjust narrative weekly using share-of-voice, sentiment and conversion data.",
+      t: "Kirkus-savvy team.",
+      d: "We know how to position your book for review success — including starred reviews.",
     },
     {
       n: "05",
-      t: "Built for the long game.",
-      d: "Personal brands compound. We engineer 12-month flywheels, not one-off stunts.",
+      t: "Global book fair access.",
+      d: "Frankfurt, Bologna, ALA, Sharjah — we get your title seen by the right rights buyers.",
     },
     {
       n: "06",
-      t: "Receipts everywhere.",
-      d: "100+ leaders branded, 1,400+ placements, $80M+ in inbound pipeline created.",
+      t: "Marketing that sells.",
+      d: "Press outreach, signing tours and promotional campaigns that put eyes on pages.",
     },
   ];
   return (
@@ -399,9 +405,9 @@ function WhyUs() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">03 — Why The Big Mouth PR</p>
             <h2 className="mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl">
-              Other agencies <span className="italic text-cream/55">whisper.</span>
+              Some publishers <span className="italic text-cream/55">just print.</span>
               <br />
-              We hand you the <span className="text-gold">microphone.</span>
+              We put you <span className="text-gold">on every shelf.</span>
             </h2>
           </div>
           <a
@@ -447,7 +453,7 @@ function Process() {
         <div className="mb-14 max-w-3xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — The Process</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            From first hello to <span className="text-gold">"who is that?"</span>
+            From manuscript to <span className="text-gold">worldwide.</span>
           </h2>
           <p className="mt-5 text-base text-navy-deep/70 md:text-lg">
             A nine-step system that's repeatable, transparent and obsessed with measurable outcomes.
@@ -455,7 +461,6 @@ function Process() {
         </div>
 
         <div className="relative">
-          {/* connecting line */}
           <div
             className="pointer-events-none absolute left-0 right-0 top-[36px] hidden h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent md:block"
             aria-hidden
@@ -498,12 +503,12 @@ function Process() {
 
 /* ===================== PORTFOLIO ===================== */
 const portfolioItems = [
-  { img: portfolio1, name: "Maya Chen", role: "CEO, Atlas Ventures", win: "Featured in Forbes 40U40 + 3 keynote bookings" },
-  { img: portfolio2, name: "David Okonkwo", role: "Founder, NorthStar Health", win: "TEDx talk + 12M LinkedIn impressions in 90 days" },
-  { img: portfolio3, name: "Priya Raman", role: "Partner, Hexa Capital", win: "Bloomberg cover + $40M new LP pipeline" },
-  { img: portfolio4, name: "Jordan Vega", role: "Chef & Restaurateur", win: "WSJ feature + 4 city expansion" },
-  { img: svcExec, role: "Tech Founder", name: "Alina Petrov", win: "TechCrunch Disrupt mainstage + Series B momentum" },
-  { img: svcAuthor, role: "Bestselling Author", name: "Marcus Hale", win: "NYT bestseller + 80-stop book tour" },
+  { img: portfolio1, name: "Eleanor Chase", role: "Author — 'Breaking the Ceiling'", win: "Bestseller on Amazon within 48 hours of launch" },
+  { img: portfolio2, name: "Marcus Hale", role: "Bestselling Author", win: "NYT bestseller + 80-stop book tour across 12 countries" },
+  { img: portfolio3, name: "Dr. Samira Patel", role: "Author — 'The Longevity Code'", win: "Audiobook hit #1 on Audible Health + 50K downloads" },
+  { img: portfolio4, name: "Tommy Nguyen", role: "First-time Author", win: "Kirkus starred review + 3 major publishing deal offers" },
+  { img: svcExec, role: "Business Memoir", name: "David Osei", win: "Featured at Frankfurt Book Fair + rights sold in 7 languages" },
+  { img: svcCreative, role: "Children's Book Author", name: "Lena Fischer", win: "Sold 15K copies through school & library channels" },
 ];
 
 function Portfolio() {
@@ -514,7 +519,7 @@ function Portfolio() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">05 — Receipts</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Leaders we made <span className="text-gold">loud.</span>
+              Books we helped <span className="text-gold">tell.</span>
             </h2>
           </div>
           <Link
@@ -561,7 +566,7 @@ function CTAStrip() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 md:flex-row">
         <p className="flex items-center gap-4 text-center font-display text-2xl font-black md:text-left md:text-3xl">
           <MouthMark className="h-7 w-7" />
-          Ready to stop being the best-kept secret in your industry?
+          Ready to share your story with the world?
         </p>
         <a
           href="#consult"
@@ -577,28 +582,28 @@ function CTAStrip() {
 /* ===================== FAQ ===================== */
 const faqs = [
   {
-    q: "Who is Executive & Personal Branding for?",
-    a: "Founders, CEOs, C-suite operators, investors, authors and category-defining experts who want their name to travel faster than their résumé.",
+    q: "Do I need a finished manuscript to get started?",
+    a: "Not at all. We work with authors at every stage — from rough draft to polished final. We can also connect you with developmental editors if your manuscript needs work before publication.",
   },
   {
-    q: "How long does it take to see results?",
-    a: "Most clients see their first tier-1 placement within 45–60 days. Compounding inbound, speaking and authority typically kicks in around month 3.",
+    q: "Which distribution platforms do you use?",
+    a: "700+ including Amazon, Barnes & Noble, Apple Books, Kobo, Audible, Libro.fm, OverDrive, Hoopla, Baker & Taylor and regional retailers across Europe, Asia and Latin America.",
   },
   {
-    q: "Do I have to commit to all six sub-services?",
-    a: "No. You can engage à la carte (e.g. just Thought Leadership or just Speaker Kit), but the full package is where the flywheel really roars.",
+    q: "How long does the publishing process take?",
+    a: "Typically 8–16 weeks from final manuscript to live on all platforms. Audiobook production adds 4–6 weeks depending on length and narration requirements.",
   },
   {
-    q: "How is The Big Mouth PR different from a traditional PR firm?",
-    a: "Traditional PR sends press releases and hopes. We engineer narrative, identity, content and media as one system — measured weekly, optimized continuously.",
+    q: "Can you help me get a Kirkus review?",
+    a: "Yes. We handle the full submission process, coach your positioning and follow up strategically. Starred reviews are never guaranteed, but our track record is strong.",
   },
   {
     q: "What's the investment?",
-    a: "Personal branding engagements start in the low five-figures per month. We'll scope and price transparently after the discovery call.",
+    a: "Publishing packages start at $7,500 for a standard print + digital + distribution bundle. Audiobook production is $3,000–$6,000 depending on length. Full-scope proposals are provided after the discovery call.",
   },
   {
-    q: "Do you ghostwrite?",
-    a: "Yes. Articles, books, op-eds, LinkedIn posts and keynotes — all in your voice, approved by you, never robotic.",
+    q: "Do you work with debut authors?",
+    a: "Absolutely. We love launching first-time authors. Our end-to-end service is specifically designed to handle everything a new author doesn't know they need.",
   },
 ];
 
@@ -610,7 +615,7 @@ function FAQ() {
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">06 — Questions</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            Loud answers to <span className="text-gold">quiet doubts.</span>
+            Answers for <span className="text-gold">every page</span> of your journey.
           </h2>
           <p className="mt-5 text-sm text-navy-deep/65">
             Didn't find what you needed? Ask us directly — we reply within one business day.
@@ -667,18 +672,18 @@ function Consult() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]">
         <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's roar</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's publish</p>
           <h2 className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
-            Your industry already <span className="text-gold">talks.</span>
+            Your story deserves <span className="text-gold">more</span> than
             <br />
-            Time it talked about <em>you.</em>
+            a drawer. Put it on <em>every</em> shelf.
           </h2>
           <p className="mt-6 max-w-md text-cream/75">
-            Drop your details. A senior strategist (not a chatbot) replies within 24 hours with a
-            tailored game plan.
+            Drop your details. A senior publishing strategist (not a chatbot) replies within 24 hours
+            with a tailored plan.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em] text-cream/55">
-            <DotMark /> No spam · No interns · No whispers
+            <DotMark /> No spam · No vanity fees · No gatekeeping
           </div>
         </div>
 
@@ -699,22 +704,22 @@ function Consult() {
             </div>
           ) : (
             <>
-              <p className="font-display text-2xl font-bold">Book your strategy call</p>
+              <p className="font-display text-2xl font-bold">Book your publishing consultation</p>
               <p className="mt-1 text-sm text-cream/65">Takes 45 seconds.</p>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <Field label="Full name" name="name" placeholder="Jane Roar" />
                 <Field label="Work email" name="email" type="email" placeholder="jane@company.com" />
                 <Field label="Company" name="company" placeholder="Atlas Ventures" />
-                <Field label="Role" name="role" placeholder="CEO / Founder" />
+                <Field label="Role" name="role" placeholder="Author / Publisher" />
               </div>
               <div className="mt-4">
                 <label className="text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60">
-                  What do you want to be known for?
+                  Tell us about your book
                 </label>
                 <textarea
-                  name="goal"
+                  name="book"
                   rows={4}
-                  placeholder="The category I want to own…"
+                  placeholder="Title, genre, current stage — manuscript ready? Describe your project…"
                   className="mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none"
                 />
               </div>
@@ -722,7 +727,7 @@ function Consult() {
                 type="submit"
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02]"
               >
-                <Volume2 className="h-4 w-4" /> Make me unmissable
+                <Volume2 className="h-4 w-4" /> Publish my story
               </button>
               <p className="mt-3 text-center text-[11px] text-cream/50">
                 By submitting, you agree to a follow-up from The Big Mouth PR team.
@@ -763,7 +768,7 @@ function Field({
 }
 
 /* ===================== PAGE ===================== */
-function ExecutiveBrandingPage() {
+function AuthorPublishingPage() {
   return (
     <main className="lion-cursor bg-white text-navy-deep">
       <SiteHeader />

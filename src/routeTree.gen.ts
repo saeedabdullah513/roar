@@ -9,12 +9,46 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesReputationMediaRouteImport } from './routes/services.reputation-media'
 import { Route as ServicesExecutivePersonalBrandingRouteImport } from './routes/services.executive-personal-branding'
+import { Route as ServicesDigitalPublicAffairsRouteImport } from './routes/services.digital-public-affairs'
+import { Route as ServicesCreativeProductionRouteImport } from './routes/services.creative-production'
+import { Route as ServicesContentSocialRouteImport } from './routes/services.content-social'
+import { Route as ServicesAuthorPublishingRouteImport } from './routes/services.author-publishing'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesReputationMediaRoute = ServicesReputationMediaRouteImport.update({
+  id: '/services/reputation-media',
+  path: '/services/reputation-media',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesExecutivePersonalBrandingRoute =
@@ -23,40 +57,168 @@ const ServicesExecutivePersonalBrandingRoute =
     path: '/services/executive-personal-branding',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesDigitalPublicAffairsRoute =
+  ServicesDigitalPublicAffairsRouteImport.update({
+    id: '/services/digital-public-affairs',
+    path: '/services/digital-public-affairs',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesCreativeProductionRoute =
+  ServicesCreativeProductionRouteImport.update({
+    id: '/services/creative-production',
+    path: '/services/creative-production',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesContentSocialRoute = ServicesContentSocialRouteImport.update({
+  id: '/services/content-social',
+  path: '/services/content-social',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesAuthorPublishingRoute =
+  ServicesAuthorPublishingRouteImport.update({
+    id: '/services/author-publishing',
+    path: '/services/author-publishing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact-us': typeof ContactUsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms': typeof TermsRoute
+  '/services/author-publishing': typeof ServicesAuthorPublishingRoute
+  '/services/content-social': typeof ServicesContentSocialRoute
+  '/services/creative-production': typeof ServicesCreativeProductionRoute
+  '/services/digital-public-affairs': typeof ServicesDigitalPublicAffairsRoute
   '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
+  '/services/reputation-media': typeof ServicesReputationMediaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact-us': typeof ContactUsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms': typeof TermsRoute
+  '/services/author-publishing': typeof ServicesAuthorPublishingRoute
+  '/services/content-social': typeof ServicesContentSocialRoute
+  '/services/creative-production': typeof ServicesCreativeProductionRoute
+  '/services/digital-public-affairs': typeof ServicesDigitalPublicAffairsRoute
   '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
+  '/services/reputation-media': typeof ServicesReputationMediaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact-us': typeof ContactUsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms': typeof TermsRoute
+  '/services/author-publishing': typeof ServicesAuthorPublishingRoute
+  '/services/content-social': typeof ServicesContentSocialRoute
+  '/services/creative-production': typeof ServicesCreativeProductionRoute
+  '/services/digital-public-affairs': typeof ServicesDigitalPublicAffairsRoute
   '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
+  '/services/reputation-media': typeof ServicesReputationMediaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/services/executive-personal-branding'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact-us'
+    | '/privacy-policy'
+    | '/terms'
+    | '/services/author-publishing'
+    | '/services/content-social'
+    | '/services/creative-production'
+    | '/services/digital-public-affairs'
+    | '/services/executive-personal-branding'
+    | '/services/reputation-media'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/services/executive-personal-branding'
-  id: '__root__' | '/' | '/services/executive-personal-branding'
+  to:
+    | '/'
+    | '/about'
+    | '/contact-us'
+    | '/privacy-policy'
+    | '/terms'
+    | '/services/author-publishing'
+    | '/services/content-social'
+    | '/services/creative-production'
+    | '/services/digital-public-affairs'
+    | '/services/executive-personal-branding'
+    | '/services/reputation-media'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact-us'
+    | '/privacy-policy'
+    | '/terms'
+    | '/services/author-publishing'
+    | '/services/content-social'
+    | '/services/creative-production'
+    | '/services/digital-public-affairs'
+    | '/services/executive-personal-branding'
+    | '/services/reputation-media'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactUsRoute: typeof ContactUsRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  TermsRoute: typeof TermsRoute
+  ServicesAuthorPublishingRoute: typeof ServicesAuthorPublishingRoute
+  ServicesContentSocialRoute: typeof ServicesContentSocialRoute
+  ServicesCreativeProductionRoute: typeof ServicesCreativeProductionRoute
+  ServicesDigitalPublicAffairsRoute: typeof ServicesDigitalPublicAffairsRoute
   ServicesExecutivePersonalBrandingRoute: typeof ServicesExecutivePersonalBrandingRoute
+  ServicesReputationMediaRoute: typeof ServicesReputationMediaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/reputation-media': {
+      id: '/services/reputation-media'
+      path: '/services/reputation-media'
+      fullPath: '/services/reputation-media'
+      preLoaderRoute: typeof ServicesReputationMediaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/executive-personal-branding': {
@@ -66,13 +228,50 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesExecutivePersonalBrandingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/digital-public-affairs': {
+      id: '/services/digital-public-affairs'
+      path: '/services/digital-public-affairs'
+      fullPath: '/services/digital-public-affairs'
+      preLoaderRoute: typeof ServicesDigitalPublicAffairsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/creative-production': {
+      id: '/services/creative-production'
+      path: '/services/creative-production'
+      fullPath: '/services/creative-production'
+      preLoaderRoute: typeof ServicesCreativeProductionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/content-social': {
+      id: '/services/content-social'
+      path: '/services/content-social'
+      fullPath: '/services/content-social'
+      preLoaderRoute: typeof ServicesContentSocialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/author-publishing': {
+      id: '/services/author-publishing'
+      path: '/services/author-publishing'
+      fullPath: '/services/author-publishing'
+      preLoaderRoute: typeof ServicesAuthorPublishingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactUsRoute: ContactUsRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  TermsRoute: TermsRoute,
+  ServicesAuthorPublishingRoute: ServicesAuthorPublishingRoute,
+  ServicesContentSocialRoute: ServicesContentSocialRoute,
+  ServicesCreativeProductionRoute: ServicesCreativeProductionRoute,
+  ServicesDigitalPublicAffairsRoute: ServicesDigitalPublicAffairsRoute,
   ServicesExecutivePersonalBrandingRoute:
     ServicesExecutivePersonalBrandingRoute,
+  ServicesReputationMediaRoute: ServicesReputationMediaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

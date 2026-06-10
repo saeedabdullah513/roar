@@ -23,6 +23,9 @@ import {
   MessageSquareHeart,
   Volume2,
   ArrowUpRight,
+  Instagram,
+  Youtube,
+  TrendingUp,
 } from "lucide-react";
 
 import {
@@ -37,8 +40,8 @@ import {
 
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
+import svcContent from "@/assets/svc-content.jpg";
 import svcExec from "@/assets/svc-exec.jpg";
-import svcAuthor from "@/assets/svc-author.jpg";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -47,31 +50,30 @@ import portfolio4 from "@/assets/portfolio-4.jpg";
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
 
-export const Route = createFileRoute("/services/executive-personal-branding")({
+export const Route = createFileRoute("/services/content-social")({
   head: () => ({
     meta: [
-      { title: "Executive & Personal Branding — The Big Mouth PR" },
+      { title: "Content & Social — The Big Mouth PR" },
       {
         name: "description",
         content:
-          "Executive & personal branding for founders, CEOs and leaders who refuse to be ignored. Strategy, identity, thought leadership, media & speaker kits — all under one roar.",
+          "LinkedIn authority content, UGC, podcasts, influencer marketing and an always-on content engine that never sleeps. We make your feed your best salesperson.",
       },
-      { property: "og:title", content: "Executive & Personal Branding — The Big Mouth PR" },
+      { property: "og:title", content: "Content & Social — The Big Mouth PR" },
       {
         property: "og:description",
         content:
-          "We turn quiet leaders into category-defining voices. Brand strategy, identity, thought leadership, media, speaker kits.",
+          "We build content engines that turn followers into fans and fans into opportunities. LinkedIn, Instagram, YouTube, podcasts, UGC and influencer programmes.",
       },
     ],
   }),
-  component: ExecutiveBrandingPage,
+  component: ContentSocialPage,
 });
 
 /* ===================== HERO ===================== */
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-deep pt-20 text-cream md:pt-28">
-      {/* watermark pattern */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.05]"
@@ -92,19 +94,19 @@ function Hero() {
           <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5">
             <DotMark />
             <span className="text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75">
-              Service · Executive & Personal Branding
+              Service · Content & Social
             </span>
           </div>
 
           <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
-            Quiet leaders <span className="italic text-cream/60">don't</span>
+            Your feed <span className="italic text-cream/60">should</span>
             <br />
-            change <span className="text-gold">industries.</span>
+            be your <span className="text-gold">best salesperson.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
-            We build personal brands that <span className="text-gold font-semibold">roar</span> —
-            not whisper. Strategy, identity, thought leadership, media coverage and speaker kits,
-            engineered so every room knows your name <em>before</em> you walk in.
+            We build content engines that don't sleep — LinkedIn, Instagram, YouTube, podcasts,
+            UGC and influencer campaigns engineered to turn <span className="text-gold font-semibold">followers into fans</span>{" "}
+            and fans into revenue.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -124,9 +126,9 @@ function Hero() {
 
           <div className="mt-10 grid max-w-md grid-cols-1 gap-6 sm:grid-cols-3">
             {[
-              { k: "+340%", v: "Avg. inbound growth" },
-              { k: "120+", v: "Leaders branded" },
-              { k: "60d", v: "From quiet to quoted" },
+              { k: "12M+", v: "LinkedIn impressions generated" },
+              { k: "4x", v: "Avg. engagement rate lift" },
+              { k: "30d", v: "From zero to consistent output" },
             ].map((s) => (
               <div key={s.v}>
                 <p className="font-display text-3xl font-black text-gold">{s.k}</p>
@@ -136,7 +138,6 @@ function Hero() {
           </div>
         </div>
 
-        {/* Lion */}
         <div className="relative">
           <div className="absolute -inset-10 rounded-full bg-gold/20 blur-3xl" aria-hidden />
           <img
@@ -145,7 +146,7 @@ function Hero() {
             className="relative mx-auto w-full max-w-[520px] animate-lion-roar drop-shadow-[0_30px_60px_rgba(253,95,8,0.35)]"
           />
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe">
-            Be unmissable.
+            Never go quiet.
           </div>
         </div>
       </div>
@@ -153,13 +154,13 @@ function Hero() {
   );
 }
 
-/* ===================== OVERVIEW / WHAT IS IT ===================== */
+/* ===================== OVERVIEW ===================== */
 function Overview() {
   const pillars = [
-    { icon: Crown, t: "Authority", d: "Position you as the inevitable expert in your category." },
-    { icon: Megaphone, t: "Visibility", d: "Get you in the rooms, feeds and front pages that matter." },
-    { icon: BookOpen, t: "Narrative", d: "A signature story that compounds across every channel." },
-    { icon: Sparkles, t: "Magnetism", d: "Inbound that converts: deals, speaking, talent, capital." },
+    { icon: Megaphone, t: "Authority", d: "Position you as the go-to voice in your space on every platform." },
+    { icon: Camera, t: "Volume", d: "A relentless content cadence that keeps you top-of-feed and top-of-mind." },
+    { icon: Mic2, t: "Connection", d: "Content that sparks conversations and builds real community." },
+    { icon: TrendingUp, t: "Conversion", d: "Social activity engineered to drive inbound, deals and opportunities." },
   ];
   return (
     <section className="relative bg-white py-20 md:py-28">
@@ -168,13 +169,13 @@ function Overview() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — What it is</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              A personal brand engineered like a <span className="text-gold">flagship product.</span>
+              A content engine that <span className="text-gold">never sleeps.</span>
             </h2>
           </div>
           <p className="text-base text-navy-deep/70 md:text-lg">
-            Executive & Personal Branding isn't a logo and a LinkedIn refresh. It's a 360° system —
-            positioning, narrative, identity, content, media, social, speaking — built so your name
-            travels faster than your résumé.
+            Content & Social isn't sporadic posting. It's a 360° system — LinkedIn authority,
+            Instagram reach, YouTube depth, podcast presence, UGC amplification and influencer
+            partnerships — engineered for perpetual visibility.
           </p>
         </div>
 
@@ -196,72 +197,72 @@ function Overview() {
   );
 }
 
-/* ===================== SUB-SERVICES (expandable) ===================== */
+/* ===================== SUB-SERVICES ===================== */
 const subServices = [
   {
     icon: Crown,
-    title: "Brand Strategy",
-    short: "Positioning, audience, narrative architecture.",
+    title: "LinkedIn Authority",
+    short: "Own the feed. Build trust at scale on the world's most powerful B2B platform.",
     details: [
-      "Competitor & whitespace audit",
-      "Positioning statement + signature POV",
-      "Audience personas & message map",
-      "Annual brand roadmap with KPIs",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Brand Identity",
-    short: "Visual & verbal system that looks unmistakably you.",
-    details: [
-      "Logo lockups, type & color system",
-      "Tone-of-voice + signature vocabulary",
-      "Templates for decks, socials, press",
-      "Photo & art direction guidelines",
-    ],
-  },
-  {
-    icon: Newspaper,
-    title: "Thought Leadership",
-    short: "Articles, op-eds and POVs that get circulated.",
-    details: [
-      "Topic pillars & editorial calendar",
-      "Ghostwritten essays + bylined articles",
-      "Distribution to Forbes, Inc., HBR, Entrepreneur",
-      "Repackaging into carousels, reels, threads",
+      "Profile optimization & content strategy",
+      "Ghostwritten posts, carousels & threads",
+      "Engagement & DM conversion playbook",
+      "LinkedIn newsletter setup & growth",
     ],
   },
   {
     icon: Mic2,
-    title: "Speaker Kits",
-    short: "Land paid stages with a kit that closes.",
+    title: "Podcast Production",
+    short: "Launch and scale a podcast that attracts your ideal audience.",
     details: [
-      "Signature talk titles & abstracts",
-      "Speaker one-pager + sizzle reel",
-      "Outreach lists for conferences & podcasts",
-      "Stage coaching + green-room playbook",
-    ],
-  },
-  {
-    icon: Megaphone,
-    title: "Media & PR",
-    short: "Get quoted. Get covered. Get remembered.",
-    details: [
-      "Press strategy + media list build",
-      "Pitches, press releases, embargo plays",
-      "Journalist relationships & exclusives",
-      "Crisis response & reputation defense",
+      "Show concept, naming & branding",
+      "Episode research, scripting & guest booking",
+      "Recording, editing & post-production",
+      "Distribution to all major platforms",
     ],
   },
   {
     icon: Camera,
-    title: "Content & Social",
-    short: "Always-on content engine across every feed.",
+    title: "UGC & Influencer",
+    short: "Let your customers and creators tell your story.",
     details: [
-      "Monthly shoot day (photo + video)",
-      "Reels, shorts, carousels & podcast clips",
-      "LinkedIn, Instagram, X & YouTube cadence",
-      "Community + DM strategy that converts",
+      "UGC strategy & campaign design",
+      "Creator identification & outreach",
+      "Content rights & licensing management",
+      "Influencer programme build & optimisation",
+    ],
+  },
+  {
+    icon: Instagram,
+    title: "Instagram & Visual Content",
+    short: "Reels, stories, carousels — visual storytelling that stops the scroll.",
+    details: [
+      "Content pillars & monthly calendar",
+      "Reel & short-form video production",
+      "Storytelling templates & frameworks",
+      "Growth & analytics tracking",
+    ],
+  },
+  {
+    icon: Youtube,
+    title: "YouTube Strategy",
+    short: "Deep-dive content that builds long-term authority and search visibility.",
+    details: [
+      "Channel strategy & content pillars",
+      "Scripting, filming & editing",
+      "SEO optimisation & thumbnail design",
+      "Community management & growth tactics",
+    ],
+  },
+  {
+    icon: Megaphone,
+    title: "Always-On Content Engine",
+    short: "A relentless publishing cadence across every channel that matters.",
+    details: [
+      "Monthly shoot days (photo + video)",
+      "Multi-platform content repurposing",
+      "Cross-channel distribution & scheduling",
+      "Weekly analytics & optimisation reviews",
     ],
   },
 ];
@@ -275,7 +276,7 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six sub-services. <span className="text-gold">One unmissable</span> leader.
+              Six sub-services. <span className="text-gold">One consistent</span> voice.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
@@ -362,33 +363,33 @@ function WhyUs() {
   const reasons = [
     {
       n: "01",
-      t: "Loud by design.",
-      d: "We refuse the polite PR playbook. Every campaign is built to provoke, not to please.",
+      t: "We write in your voice, not ours.",
+      d: "Every post, script and caption sounds unmistakably like you — because we study how you think, not just what you say.",
     },
     {
       n: "02",
-      t: "Senior strategists, no juniors.",
-      d: "Your account is run by ex-newsroom, ex-agency leads — not interns reading scripts.",
+      t: "Volume without burnout.",
+      d: "We produce at scale so you never worry about 'what to post.' A consistent cadence that compounds without draining you.",
     },
     {
       n: "03",
-      t: "Press relationships, not press lists.",
-      d: "Journalists at Forbes, Bloomberg, WSJ, TechCrunch already know our pitch lands.",
+      t: "Platform-native, always.",
+      d: "We know what works on LinkedIn vs Instagram vs YouTube. Every piece of content is optimised for its platform.",
     },
     {
       n: "04",
-      t: "Data-led, gut-checked.",
-      d: "We adjust narrative weekly using share-of-voice, sentiment and conversion data.",
+      t: "UGC that converts.",
+      d: "We don't just collect content — we engineer campaigns that generate authentic material your audience trusts.",
     },
     {
       n: "05",
-      t: "Built for the long game.",
-      d: "Personal brands compound. We engineer 12-month flywheels, not one-off stunts.",
+      t: "Influencer partnerships that work.",
+      d: "We identify creators whose audiences match your ICP and build campaigns that drive measurable ROI.",
     },
     {
       n: "06",
-      t: "Receipts everywhere.",
-      d: "100+ leaders branded, 1,400+ placements, $80M+ in inbound pipeline created.",
+      t: "Weekly optimisation.",
+      d: "Content isn't 'set and forget.' We review performance weekly and pivot fast based on real data.",
     },
   ];
   return (
@@ -399,9 +400,9 @@ function WhyUs() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">03 — Why The Big Mouth PR</p>
             <h2 className="mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl">
-              Other agencies <span className="italic text-cream/55">whisper.</span>
+              Other agencies <span className="italic text-cream/55">post</span> and
               <br />
-              We hand you the <span className="text-gold">microphone.</span>
+              pray. We <span className="text-gold">engineer</span> attention.
             </h2>
           </div>
           <a
@@ -447,7 +448,7 @@ function Process() {
         <div className="mb-14 max-w-3xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — The Process</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            From first hello to <span className="text-gold">"who is that?"</span>
+            From first idea to <span className="text-gold">consistent roar.</span>
           </h2>
           <p className="mt-5 text-base text-navy-deep/70 md:text-lg">
             A nine-step system that's repeatable, transparent and obsessed with measurable outcomes.
@@ -455,7 +456,6 @@ function Process() {
         </div>
 
         <div className="relative">
-          {/* connecting line */}
           <div
             className="pointer-events-none absolute left-0 right-0 top-[36px] hidden h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent md:block"
             aria-hidden
@@ -498,12 +498,12 @@ function Process() {
 
 /* ===================== PORTFOLIO ===================== */
 const portfolioItems = [
-  { img: portfolio1, name: "Maya Chen", role: "CEO, Atlas Ventures", win: "Featured in Forbes 40U40 + 3 keynote bookings" },
-  { img: portfolio2, name: "David Okonkwo", role: "Founder, NorthStar Health", win: "TEDx talk + 12M LinkedIn impressions in 90 days" },
-  { img: portfolio3, name: "Priya Raman", role: "Partner, Hexa Capital", win: "Bloomberg cover + $40M new LP pipeline" },
-  { img: portfolio4, name: "Jordan Vega", role: "Chef & Restaurateur", win: "WSJ feature + 4 city expansion" },
-  { img: svcExec, role: "Tech Founder", name: "Alina Petrov", win: "TechCrunch Disrupt mainstage + Series B momentum" },
-  { img: svcAuthor, role: "Bestselling Author", name: "Marcus Hale", win: "NYT bestseller + 80-stop book tour" },
+  { img: portfolio1, name: "Elena Torres", role: "CEO, TechVista", win: "12M LinkedIn impressions + 3x engagement in 90 days" },
+  { img: portfolio2, name: "Marcus Chen", role: "Founder, Greenstone Partners", win: "Podcast launch hit #1 in business category" },
+  { img: portfolio3, name: "Sarah Mitchell", role: "Partner, Elevate Capital", win: "UGC campaign drove $2M in attributed pipeline" },
+  { img: portfolio4, name: "Alex Rivera", role: "Author & Speaker", win: "100K YouTube subscribers in 6 months" },
+  { img: svcContent, name: "Priya Sharma", role: "CEO, Nexus Health", win: "LinkedIn thought leadership → 14 keynote invites" },
+  { img: svcExec, name: "James Carter", role: "Founder, Carter Group", win: "Instagram reels generated 4,000+ inbound leads" },
 ];
 
 function Portfolio() {
@@ -514,7 +514,7 @@ function Portfolio() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">05 — Receipts</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Leaders we made <span className="text-gold">loud.</span>
+              Feeds we turned <span className="text-gold">into fortunes.</span>
             </h2>
           </div>
           <Link
@@ -561,7 +561,7 @@ function CTAStrip() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 md:flex-row">
         <p className="flex items-center gap-4 text-center font-display text-2xl font-black md:text-left md:text-3xl">
           <MouthMark className="h-7 w-7" />
-          Ready to stop being the best-kept secret in your industry?
+          Tired of shouting into the algorithmic void?
         </p>
         <a
           href="#consult"
@@ -577,28 +577,28 @@ function CTAStrip() {
 /* ===================== FAQ ===================== */
 const faqs = [
   {
-    q: "Who is Executive & Personal Branding for?",
-    a: "Founders, CEOs, C-suite operators, investors, authors and category-defining experts who want their name to travel faster than their résumé.",
+    q: "Who is Content & Social for?",
+    a: "CEOs, founders, investors, authors and experts who want to build authority at scale through consistent, high-quality content across every platform.",
   },
   {
-    q: "How long does it take to see results?",
-    a: "Most clients see their first tier-1 placement within 45–60 days. Compounding inbound, speaking and authority typically kicks in around month 3.",
+    q: "How much time do I need to invest?",
+    a: "As little as 30 minutes per week. We handle production, distribution and optimisation — you provide the insights and approve the output.",
   },
   {
-    q: "Do I have to commit to all six sub-services?",
-    a: "No. You can engage à la carte (e.g. just Thought Leadership or just Speaker Kit), but the full package is where the flywheel really roars.",
+    q: "What platforms do you cover?",
+    a: "LinkedIn, Instagram, YouTube, X (Twitter), TikTok, podcasts and newsletters. We focus on the platforms that matter most to your audience.",
   },
   {
-    q: "How is The Big Mouth PR different from a traditional PR firm?",
-    a: "Traditional PR sends press releases and hopes. We engineer narrative, identity, content and media as one system — measured weekly, optimized continuously.",
+    q: "How is this different from a content agency?",
+    a: "Most agencies batch generic content. We build a custom voice, study your industry and engineer each piece for specific business outcomes.",
+  },
+  {
+    q: "Do you work with existing content teams?",
+    a: "Yes. We can augment your in-house team, take over specific channels or build your entire content function from scratch.",
   },
   {
     q: "What's the investment?",
-    a: "Personal branding engagements start in the low five-figures per month. We'll scope and price transparently after the discovery call.",
-  },
-  {
-    q: "Do you ghostwrite?",
-    a: "Yes. Articles, books, op-eds, LinkedIn posts and keynotes — all in your voice, approved by you, never robotic.",
+    a: "Content & Social engagements start in the low five-figures per month. We'll scope and price transparently after the discovery call.",
   },
 ];
 
@@ -610,7 +610,7 @@ function FAQ() {
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">06 — Questions</p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            Loud answers to <span className="text-gold">quiet doubts.</span>
+            Direct answers to <span className="text-gold">algorithm questions.</span>
           </h2>
           <p className="mt-5 text-sm text-navy-deep/65">
             Didn't find what you needed? Ask us directly — we reply within one business day.
@@ -669,9 +669,9 @@ function Consult() {
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's roar</p>
           <h2 className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
-            Your industry already <span className="text-gold">talks.</span>
+            Your content <span className="text-gold">deserves</span>
             <br />
-            Time it talked about <em>you.</em>
+            to be <em>heard.</em>
           </h2>
           <p className="mt-6 max-w-md text-cream/75">
             Drop your details. A senior strategist (not a chatbot) replies within 24 hours with a
@@ -709,12 +709,12 @@ function Consult() {
               </div>
               <div className="mt-4">
                 <label className="text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60">
-                  What do you want to be known for?
+                  What content goals matter most to you?
                 </label>
                 <textarea
                   name="goal"
                   rows={4}
-                  placeholder="The category I want to own…"
+                  placeholder="LinkedIn growth, podcast launch, video content…"
                   className="mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none"
                 />
               </div>
@@ -763,7 +763,7 @@ function Field({
 }
 
 /* ===================== PAGE ===================== */
-function ExecutiveBrandingPage() {
+function ContentSocialPage() {
   return (
     <main className="lion-cursor bg-white text-navy-deep">
       <SiteHeader />
