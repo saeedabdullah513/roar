@@ -205,7 +205,7 @@
     30% { opacity: 1; transform: translate(-50%, -50%) scale(1.1) rotate(-4deg); }
     100% { opacity: 0; transform: translate(-50%, -90%) scale(1.4) rotate(2deg); }
   }
-  .animate-roar-burst { animation: roar-burst 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .animate-roar-burst { animation: roar-burst 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; text-shadow: 0 6px 20px rgba(253,95,8,0.6); }
 
   /* Lion-shaped cursor — embedded SVG so no asset is needed */
   .lion-cursor, .lion-cursor * {
@@ -214,5 +214,78 @@
   .lion-cursor input, .lion-cursor textarea, .lion-cursor select { cursor: text; }
   .lion-cursor a, .lion-cursor button, .lion-cursor [role="button"] {
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 64 64'><g><circle cx='32' cy='32' r='20' fill='%23fd5f08'/><path d='M12 32 L4 20 L18 24 Z M52 32 L60 20 L46 24 Z M12 38 L4 50 L18 44 Z M52 38 L60 50 L46 44 Z' fill='%23fd5f08'/><circle cx='25' cy='28' r='3' fill='%2310171d'/><circle cx='39' cy='28' r='3' fill='%2310171d'/><path d='M20 38 Q32 52 44 38 Q38 46 32 46 Q26 46 20 38 Z' fill='%2310171d'/><path d='M28 44 L26 50 M36 44 L38 50' stroke='%23fff' stroke-width='2' stroke-linecap='round'/></g></svg>") 20 20, pointer;
+  }
+
+  /* ─── Animation delays (in tenths of seconds) ─── */
+  .delay-15 { animation-delay: 0.15s; }
+  .delay-6 { animation-delay: 0.6s; }
+  .delay-12 { animation-delay: 1.2s; }
+  .delay-18 { animation-delay: 1.8s; }
+  .delay-24 { animation-delay: 2.4s; }
+  .delay-30 { animation-delay: 3s; }
+  .delay-36 { animation-delay: 3.6s; }
+
+  /* ─── Background pattern with CSS variable ─── */
+  .bg-icon-pattern {
+    background-image: var(--icon-url);
+    background-size: 120px 120px;
+    background-repeat: repeat;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  .bg-icon-pattern-lg {
+    background-image: var(--icon-url);
+    background-size: 140px 140px;
+    background-repeat: space;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  .bg-icon-pattern-sm {
+    background-image: var(--icon-url);
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  .bg-icon-pattern-xl {
+    background-image: var(--icon-url);
+    background-size: 160px;
+    background-repeat: space;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  /* ─── Floating dust dots ─── */
+  .dust-dot {
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    animation: float-dust 8s ease-in-out infinite;
+    filter: blur(0.5px);
+  }
+  .dust-dot:nth-child(odd) { background-color: var(--gold); }
+  .dust-dot:nth-child(even) { background-color: var(--bm-blue); }
+
+  /* ─── Portfolio card heights ─── */
+  .portfolio-hero { min-height: 480px; }
+  .portfolio-sm { min-height: 220px; }
+  @media (min-width: 768px) {
+    .portfolio-hero { min-height: 480px; }
+    .portfolio-sm { min-height: 220px; }
+  }
+
+  /* ─── Responsive container widths ─── */
+  @media (min-width: 1536px) {
+    .container-wide { max-width: 1500px; }
+  }
+
+  /* ─── Section spacing consistency ─── */
+  .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
+  .section-pad-sm { padding-top: 3rem; padding-bottom: 3rem; }
+
+  /* ─── Responsive heading clamp override for very large screens ─── */
+  @media (min-width: 1920px) {
+    .hero-heading { font-size: 5.5rem; }
   }
 }

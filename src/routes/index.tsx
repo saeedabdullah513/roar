@@ -142,7 +142,7 @@ export function LionInteractions() {
         <span
           key={b.id}
           className="absolute -translate-x-1/2 -translate-y-1/2 select-none font-display text-[3rem] font-black text-gold animate-roar-burst"
-          style={{ left: b.x, top: b.y, textShadow: "0 6px 20px rgba(253,95,8,0.6)" }}
+          style={{ left: b.x, top: b.y }}
         >
           Fahhh
         </span>
@@ -201,10 +201,10 @@ export function SiteHeader() {
   }, []);
 
   const links = [
-    { href: "#story", label: "Our Story" },
-    { href: "#industries", label: "Industries" },
-    { href: "#portfolio", label: "Work" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/packages", label: "Packages" },
+    { href: "/contact-us", label: "Contact Us" },
+    { href: "/#faq", label: "FAQ" },
   ];
 
   const navItemClass =
@@ -397,31 +397,27 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-deep/85 to-navy-deep/95" />
         {/* Icon pattern bg */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage: `url("${iconUrl}")`,
-            backgroundSize: "140px",
-            backgroundRepeat: "space",
-          }}
+          aria-hidden
+          className="absolute inset-0 bg-icon-pattern-lg"
+          style={{ "--icon-url": `url(${iconUrl})` } as React.CSSProperties}
         />
         {Array.from({ length: 14 }).map((_, i) => (
           <span
             key={i}
-            className={`absolute h-1.5 w-1.5 rounded-full animate-float-dust ${
-              i % 2 ? "bg-gold" : "bg-bm-blue"
-            }`}
+            className={`dust-dot ${[
+              "delay-6", "delay-12", "delay-18", "delay-24", "delay-30", "delay-36", "delay-6",
+              "delay-12", "delay-18", "delay-24", "delay-30", "delay-36", "delay-6", "delay-12",
+            ][i]}`}
             style={{
               left: `${(i * 53) % 100}%`,
               top: `${(i * 37) % 100}%`,
-              animationDelay: `${(i % 7) * 0.6}s`,
-              filter: "blur(0.5px)",
             }}
           />
         ))}
       </div>
 
       {/* Main grid */}
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16 xl:gap-20">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-16 xl:gap-20 2xl:max-w-[1500px]">
         {/* LEFT — bold copy + lion */}
         <div className="animate-reveal relative">
           <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-gold/30 bg-navy/50 px-4 py-2 text-[11px] uppercase tracking-[0.3em] text-gold backdrop-blur">
@@ -477,7 +473,7 @@ function Hero() {
         </div>
 
         {/* RIGHT — lead form */}
-        <div className="relative animate-reveal" style={{ animationDelay: "0.15s" }}>
+        <div className="relative animate-reveal delay-15">
           {/* Lion big version on mobile only — above form */}
           <img
             src={lionUrl}
@@ -592,7 +588,7 @@ export function ClientsRibbon() {
 function Story() {
   const [open, setOpen] = useState(false);
   return (
-    <section id="story" className="relative bg-white py-28 md:py-32">
+    <section id="story" className="relative bg-white py-24 md:py-28 xl:py-20">
       {/* Icon pattern accent */}
       <img
         src={iconUrl}
@@ -600,9 +596,9 @@ function Story() {
         aria-hidden
         className="pointer-events-none absolute left-0 top-10 hidden h-48 w-auto opacity-[0.05] md:block"
       />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
-        <div className="relative">
-          <button onClick={() => setOpen(true)} className="group relative block w-full overflow-hidden rounded-2xl shadow-luxe" aria-label="Play our story">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+        <div className="flex justify-center">
+          <button onClick={() => setOpen(true)} className="group relative block w-full max-w-lg overflow-hidden rounded-2xl shadow-luxe lg:max-w-[600px]" aria-label="Play our story">
             <img src={storyThumb} alt="The Big Mouth PR story" loading="lazy" className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105 md:h-[400px] lg:h-[520px]" />
             <div className="absolute inset-0 bg-gradient-to-tr from-navy-deep/70 via-navy-deep/20 to-transparent" />
             <span className="absolute inset-0 flex items-center justify-center">
@@ -737,7 +733,7 @@ const serviceLinks = serviceGroups.map((s) => ({
 
 function Services() {
   return (
-    <section id="services" className="relative overflow-hidden bg-white py-24 text-navy-deep md:py-32">
+    <section id="services" className="relative overflow-hidden bg-white py-20 text-navy-deep md:py-24 xl:py-20">
       <img src={iconUrl} alt="" aria-hidden className="pointer-events-none absolute -right-20 top-10 hidden h-[560px] w-auto opacity-[0.04] lg:block" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -818,7 +814,7 @@ function Industries() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="industries" className="relative bg-white py-24 text-navy-deep md:py-32 border-t border-navy-deep/5">
+    <section id="industries" className="relative bg-white py-20 text-navy-deep md:py-24 xl:py-20 border-t border-navy-deep/5">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -897,7 +893,7 @@ function Portfolio() {
     { img: portfolio4, title: "LinkedIn Authority Build", tag: "Content" },
   ];
   return (
-    <section id="portfolio" className="bg-white py-28 md:py-32 border-t border-navy-deep/5">
+    <section id="portfolio" className="bg-white py-24 md:py-28 xl:py-20 border-t border-navy-deep/5">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -918,8 +914,8 @@ function Portfolio() {
         <div className="mt-14 grid gap-5 md:grid-cols-12">
           {items.map((it, i) => (
             <a key={it.title} href="#" className={`group relative block overflow-hidden rounded-2xl shadow-luxe ${
-              i === 0 ? "md:col-span-7 md:row-span-2" : i === 1 ? "md:col-span-5" : "md:col-span-5 md:col-start-8"
-            }`} style={{ minHeight: i === 0 ? 480 : 220 }}>
+              i === 0 ? "md:col-span-7 md:row-span-2 portfolio-hero" : i === 1 ? "md:col-span-5 portfolio-sm" : "md:col-span-5 md:col-start-8 portfolio-sm"
+            }`}>
               <img src={it.img} alt={it.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-transparent" />
               <div className="absolute bottom-0 p-8 text-cream">
@@ -946,7 +942,7 @@ const cases = [
 
 function CaseStudies() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 text-navy-deep md:py-32 border-t border-navy-deep/5">
+    <section className="relative overflow-hidden bg-white py-20 text-navy-deep md:py-24 xl:py-20 border-t border-navy-deep/5">
       <img src={iconUrl} alt="" aria-hidden className="pointer-events-none absolute -left-20 top-20 hidden h-[360px] w-auto opacity-[0.05] lg:block" />
       <div className="relative mx-auto max-w-7xl px-6">
         <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
@@ -992,9 +988,9 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep py-28 text-cream md:py-32">
+    <section className="relative overflow-hidden bg-navy-deep py-24 text-cream md:py-28 xl:py-20">
       {/* Icon pattern */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: `url("${iconUrl}")`, backgroundSize: "160px", backgroundRepeat: "space" }} />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-icon-pattern-xl" style={{ "--icon-url": `url(${iconUrl})` } as React.CSSProperties} />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex items-end justify-between flex-wrap gap-4">
           <div>
@@ -1073,7 +1069,7 @@ const faqs = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-white py-28 md:py-32">
+    <section id="faq" className="bg-white py-24 md:py-28 xl:py-20">
       <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
@@ -1123,8 +1119,8 @@ function platformIcon(p: string) {
 
 function SocialFeed() {
   return (
-    <section className="relative overflow-hidden bg-white pb-28 md:pb-32 border-t border-navy-deep/5">
-      <div className="mx-auto max-w-7xl px-6 pt-20">
+    <section className="relative overflow-hidden bg-white pb-24 md:pb-28 xl:pb-20 border-t border-navy-deep/5">
+      <div className="mx-auto max-w-7xl px-6 pt-16 md:pt-20">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
@@ -1171,7 +1167,7 @@ function SocialFeed() {
 ===================================================================== */
 function FinalCTA() {
   return (
-    <section id="consult" className="relative overflow-hidden bg-navy-deep py-28 text-cream md:py-36">
+    <section id="consult" className="relative overflow-hidden bg-navy-deep py-24 text-cream md:py-28 xl:py-20">
       <img src={lionUrl} alt="" aria-hidden className="pointer-events-none absolute -left-20 bottom-0 hidden h-[420px] w-auto opacity-[0.10] md:block" />
       <img src={iconUrl} alt="" aria-hidden className="pointer-events-none absolute -right-16 top-10 hidden h-[420px] w-auto opacity-[0.08] md:block" />
       <div className="pointer-events-none absolute -bottom-10 left-1/2 -translate-x-1/2 select-none font-display text-[20vw] font-black uppercase leading-none text-cream/[0.04]">
@@ -1209,7 +1205,7 @@ export function Footer() {
             A loud, fearless personal branding & PR studio. Serving leaders who'd rather be talked about than tip-toed around.
           </p>
         </div>
-        <FooterCol title="Studio" items={[{ label: "Our Story", href: "/#story" }, { label: "Services", href: "/#services" }, { label: "Portfolio", href: "/#portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
+        <FooterCol title="Studio" items={[{ label: "Our Story", href: "/#story" }, { label: "About Us", href: "/about-us" }, { label: "Services", href: "/#services" }, { label: "Packages", href: "/packages" }, { label: "Portfolio", href: "/#portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
         <FooterCol title="Services" items={[{ label: "Executive & Personal Branding", href: "/services/executive-personal-branding" }, { label: "Reputation & Media", href: "/services/reputation-media" }, { label: "Content & Social", href: "/services/content-social" }, { label: "Creative Production", href: "/services/creative-production" }, { label: "Author & Publishing", href: "/services/author-publishing" }, { label: "Digital & Public Affairs", href: "/services/digital-public-affairs" }]} />
         <FooterCol title="Get loud" items={[{ label: "Book a Call", href: "/contact-us#form" }, { label: "hello@thebigmouthpr.com", href: "mailto:hello@thebigmouthpr.com" }, { label: "+1 (555) 010-0420", href: "tel:+15550100420" }, { label: "New York · Remote", href: "#" }]} />
       </div>

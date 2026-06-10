@@ -39,12 +39,8 @@ function Hero() {
     <section className="relative overflow-hidden bg-navy-deep pt-20 text-cream md:pt-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage: `url(${ICON_URL})`,
-          backgroundSize: "120px 120px",
-          backgroundRepeat: "repeat",
-        }}
+        className="pointer-events-none absolute inset-0 bg-icon-pattern"
+        style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties}
       />
       <div className="relative mx-auto max-w-4xl px-6 py-16 lg:py-24">
         <Link
@@ -199,8 +195,8 @@ function FinalCTA() {
     <section className="relative overflow-hidden bg-navy-deep py-24 text-cream">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{ backgroundImage: `url(${ICON_URL})`, backgroundSize: "140px 140px" }}
+        className="pointer-events-none absolute inset-0 bg-icon-pattern-lg"
+        style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties}
       />
       <img src={LION_URL} aria-hidden alt="" className="pointer-events-none absolute -left-16 bottom-0 w-[320px] opacity-20 md:w-[440px]" />
       <div className="relative mx-auto max-w-3xl px-6 text-center">

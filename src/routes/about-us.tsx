@@ -66,12 +66,8 @@ function AboutHero() {
     <section className="relative overflow-hidden bg-navy-deep pt-28 text-cream">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage: `url(${ICON_URL})`,
-          backgroundSize: "120px 120px",
-          backgroundRepeat: "repeat",
-        }}
+        className="pointer-events-none absolute inset-0 bg-icon-pattern"
+        style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties}
       />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-[1.1fr_1fr] lg:py-28">
         <div>
@@ -433,12 +429,8 @@ function Team() {
     <section id="team" className="relative bg-navy-deep py-24 text-cream md:py-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage: `url(${ICON_URL})`,
-          backgroundSize: "120px 120px",
-          backgroundRepeat: "repeat",
-        }}
+        className="pointer-events-none absolute inset-0 bg-icon-pattern"
+        style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties}
       />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-wrap items-end justify-between gap-6">
@@ -652,12 +644,8 @@ function CTAStrip() {
     <section className="relative overflow-hidden bg-gold py-20 text-navy-deep">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url(${ICON_URL})`,
-          backgroundSize: "100px 100px",
-          backgroundRepeat: "repeat",
-        }}
+        className="pointer-events-none absolute inset-0 bg-icon-pattern-sm"
+        style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties}
       />
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
         <h2 className="font-display text-4xl font-black uppercase leading-[0.95] md:text-6xl">

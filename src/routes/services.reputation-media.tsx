@@ -78,12 +78,8 @@ function Hero() {
     <section className="relative overflow-hidden bg-navy-deep pt-20 text-cream md:pt-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage: `url(${ICON_URL})`,
-          backgroundSize: "120px 120px",
-          backgroundRepeat: "repeat",
-        }}
+        className="pointer-events-none absolute inset-0 bg-icon-pattern"
+        style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties}
       />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-[1.1fr_1fr] lg:py-24">
         <div>
@@ -165,7 +161,7 @@ function Overview() {
     { icon: Megaphone, t: "Amplification", d: "Every win turns into a story. Every story turns into momentum." },
   ];
   return (
-    <section className="relative bg-white py-20 md:py-28">
+    <section className="relative bg-white py-20 md:py-24 xl:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
@@ -272,7 +268,7 @@ const subServices = [
 function SubServices() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="sub-services" className="relative bg-[oklch(0.98_0.005_240)] py-20 md:py-28">
+    <section id="sub-services" className="relative bg-[oklch(0.98_0.005_240)] py-20 md:py-24 xl:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
@@ -395,7 +391,7 @@ function WhyUs() {
     },
   ];
   return (
-    <section className="relative overflow-hidden bg-navy-deep py-20 text-cream md:py-28">
+    <section className="relative overflow-hidden bg-navy-deep py-16 text-cream md:py-20 xl:py-16">
       <img src={LION_URL} aria-hidden alt="" className="pointer-events-none absolute -right-20 -top-10 w-[380px] opacity-[0.07] md:w-[520px]" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -445,7 +441,7 @@ function Process() {
     { icon: MessageSquareHeart, t: "Feedback Loop", d: "NPS, candid debrief, renewal & expansion." },
   ];
   return (
-    <section id="process" className="relative bg-white py-20 md:py-28">
+    <section id="process" className="relative bg-white py-20 md:py-24 xl:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-3xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — The Process</p>
@@ -510,7 +506,7 @@ const portfolioItems = [
 
 function Portfolio() {
   return (
-    <section id="portfolio" className="relative bg-[oklch(0.98_0.005_240)] py-20 md:py-28">
+    <section id="portfolio" className="relative bg-[oklch(0.98_0.005_240)] py-20 md:py-24 xl:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
@@ -607,7 +603,7 @@ const faqs = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="relative bg-white py-20 md:py-28">
+    <section id="faq" className="relative bg-white py-20 md:py-24 xl:py-20">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">06 — Questions</p>
@@ -687,11 +683,11 @@ function Consult() {
   };
 
   return (
-    <section id="consult" className="relative overflow-hidden bg-navy-deep py-24 text-cream">
+    <section id="consult" className="relative overflow-hidden bg-navy-deep py-20 text-cream md:py-24 xl:py-20">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{ backgroundImage: `url(${ICON_URL})`, backgroundSize: "140px 140px" }}
+        className="pointer-events-none absolute inset-0 bg-icon-pattern-lg"
+        style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties}
       />
       <img src={LION_URL} aria-hidden alt="" className="pointer-events-none absolute -left-16 bottom-0 w-[320px] opacity-20 md:w-[440px]" />
 
