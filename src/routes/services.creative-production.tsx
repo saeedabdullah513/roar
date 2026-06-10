@@ -26,6 +26,7 @@ import {
   Scissors,
   Monitor,
   Crown,
+  Loader2,
 } from "lucide-react";
 
 import {
@@ -37,6 +38,8 @@ import {
   MouthMark,
   ClientsRibbon,
 } from "./index";
+
+import { submitContactForm } from "../lib/api/contact.functions";
 
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
@@ -662,6 +665,34 @@ function FAQ() {
 /* ===================== CONSULT / CONTACT CTA ===================== */
 function Consult() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleConsultSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+    setError(null);
+    try {
+      const fd = new FormData(e.currentTarget);
+      await submitContactForm({
+        data: {
+          name: fd.get("name") as string,
+          email: fd.get("email") as string,
+          company: fd.get("company") as string,
+          role: fd.get("role") as string,
+          phone: "",
+          service: "Creative Production",
+          message: (fd.get("project") || "") as string,
+        },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <section id="consult" className="relative overflow-hidden bg-navy-deep py-24 text-cream">
       <div
@@ -689,10 +720,7 @@ function Consult() {
         </div>
 
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSubmitted(true);
-          }}
+          onSubmit={handleConsultSubmit}
           className="rounded-3xl border border-cream/10 bg-cream/[0.04] p-7 shadow-luxe backdrop-blur md:p-9"
         >
           {submitted ? (
@@ -724,11 +752,15 @@ function Consult() {
                   className="mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none"
                 />
               </div>
+              {error && (
+                <p className="mt-4 rounded-xl bg-red-500/20 px-4 py-3 text-sm text-red-200">{error}</p>
+              )}
               <button
                 type="submit"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02]"
+                disabled={sending}
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02] disabled:opacity-60"
               >
-                <Volume2 className="h-4 w-4" /> Let's make it
+                {sending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending...</> : <><Volume2 className="h-4 w-4" /> Let's make it</>}
               </button>
               <p className="mt-3 text-center text-[11px] text-cream/50">
                 By submitting, you agree to a follow-up from The Big Mouth PR team.

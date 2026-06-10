@@ -31,6 +31,7 @@ import {
   Youtube,
   Volume2,
   Menu,
+  Loader2,
 } from "lucide-react";
 
 import {
@@ -42,6 +43,7 @@ import {
   NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { submitContactForm } from "../lib/api/contact.functions";
 
 import heroImg from "@/assets/hero-executive.jpg";
 import logoUrl from "@/assets/roar-logo.png";
@@ -352,6 +354,38 @@ export function SiteHeader() {
    1. HERO
 ===================================================================== */
 function Hero() {
+  const [heroForm, setHeroForm] = useState({ name: "", email: "", company: "", title: "", message: "" });
+  const [heroSending, setHeroSending] = useState(false);
+  const [heroDone, setHeroDone] = useState(false);
+  const [heroError, setHeroError] = useState<string | null>(null);
+
+  const heroUpdate = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setHeroForm((p) => ({ ...p, [field]: e.target.value }));
+
+  const handleHeroSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setHeroSending(true);
+    setHeroError(null);
+    try {
+      await submitContactForm({
+        data: {
+          name: heroForm.name,
+          email: heroForm.email,
+          company: heroForm.company,
+          role: heroForm.title,
+          phone: "",
+          service: "Strategy Call",
+          message: heroForm.message,
+        },
+      });
+      setHeroDone(true);
+    } catch (err) {
+      setHeroError(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setHeroSending(false);
+    }
+  };
+
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-navy-deep pt-24 text-cream">
       <div className="absolute inset-0">
@@ -453,32 +487,44 @@ function Hero() {
           />
           <MouthMark className="absolute -top-10 -right-2 hidden h-16 w-16 rotate-[8deg] text-gold/90 md:block" />
 
-          <form className="relative rounded-3xl border border-cream/15 bg-navy/80 p-8 backdrop-blur-xl shadow-luxe md:p-10">
+          <form onSubmit={handleHeroSubmit} className="relative rounded-3xl border border-cream/15 bg-navy/80 p-8 backdrop-blur-xl shadow-luxe md:p-10">
             <div className="absolute -top-3 left-8 inline-flex items-center gap-2 rounded-full bg-gold px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-navy-deep">
               <DotMark />
               Free Strategy Call
             </div>
 
+            {heroDone ? (
+              <div className="py-10 text-center">
+                <p className="mt-3 font-display text-3xl font-bold text-cream">Roar received!</p>
+                <p className="mt-2 text-sm text-cream/70">We'll be in touch within one business day.</p>
+              </div>
+            ) : (
+              <>
             <h2 className="mt-3 font-display text-3xl font-bold text-cream md:text-4xl">
               Tell us your story.<br />
               <span className="text-gold italic">We'll make it loud.</span>
             </h2>
             <p className="mt-2 text-sm text-cream/80">30 minutes. No pitch. Real strategy.</p>
 
+            {heroError && (
+              <p className="mt-4 rounded-xl bg-red-500/20 px-4 py-3 text-sm text-red-200">{heroError}</p>
+            )}
+
             <div className="mt-6 grid gap-3">
-              <input type="text" placeholder="Your name" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
-              <input type="email" placeholder="Work email" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+              <input type="text" required value={heroForm.name} onChange={heroUpdate("name")} placeholder="Your name" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+              <input type="email" required value={heroForm.email} onChange={heroUpdate("email")} placeholder="Work email" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
               <div className="grid grid-cols-2 gap-3">
-                <input type="text" placeholder="Company" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
-                <input type="text" placeholder="Title" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+                <input type="text" required value={heroForm.company} onChange={heroUpdate("company")} placeholder="Company" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+                <input type="text" required value={heroForm.title} onChange={heroUpdate("title")} placeholder="Title" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
               </div>
-              <textarea rows={2} placeholder="What do you want the world to hear?" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
-              <button type="button" className="group mt-1 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep transition hover:bg-gold-soft hover:scale-[1.01]">
-                Open The Mic
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+              <textarea rows={2} required value={heroForm.message} onChange={heroUpdate("message")} placeholder="What do you want the world to hear?" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+              <button type="submit" disabled={heroSending} className="group mt-1 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep transition hover:bg-gold-soft hover:scale-[1.01] disabled:opacity-60">
+                {heroSending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending...</> : <>Open The Mic <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" /></>}
               </button>
               <p className="text-center text-xs text-cream/70">🔒 Your details stay private. Always.</p>
             </div>
+            </>
+            )}
           </form>
         </div>
       </div>
@@ -715,9 +761,10 @@ function Services() {
           {serviceGroups.map((s) => {
             const Icon = s.icon;
             return (
-              <article
+              <Link
                 key={s.title}
-                className="group relative overflow-hidden rounded-2xl border border-navy-deep/10 bg-navy-deep p-8 text-cream transition hover:border-gold hover:-translate-y-1 hover:shadow-luxe min-h-[380px] flex flex-col justify-end"
+                to={serviceLinks.find((l) => l.label === s.title)?.href ?? "/"}
+                className="group relative block overflow-hidden rounded-2xl border border-navy-deep/10 bg-navy-deep p-8 text-cream transition hover:border-gold hover:-translate-y-1 hover:shadow-luxe min-h-[380px] flex flex-col justify-end"
               >
                 {/* Background image */}
                 <img
@@ -745,7 +792,7 @@ function Services() {
                     Explore <ArrowRight className="h-3 w-3" />
                   </div>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>
@@ -1164,9 +1211,9 @@ export function Footer() {
             A loud, fearless personal branding & PR studio. Serving leaders who'd rather be talked about than tip-toed around.
           </p>
         </div>
-        <FooterCol title="Studio" items={["Our Story", "Services", "Portfolio", "Case Studies"]} />
-        <FooterCol title="Resources" items={["Insights", "FAQ", "Speaker Kits", "Audiobooks"]} />
-        <FooterCol title="Get loud" items={["Book a Call", "hello@thebigmouthpr.com", "+1 (555) 010-0420", "New York · Remote"]} />
+        <FooterCol title="Studio" items={[{ label: "Our Story", href: "/#story" }, { label: "Services", href: "/#services" }, { label: "Portfolio", href: "/#portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
+        <FooterCol title="Services" items={[{ label: "Executive & Personal Branding", href: "/services/executive-personal-branding" }, { label: "Reputation & Media", href: "/services/reputation-media" }, { label: "Content & Social", href: "/services/content-social" }, { label: "Creative Production", href: "/services/creative-production" }, { label: "Author & Publishing", href: "/services/author-publishing" }, { label: "Digital & Public Affairs", href: "/services/digital-public-affairs" }]} />
+        <FooterCol title="Get loud" items={[{ label: "Book a Call", href: "/contact-us#form" }, { label: "hello@thebigmouthpr.com", href: "mailto:hello@thebigmouthpr.com" }, { label: "+1 (555) 010-0420", href: "tel:+15550100420" }, { label: "New York · Remote", href: "#" }]} />
       </div>
       <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-cream/10 px-6 pt-8 text-xs text-cream/55 md:flex-row">
         <p className="flex items-center gap-3">
@@ -1175,21 +1222,21 @@ export function Footer() {
         <div className="flex gap-6">
           <a href="/privacy-policy" className="hover:text-gold">Privacy</a>
           <a href="/terms" className="hover:text-gold">Terms</a>
-          <a href="#" className="hover:text-gold">LinkedIn</a>
-          <a href="#" className="hover:text-gold">Instagram</a>
+          <a href="https://linkedin.com/company/thebigmouthpr" target="_blank" rel="noopener noreferrer" className="hover:text-gold">LinkedIn</a>
+          <a href="https://instagram.com/thebigmouthpr" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Instagram</a>
         </div>
       </div>
     </footer>
   );
 }
 
-function FooterCol({ title, items }: { title: string; items: string[] }) {
+function FooterCol({ title, items }: { title: string; items: { label: string; href: string }[] }) {
   return (
     <div>
       <p className="text-xs uppercase tracking-[0.3em] text-gold">{title}</p>
       <ul className="mt-5 space-y-3 text-sm">
         {items.map((i) => (
-          <li key={i}><a href="#" className="hover:text-cream">{i}</a></li>
+          <li key={i.label}><a href={i.href} className="hover:text-cream">{i.label}</a></li>
         ))}
       </ul>
     </div>

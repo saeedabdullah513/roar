@@ -26,6 +26,7 @@ import {
   Instagram,
   Youtube,
   TrendingUp,
+  Loader2,
 } from "lucide-react";
 
 import {
@@ -37,6 +38,8 @@ import {
   MouthMark,
   ClientsRibbon,
 } from "./index";
+
+import { submitContactForm } from "../lib/api/contact.functions";
 
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
@@ -656,6 +659,34 @@ function FAQ() {
 /* ===================== CONSULT / CONTACT CTA ===================== */
 function Consult() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleConsultSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSending(true);
+    setError(null);
+    try {
+      const fd = new FormData(e.currentTarget);
+      await submitContactForm({
+        data: {
+          name: (fd.get("name") || fd.get("fullname")) as string,
+          email: (fd.get("email")) as string,
+          company: (fd.get("company")) as string,
+          role: (fd.get("role")) as string,
+          phone: "",
+          service: "Strategy Call",
+          message: (fd.get("goal") as string) || "Strategy call request",
+        },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <section id="consult" className="relative overflow-hidden bg-navy-deep py-24 text-cream">
       <div
@@ -669,9 +700,9 @@ function Consult() {
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's roar</p>
           <h2 className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
-            Your content <span className="text-gold">deserves</span>
+            Your industry already <span className="text-gold">talks.</span>
             <br />
-            to be <em>heard.</em>
+            Time it talked about <em>you.</em>
           </h2>
           <p className="mt-6 max-w-md text-cream/75">
             Drop your details. A senior strategist (not a chatbot) replies within 24 hours with a
@@ -683,10 +714,7 @@ function Consult() {
         </div>
 
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSubmitted(true);
-          }}
+          onSubmit={handleConsultSubmit}
           className="rounded-3xl border border-cream/10 bg-cream/[0.04] p-7 shadow-luxe backdrop-blur md:p-9"
         >
           {submitted ? (
@@ -709,20 +737,24 @@ function Consult() {
               </div>
               <div className="mt-4">
                 <label className="text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60">
-                  What content goals matter most to you?
+                  What do you want to be known for?
                 </label>
                 <textarea
                   name="goal"
                   rows={4}
-                  placeholder="LinkedIn growth, podcast launch, video content…"
+                  placeholder="The category I want to own…"
                   className="mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none"
                 />
               </div>
+              {error && (
+                <p className="mt-4 rounded-xl bg-red-500/20 px-4 py-3 text-sm text-red-200">{error}</p>
+              )}
               <button
                 type="submit"
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02]"
+                disabled={sending}
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02] disabled:opacity-60"
               >
-                <Volume2 className="h-4 w-4" /> Make me unmissable
+                {sending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending...</> : <><Volume2 className="h-4 w-4" /> Make me unmissable</>}
               </button>
               <p className="mt-3 text-center text-[11px] text-cream/50">
                 By submitting, you agree to a follow-up from The Big Mouth PR team.
