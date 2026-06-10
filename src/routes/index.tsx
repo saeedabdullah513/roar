@@ -49,7 +49,6 @@ import heroImg from "@/assets/hero-executive.jpg";
 import logoUrl from "@/assets/roar-logo.png";
 import iconUrl from "@/assets/favicon.png";
 import lionUrl from "@/assets/lion-roar.png";
-import fahhhSound from "@/assets/fahhh.mp3";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -100,17 +99,81 @@ export const Route = createFileRoute("/")({
 /* =====================================================================
    Roar audio (WebAudio synthesized — no asset needed)
 ===================================================================== */
-let fahhhAudio: HTMLAudioElement | null = null;
+let audioCtx: AudioContext | null = null;
+
+function getAudioCtx() {
+  if (!audioCtx) audioCtx = new AudioContext();
+  return audioCtx;
+}
 
 function playRoar() {
   if (typeof window === "undefined") return;
   try {
-    if (!fahhhAudio) {
-      fahhhAudio = new Audio(fahhhSound);
-      fahhhAudio.preload = "auto";
+    const ctx = getAudioCtx();
+    const now = ctx.currentTime;
+
+    // Master gain — shapes the overall roar envelope
+    const masterGain = ctx.createGain();
+    masterGain.connect(ctx.destination);
+    masterGain.gain.setValueAtTime(0, now);
+    masterGain.gain.linearRampToValueAtTime(0.7, now + 0.05);   // quick swell
+    masterGain.gain.linearRampToValueAtTime(0.3, now + 0.3);    // settle
+    masterGain.gain.exponentialRampToValueAtTime(0.01, now + 1.5); // fade
+    masterGain.gain.setValueAtTime(0, now + 1.6);
+
+    // Low-pass filter that opens up (mouth opening effect)
+    const filter = ctx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(300, now);
+    filter.frequency.exponentialRampToValueAtTime(2000, now + 0.3);
+    filter.Q.setValueAtTime(2, now);
+    filter.connect(masterGain);
+
+    // Oscillator 1 — deep growl
+    const osc1 = ctx.createOscillator();
+    osc1.type = "sawtooth";
+    osc1.frequency.setValueAtTime(85, now);
+    osc1.frequency.linearRampToValueAtTime(110, now + 0.4);
+    osc1.frequency.linearRampToValueAtTime(70, now + 1.2);
+    osc1.connect(filter);
+    osc1.start(now);
+    osc1.stop(now + 1.5);
+
+    // Oscillator 2 — rich harmonic layer
+    const osc2 = ctx.createOscillator();
+    osc2.type = "square";
+    osc2.frequency.setValueAtTime(95, now);
+    osc2.frequency.linearRampToValueAtTime(120, now + 0.4);
+    osc2.frequency.linearRampToValueAtTime(80, now + 1.2);
+    osc2.connect(filter);
+    osc2.start(now);
+    osc2.stop(now + 1.5);
+
+    // Noise — breath/rasp
+    const bufferSize = ctx.sampleRate * 2;
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.pow(Math.random(), 3) * 0.6;
     }
-    fahhhAudio.currentTime = 0;
-    fahhhAudio.play().catch(() => {});
+    const noise = ctx.createBufferSource();
+    noise.buffer = buffer;
+
+    const noiseFilter = ctx.createBiquadFilter();
+    noiseFilter.type = "bandpass";
+    noiseFilter.frequency.setValueAtTime(800, now);
+    noiseFilter.frequency.exponentialRampToValueAtTime(3000, now + 0.5);
+    noiseFilter.Q.setValueAtTime(0.5, now);
+
+    const noiseGain = ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.2, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 1.2);
+
+    noise.connect(noiseFilter);
+    noiseFilter.connect(noiseGain);
+    noiseGain.connect(masterGain);
+    noise.start(now);
+    noise.stop(now + 1.3);
   } catch {
     /* no audio */
   }
@@ -144,7 +207,7 @@ export function LionInteractions() {
           className="absolute -translate-x-1/2 -translate-y-1/2 select-none font-display text-[3rem] font-black text-gold animate-roar-burst"
           style={{ left: b.x, top: b.y }}
         >
-          Fahhh
+          ROAR!
         </span>
       ))}
     </div>

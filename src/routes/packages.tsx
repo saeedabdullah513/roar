@@ -30,6 +30,7 @@ import {
 import { submitContactForm } from "../lib/api/contact.functions";
 
 import lionUrl from "@/assets/lion-roar.png";
+import lionChildUrl from "@/assets/lion-child-image.png";
 import iconUrl from "@/assets/favicon.png";
 
 const LION_URL = lionUrl;
@@ -333,7 +334,6 @@ function PackagesPage() {
           {packages.map((p) => {
             const Icon = p.icon;
             const isPride = p.id === "pride";
-            const lionSize = p.id === "cub" ? "h-16" : p.id === "lion" ? "h-24" : "h-28";
             return (
               <article key={p.id} className={`relative flex flex-col rounded-3xl bg-white p-8 shadow-luxe ring-1 ${p.ring} ${p.badge ? "lg:-translate-y-4 lg:scale-[1.02]" : ""}`}>
                 {p.badge && (
@@ -342,7 +342,17 @@ function PackagesPage() {
 
                 {/* Lion illustration */}
                 <div className="flex items-center justify-center mb-4">
-                  <img src={LION_URL} alt="" aria-hidden className={`${lionSize} w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.3)] opacity-90`} />
+                  {p.id === "cub" ? (
+                    <img src={lionChildUrl} alt="" aria-hidden className="h-28 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.3)] opacity-90" />
+                  ) : p.id === "pride" ? (
+                    <div className="flex items-center">
+                      <img src={LION_URL} alt="" aria-hidden className="h-20 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.3)] opacity-90 -mr-3" />
+                      <img src={LION_URL} alt="" aria-hidden className="h-24 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.3)] opacity-90 z-10" />
+                      <img src={LION_URL} alt="" aria-hidden className="h-20 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.3)] opacity-90 -ml-3" />
+                    </div>
+                  ) : (
+                    <img src={LION_URL} alt="" aria-hidden className="h-24 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.3)] opacity-90" />
+                  )}
                 </div>
 
                 <div className="flex items-center gap-3">
