@@ -387,7 +387,7 @@ function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-navy-deep py-20 text-cream md:py-28 lg:py-32 xl:min-h-[650px]">
+    <section className="relative w-full overflow-hidden bg-navy-deep py-16 text-cream md:py-24 lg:py-28">
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -450,7 +450,7 @@ function Hero() {
             src={lionUrl}
             alt=""
             aria-hidden
-            className="pointer-events-none absolute -right-6 -top-10 hidden h-[260px] w-auto animate-lion-roar drop-shadow-[0_20px_50px_rgba(253,95,8,0.45)] md:block lg:-right-16 lg:top-0 lg:h-[340px]"
+            className="pointer-events-none absolute right-0 hidden h-[220px] w-auto animate-lion-roar drop-shadow-[0_20px_50px_rgba(253,95,8,0.45)] md:block md:top-16 md:h-[200px] lg:-right-8 lg:top-12 lg:h-[280px] xl:-right-12 xl:h-[340px]"
           />
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/90 md:text-xl">
@@ -483,7 +483,7 @@ function Hero() {
             src={lionUrl}
             alt=""
             aria-hidden
-            className="mx-auto -mb-4 block h-40 w-auto animate-lion-roar drop-shadow-[0_18px_40px_rgba(253,95,8,0.4)] md:hidden"
+            className="mx-auto mb-4 block h-32 w-auto animate-lion-roar drop-shadow-[0_18px_40px_rgba(253,95,8,0.4)] md:hidden"
           />
           <MouthMark className="absolute -top-10 -right-2 hidden h-16 w-16 rotate-[8deg] text-gold/90 md:block" />
 
@@ -529,9 +529,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-[10px] uppercase tracking-[0.4em] text-cream/45">
-        ↓ The story starts here
-      </div>
+
     </section>
   );
 }
@@ -764,7 +762,7 @@ function Services() {
               <Link
                 key={s.title}
                 to={serviceLinks.find((l) => l.label === s.title)?.href ?? "/"}
-                className="group relative block overflow-hidden rounded-2xl border border-navy-deep/10 bg-navy-deep p-8 text-cream transition hover:border-gold hover:-translate-y-1 hover:shadow-luxe min-h-[380px] flex flex-col justify-end"
+                className="group relative block overflow-hidden rounded-2xl border border-navy-deep/10 bg-navy-deep p-6 text-cream transition hover:border-gold hover:-translate-y-1 hover:shadow-luxe min-h-[280px] flex flex-col justify-end sm:p-8 sm:min-h-[380px]"
               >
                 {/* Background image */}
                 <img
@@ -852,7 +850,7 @@ function Industries() {
                   <article
                     onMouseEnter={() => setHovered(i)}
                     onMouseLeave={() => setHovered(null)}
-                    className="group relative h-[440px] overflow-hidden rounded-2xl border border-cream/10 bg-navy"
+                    className="group relative h-[320px] overflow-hidden rounded-2xl border border-cream/10 bg-navy md:h-[400px] lg:h-[460px]"
                   >
                     <img
                       src={it.img}
