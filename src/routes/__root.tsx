@@ -120,6 +120,22 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) return;
+
+    const script = document.createElement("script");
+    script.id = "ze-snippet";
+    script.src =
+      "https://static.zdassets.com/ekr/snippet.js?key=ffb8bd50-e6cd-4986-aa40-2c1c957ce4fb";
+    document.head.appendChild(script);
+
+    const timer = setTimeout(() => {
+      window.zE?.("webWidget", "open");
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}

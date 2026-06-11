@@ -675,7 +675,7 @@ function Consult() {
           message: (fd.get("goal") as string) || "Strategy call request",
         },
       });
-      setSubmitted(true);
+      window.location.href = "/thank-you";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {

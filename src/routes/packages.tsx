@@ -290,7 +290,7 @@ function PackagesPage() {
           message: (fd.get("message") as string) || "Packages inquiry",
         },
       });
-      setSubmitted(true);
+      window.location.href = "/thank-you";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {

@@ -680,7 +680,7 @@ function Consult() {
           message: (fd.get("book") || "") as string,
         },
       });
-      setSubmitted(true);
+      window.location.href = "/thank-you";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {

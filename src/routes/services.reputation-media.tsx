@@ -674,7 +674,7 @@ function Consult() {
           message: (fd.get("goal") || fd.get("project") || fd.get("book") || fd.get("opportunity") || "") as string,
         },
       });
-      setSubmitted(true);
+      window.location.href = "/thank-you";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {

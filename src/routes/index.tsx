@@ -378,7 +378,7 @@ function Hero() {
           message: heroForm.message,
         },
       });
-      setHeroDone(true);
+      window.location.href = "/thank-you";
     } catch (err) {
       setHeroError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
@@ -1245,7 +1245,7 @@ export function FloatingCTA() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <a href="#consult" className={`fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition ${
+    <a href="/contact-us" className={`fixed bottom-6 left-6 z-50 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition ${
       shown ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
     }`}>
       <MouthMark className="h-4 w-4" />

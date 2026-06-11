@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PackagesRouteImport } from './routes/packages'
@@ -23,6 +24,11 @@ import { Route as ServicesCreativeProductionRouteImport } from './routes/service
 import { Route as ServicesContentSocialRouteImport } from './routes/services.content-social'
 import { Route as ServicesAuthorPublishingRouteImport } from './routes/services.author-publishing'
 
+const ThankYouRoute = ThankYouRouteImport.update({
+  id: '/thank-you',
+  path: '/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms': typeof TermsRoute
+  '/thank-you': typeof ThankYouRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
@@ -116,6 +123,7 @@ export interface FileRoutesByTo {
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms': typeof TermsRoute
+  '/thank-you': typeof ThankYouRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms': typeof TermsRoute
+  '/thank-you': typeof ThankYouRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
@@ -149,6 +158,7 @@ export interface FileRouteTypes {
     | '/packages'
     | '/privacy-policy'
     | '/terms'
+    | '/thank-you'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
@@ -164,6 +174,7 @@ export interface FileRouteTypes {
     | '/packages'
     | '/privacy-policy'
     | '/terms'
+    | '/thank-you'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
@@ -179,6 +190,7 @@ export interface FileRouteTypes {
     | '/packages'
     | '/privacy-policy'
     | '/terms'
+    | '/thank-you'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
@@ -195,6 +207,7 @@ export interface RootRouteChildren {
   PackagesRoute: typeof PackagesRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TermsRoute: typeof TermsRoute
+  ThankYouRoute: typeof ThankYouRoute
   ServicesAuthorPublishingRoute: typeof ServicesAuthorPublishingRoute
   ServicesContentSocialRoute: typeof ServicesContentSocialRoute
   ServicesCreativeProductionRoute: typeof ServicesCreativeProductionRoute
@@ -205,6 +218,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/thank-you': {
+      id: '/thank-you'
+      path: '/thank-you'
+      fullPath: '/thank-you'
+      preLoaderRoute: typeof ThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -307,6 +327,7 @@ const rootRouteChildren: RootRouteChildren = {
   PackagesRoute: PackagesRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   TermsRoute: TermsRoute,
+  ThankYouRoute: ThankYouRoute,
   ServicesAuthorPublishingRoute: ServicesAuthorPublishingRoute,
   ServicesContentSocialRoute: ServicesContentSocialRoute,
   ServicesCreativeProductionRoute: ServicesCreativeProductionRoute,

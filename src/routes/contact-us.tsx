@@ -142,7 +142,7 @@ function ContactSection() {
     setError(null);
     try {
       await submitContactForm({ data: formData });
-      setSubmitted(true);
+      window.location.href = "/thank-you";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {

@@ -802,7 +802,7 @@ function Consult() {
           message: (fd.get("goal") as string) || "Brand strategy inquiry",
         },
       });
-      setSubmitted(true);
+      window.location.href = "/thank-you";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
