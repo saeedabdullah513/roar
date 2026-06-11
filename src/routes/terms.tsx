@@ -152,16 +152,16 @@ function Content() {
 
         <Section title="9. Governing Law">
           <p>
-            These terms are governed by the laws of the State of New York. Any disputes arising from
-            these terms shall be resolved in the courts of New York County, New York.
+            These terms are governed by the laws of the State of 2626 E 82nd St Ste#230, Bloomington, MN 55425. Any disputes arising from
+            these terms shall be resolved in the courts of 2626 E 82nd St Ste#230, Bloomington, MN 55425 County, 2626 E 82nd St Ste#230, Bloomington, MN 55425.
           </p>
         </Section>
 
         <Section title="10. Contact">
           <p>
             If you have questions about these Terms & Conditions, please contact us at{" "}
-            <a href="mailto:hello@thebigmouthpr.com" className="text-gold underline hover:text-gold/80">
-              hello@thebigmouthpr.com
+            <a href="mailto:sales@thebigmouthpr.com" className="text-gold underline hover:text-gold/80">
+              sales@thebigmouthpr.com
             </a>.
           </p>
         </Section>

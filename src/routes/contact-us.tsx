@@ -87,9 +87,9 @@ function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             {[
-              { icon: Phone, label: "+1 (555) 010-0420" },
-              { icon: Mail, label: "hello@thebigmouthpr.com" },
-              { icon: MapPin, label: "New York · Remote" },
+              { icon: Phone, label: "+1 (332) 258-7873" },
+              { icon: Mail, label: "sales@thebigmouthpr.com" },
+              { icon: MapPin, label: "2626 E 82nd St Ste#230, Bloomington, MN 55425" },
             ].map((c) => (
               <span
                 key={c.label}
@@ -177,21 +177,21 @@ function ContactSection() {
                 {
                   icon: Mail,
                   label: "Email us directly",
-                  desc: "hello@thebigmouthpr.com — we reply within 24 hours.",
+                  desc: "sales@thebigmouthpr.com — we reply within 24 hours.",
                   action: "Send email →",
-                  href: "mailto:hello@thebigmouthpr.com",
+                  href: "mailto:sales@thebigmouthpr.com",
                 },
                 {
                   icon: Phone,
                   label: "Call the studio",
-                  desc: "+1 (555) 010-0420 — Mon–Fri, 9am–6pm EST.",
+                  desc: "+1 (332) 258-7873 — Mon–Fri, 9am–6pm EST.",
                   action: "Call now →",
                   href: "tel:+15550100420",
                 },
                 {
                   icon: MapPin,
                   label: "Visit us",
-                  desc: "New York City (by appointment) · Remote everywhere.",
+                  desc: "2626 E 82nd St Ste#230, Bloomington, MN 55425 City (by appointment) · Remote everywhere.",
                   action: "Get directions →",
                   href: "#",
                 },
@@ -407,11 +407,11 @@ function Location() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Studio</p>
             <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              New York energy. <span className="text-gold">Global reach.</span>
+              2626 E 82nd St Ste#230, Bloomington, MN 55425 energy. <span className="text-gold">Global reach.</span>
             </h2>
           </div>
           <p className="text-base text-navy-deep/70 md:text-lg">
-            Based in New York City with clients across three continents. We meet
+            Based in 2626 E 82nd St Ste#230, Bloomington, MN 55425 City with clients across three continents. We meet
             in person by appointment, work remotely every day, and show up
             everywhere that matters.
           </p>
@@ -421,8 +421,8 @@ function Location() {
           {[
             {
               icon: MapPin,
-              title: "New York Studio",
-              lines: ["228 Park Ave S", "Suite 51202", "New York, NY 10003"],
+              title: "2626 E 82nd St Ste#230, Bloomington, MN 55425 Studio",
+              lines: ["228 Park Ave S", "Suite 51202", "2626 E 82nd St Ste#230, Bloomington, MN 55425, NY 10003"],
             },
             {
               icon: Clock,
@@ -432,7 +432,7 @@ function Location() {
             {
               icon: Phone,
               title: "Quick contact",
-              lines: ["+1 (555) 010-0420", "hello@thebigmouthpr.com", "Response: <24 hours"],
+              lines: ["+1 (332) 258-7873", "sales@thebigmouthpr.com", "Response: <24 hours"],
             },
           ].map((loc) => (
             <div
@@ -490,7 +490,7 @@ const faqs = [
   },
   {
     q: "Where are you located?",
-    a: "Our studio is based in New York City (by appointment). We work with clients remotely across North America, Europe and Asia.",
+    a: "Our studio is based in 2626 E 82nd St Ste#230, Bloomington, MN 55425 City (by appointment). We work with clients remotely across North America, Europe and Asia.",
   },
   {
     q: "Do you take calls from international numbers?",

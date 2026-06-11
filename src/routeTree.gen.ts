@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as BrandStrategyRouteImport } from './routes/brand-strategy'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesReputationMediaRouteImport } from './routes/services.reputation-media'
@@ -40,6 +41,11 @@ const PackagesRoute = PackagesRouteImport.update({
 const ContactUsRoute = ContactUsRouteImport.update({
   id: '/contact-us',
   path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandStrategyRoute = BrandStrategyRouteImport.update({
+  id: '/brand-strategy',
+  path: '/brand-strategy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutUsRoute = AboutUsRouteImport.update({
@@ -90,6 +96,7 @@ const ServicesAuthorPublishingRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/brand-strategy': typeof BrandStrategyRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -104,6 +111,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/brand-strategy': typeof BrandStrategyRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -119,6 +127,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
+  '/brand-strategy': typeof BrandStrategyRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -135,6 +144,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about-us'
+    | '/brand-strategy'
     | '/contact-us'
     | '/packages'
     | '/privacy-policy'
@@ -149,6 +159,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about-us'
+    | '/brand-strategy'
     | '/contact-us'
     | '/packages'
     | '/privacy-policy'
@@ -163,6 +174,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about-us'
+    | '/brand-strategy'
     | '/contact-us'
     | '/packages'
     | '/privacy-policy'
@@ -178,6 +190,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
+  BrandStrategyRoute: typeof BrandStrategyRoute
   ContactUsRoute: typeof ContactUsRoute
   PackagesRoute: typeof PackagesRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       path: '/contact-us'
       fullPath: '/contact-us'
       preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brand-strategy': {
+      id: '/brand-strategy'
+      path: '/brand-strategy'
+      fullPath: '/brand-strategy'
+      preLoaderRoute: typeof BrandStrategyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about-us': {
@@ -282,6 +302,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
+  BrandStrategyRoute: BrandStrategyRoute,
   ContactUsRoute: ContactUsRoute,
   PackagesRoute: PackagesRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,

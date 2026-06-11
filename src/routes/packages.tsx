@@ -152,7 +152,7 @@ const packages: Pkg[] = [
       "UGC Campaigns + Photography + Videography", "Podcast Strategy & Production",
       "Speaker Kit & Keynote Design", "Custom Merchandise + Print Design",
       "Press Release — premium campaign", "Wikipedia (where eligible) + Wikitia + Link Insertions",
-      "Times Square, New York Screen Display", "Kirkus Reviews",
+      "Times Square, 2626 E 82nd St Ste#230, Bloomington, MN 55425 Screen Display", "Kirkus Reviews",
       "Audiobook + AI Audiobook Production", "US Copyright + ISBN Registration",
       "Distribution to 700+ Digital Platforms", "Content Translation Services",
       "Book Fairs & Book Signing Events",

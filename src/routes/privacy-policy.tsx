@@ -141,8 +141,8 @@ function Content() {
             Depending on your jurisdiction, you may have the right to access, correct, delete, or
             port your personal data. You may also have the right to restrict or object to certain
             processing. To exercise these rights, please contact us at{" "}
-            <a href="mailto:hello@thebigmouthpr.com" className="text-gold underline hover:text-gold/80">
-              hello@thebigmouthpr.com
+            <a href="mailto:sales@thebigmouthpr.com" className="text-gold underline hover:text-gold/80">
+              sales@thebigmouthpr.com
             </a>.
           </p>
         </Section>
@@ -176,13 +176,13 @@ function Content() {
           </p>
           <p className="mt-2">
             Email:{" "}
-            <a href="mailto:hello@thebigmouthpr.com" className="text-gold underline hover:text-gold/80">
-              hello@thebigmouthpr.com
+            <a href="mailto:sales@thebigmouthpr.com" className="text-gold underline hover:text-gold/80">
+              sales@thebigmouthpr.com
             </a>
             <br />
-            Phone: +1 (555) 010-0420
+            Phone: +1 (332) 258-7873
             <br />
-            Studio: 228 Park Ave S, Suite 51202, New York, NY 10003
+            Studio: 228 Park Ave S, Suite 51202, 2626 E 82nd St Ste#230, Bloomington, MN 55425, NY 10003
           </p>
         </Section>
       </div>

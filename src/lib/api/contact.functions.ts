@@ -14,56 +14,49 @@ const contactSchema = z.object({
 
 export type ContactData = z.infer<typeof contactSchema>;
 
+// Add or remove recipient emails here:
+const recipients = [
+  "sales@thebigmouthpr.com",
+  "abdullah.saeed@canvasdigital.org",
+];
+
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator(contactSchema)
   .handler(async ({ data }) => {
     const { name, email, company, role, phone, service, message } = data;
 
-    const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = process.env.SMTP_PORT;
-    const smtpUser = process.env.SMTP_USER;
-    const smtpPass = process.env.SMTP_PASS;
-    const notifyEmail = process.env.CONTACT_EMAIL ?? "hello@thebigmouthpr.com";
+    const smtpHost = "smtp.titan.email";
+    const smtpPort = 587;
+    const smtpUser = "sales@thebigmouthpr.com";
+    const smtpPass = "QSXCR2!1cxv";
 
-    if (smtpHost && smtpUser && smtpPass) {
-      const transporter = nodemailer.createTransport({
-        host: smtpHost,
-        port: Number(smtpPort) || 587,
-        secure: Number(smtpPort) === 465,
-        auth: { user: smtpUser, pass: smtpPass },
-      });
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: false,
+      auth: { user: smtpUser, pass: smtpPass },
+    });
 
-      const html = `
-        <h2>New contact form submission — thebigmouthpr.com</h2>
-        <table style="border-collapse:collapse;width:100%;max-width:600px">
-          <tr><td style="padding:8px;font-weight:bold">Name</td><td style="padding:8px">${name}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px">${email}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Company</td><td style="padding:8px">${company}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Role</td><td style="padding:8px">${role}</td></tr>
-          ${phone ? `<tr><td style="padding:8px;font-weight:bold">Phone</td><td style="padding:8px">${phone}</td></tr>` : ""}
-          <tr><td style="padding:8px;font-weight:bold">Service</td><td style="padding:8px">${service}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Message</td><td style="padding:8px">${message}</td></tr>
-        </table>
-      `;
+    const html = `
+      <h2>New contact form submission — thebigmouthpr.com</h2>
+      <table style="border-collapse:collapse;width:100%;max-width:600px">
+        <tr><td style="padding:8px;font-weight:bold">Name</td><td style="padding:8px">${name}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px">${email}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold">Company</td><td style="padding:8px">${company}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold">Role</td><td style="padding:8px">${role}</td></tr>
+        ${phone ? `<tr><td style="padding:8px;font-weight:bold">Phone</td><td style="padding:8px">${phone}</td></tr>` : ""}
+        <tr><td style="padding:8px;font-weight:bold">Service</td><td style="padding:8px">${service}</td></tr>
+        <tr><td style="padding:8px;font-weight:bold">Message</td><td style="padding:8px">${message}</td></tr>
+      </table>
+    `;
 
-      await transporter.sendMail({
-        from: `"The Big Mouth PR Website" <${smtpUser}>`,
-        to: notifyEmail,
-        replyTo: email,
-        subject: `New inquiry from ${name} — ${service}`,
-        html,
-      });
-    } else {
-      console.log("=== CONTACT FORM SUBMISSION (SMTP not configured) ===", {
-        name,
-        email,
-        company,
-        role,
-        phone,
-        service,
-        message,
-      });
-    }
+    await transporter.sendMail({
+      from: `"The Big Mouth PR" <${smtpUser}>`,
+      to: recipients.join(", "),
+      replyTo: email,
+      subject: `New inquiry from ${name} — ${service}`,
+      html,
+    });
 
     return { success: true };
   });

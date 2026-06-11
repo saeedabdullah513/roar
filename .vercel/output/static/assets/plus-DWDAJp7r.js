@@ -1,1 +1,0 @@
-import{d as o}from"./index-W35bLtRQ.js";const s=[["path",{d:"M5 12h14",key:"1ays0h"}],["path",{d:"m12 5 7 7-7 7",key:"xquz4c"}]],e=o("arrow-right",s);const t=[["path",{d:"M5 12h14",key:"1ays0h"}]],h=o("minus",t);const a=[["path",{d:"M5 12h14",key:"1ays0h"}],["path",{d:"M12 5v14",key:"s699le"}]],n=o("plus",a);export{e as A,h as M,n as P};
