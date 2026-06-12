@@ -56,17 +56,17 @@ const ICON_URL = iconUrl;
 export const Route = createFileRoute("/services/content-social")({
   head: () => ({
     meta: [
-      { title: "Content & Social — The Big Mouth PR" },
+      { title: "Become a Loud Social Presence with The Big Mouth PR" },
       {
         name: "description",
         content:
-          "LinkedIn authority content, UGC, podcasts, influencer marketing and an always-on content engine that never sleeps. We make your feed your best salesperson.",
+          "If you're aiming to reach millions on social media, a strong team is the first step to it. Let The Big Mouth PR be that team.",
       },
-      { property: "og:title", content: "Content & Social — The Big Mouth PR" },
+      { property: "og:title", content: "Become a Loud Social Presence with The Big Mouth PR" },
       {
         property: "og:description",
         content:
-          "We build content engines that turn followers into fans and fans into opportunities. LinkedIn, Instagram, YouTube, podcasts, UGC and influencer programmes.",
+          "If you're aiming to reach millions on social media, a strong team is the first step to it. Let The Big Mouth PR be that team.",
       },
     ],
   }),
@@ -201,7 +201,7 @@ const subServices = [
   {
     icon: Crown,
     title: "LinkedIn Authority",
-    short: "Own the feed. Build trust at scale on the world's most powerful B2B platform.",
+    short: "More on LinkedIn Authority.",
     details: [
       "Profile optimization & content strategy",
       "Ghostwritten posts, carousels & threads",
@@ -212,7 +212,7 @@ const subServices = [
   {
     icon: Mic2,
     title: "Podcast Production",
-    short: "Launch and scale a podcast that attracts your ideal audience.",
+    short: "Get the full story on Podcast Production.",
     details: [
       "Show concept, naming & branding",
       "Episode research, scripting & guest booking",
@@ -223,7 +223,7 @@ const subServices = [
   {
     icon: Camera,
     title: "UGC & Influencer",
-    short: "Let your customers and creators tell your story.",
+    short: "See how UGC & Influencer works in detail.",
     details: [
       "UGC strategy & campaign design",
       "Creator identification & outreach",
@@ -234,7 +234,7 @@ const subServices = [
   {
     icon: Instagram,
     title: "Instagram & Visual Content",
-    short: "Reels, stories, carousels — visual storytelling that stops the scroll.",
+    short: "Dig into Instagram & Visual Content.",
     details: [
       "Content pillars & monthly calendar",
       "Reel & short-form video production",
@@ -245,7 +245,7 @@ const subServices = [
   {
     icon: Youtube,
     title: "YouTube Strategy",
-    short: "Deep-dive content that builds long-term authority and search visibility.",
+    short: "Read more about YouTube Strategy.",
     details: [
       "Channel strategy & content pillars",
       "Scripting, filming & editing",
@@ -256,7 +256,7 @@ const subServices = [
   {
     icon: Megaphone,
     title: "Always-On Content Engine",
-    short: "A relentless publishing cadence across every channel that matters.",
+    short: "Find out what the Always-On Content Engine can do.",
     details: [
       "Monthly shoot days (photo + video)",
       "Multi-platform content repurposing",
@@ -275,12 +275,12 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six sub-services. <span className="text-gold">One consistent</span> voice.
+              Six channels. <span className="text-gold">One voice that doesn't shut</span> up.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
-            Pick à la carte or take the full package. Each sub-service is a future Big Mouth page of
-            its own — preview them below.
+            Content & Social isn't sporadic posting — it is a full-time global multimedia operation. Each
+            sub-service is a future Big Mouth page of its own — preview them below.
           </p>
         </div>
 
@@ -337,7 +337,7 @@ function SubServices() {
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
                         A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        coming soon — full deliverables, samples and pricing.
+                        full deliverables, samples and pricing.
                       </p>
                       <a
                         href="#consult"

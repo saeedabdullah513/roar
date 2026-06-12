@@ -53,17 +53,17 @@ const ICON_URL = iconUrl;
 export const Route = createFileRoute("/services/executive-personal-branding")({
   head: () => ({
     meta: [
-      { title: "Executive & Personal Branding — The Big Mouth PR" },
+      { title: "Build a Personal Brand That Shouts- The Big Mouth PR" },
       {
         name: "description",
         content:
-          "Executive & personal branding for founders, CEOs and leaders who refuse to be ignored. Strategy, identity, thought leadership, media & speaker kits — all under one roar.",
+          "If you want a personal brand that stands above the rest. You need a solid team that gets you there. The Big Mouth PR is your ladder to personal success.",
       },
-      { property: "og:title", content: "Executive & Personal Branding — The Big Mouth PR" },
+      { property: "og:title", content: "Build a Personal Brand That Shouts- The Big Mouth PR" },
       {
         property: "og:description",
         content:
-          "We turn quiet leaders into category-defining voices. Brand strategy, identity, thought leadership, media, speaker kits.",
+          "If you want a personal brand that stands above the rest. You need a solid team that gets you there. The Big Mouth PR is your ladder to personal success.",
       },
     ],
   }),
@@ -200,7 +200,7 @@ const subServices = [
   {
     icon: Crown,
     title: "Brand Strategy",
-    short: "Positioning, audience, narrative architecture.",
+    short: "Explore what we offer with brand strategy.",
     details: [
       "Competitor & whitespace audit",
       "Positioning statement + signature POV",
@@ -211,7 +211,7 @@ const subServices = [
   {
     icon: Sparkles,
     title: "Brand Identity",
-    short: "Visual & verbal system that looks unmistakably you.",
+    short: "Discover your brand identity and how we can shape it according to you.",
     details: [
       "Logo lockups, type & color system",
       "Tone-of-voice + signature vocabulary",
@@ -222,7 +222,7 @@ const subServices = [
   {
     icon: Newspaper,
     title: "Thought Leadership",
-    short: "Articles, op-eds and POVs that get circulated.",
+    short: "Explore how we turn your ideas into fully published pieces for the world to see.",
     details: [
       "Topic pillars & editorial calendar",
       "Ghostwritten essays + bylined articles",
@@ -233,7 +233,7 @@ const subServices = [
   {
     icon: Mic2,
     title: "Speaker Kits",
-    short: "Land paid stages with a kit that closes.",
+    short: "Turn speaking into a strong suit with us.",
     details: [
       "Signature talk titles & abstracts",
       "Speaker one-pager + sizzle reel",
@@ -244,7 +244,7 @@ const subServices = [
   {
     icon: Megaphone,
     title: "Media & PR",
-    short: "Get quoted. Get covered. Get remembered.",
+    short: "Make yourself known in your industry with us.",
     details: [
       "Press strategy + media list build",
       "Pitches, press releases, embargo plays",
@@ -255,7 +255,7 @@ const subServices = [
   {
     icon: Camera,
     title: "Content & Social",
-    short: "Always-on content engine across every feed.",
+    short: "If going viral is what you aim for, we're the team to make it happen.",
     details: [
       "Monthly shoot day (photo + video)",
       "Reels, shorts, carousels & podcast clips",
@@ -274,7 +274,7 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six sub-services. <span className="text-gold">One unmissable</span> leader.
+              A Great Leader Deserves a <span className="text-gold">Strong Team.</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
@@ -336,7 +336,7 @@ function SubServices() {
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
                         A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        coming soon — full deliverables, samples and pricing.
+                        full deliverables, samples and pricing.
                       </p>
                       <a
                         href="#consult"

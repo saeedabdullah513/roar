@@ -57,16 +57,17 @@ const ICON_URL = iconUrl;
 export const Route = createFileRoute("/services/digital-public-affairs")({
   head: () => ({
     meta: [
-      { title: "Digital & Public Affairs — The Big Mouth PR" },
+      { title: "Digital & Public Affairs Services | Big Mouth PR" },
       {
         name: "description",
         content:
-          "Digital marketing, media buying, web design, public & community affairs and multilingual translation for brands that operate in the public square.",
+          "From media buying to government relations, we handle the digital and public-facing work that shapes how the world sees you.",
       },
-      { property: "og:title", content: "Digital & Public Affairs — The Big Mouth PR" },
+      { property: "og:title", content: "Digital & Public Affairs Services | Big Mouth PR" },
       {
         property: "og:description",
-        content: "Command the digital and public square with integrated campaigns, media buying and advocacy.",
+        content:
+          "From media buying to government relations, we handle the digital and public-facing work that shapes how the world sees you.",
       },
     ],
   }),
@@ -202,7 +203,7 @@ const subServices = [
   {
     icon: Monitor,
     title: "Digital Marketing",
-    short: "Search, social, programmatic, email — full-funnel campaigns.",
+    short: "More on Digital Marketing.",
     details: [
       "Paid search & SEO strategy",
       "Social media advertising (Meta, LinkedIn, X, TikTok)",
@@ -214,7 +215,7 @@ const subServices = [
   {
     icon: BarChart3,
     title: "Media Buying",
-    short: "Strategic placement, negotiation and performance management.",
+    short: "See how Media Buying works for you.",
     details: [
       "Media strategy & audience planning",
       "Rate negotiation & insertion orders",
@@ -226,7 +227,7 @@ const subServices = [
   {
     icon: Globe,
     title: "Web Design & Development",
-    short: "High-performance websites built for conversion and impact.",
+    short: "Read more on Web Design & Development.",
     details: [
       "Custom website design & development",
       "Landing page optimisation & A/B testing",
@@ -238,7 +239,7 @@ const subServices = [
   {
     icon: Users,
     title: "Public Affairs",
-    short: "Government relations, stakeholder engagement and policy campaigns.",
+    short: "Find out more about Public Affairs.",
     details: [
       "Legislative monitoring & policy analysis",
       "Coalition building & stakeholder mapping",
@@ -250,7 +251,7 @@ const subServices = [
   {
     icon: Megaphone,
     title: "Community Affairs",
-    short: "Local engagement, corporate citizenship and community investment.",
+    short: "See what Community Affairs looks like in action.",
     details: [
       "Community needs assessment & strategy",
       "Local partnership development",
@@ -262,7 +263,7 @@ const subServices = [
   {
     icon: Languages,
     title: "Translation & Localisation",
-    short: "Professional translation for 40+ languages and cultural adaptation.",
+    short: "Explore Translation & Localization in more detail.",
     details: [
       "Professional human translation + AI-assisted workflows",
       "Marketing & creative localisation",
@@ -282,12 +283,11 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six disciplines. <span className="text-gold">Every</span> channel.
+              Your Only Team to Handle it All.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
-            Pick à la carte or take the full suite. Each discipline is a future Big Mouth page of its
-            own — preview them below.
+            Pick one service or take the full suite. The Big Mouth offers expertise in each one:
           </p>
         </div>
 
@@ -344,7 +344,7 @@ function SubServices() {
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
                         A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        coming soon — full deliverables, samples and pricing.
+                        full deliverables, samples and pricing.
                       </p>
                       <a
                         href="#consult"

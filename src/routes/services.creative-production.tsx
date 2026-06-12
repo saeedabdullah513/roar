@@ -57,16 +57,17 @@ const ICON_URL = iconUrl;
 export const Route = createFileRoute("/services/creative-production")({
   head: () => ({
     meta: [
-      { title: "Creative Production — The Big Mouth PR" },
+      { title: "Creative Production Services | Big Mouth PR" },
       {
         name: "description",
         content:
-          "Photography, videography, print design, experiential marketing and custom merchandise — all produced in-house by The Big Mouth PR.",
+          "Photography, film, print, and merch — all under one roof. Creative production that makes your brand impossible to scroll past.",
       },
-      { property: "og:title", content: "Creative Production — The Big Mouth PR" },
+      { property: "og:title", content: "Creative Production Services | Big Mouth PR" },
       {
         property: "og:description",
-        content: "In-house creative production that turns brand strategy into visual reality.",
+        content:
+          "Photography, film, print, and merch — all under one roof. Creative production that makes your brand impossible to scroll past.",
       },
     ],
   }),
@@ -201,7 +202,7 @@ const subServices = [
   {
     icon: Camera,
     title: "Photography",
-    short: "Studio, location, product, event and portrait photography.",
+    short: "More on Photography.",
     details: [
       "Brand portrait sessions & headshot suites",
       "Product & packaging photography",
@@ -213,7 +214,7 @@ const subServices = [
   {
     icon: Film,
     title: "Videography",
-    short: "Brand films, reels, testimonials and sizzle reels.",
+    short: "See what Videography can do for your brand.",
     details: [
       "Cinematic brand films & TVCs",
       "Social-first reels & shorts",
@@ -225,7 +226,7 @@ const subServices = [
   {
     icon: Printer,
     title: "Print Production",
-    short: "Magazines, brochures, signage and premium print.",
+    short: "Read more on Print Production.",
     details: [
       "Magazines, annual reports & coffee-table books",
       "Brochures, sell-sheets & one-pagers",
@@ -237,7 +238,7 @@ const subServices = [
   {
     icon: Gift,
     title: "Custom Merchandise",
-    short: "Apparel, swag, premium goods and branded packaging.",
+    short: "Explore the full range of Custom Merchandise.",
     details: [
       "Custom apparel & streetwear drops",
       "Conference & event swag packs",
@@ -249,7 +250,7 @@ const subServices = [
   {
     icon: Monitor,
     title: "Experiential Marketing",
-    short: "Pop-ups, activations, launch events and immersive experiences.",
+    short: "Find out more about Experiential Marketing.",
     details: [
       "Pop-up shops & brand activations",
       "Product launch events & after-parties",
@@ -261,7 +262,7 @@ const subServices = [
   {
     icon: Scissors,
     title: "Post-Production",
-    short: "Editing, grading, sound design, retouching and finishing.",
+    short: "See how Post-Production polishes everything.",
     details: [
       "Video editing & colour grading",
       "Sound design & audio mixing",
@@ -281,12 +282,11 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six production disciplines. <span className="text-gold">One</span> creative partner.
+              A Team That Handles it All.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
-            Pick à la carte or bundle them all. Each discipline is a future Big Mouth page of its
-            own — preview them below.
+            Pick à la carte or bundle them all. The Big Mouth PR can make everything you need happen:
           </p>
         </div>
 
@@ -343,7 +343,7 @@ function SubServices() {
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
                         A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        coming soon — full deliverables, samples and pricing.
+                        full deliverables, samples and pricing.
                       </p>
                       <a
                         href="#consult"

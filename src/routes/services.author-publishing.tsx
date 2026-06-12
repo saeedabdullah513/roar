@@ -56,16 +56,17 @@ const ICON_URL = iconUrl;
 export const Route = createFileRoute("/services/author-publishing")({
   head: () => ({
     meta: [
-      { title: "Author & Publishing — The Big Mouth PR" },
+      { title: "Author & Publishing Services | Big Mouth PR" },
       {
         name: "description",
         content:
-          "Audiobooks, ISBN & copyright, Kirkus reviews, book fairs, signings and 700+ platform distribution for authors and publishers.",
+          "From manuscript to global shelf, we handle the publishing details so your book gets seen, reviewed, and read everywhere.",
       },
-      { property: "og:title", content: "Author & Publishing — The Big Mouth PR" },
+      { property: "og:title", content: "Author & Publishing Services | Big Mouth PR" },
       {
         property: "og:description",
-        content: "Full-service publishing support — from manuscript to audiobook to worldwide distribution.",
+        content:
+          "From manuscript to global shelf, we handle the publishing details so your book gets seen, reviewed, and read everywhere.",
       },
     ],
   }),
@@ -200,7 +201,7 @@ const subServices = [
   {
     icon: Headphones,
     title: "Audiobook Production",
-    short: "Professional narration, studio recording and mastering.",
+    short: "More on Audiobook Production.",
     details: [
       "Professional voice talent casting",
       "In-studio & remote recording options",
@@ -212,7 +213,7 @@ const subServices = [
   {
     icon: Library,
     title: "ISBN & Copyright",
-    short: "Registration, legal protection and cataloguing.",
+    short: "See how ISBN & Copyright are handled.",
     details: [
       "ISBN assignment (print & digital)",
       "Copyright registration with Library of Congress",
@@ -224,7 +225,7 @@ const subServices = [
   {
     icon: Star,
     title: "Kirkus Reviews",
-    short: "Catalogue listing, review submission and promotion.",
+    short: "Read more on Kirkus Reviews.",
     details: [
       "Kirkus Indie review submission & management",
       "Editorial selection & follow-up strategy",
@@ -236,7 +237,7 @@ const subServices = [
   {
     icon: Globe,
     title: "Book Fairs",
-    short: "Placement at Frankfurt, Bologna, ALA and regional fairs.",
+    short: "Find out where Book Fairs can take you.",
     details: [
       "Exhibitor registration & booth procurement",
       "Title catalogue & promotional materials",
@@ -248,7 +249,7 @@ const subServices = [
   {
     icon: BookMarked,
     title: "Book Signings & Tours",
-    short: "End-to-end tour logistics and event production.",
+    short: "Get the details on Book Signings & Tours.",
     details: [
       "Venue booking & itinerary planning",
       "Local media & press outreach per city",
@@ -260,7 +261,7 @@ const subServices = [
   {
     icon: Megaphone,
     title: "Distribution (700+ Platforms)",
-    short: "Global distribution to every major retailer and library.",
+    short: "See the full reach of our Distribution network.",
     details: [
       "Amazon, Barnes & Noble, Apple Books, Kobo",
       "IngramSpark & Baker & Taylor wholesale",
@@ -280,7 +281,7 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six publishing pillars. <span className="text-gold">One</span> global launch.
+              Six Pillars Between You and a Published Author Bio.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
@@ -342,7 +343,7 @@ function SubServices() {
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
                         A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        coming soon — full deliverables, samples and pricing.
+                        full deliverables, samples and pricing.
                       </p>
                       <a
                         href="#consult"

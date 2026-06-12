@@ -620,13 +620,13 @@ function Story() {
             <DotMark /> Our story
           </p>
           <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
-            Built for the ones <br />
-            who refuse to be the <br />
-            <span className="text-gold italic">best-kept secret.</span>
+            You're the story, <br />
+            we're made to read <em>you</em> <br />
+            <span className="text-gold italic">out loud.</span>
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-navy/80">
-            Most agencies polish you until you're palatable. We do the opposite.
-            We find the loudest, truest, most magnetic version of you — and we hand the world a megaphone.
+            Most agencies try to change you to make a story happen. We do the opposite.
+            We find what makes you, "you" — and shout it to the world.
           </p>
           <p className="mt-4 text-base leading-relaxed text-navy/70">
             Twelve years. Three continents. One belief:{" "}
@@ -710,6 +710,13 @@ const serviceGroups = [
     desc: "Digital marketing, media buying, web design, public & community affairs and translation across markets.",
     tags: ["Media Buying", "Web Design", "Public Affairs", "Translation"],
     img: svcDigital,
+  },
+  {
+    icon: Sparkles,
+    title: "Events & Experiential Marketing",
+    desc: "Experiential marketing, book fair participation, book signings, Times Square features, photography, videography and custom merchandise.",
+    tags: ["Experiential", "Book Fairs", "Times Square", "Merch"],
+    img: svcCreative,
   },
 ];
 
@@ -822,8 +829,8 @@ function Industries() {
               <DotMark /> Industries we make loud
             </p>
             <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
-              Built for every <br />
-              <span className="text-gold italic">loud leader.</span>
+              Built for the <br />
+              <span className="text-gold italic">loud leads.</span>
             </h2>
           </div>
           <div className="flex gap-3">
@@ -901,8 +908,10 @@ function Portfolio() {
               <DotMark /> Portfolio
             </p>
             <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
-              Quiet leaders. <br />
-              <span className="text-gold italic">Loud results.</span>
+              Don't confuse us with <br />
+              <span className="text-gold italic">loudmouths.</span>
+              <br />
+              We deliver results.
             </h2>
           </div>
           <a href="#consult" className="group inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-navy-deep">
@@ -1059,11 +1068,11 @@ function Testimonials() {
    10. FAQ
 ===================================================================== */
 const faqs = [
-  { q: "Who do you typically work with?", a: "Founders, C-level executives, authors and high-profile professionals ready to be seen — not shy." },
-  { q: "How long until I see results?", a: "Most clients see meaningful media or audience movement inside 60–90 days. Wikipedia and audiobooks take longer by design." },
-  { q: "Do you offer one-off services or only retainers?", a: "Both. Pick a single service (LinkedIn build, ISBN registration) or a full personal-brand engagement." },
-  { q: "Is the 30-minute call really free?", a: "Yes. Zero obligation. You leave with a custom 90-day roadmap whether or not we work together." },
-  { q: "Can you handle reputation crises?", a: "Yes — discreetly. Crisis communications and online reputation management are core services." },
+  { q: "Who do you typically work with?", a: "Founders, C-level executives, authors, and high-profile professionals ready to be seen and aren't shy." },
+  { q: "How long until I see results?", a: "Most clients see meaningful media presence in 60–90 days. Results are more dependent on strategy. Wikipedia and audiobooks take longer by design." },
+  { q: "Do you offer one-off services or only retainers?", a: "Both. We offer what you want. Pick a single service (LinkedIn build, ISBN registration) or a full personal-brand management." },
+  { q: "Is the 30-minute call really free?", a: "Yes. Zero obligation. You leave with a custom 90-day roadmap, whether or not we work together (which is highly unlikely after the call)." },
+  { q: "Can you handle reputation crises?", a: "Yes. Crisis communications and online reputation management are core services." },
 ];
 
 function FAQ() {

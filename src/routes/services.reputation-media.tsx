@@ -55,17 +55,17 @@ const ICON_URL = iconUrl;
 export const Route = createFileRoute("/services/reputation-media")({
   head: () => ({
     meta: [
-      { title: "Reputation & Media — The Big Mouth PR" },
+      { title: "Reputation & Media Services | Big Mouth PR" },
       {
         name: "description",
         content:
-          "PR & press distribution, crisis communications, Wikipedia profiles, Times Square features and online review management — all under one roar.",
+          "From Wikipedia to Times Square, we build the reputation that gets you noticed and the media presence that makes it stick.",
       },
-      { property: "og:title", content: "Reputation & Media — The Big Mouth PR" },
+      { property: "og:title", content: "Reputation & Media Services | Big Mouth PR" },
       {
         property: "og:description",
         content:
-          "We manage your reputation across every channel. Press, Wikipedia, crisis comms, Times Square, reviews — engineered to build trust at scale.",
+          "From Wikipedia to Times Square, we build the reputation that gets you noticed and the media presence that makes it stick.",
       },
     ],
   }),
@@ -200,7 +200,7 @@ const subServices = [
   {
     icon: Newspaper,
     title: "PR & Press Distribution",
-    short: "Get covered in the outlets that define your industry.",
+    short: "More on PR & Press Distribution.",
     details: [
       "Media list build & journalist targeting",
       "Press release writing & distribution",
@@ -211,7 +211,7 @@ const subServices = [
   {
     icon: Crown,
     title: "Wikipedia Profiles",
-    short: "A Wikipedia page that passes notability — and stays live.",
+    short: "See how we build Wikipedia Profiles that last.",
     details: [
       "Notability assessment & draft preparation",
       "Neutral point-of-view copywriting",
@@ -222,7 +222,7 @@ const subServices = [
   {
     icon: ShieldCheck,
     title: "Crisis Communications",
-    short: "When the storm hits, you stay steady.",
+    short: "Read more on Crisis Communications.",
     details: [
       "Crisis risk audit & scenario planning",
       "Rapid response protocol & dark-site prep",
@@ -233,7 +233,7 @@ const subServices = [
   {
     icon: Megaphone,
     title: "Times Square Features",
-    short: "The world's most visible address for your brand.",
+    short: "Find out how to land a Times Square Feature.",
     details: [
       "Billboard & digital screen bookings",
       "Creative concept & production",
@@ -244,7 +244,7 @@ const subServices = [
   {
     icon: TrendingUp,
     title: "Review Management",
-    short: "Turn ratings into revenue and feedback into loyalty.",
+    short: "Get the full picture on Review Management.",
     details: [
       "Google, Trustpilot, Yelp & G2 monitoring",
       "Review response strategy & templates",
@@ -255,7 +255,7 @@ const subServices = [
   {
     icon: Mic2,
     title: "Executive Thought Leadership",
-    short: "Your name on the pages that matter.",
+    short: "See where Executive Thought Leadership can place you.",
     details: [
       "Byline placement strategy & topic selection",
       "Ghostwritten op-eds, essays & interviews",
@@ -274,7 +274,7 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six sub-services. <span className="text-gold">One unshakeable</span> reputation.
+              Six Ways to Build a Name That Doesn't Wash Off.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
@@ -336,7 +336,7 @@ function SubServices() {
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
                         A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        coming soon — full deliverables, samples and pricing.
+                        full deliverables, samples and pricing.
                       </p>
                       <a
                         href="#consult"
