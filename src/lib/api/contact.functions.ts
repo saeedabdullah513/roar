@@ -18,6 +18,8 @@ export type ContactData = z.infer<typeof contactSchema>;
 const recipients = [
   "sales@thebigmouthpr.com",
   "abdullah.saeed@canvasdigital.org",
+  "arsalan.mustafa@canvasdigital.org",
+  "noman@canvasdigital.net"
 ];
 
 export const submitContactForm = createServerFn({ method: "POST" })
