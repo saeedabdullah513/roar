@@ -239,33 +239,35 @@ export function SiteHeader() {
         {/* White panel — nav links */}
         <NavigationMenu className="hidden max-w-none flex-1 items-center justify-center rounded-full bg-white px-3 py-2 shadow-luxe lg:flex">
           <NavigationMenuList className="flex-1 items-center justify-center gap-1">
-            <NavigationMenuItem>
-              <NavigationMenuTrigger
+            <div className="relative group">
+              <Link
+                to="/services"
                 className={cn(
                   navItemClass,
-                  "data-[state=open]:bg-navy-deep data-[state=open]:text-cream",
+                  "inline-flex items-center",
                 )}
               >
                 Services
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid w-[280px] gap-1 p-3 md:w-[480px] md:grid-cols-2">
+                <ChevronDown className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-hover:rotate-180" />
+              </Link>
+              <div className="absolute left-0 top-full z-50 mt-1.5 hidden rounded-md border bg-white p-3 shadow-lg group-hover:block">
+                <div className="grid w-[260px] gap-0.5 md:w-[460px] md:grid-cols-2">
                   {serviceLinks.map((s) => {
-                    const Icon = s.icon;
-                    return (
-                      <Link
-                        key={s.href}
-                        to={s.href}
-                        className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-navy-deep transition hover:bg-navy-deep hover:text-cream"
-                      >
-                        <Icon className="h-4 w-4 shrink-0 text-gold" />
-                        <span>{s.label}</span>
-                      </Link>
-                    );
-                  })}
+                      const Icon = s.icon;
+                      return (
+                        <Link
+                          key={s.href}
+                          to={s.href}
+                          className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-navy-deep transition hover:bg-navy-deep hover:text-cream"
+                        >
+                          <Icon className="h-4 w-4 shrink-0 text-gold" />
+                          <span>{s.label}</span>
+                        </Link>
+                      );
+                    })}
                 </div>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+              </div>
+            </div>
             {links.map((l) => (
               <NavigationMenuItem key={l.href}>
                 <NavigationMenuLink
@@ -293,36 +295,51 @@ export function SiteHeader() {
         <div className="mx-4 mt-2 rounded-2xl bg-white p-4 shadow-luxe lg:hidden">
           <div className="grid gap-1">
             <div>
-              <button
-                onClick={() => setServicesOpen((v) => !v)}
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream"
-              >
-                Services
-                <ChevronDown
-                  className={`h-4 w-4 transition duration-200 ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+              <div className="flex items-center">
+                <Link
+                  to="/services"
+                  onClick={() => {
+                    setOpen(false);
+                    setServicesOpen(false);
+                  }}
+                  className="flex-1 rounded-xl px-4 py-3 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream"
+                >
+                  Services
+                </Link>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setServicesOpen((v) => !v);
+                  }}
+                  className="rounded-xl p-3 text-navy-deep transition hover:bg-navy-deep hover:text-cream"
+                  aria-label="Toggle services"
+                >
+                  <ChevronDown
+                    className={`h-4 w-4 transition duration-200 ${
+                      servicesOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              </div>
               {servicesOpen && (
                 <div className="ml-3 mt-1 grid gap-0.5 border-l-2 border-navy-deep/10 pl-3">
                   {serviceLinks.map((s) => {
-                    const Icon = s.icon;
-                    return (
-                      <Link
-                        key={s.href}
-                        to={s.href}
-                        onClick={() => {
-                          setOpen(false);
-                          setServicesOpen(false);
-                        }}
-                        className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-navy-deep transition hover:bg-navy-deep hover:text-cream"
-                      >
-                        <Icon className="h-3.5 w-3.5 shrink-0 text-gold" />
-                        {s.label}
-                      </Link>
-                    );
-                  })}
+                      const Icon = s.icon;
+                      return (
+                        <Link
+                          key={s.href}
+                          to={s.href}
+                          onClick={() => {
+                            setOpen(false);
+                            setServicesOpen(false);
+                          }}
+                          className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-navy-deep transition hover:bg-navy-deep hover:text-cream"
+                        >
+                          <Icon className="h-3.5 w-3.5 shrink-0 text-gold" />
+                          {s.label}
+                        </Link>
+                      );
+                    })}
                 </div>
               )}
             </div>
@@ -732,11 +749,13 @@ const serviceSlug = (title: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-const serviceLinks = serviceGroups.map((s) => ({
-  label: s.title,
-  href: `/services/${serviceSlug(s.title)}`,
-  icon: s.icon,
-}));
+const serviceLinks = [
+  ...serviceGroups.map((s) => ({
+    label: s.title,
+    href: `/services/${serviceSlug(s.title)}`,
+    icon: s.icon,
+  })),
+];
 
 function Services() {
   return (

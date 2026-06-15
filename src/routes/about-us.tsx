@@ -36,6 +36,10 @@ import reel1 from "@/assets/reel-1.jpg";
 import reel2 from "@/assets/reel-2.jpg";
 import reel3 from "@/assets/reel-3.jpg";
 import reel4 from "@/assets/reel-4.jpg";
+import happiness1 from "@/assets/cheif-happiness-officer-1.png";
+import happiness2 from "@/assets/cheif-happiness-officer-2.png";
+import happiness3 from "@/assets/cheif-happiness-officer-3.png";
+import happiness4 from "@/assets/cheif-happiness-officer-4.png";
 
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
@@ -384,7 +388,8 @@ const team = [
     name: "Aarav Mehta",
     role: "Founder & Chief Roar Officer",
     bio: "Twelve years in PR. Built brands across three continents. Allergic to whispering.",
-    img: founder,
+    img: happiness1,
+    imgFull: happiness2,
     socials: { linkedin: "#", instagram: "#" },
   },
   {
@@ -419,10 +424,78 @@ const team = [
     name: "Priya Raghavan",
     role: "Client Partner",
     bio: "Your day-one ally. Keeps the strategy honest and the work shipping on time.",
-    img: founder,
+    img: happiness3,
+    imgFull: happiness4,
     socials: { linkedin: "#", instagram: "#" },
   },
 ];
+
+function TeamCard({ member }: { member: (typeof team)[number] }) {
+  const [tapped, setTapped] = useState(false);
+  const hasFullBody = "imgFull" in member && member.imgFull !== member.img;
+
+  return (
+    <article
+      className="group relative overflow-hidden rounded-2xl bg-cream/5 ring-1 ring-cream/10 transition hover:ring-gold"
+      onClick={() => hasFullBody && setTapped((v) => !v)}
+    >
+      <div className="relative h-96 w-full overflow-hidden md:h-[420px]">
+        <img
+          src={member.img}
+          alt={member.name}
+          loading="lazy"
+          className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+            hasFullBody
+              ? tapped
+                ? "opacity-0 scale-110"
+                : "opacity-100 scale-100 group-hover:opacity-0 group-hover:scale-110"
+              : "opacity-100 group-hover:scale-105"
+          }`}
+        />
+        {hasFullBody && (
+          <img
+            src={member.imgFull}
+            alt={member.name}
+            loading="lazy"
+            className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+              tapped
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100"
+            }`}
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-transparent" />
+        <div className="absolute right-4 top-4 flex gap-2 opacity-0 transition group-hover:opacity-100">
+          <a
+            href={member.socials.linkedin}
+            aria-label={`${member.name} on LinkedIn`}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold text-navy-deep hover:scale-110"
+          >
+            <Linkedin className="h-4 w-4" />
+          </a>
+          <a
+            href={member.socials.instagram}
+            aria-label={`${member.name} on Instagram`}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-navy-deep hover:scale-110"
+          >
+            <Instagram className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="font-display text-2xl font-black uppercase text-cream">
+          {member.name}
+        </h3>
+        <p className="mt-1 text-xs font-bold uppercase tracking-[0.25em] text-gold">
+          {member.role}
+        </p>
+        <p className="mt-4 text-sm leading-relaxed text-cream/75">
+          {member.bio}
+        </p>
+      </div>
+    </article>
+  );
+}
 
 function Team() {
   return (
@@ -450,47 +523,7 @@ function Team() {
 
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {team.map((m) => (
-            <article
-              key={m.name}
-              className="group relative overflow-hidden rounded-2xl bg-cream/5 ring-1 ring-cream/10 transition hover:ring-gold"
-            >
-              <div className="relative h-80 w-full overflow-hidden">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-transparent" />
-                <div className="absolute right-4 top-4 flex gap-2 opacity-0 transition group-hover:opacity-100">
-                  <a
-                    href={m.socials.linkedin}
-                    aria-label={`${m.name} on LinkedIn`}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold text-navy-deep hover:scale-110"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
-                  <a
-                    href={m.socials.instagram}
-                    aria-label={`${m.name} on Instagram`}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-navy-deep hover:scale-110"
-                  >
-                    <Instagram className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-display text-2xl font-black uppercase text-cream">
-                  {m.name}
-                </h3>
-                <p className="mt-1 text-xs font-bold uppercase tracking-[0.25em] text-gold">
-                  {m.role}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-cream/75">
-                  {m.bio}
-                </p>
-              </div>
-            </article>
+            <TeamCard key={m.name} member={m} />
           ))}
         </div>
       </div>

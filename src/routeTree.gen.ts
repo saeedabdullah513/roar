@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
@@ -19,6 +20,7 @@ import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesReputationMediaRouteImport } from './routes/services.reputation-media'
 import { Route as ServicesExecutivePersonalBrandingRouteImport } from './routes/services.executive-personal-branding'
+import { Route as ServicesEventsExperientialMarketingRouteImport } from './routes/services.events-experiential-marketing'
 import { Route as ServicesDigitalPublicAffairsRouteImport } from './routes/services.digital-public-affairs'
 import { Route as ServicesCreativeProductionRouteImport } from './routes/services.creative-production'
 import { Route as ServicesContentSocialRouteImport } from './routes/services.content-social'
@@ -32,6 +34,11 @@ const ThankYouRoute = ThankYouRouteImport.update({
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -65,38 +72,44 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesReputationMediaRoute = ServicesReputationMediaRouteImport.update({
-  id: '/services/reputation-media',
-  path: '/services/reputation-media',
-  getParentRoute: () => rootRouteImport,
+  id: '/reputation-media',
+  path: '/reputation-media',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesExecutivePersonalBrandingRoute =
   ServicesExecutivePersonalBrandingRouteImport.update({
-    id: '/services/executive-personal-branding',
-    path: '/services/executive-personal-branding',
-    getParentRoute: () => rootRouteImport,
+    id: '/executive-personal-branding',
+    path: '/executive-personal-branding',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesEventsExperientialMarketingRoute =
+  ServicesEventsExperientialMarketingRouteImport.update({
+    id: '/events-experiential-marketing',
+    path: '/events-experiential-marketing',
+    getParentRoute: () => ServicesRoute,
   } as any)
 const ServicesDigitalPublicAffairsRoute =
   ServicesDigitalPublicAffairsRouteImport.update({
-    id: '/services/digital-public-affairs',
-    path: '/services/digital-public-affairs',
-    getParentRoute: () => rootRouteImport,
+    id: '/digital-public-affairs',
+    path: '/digital-public-affairs',
+    getParentRoute: () => ServicesRoute,
   } as any)
 const ServicesCreativeProductionRoute =
   ServicesCreativeProductionRouteImport.update({
-    id: '/services/creative-production',
-    path: '/services/creative-production',
-    getParentRoute: () => rootRouteImport,
+    id: '/creative-production',
+    path: '/creative-production',
+    getParentRoute: () => ServicesRoute,
   } as any)
 const ServicesContentSocialRoute = ServicesContentSocialRouteImport.update({
-  id: '/services/content-social',
-  path: '/services/content-social',
-  getParentRoute: () => rootRouteImport,
+  id: '/content-social',
+  path: '/content-social',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesAuthorPublishingRoute =
   ServicesAuthorPublishingRouteImport.update({
-    id: '/services/author-publishing',
-    path: '/services/author-publishing',
-    getParentRoute: () => rootRouteImport,
+    id: '/author-publishing',
+    path: '/author-publishing',
+    getParentRoute: () => ServicesRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -106,12 +119,14 @@ export interface FileRoutesByFullPath {
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
   '/services/digital-public-affairs': typeof ServicesDigitalPublicAffairsRoute
+  '/services/events-experiential-marketing': typeof ServicesEventsExperientialMarketingRoute
   '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
   '/services/reputation-media': typeof ServicesReputationMediaRoute
 }
@@ -122,12 +137,14 @@ export interface FileRoutesByTo {
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
   '/services/digital-public-affairs': typeof ServicesDigitalPublicAffairsRoute
+  '/services/events-experiential-marketing': typeof ServicesEventsExperientialMarketingRoute
   '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
   '/services/reputation-media': typeof ServicesReputationMediaRoute
 }
@@ -139,12 +156,14 @@ export interface FileRoutesById {
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
   '/services/digital-public-affairs': typeof ServicesDigitalPublicAffairsRoute
+  '/services/events-experiential-marketing': typeof ServicesEventsExperientialMarketingRoute
   '/services/executive-personal-branding': typeof ServicesExecutivePersonalBrandingRoute
   '/services/reputation-media': typeof ServicesReputationMediaRoute
 }
@@ -157,12 +176,14 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/packages'
     | '/privacy-policy'
+    | '/services'
     | '/terms'
     | '/thank-you'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
     | '/services/digital-public-affairs'
+    | '/services/events-experiential-marketing'
     | '/services/executive-personal-branding'
     | '/services/reputation-media'
   fileRoutesByTo: FileRoutesByTo
@@ -173,12 +194,14 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/packages'
     | '/privacy-policy'
+    | '/services'
     | '/terms'
     | '/thank-you'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
     | '/services/digital-public-affairs'
+    | '/services/events-experiential-marketing'
     | '/services/executive-personal-branding'
     | '/services/reputation-media'
   id:
@@ -189,12 +212,14 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/packages'
     | '/privacy-policy'
+    | '/services'
     | '/terms'
     | '/thank-you'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
     | '/services/digital-public-affairs'
+    | '/services/events-experiential-marketing'
     | '/services/executive-personal-branding'
     | '/services/reputation-media'
   fileRoutesById: FileRoutesById
@@ -206,14 +231,9 @@ export interface RootRouteChildren {
   ContactUsRoute: typeof ContactUsRoute
   PackagesRoute: typeof PackagesRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   TermsRoute: typeof TermsRoute
   ThankYouRoute: typeof ThankYouRoute
-  ServicesAuthorPublishingRoute: typeof ServicesAuthorPublishingRoute
-  ServicesContentSocialRoute: typeof ServicesContentSocialRoute
-  ServicesCreativeProductionRoute: typeof ServicesCreativeProductionRoute
-  ServicesDigitalPublicAffairsRoute: typeof ServicesDigitalPublicAffairsRoute
-  ServicesExecutivePersonalBrandingRoute: typeof ServicesExecutivePersonalBrandingRoute
-  ServicesReputationMediaRoute: typeof ServicesReputationMediaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -230,6 +250,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -276,48 +303,81 @@ declare module '@tanstack/react-router' {
     }
     '/services/reputation-media': {
       id: '/services/reputation-media'
-      path: '/services/reputation-media'
+      path: '/reputation-media'
       fullPath: '/services/reputation-media'
       preLoaderRoute: typeof ServicesReputationMediaRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/executive-personal-branding': {
       id: '/services/executive-personal-branding'
-      path: '/services/executive-personal-branding'
+      path: '/executive-personal-branding'
       fullPath: '/services/executive-personal-branding'
       preLoaderRoute: typeof ServicesExecutivePersonalBrandingRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/events-experiential-marketing': {
+      id: '/services/events-experiential-marketing'
+      path: '/events-experiential-marketing'
+      fullPath: '/services/events-experiential-marketing'
+      preLoaderRoute: typeof ServicesEventsExperientialMarketingRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/digital-public-affairs': {
       id: '/services/digital-public-affairs'
-      path: '/services/digital-public-affairs'
+      path: '/digital-public-affairs'
       fullPath: '/services/digital-public-affairs'
       preLoaderRoute: typeof ServicesDigitalPublicAffairsRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/creative-production': {
       id: '/services/creative-production'
-      path: '/services/creative-production'
+      path: '/creative-production'
       fullPath: '/services/creative-production'
       preLoaderRoute: typeof ServicesCreativeProductionRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/content-social': {
       id: '/services/content-social'
-      path: '/services/content-social'
+      path: '/content-social'
       fullPath: '/services/content-social'
       preLoaderRoute: typeof ServicesContentSocialRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/author-publishing': {
       id: '/services/author-publishing'
-      path: '/services/author-publishing'
+      path: '/author-publishing'
       fullPath: '/services/author-publishing'
       preLoaderRoute: typeof ServicesAuthorPublishingRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
   }
 }
+
+interface ServicesRouteChildren {
+  ServicesAuthorPublishingRoute: typeof ServicesAuthorPublishingRoute
+  ServicesContentSocialRoute: typeof ServicesContentSocialRoute
+  ServicesCreativeProductionRoute: typeof ServicesCreativeProductionRoute
+  ServicesDigitalPublicAffairsRoute: typeof ServicesDigitalPublicAffairsRoute
+  ServicesEventsExperientialMarketingRoute: typeof ServicesEventsExperientialMarketingRoute
+  ServicesExecutivePersonalBrandingRoute: typeof ServicesExecutivePersonalBrandingRoute
+  ServicesReputationMediaRoute: typeof ServicesReputationMediaRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesAuthorPublishingRoute: ServicesAuthorPublishingRoute,
+  ServicesContentSocialRoute: ServicesContentSocialRoute,
+  ServicesCreativeProductionRoute: ServicesCreativeProductionRoute,
+  ServicesDigitalPublicAffairsRoute: ServicesDigitalPublicAffairsRoute,
+  ServicesEventsExperientialMarketingRoute:
+    ServicesEventsExperientialMarketingRoute,
+  ServicesExecutivePersonalBrandingRoute:
+    ServicesExecutivePersonalBrandingRoute,
+  ServicesReputationMediaRoute: ServicesReputationMediaRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -326,15 +386,9 @@ const rootRouteChildren: RootRouteChildren = {
   ContactUsRoute: ContactUsRoute,
   PackagesRoute: PackagesRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   TermsRoute: TermsRoute,
   ThankYouRoute: ThankYouRoute,
-  ServicesAuthorPublishingRoute: ServicesAuthorPublishingRoute,
-  ServicesContentSocialRoute: ServicesContentSocialRoute,
-  ServicesCreativeProductionRoute: ServicesCreativeProductionRoute,
-  ServicesDigitalPublicAffairsRoute: ServicesDigitalPublicAffairsRoute,
-  ServicesExecutivePersonalBrandingRoute:
-    ServicesExecutivePersonalBrandingRoute,
-  ServicesReputationMediaRoute: ServicesReputationMediaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
