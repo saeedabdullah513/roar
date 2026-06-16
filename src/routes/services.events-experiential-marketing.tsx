@@ -339,8 +339,7 @@ function SubServices() {
                     </ul>
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
-                        A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        full deliverables, samples and pricing.
+                        Want to know more about our <span className="font-bold text-gold">{s.title}</span>?
                       </p>
                       <a
                         href="#consult"

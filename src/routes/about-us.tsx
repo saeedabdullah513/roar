@@ -31,15 +31,16 @@ import {
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
 import storyThumb from "@/assets/story-video-thumb.jpg";
-import founder from "@/assets/founder.jpg";
-import reel1 from "@/assets/reel-1.jpg";
-import reel2 from "@/assets/reel-2.jpg";
-import reel3 from "@/assets/reel-3.jpg";
-import reel4 from "@/assets/reel-4.jpg";
 import happiness1 from "@/assets/cheif-happiness-officer-1.png";
 import happiness2 from "@/assets/cheif-happiness-officer-2.png";
 import happiness3 from "@/assets/cheif-happiness-officer-3.png";
 import happiness4 from "@/assets/cheif-happiness-officer-4.png";
+import viceRoarCorporate from "@/assets/vice-roar-sales.png";
+import viceRoarFull from "@/assets/vice-roar-sales-2.png";
+import srConsultantCorporate from "@/assets/sr-roar-consultant.png";
+import srConsultantFull from "@/assets/senior-roar-consultant-2.png";
+import digitalRoarCorporate from "@/assets/digital-roar-officer.png";
+import digitalRoarFull from "@/assets/Digital Roar Officer 2.png";
 
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
@@ -385,47 +386,43 @@ function Values() {
 /* =============== TEAM =============== */
 const team = [
   {
-    name: "Aarav Mehta",
-    role: "Founder & Chief Roar Officer",
-    bio: "Twelve years in PR. Built brands across three continents. Allergic to whispering.",
+    name: "Alvin",
+    role: "Chief Roar Officer",
+    bio: "The voice behind the roar. Alvin leads strategy and vision — louder than any competitor dares.",
+    img: happiness3,
+    imgFull: happiness4,
+    socials: { linkedin: "#", instagram: "#" },
+  },
+  {
+    name: "Emma Baker",
+    role: "Chief Happiness Officer",
+    bio: "Keeps the team, clients, and culture smiling. Emma ensures every client feels like the center of the universe.",
     img: happiness1,
     imgFull: happiness2,
     socials: { linkedin: "#", instagram: "#" },
   },
   {
-    name: "Sienna Cole",
-    role: "Head of Brand Strategy",
-    bio: "Former editor turned strategist. Turns founder chaos into category-defining narratives.",
-    img: reel1,
+    name: "Chris James",
+    role: "Vice Roar Sales",
+    bio: "Turns handshakes into partnerships. Chris leads the sales engine with charm and strategic firepower.",
+    img: viceRoarCorporate,
+    imgFull: viceRoarFull,
     socials: { linkedin: "#", instagram: "#" },
   },
   {
-    name: "Marcus Wright",
-    role: "Director, Media & PR",
-    bio: "Ex-newsroom. A black book that makes journalists actually pick up the phone.",
-    img: reel2,
+    name: "Nikita Johnson",
+    role: "Sr. Roar Consultant",
+    bio: "Seasoned strategist who maps the route from unseen to undeniable. Nikita builds brands that dominate their categories.",
+    img: srConsultantCorporate,
+    imgFull: srConsultantFull,
     socials: { linkedin: "#", instagram: "#" },
   },
   {
-    name: "Leila Hassan",
-    role: "Creative Director",
-    bio: "Designs identities that look like the brand sounds — sharp, loud, unmistakable.",
-    img: reel3,
-    socials: { linkedin: "#", instagram: "#" },
-  },
-  {
-    name: "Noah Park",
-    role: "Head of Content & Social",
-    bio: "Builds the feeds, scripts the hooks, ships the reels that algorithms can't ignore.",
-    img: reel4,
-    socials: { linkedin: "#", instagram: "#" },
-  },
-  {
-    name: "Priya Raghavan",
-    role: "Client Partner",
-    bio: "Your day-one ally. Keeps the strategy honest and the work shipping on time.",
-    img: happiness3,
-    imgFull: happiness4,
+    name: "Gavin",
+    role: "Digital Roar Officer",
+    bio: "Owns every pixel and platform. Gavin engineers digital dominance that leaves competitors scrambling.",
+    img: digitalRoarCorporate,
+    imgFull: digitalRoarFull,
     socials: { linkedin: "#", instagram: "#" },
   },
 ];

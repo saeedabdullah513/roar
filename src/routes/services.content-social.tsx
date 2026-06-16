@@ -275,12 +275,13 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              Six channels. <span className="text-gold">One voice that doesn't shut</span> up.
+              Six Channels. <span className="text-gold">One Voice That Doesn't Shut</span> Up.
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
-            Content & Social isn't sporadic posting — it is a full-time global multimedia operation. Each
-            sub-service is a future Big Mouth page of its own — preview them below.
+            Content & Social isn't sporadic posting. It's a 360° system — LinkedIn authority,
+            Instagram reach, YouTube depth, podcast presence, UGC amplification, and influencer
+            partnerships — engineered for perpetual visibility.
           </p>
         </div>
 
@@ -336,8 +337,7 @@ function SubServices() {
                     </ul>
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
-                        A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        full deliverables, samples and pricing.
+                        Want to know more about our <span className="font-bold text-gold">{s.title}</span>?
                       </p>
                       <a
                         href="#consult"

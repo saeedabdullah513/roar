@@ -209,11 +209,11 @@
 
   /* Lion face cursor — site's lion theme */
   .lion-cursor, .lion-cursor * {
-    cursor: url("./assets/lion-cursor.png"), auto;
+    cursor: url("./assets/lion-cursor.png") 32 32, auto;
   }
   .lion-cursor input, .lion-cursor textarea, .lion-cursor select { cursor: text; }
   .lion-cursor a, .lion-cursor button, .lion-cursor [role="button"] {
-    cursor: url("./assets/lion-cursor.png"), pointer;
+    cursor: url("./assets/lion-cursor.png") 32 32, pointer;
   }
 
   /* ─── Animation delays (in tenths of seconds) ─── */
@@ -288,4 +288,7 @@
   @media (min-width: 1920px) {
     .hero-heading { font-size: 5.5rem; }
   }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 }

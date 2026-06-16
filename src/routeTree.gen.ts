@@ -13,6 +13,7 @@ import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as BrandStrategyRouteImport } from './routes/brand-strategy'
@@ -25,6 +26,7 @@ import { Route as ServicesDigitalPublicAffairsRouteImport } from './routes/servi
 import { Route as ServicesCreativeProductionRouteImport } from './routes/services.creative-production'
 import { Route as ServicesContentSocialRouteImport } from './routes/services.content-social'
 import { Route as ServicesAuthorPublishingRouteImport } from './routes/services.author-publishing'
+import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 
 const ThankYouRoute = ThankYouRouteImport.update({
   id: '/thank-you',
@@ -44,6 +46,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PackagesRoute = PackagesRouteImport.update({
@@ -111,6 +118,11 @@ const ServicesAuthorPublishingRoute =
     path: '/author-publishing',
     getParentRoute: () => ServicesRoute,
   } as any)
+const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PortfolioRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -118,10 +130,12 @@ export interface FileRoutesByFullPath {
   '/brand-strategy': typeof BrandStrategyRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
@@ -136,10 +150,12 @@ export interface FileRoutesByTo {
   '/brand-strategy': typeof BrandStrategyRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
@@ -155,10 +171,12 @@ export interface FileRoutesById {
   '/brand-strategy': typeof BrandStrategyRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
   '/services/author-publishing': typeof ServicesAuthorPublishingRoute
   '/services/content-social': typeof ServicesContentSocialRoute
   '/services/creative-production': typeof ServicesCreativeProductionRoute
@@ -175,10 +193,12 @@ export interface FileRouteTypes {
     | '/brand-strategy'
     | '/contact-us'
     | '/packages'
+    | '/portfolio'
     | '/privacy-policy'
     | '/services'
     | '/terms'
     | '/thank-you'
+    | '/portfolio/$slug'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
@@ -193,10 +213,12 @@ export interface FileRouteTypes {
     | '/brand-strategy'
     | '/contact-us'
     | '/packages'
+    | '/portfolio'
     | '/privacy-policy'
     | '/services'
     | '/terms'
     | '/thank-you'
+    | '/portfolio/$slug'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
@@ -211,10 +233,12 @@ export interface FileRouteTypes {
     | '/brand-strategy'
     | '/contact-us'
     | '/packages'
+    | '/portfolio'
     | '/privacy-policy'
     | '/services'
     | '/terms'
     | '/thank-you'
+    | '/portfolio/$slug'
     | '/services/author-publishing'
     | '/services/content-social'
     | '/services/creative-production'
@@ -230,6 +254,7 @@ export interface RootRouteChildren {
   BrandStrategyRoute: typeof BrandStrategyRoute
   ContactUsRoute: typeof ContactUsRoute
   PackagesRoute: typeof PackagesRoute
+  PortfolioRoute: typeof PortfolioRouteWithChildren
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   TermsRoute: typeof TermsRoute
@@ -264,6 +289,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/packages': {
@@ -350,8 +382,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAuthorPublishingRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/portfolio/$slug': {
+      id: '/portfolio/$slug'
+      path: '/$slug'
+      fullPath: '/portfolio/$slug'
+      preLoaderRoute: typeof PortfolioSlugRouteImport
+      parentRoute: typeof PortfolioRoute
+    }
   }
 }
+
+interface PortfolioRouteChildren {
+  PortfolioSlugRoute: typeof PortfolioSlugRoute
+}
+
+const PortfolioRouteChildren: PortfolioRouteChildren = {
+  PortfolioSlugRoute: PortfolioSlugRoute,
+}
+
+const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
+  PortfolioRouteChildren,
+)
 
 interface ServicesRouteChildren {
   ServicesAuthorPublishingRoute: typeof ServicesAuthorPublishingRoute
@@ -385,6 +436,7 @@ const rootRouteChildren: RootRouteChildren = {
   BrandStrategyRoute: BrandStrategyRoute,
   ContactUsRoute: ContactUsRoute,
   PackagesRoute: PackagesRoute,
+  PortfolioRoute: PortfolioRouteWithChildren,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRouteWithChildren,
   TermsRoute: TermsRoute,

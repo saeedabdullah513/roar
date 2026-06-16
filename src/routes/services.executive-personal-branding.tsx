@@ -274,12 +274,12 @@ function SubServices() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
             <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-              A Great Leader Deserves a <span className="text-gold">Strong Team.</span>
+              A Great Leader Deserves a <span className="text-gold">Strong Team</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
             Pick à la carte or take the full package. Each sub-service is a future Big Mouth page of
-            its own — preview them below.
+            its own. Preview them below.
           </p>
         </div>
 
@@ -335,8 +335,7 @@ function SubServices() {
                     </ul>
                     <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-navy-deep p-6 text-cream">
                       <p className="text-sm text-cream/75">
-                        A dedicated page for <span className="font-bold text-gold">{s.title}</span> is
-                        full deliverables, samples and pricing.
+                        Want to know more about our <span className="font-bold text-gold">{s.title}</span>?
                       </p>
                       <a
                         href="#consult"

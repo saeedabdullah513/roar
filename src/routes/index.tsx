@@ -54,6 +54,10 @@ import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
+import caseTerraSquare from "@/assets/case-study-portfolio/Terra Securities Time Square by TheBigMouthPR.jpg";
+import caseUsaToday from "@/assets/case-study-portfolio/screencapture-usatoday-press-release-story-34497-as-women-led-businesses-hit-record-numbers-media-entrepreneur-keri-murphy-launches-new-network-focused-on-visibility-2026-06-11-22_00_37.png";
+import caseForbes from "@/assets/case-study-portfolio/Forbes Jessica.jpg";
+import caseBrandBook from "@/assets/case-study-portfolio/Brand Book.png";
 import indFnb from "@/assets/ind-fnb.jpg";
 import indTech from "@/assets/ind-tech.jpg";
 import indFinance from "@/assets/ind-finance.jpg";
@@ -250,7 +254,7 @@ export function SiteHeader() {
                 Services
                 <ChevronDown className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-hover:rotate-180" />
               </Link>
-              <div className="absolute left-0 top-full z-50 mt-1.5 hidden rounded-md border bg-white p-3 shadow-lg group-hover:block">
+              <div className="absolute left-0 top-full z-50 rounded-md border bg-white p-3 shadow-lg opacity-0 pointer-events-none transition-all duration-150 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:delay-75">
                 <div className="grid w-[260px] gap-0.5 md:w-[460px] md:grid-cols-2">
                   {serviceLinks.map((s) => {
                       const Icon = s.icon;
@@ -913,10 +917,10 @@ function Industries() {
 ===================================================================== */
 function Portfolio() {
   const items = [
-    { img: portfolio1, title: "CEO Editorial Shoot", tag: "Photography" },
-    { img: portfolio2, title: "Forbes Feature Placement", tag: "PR & Media" },
-    { img: portfolio3, title: "Keynote Speaker Kit", tag: "Brand Strategy" },
-    { img: portfolio4, title: "LinkedIn Authority Build", tag: "Content" },
+    { img: caseTerraSquare, title: "Terra Securities — Times Square Takeover", tag: "Outdoor & Experiential", slug: "terra-securities-times-square" },
+    { img: caseUsaToday, title: "USA Today — Keri Murphy Feature", tag: "PR & Media", slug: "usa-today-keri-murphy" },
+    { img: caseForbes, title: "Forbes — Jessica Executive Profile", tag: "PR & Media", slug: "forbes-jessica-feature" },
+    { img: caseBrandBook, title: "Brand Book Design", tag: "Creative Production", slug: "brand-book-design" },
   ];
   return (
     <section id="portfolio" className="bg-white py-24 md:py-28 xl:py-20 border-t border-navy-deep/5">
@@ -933,24 +937,29 @@ function Portfolio() {
               We deliver results.
             </h2>
           </div>
-          <a href="#consult" className="group inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-navy-deep">
+          <Link to="/portfolio" className="group inline-flex items-center gap-2 text-sm uppercase tracking-[0.25em] text-navy-deep">
             View all work
             <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-12">
           {items.map((it, i) => (
-            <a key={it.title} href="#" className={`group relative block overflow-hidden rounded-2xl shadow-luxe ${
-              i === 0 ? "md:col-span-7 md:row-span-2 portfolio-hero" : i === 1 ? "md:col-span-5 portfolio-sm" : "md:col-span-5 md:col-start-8 portfolio-sm"
-            }`}>
+            <Link
+              key={it.slug}
+              to="/portfolio/$slug"
+              params={{ slug: it.slug }}
+              className={`group relative block overflow-hidden rounded-2xl shadow-luxe ${
+                i === 0 ? "md:col-span-7 md:row-span-2 portfolio-hero" : i === 1 ? "md:col-span-5 portfolio-sm" : "md:col-span-5 md:col-start-8 portfolio-sm"
+              }`}
+            >
               <img src={it.img} alt={it.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/30 to-transparent" />
               <div className="absolute bottom-0 p-8 text-cream">
                 <p className="text-[10px] uppercase tracking-[0.35em] text-gold">{it.tag}</p>
                 <h3 className="mt-2 font-display text-3xl font-bold">{it.title}</h3>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -1233,8 +1242,8 @@ export function Footer() {
             A loud, fearless personal branding & PR studio. Serving leaders who'd rather be talked about than tip-toed around.
           </p>
         </div>
-        <FooterCol title="Studio" items={[{ label: "Our Story", href: "/#story" }, { label: "About Us", href: "/about-us" }, { label: "Services", href: "/#services" }, { label: "Packages", href: "/packages" }, { label: "Portfolio", href: "/#portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
-        <FooterCol title="Services" items={[{ label: "Executive & Personal Branding", href: "/services/executive-personal-branding" }, { label: "Reputation & Media", href: "/services/reputation-media" }, { label: "Content & Social", href: "/services/content-social" }, { label: "Creative Production", href: "/services/creative-production" }, { label: "Author & Publishing", href: "/services/author-publishing" }, { label: "Digital & Public Affairs", href: "/services/digital-public-affairs" }]} />
+        <FooterCol title="Studio" items={[{ label: "Our Story", href: "/#story" }, { label: "About Us", href: "/about-us" }, { label: "Services", href: "/services" }, { label: "Packages", href: "/packages" }, { label: "Portfolio", href: "/portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
+        <FooterCol title="Services" items={[{ label: "Executive & Personal Branding", href: "/services/executive-personal-branding" }, { label: "Reputation & Media", href: "/services/reputation-media" }, { label: "Content & Social", href: "/services/content-social" }, { label: "Creative Production", href: "/services/creative-production" }, { label: "Author & Publishing", href: "/services/author-publishing" }, { label: "Digital & Public Affairs", href: "/services/digital-public-affairs" }, { label: "Events & Experiential Marketing", href: "/services/events-experiential-marketing" }]} />
         <FooterCol title="Get loud" items={[{ label: "Book a Call", href: "/contact-us#form" }, { label: "sales@thebigmouthpr.com", href: "mailto:sales@thebigmouthpr.com" }, { label: "+1 (332) 258-7873", href: "tel:+15550100420" }, { label: "2626 E 82nd St Ste#230, Bloomington, MN 55425", href: "#" }]} />
       </div>
       <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-cream/10 px-6 pt-8 text-xs text-cream/55 md:flex-row">

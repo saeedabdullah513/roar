@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -675,6 +675,11 @@ function Field({
 
 /* ===================== PAGE ===================== */
 function ServicesPage() {
+  const location = useLocation();
+  if (location.pathname !== "/services") {
+    return <Outlet />;
+  }
+
   return (
     <main className="lion-cursor bg-white text-navy-deep">
       <SiteHeader />

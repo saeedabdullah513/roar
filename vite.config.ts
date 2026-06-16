@@ -11,7 +11,7 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    server: { host: "0.0.0.0" },
+    server: { host: "0.0.0.0", historyApiFallback: true },
   },
   nitro: { preset: "vercel" },
 });
