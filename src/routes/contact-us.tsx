@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 
 import { submitContactForm } from "../lib/api/contact.functions";
+import { fetchIpGeolocation } from "../lib/ip-geolocation";
 
 import {
   SiteHeader,
@@ -141,7 +142,8 @@ function ContactSection() {
     setSending(true);
     setError(null);
     try {
-      await submitContactForm({ data: formData });
+      const geo = await fetchIpGeolocation();
+      await submitContactForm({ data: { ...formData, ...geo } });
       window.location.href = "/thank-you";
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");

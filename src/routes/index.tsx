@@ -50,6 +50,11 @@ import logoUrl from "@/assets/roar-logo.png";
 import iconUrl from "@/assets/favicon.png";
 import lionUrl from "@/assets/lion-roar.png";
 import roarSfx from "@/assets/lion-roaring-sfx.mp3";
+import storyVideo from "@/assets/video/the-big-mouth-pr-final-cut.mp4";
+import testimonial1 from "@/assets/video/testimonia-1.mp4";
+import testimonial2 from "@/assets/video/testimonial-2.mp4";
+import testimonial3 from "@/assets/video/testimonial-3.mp4";
+import testimonial4 from "@/assets/video/testimonial-4.mp4";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -562,12 +567,12 @@ const ribbonServices = [
 
 function ServicesRibbon() {
   return (
-    <section className="relative overflow-hidden border-y border-cream/5 bg-navy-deep py-6 text-cream">
+    <section className="relative overflow-hidden border-y border-navy-deep/10 bg-white py-6">
       <div className="flex w-max gap-10 marquee">
         {[...ribbonServices, ...ribbonServices].map((item, i) => (
           <div key={i} className="flex items-center gap-4 whitespace-nowrap">
             <DotMark />
-            <span className="font-display text-2xl font-bold uppercase tracking-tight text-cream/90 md:text-3xl">{item}</span>
+            <span className="font-display text-2xl font-bold uppercase tracking-tight text-navy-deep/40 md:text-3xl">{item}</span>
           </div>
         ))}
       </div>
@@ -585,14 +590,14 @@ const clients = [
 
 export function ClientsRibbon() {
   return (
-    <section className="relative overflow-hidden bg-white py-8 border-y border-navy-deep/10">
-      <p className="mb-6 text-center text-[11px] uppercase tracking-[0.4em] text-navy/55">
+    <section className="relative overflow-hidden bg-navy-deep py-8 text-cream border-y border-cream/5">
+      <p className="mb-6 text-center text-[11px] uppercase tracking-[0.4em] text-cream/55">
         Our voices have landed in
       </p>
       <div className="flex w-max gap-16 marquee-fast">
         {[...clients, ...clients].map((c, i) => (
           <div key={i} className="flex items-center gap-16 whitespace-nowrap">
-            <span className="font-display text-3xl font-bold tracking-[0.15em] text-navy-deep/40 transition hover:text-gold md:text-4xl">
+            <span className="font-display text-3xl font-bold tracking-[0.15em] text-cream/40 transition hover:text-gold md:text-4xl">
               {c}
             </span>
             <DotMark className="opacity-40" />
@@ -608,6 +613,40 @@ export function ClientsRibbon() {
 ===================================================================== */
 function Story() {
   const [open, setOpen] = useState(false);
+  const [posterThumb, setPosterThumb] = useState(storyThumb);
+  const storyVideoRef = useRef<HTMLVideoElement>(null);
+  const captureRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const v = captureRef.current;
+    if (!v) return;
+    const capture = () => {
+      if (v.videoWidth) {
+        const c = document.createElement("canvas");
+        c.width = v.videoWidth;
+        c.height = v.videoHeight;
+        const ctx = c.getContext("2d");
+        if (ctx) { ctx.drawImage(v, 0, 0, c.width, c.height); setPosterThumb(c.toDataURL("image/jpeg", 0.8)); }
+      }
+    };
+    v.addEventListener("loadeddata", capture);
+    v.load();
+    return () => { v.removeEventListener("loadeddata", capture); };
+  }, []);
+
+  const onStoryOpen = () => {
+    setOpen(true);
+    setTimeout(() => {
+      const video = storyVideoRef.current;
+      if (video && video.readyState >= 2) {
+        const canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth || 1280;
+        canvas.height = video.videoHeight || 720;
+        const ctx = canvas.getContext("2d");
+        if (ctx) { ctx.drawImage(video, 0, 0, canvas.width, canvas.height); video.poster = canvas.toDataURL("image/jpeg", 0.7); }
+      }
+    }, 200);
+  };
   return (
     <section id="story" className="relative bg-white py-24 md:py-28 xl:py-20">
       {/* Icon pattern accent */}
@@ -619,8 +658,8 @@ function Story() {
       />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         <div className="flex justify-center">
-          <button onClick={() => setOpen(true)} className="group relative block w-full max-w-lg overflow-hidden rounded-2xl shadow-luxe lg:max-w-[600px]" aria-label="Play our story">
-            <img src={storyThumb} alt="The Big Mouth PR story" loading="lazy" className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105 md:h-[400px] lg:h-[520px]" />
+          <button onClick={onStoryOpen} className="group relative block w-full max-w-lg overflow-hidden rounded-2xl shadow-luxe lg:max-w-[600px]" aria-label="Play our story">
+            <img src={posterThumb} alt="The Big Mouth PR story" loading="lazy" className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105 md:h-[400px] lg:h-[520px]" />
             <div className="absolute inset-0 bg-gradient-to-tr from-navy-deep/70 via-navy-deep/20 to-transparent" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="relative">
@@ -667,12 +706,19 @@ function Story() {
             <X className="h-5 w-5" />
           </button>
           <div className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-black shadow-luxe" onClick={(e) => e.stopPropagation()}>
-            <div className="aspect-video w-full">
-              <iframe className="h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="The Big Mouth PR — Our Story" allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen />
-            </div>
+            <video
+              ref={storyVideoRef}
+              src={storyVideo}
+              className="w-full"
+              controls
+              playsInline
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       )}
+      <video ref={captureRef} src={storyVideo} className="hidden" preload="auto" playsInline muted />
     </section>
   );
 }
@@ -731,13 +777,6 @@ const serviceGroups = [
     desc: "Digital marketing, media buying, web design, public & community affairs and translation across markets.",
     tags: ["Media Buying", "Web Design", "Public Affairs", "Translation"],
     img: svcDigital,
-  },
-  {
-    icon: Sparkles,
-    title: "Events & Experiential Marketing",
-    desc: "Experiential marketing, book fair participation, book signings, Times Square features, photography, videography and custom merchandise.",
-    tags: ["Experiential", "Book Fairs", "Times Square", "Merch"],
-    img: svcCreative,
   },
 ];
 
@@ -962,13 +1001,22 @@ function Portfolio() {
             </Link>
           ))}
         </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03]"
+          >
+            Explore All Services <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
 
 /* =====================================================================
-   8. CASE STUDIES — with visuals
+   6. INDUSTRIES
 ===================================================================== */
 const cases = [
   { client: "Maya R.", role: "Fintech Founder", metric: "+340%", label: "Inbound opportunities", note: "Featured in Forbes & WSJ in 6 months.", img: reel1 },
@@ -1017,13 +1065,49 @@ function CaseStudies() {
    9. TESTIMONIALS — reel format (vertical cards with video/image + text above)
 ===================================================================== */
 const testimonials = [
-  { name: "Sarah Lin", role: "VP, BlackRock", quote: "I went from invisible to invited to the keynote stage. The Big Mouth PR just gets it.", img: reel1 },
-  { name: "Jordan Pierce", role: "Tech Founder", quote: "They built a personal brand that closes deals while I sleep. Worth every penny.", img: reel2 },
-  { name: "Priya Anand", role: "Author & Speaker", quote: "Kirkus review, audiobook, Times Square — I felt the literal noise.", img: reel3 },
-  { name: "Marcus Webb", role: "CMO", quote: "Sophisticated, witty, ruthlessly strategic. The studio I tell every CEO friend about.", img: reel4 },
+  { name: "Sarah Lin", role: "VP, BlackRock", quote: "I went from invisible to invited to the keynote stage. The Big Mouth PR just gets it.", img: reel1, video: testimonial1 },
+  { name: "Jordan Pierce", role: "Tech Founder", quote: "They built a personal brand that closes deals while I sleep. Worth every penny.", img: reel2, video: testimonial2 },
+  { name: "Priya Anand", role: "Author & Speaker", quote: "Kirkus review, audiobook, Times Square — I felt the literal noise.", img: reel3, video: testimonial3 },
+  { name: "Marcus Webb", role: "CMO", quote: "Sophisticated, witty, ruthlessly strategic. The studio I tell every CEO friend about.", img: reel4, video: testimonial4 },
 ];
 
 function Testimonials() {
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  const handlePlay = (index: number) => {
+    videoRefs.current.forEach((v, i) => {
+      if (v && i !== index) { v.pause(); v.currentTime = 0; }
+    });
+    const video = videoRefs.current[index];
+    if (video) {
+      video.paused ? video.play() : video.pause();
+    }
+  };
+
+  const capturePoster = (video: HTMLVideoElement, index: number) => {
+    if (video.poster && video.poster.startsWith("data:")) return;
+    const seekAndCapture = () => {
+      video.currentTime = 1;
+      video.onseeked = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth || 640;
+        canvas.height = video.videoHeight || 1138;
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          video.poster = canvas.toDataURL("image/jpeg", 0.7);
+        }
+        video.onseeked = null;
+        video.pause();
+      };
+    };
+    if (video.readyState >= 2) {
+      seekAndCapture();
+    } else {
+      video.onloadedmetadata = () => seekAndCapture();
+    }
+  };
+
   return (
     <section className="relative overflow-hidden bg-navy-deep py-24 text-cream md:py-28 xl:py-20">
       {/* Icon pattern */}
@@ -1048,42 +1132,26 @@ function Testimonials() {
 
         {/* Reel grid */}
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {testimonials.map((t) => (
+          {testimonials.map((t, i) => (
             <article key={t.name} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-black shadow-luxe">
-              <img src={t.img} alt={t.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
-
-              {/* Top: quote */}
-              <div className="absolute inset-x-0 top-0 p-5">
-                <Quote className="h-5 w-5 text-gold" />
-                <p className="mt-2 font-display text-base italic leading-snug text-cream drop-shadow">
-                  "{t.quote}"
-                </p>
-              </div>
-
-              {/* Reel-like controls */}
-              <div className="absolute right-3 top-1/2 flex -translate-y-1/2 flex-col items-center gap-4 text-cream">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-cream/15 backdrop-blur">
-                  <Heart className="h-4 w-4" />
-                </span>
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-cream/15 backdrop-blur">
-                  <Volume2 className="h-4 w-4" />
-                </span>
-              </div>
+              <video
+                ref={(el) => { videoRefs.current[i] = el; if (el) capturePoster(el, i); }}
+                src={t.video}
+                playsInline
+                preload="metadata"
+                poster={t.img}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
               {/* Play */}
-              <span className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 grid h-14 w-14 place-items-center rounded-full bg-gold/95 text-navy-deep transition group-hover:scale-110">
+              <button
+                onClick={() => handlePlay(i)}
+                className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 grid h-14 w-14 place-items-center rounded-full bg-gold/95 text-navy-deep transition group-hover:scale-110"
+                aria-label={`Play ${t.name} testimonial`}
+              >
                 <Play className="ml-0.5 h-6 w-6 fill-current" />
-              </span>
-
-              {/* Bottom: name */}
-              <div className="absolute inset-x-0 bottom-0 flex items-center gap-3 p-5">
-                <img src={t.img} alt="" className="h-10 w-10 rounded-full border-2 border-gold object-cover" />
-                <div>
-                  <p className="text-sm font-bold text-cream">{t.name}</p>
-                  <p className="text-[11px] text-cream/70">{t.role}</p>
-                </div>
-              </div>
+              </button>
             </article>
           ))}
         </div>

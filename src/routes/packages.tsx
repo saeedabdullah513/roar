@@ -28,6 +28,7 @@ import {
 } from "./index";
 
 import { submitContactForm } from "../lib/api/contact.functions";
+import { fetchIpGeolocation } from "../lib/ip-geolocation";
 
 import lionUrl from "@/assets/lion-roar.png";
 import lionChildUrl from "@/assets/lion-child-image.png";
@@ -279,6 +280,7 @@ function PackagesPage() {
     setError(null);
     try {
       const fd = new FormData(e.currentTarget);
+      const geo = await fetchIpGeolocation();
       await submitContactForm({
         data: {
           name: fd.get("name") as string,
@@ -288,6 +290,7 @@ function PackagesPage() {
           phone: fd.get("phone") as string || "",
           service: (fd.get("package") as string) || "Packages Inquiry",
           message: (fd.get("message") as string) || "Packages inquiry",
+          ...geo,
         },
       });
       window.location.href = "/thank-you";
@@ -400,7 +403,6 @@ function PackagesPage() {
                   >
                     {isPride ? "Request a quote" : "Book this roar"} <ArrowRight className="h-4 w-4" />
                   </button>
-                  <a href={`#${p.id}-details`} className="text-center text-xs font-semibold uppercase tracking-widest text-navy-deep/60 hover:text-navy-deep">See full details ↓</a>
                 </div>
               </article>
             );
@@ -409,6 +411,7 @@ function PackagesPage() {
       </section>
 
       {/* ===================== COMPARISON TABLE ===================== */}
+      {false && (
       <section className="relative bg-white py-20">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-icon-pattern opacity-[0.03]" style={{ "--icon-url": `url(${ICON_URL})`, backgroundSize: "260px" } as React.CSSProperties} />
         <div className="relative mx-auto max-w-7xl px-6">
@@ -459,41 +462,49 @@ function PackagesPage() {
           </p>
         </div>
       </section>
+      )}
+      <section className="bg-white pb-20">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <p className="text-base font-bold text-navy-deep">
+            * Services listed are indicative. The final scope of work at the time of contract shall be considered the final package.
+          </p>
+        </div>
+      </section>
 
       {/* ===================== FAQ (relocated package details) ===================== */}
-      <section id="packages-faq" className="bg-white py-20 md:py-24 border-t border-navy-deep/5">
+      <section id="packages-faq" className="bg-navy-deep py-20 text-cream md:py-24 border-t border-cream/5">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold"><DotMark /> Package FAQ</p>
-            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95]">Which roar is <span className="text-gold italic">right</span> for you?</h2>
-            <p className="mt-6 text-navy/70">Detailed breakdown of who each package serves and what you can expect.</p>
+            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-cream">Which roar is <span className="text-gold italic">right</span> for you?</h2>
+            <p className="mt-6 text-cream/70">Detailed breakdown of who each package serves and what you can expect.</p>
           </div>
           <div className="space-y-3">
             {packages.map((p, i) => {
               const isOpen = faqOpen === i;
               return (
-                <div key={p.id} className="rounded-2xl border border-navy-deep/10 bg-white overflow-hidden transition hover:border-gold">
+                <div key={p.id} className="rounded-2xl border border-cream/10 bg-cream/5 overflow-hidden transition hover:border-gold">
                   <button onClick={() => setFaqOpen(isOpen ? null : i)} className="flex w-full items-center justify-between gap-6 p-7 text-left">
                     <div>
                       <span className={`text-[11px] font-bold uppercase tracking-widest ${p.accent}`}>{p.name}</span>
-                      <h3 className="mt-1 font-display text-xl font-bold text-navy-deep md:text-2xl">{p.tagline}</h3>
+                      <h3 className="mt-1 font-display text-xl font-bold text-cream md:text-2xl">{p.tagline}</h3>
                     </div>
-                    {isOpen ? <Minus className="h-5 w-5 shrink-0 text-gold" /> : <Plus className="h-5 w-5 shrink-0 text-navy-deep" />}
+                    {isOpen ? <Minus className="h-5 w-5 shrink-0 text-gold" /> : <Plus className="h-5 w-5 shrink-0 text-cream" />}
                   </button>
                   {isOpen && (
                     <div className="px-7 pb-7 space-y-5">
-                      <p className="text-base leading-relaxed text-navy/75">{p.purpose}</p>
-                      <div className="rounded-xl bg-navy-deep/[0.04] p-4">
-                        <p className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">Who is this package best for?</p>
-                        <p className="mt-2 text-sm text-navy-deep/80">{p.bestFor}</p>
+                      <p className="text-base leading-relaxed text-cream/75">{p.purpose}</p>
+                      <div className="rounded-xl bg-cream/10 p-4">
+                        <p className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Who is this package best for?</p>
+                        <p className="mt-2 text-sm text-cream/80">{p.bestFor}</p>
                       </div>
                       <div>
-                        <p className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">Best audience fit</p>
+                        <p className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Best audience fit</p>
                         <div className="mt-3 grid gap-3 sm:grid-cols-3">
                           {p.audience.map((a) => (
-                            <div key={a.title} className="rounded-xl border border-navy-deep/10 p-3">
-                              <p className="font-display text-xs font-black uppercase tracking-wider">{a.title}</p>
-                              <p className="mt-1 text-xs leading-relaxed text-navy-deep/70">{a.copy}</p>
+                            <div key={a.title} className="rounded-xl border border-cream/10 p-3">
+                              <p className="font-display text-xs font-black uppercase tracking-wider text-cream">{a.title}</p>
+                              <p className="mt-1 text-xs leading-relaxed text-cream/70">{a.copy}</p>
                             </div>
                           ))}
                         </div>

@@ -10,11 +10,13 @@ const contactSchema = z.object({
   phone: z.string().optional(),
   service: z.string().min(1, "Service is required"),
   message: z.string().min(1, "Message is required"),
+  ipAddress: z.string().optional(),
+  ipCity: z.string().optional(),
+  ipCountry: z.string().optional(),
 });
 
 export type ContactData = z.infer<typeof contactSchema>;
 
-// Add or remove recipient emails here:
 const recipients = [
   "sales@thebigmouthpr.com",
   "abdullah.saeed@canvasdigital.org",
@@ -25,7 +27,7 @@ const recipients = [
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator(contactSchema)
   .handler(async ({ data }) => {
-    const { name, email, company, role, phone, service, message } = data;
+    const { name, email, company, role, phone, service, message, ipAddress, ipCity, ipCountry } = data;
 
     const smtpHost = "smtp.titan.email";
     const smtpPort = 587;
@@ -39,6 +41,12 @@ export const submitContactForm = createServerFn({ method: "POST" })
       auth: { user: smtpUser, pass: smtpPass },
     });
 
+    const geoRow = ipAddress
+      ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold;border-top:1px solid #ddd">IP Address</td><td style="padding:8px;border-top:1px solid #ddd">${ipAddress}</td></tr>
+         ${ipCity ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">City</td><td style="padding:8px">${ipCity}</td></tr>` : ""}
+         ${ipCountry ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Country</td><td style="padding:8px">${ipCountry}</td></tr>` : ""}`
+      : "";
+
     const html = `
       <h2>New contact form submission — thebigmouthpr.com</h2>
       <table style="border-collapse:collapse;width:100%;max-width:600px">
@@ -49,6 +57,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
         ${phone ? `<tr><td style="padding:8px;font-weight:bold">Phone</td><td style="padding:8px">${phone}</td></tr>` : ""}
         <tr><td style="padding:8px;font-weight:bold">Service</td><td style="padding:8px">${service}</td></tr>
         <tr><td style="padding:8px;font-weight:bold">Message</td><td style="padding:8px">${message}</td></tr>
+        ${geoRow}
       </table>
     `;
 

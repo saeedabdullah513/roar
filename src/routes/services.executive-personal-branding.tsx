@@ -37,6 +37,7 @@ import {
 } from "./index";
 
 import { submitContactForm } from "../lib/api/contact.functions";
+import { fetchIpGeolocation } from "../lib/ip-geolocation";
 
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
@@ -663,6 +664,7 @@ function Consult() {
     setError(null);
     try {
       const fd = new FormData(e.currentTarget);
+      const geo = await fetchIpGeolocation();
       await submitContactForm({
         data: {
           name: (fd.get("name") || fd.get("fullname")) as string,
@@ -672,6 +674,7 @@ function Consult() {
           phone: "",
           service: "Strategy Call",
           message: (fd.get("goal") as string) || "Strategy call request",
+          ...geo,
         },
       });
       window.location.href = "/thank-you";

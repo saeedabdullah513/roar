@@ -42,6 +42,7 @@ import {
 } from "./index";
 
 import { submitContactForm } from "../lib/api/contact.functions";
+import { fetchIpGeolocation } from "../lib/ip-geolocation";
 
 import founderUrl from "@/assets/founder.jpg";
 import lionUrl from "@/assets/lion-roar.png";
@@ -791,6 +792,7 @@ function Consult() {
     setError(null);
     try {
       const fd = new FormData(e.currentTarget);
+      const geo = await fetchIpGeolocation();
       await submitContactForm({
         data: {
           name: (fd.get("name") || fd.get("fullname")) as string,
@@ -800,6 +802,7 @@ function Consult() {
           phone: "",
           service: "Brand Strategy Call",
           message: (fd.get("goal") as string) || "Brand strategy inquiry",
+          ...geo,
         },
       });
       window.location.href = "/thank-you";
