@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 import {
   SiteHeader,
@@ -28,11 +29,6 @@ export const Route = createFileRoute("/thank-you")({
         property: "og:description",
         content:
           "Your message has been received. Our team will respond shortly.",
-      },
-    ],
-    scripts: [
-      {
-        children: `gtag('event', 'conversion', {'send_to': 'AW-18245037953/uW_-CNi1jsEcEIHf9PtD'});`,
       },
     ],
   }),
@@ -196,6 +192,14 @@ function FinalCTA() {
 }
 
 function ThankYouPage() {
+  useEffect(() => {
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push({
+      event: "conversion",
+      send_to: "AW-18245037953/uW_-CNi1jsEcEIHf9PtD",
+    });
+  }, []);
+
   return (
     <main className="lion-cursor bg-white text-navy-deep">
       <SiteHeader />
