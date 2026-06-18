@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import {
   ArrowRight,
   Crown,
@@ -26,6 +27,8 @@ import {
   ShieldCheck,
   TrendingUp,
   Loader2,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 import {
@@ -49,6 +52,10 @@ import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
+import leader1 from "@/assets/leader-1.png";
+import leader2 from "@/assets/leader-2.png";
+import leader3 from "@/assets/leader-3.jpeg";
+import leader4 from "@/assets/leader-4.png";
 
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
@@ -496,15 +503,18 @@ function Process() {
 
 /* ===================== PORTFOLIO ===================== */
 const portfolioItems = [
-  { img: portfolio1, name: "Sofia Reyes", role: "CEO, Lumina Health", win: "Forbes cover story + 4 speaking invites in 60 days" },
-  { img: portfolio2, name: "James Whitfield", role: "Founder, Whitfield Capital", win: "Wikipedia page approved + $20M fund close" },
-  { img: portfolio3, name: "Nina Patel", role: "Partner, Apex Ventures", win: "Bloomberg profile + crisis turnaround in 48 hours" },
-  { img: portfolio4, name: "Omar Hassan", role: "Tech Entrepreneur", win: "TechCrunch exclusive + Times Square billboard campaign" },
-  { img: svcMedia, name: "Rachel Kim", role: "Author & Advocate", win: "WSJ bestseller list + 200+ press placements" },
-  { img: svcExec, name: "Daniel Cruz", role: "CEO, Cruz Holdings", win: "NYT mention + 85% positive sentiment recovery" },
+  { img: leader1 },
+  { img: leader2 },
+  { img: leader3 },
+  { img: leader4 },
 ];
 
 function Portfolio() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
   return (
     <section id="portfolio" className="relative bg-[oklch(0.98_0.005_240)] py-20 md:py-24 xl:py-20">
       <div className="mx-auto max-w-7xl px-6">
@@ -515,37 +525,26 @@ function Portfolio() {
               Reputations we <span className="text-gold">fortified.</span>
             </h2>
           </div>
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-navy-deep hover:text-gold"
-          >
-            See full portfolio <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          <div className="flex gap-3">
+            <button onClick={scrollPrev} aria-label="Previous" className="grid h-10 w-10 place-items-center rounded-full border border-navy-deep/20 text-navy-deep transition hover:bg-navy-deep hover:text-white">
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button onClick={scrollNext} aria-label="Next" className="grid h-10 w-10 place-items-center rounded-full border border-navy-deep/20 text-navy-deep transition hover:bg-navy-deep hover:text-white">
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {portfolioItems.map((p) => (
-            <article
-              key={p.name}
-              className="group relative overflow-hidden rounded-2xl bg-navy-deep shadow-luxe"
-            >
-              <img
-                src={p.img}
-                alt={p.name}
-                loading="lazy"
-                className="h-[240px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[320px] md:h-[420px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6 text-cream">
-                <DotMark />
-                <p className="mt-3 font-display text-2xl font-bold">{p.name}</p>
-                <p className="text-xs uppercase tracking-[0.25em] text-cream/70">{p.role}</p>
-                <p className="mt-4 border-t border-cream/20 pt-3 text-sm text-cream/85">
-                  <span className="font-bold text-gold">Win:</span> {p.win}
-                </p>
-              </div>
-            </article>
-          ))}
+        <div ref={emblaRef} className="overflow-hidden">
+          <div className="flex gap-5">
+            {portfolioItems.map((p) => (
+              <article key={p.img} className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[45%] lg:basis-[32%]">
+                <div className="group relative overflow-hidden rounded-2xl bg-navy-deep shadow-luxe">
+                  <img src={p.img} alt="Portfolio" loading="lazy" className="h-[320px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[400px]" />
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -16,6 +16,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BrandStrategyRouteImport } from './routes/brand-strategy'
 import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
@@ -61,6 +62,11 @@ const PackagesRoute = PackagesRouteImport.update({
 const ContactUsRoute = ContactUsRouteImport.update({
   id: '/contact-us',
   path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BrandStrategyRoute = BrandStrategyRouteImport.update({
@@ -128,6 +134,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/brand-strategy': typeof BrandStrategyRoute
+  '/careers': typeof CareersRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/portfolio': typeof PortfolioRouteWithChildren
@@ -148,6 +155,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/brand-strategy': typeof BrandStrategyRoute
+  '/careers': typeof CareersRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/portfolio': typeof PortfolioRouteWithChildren
@@ -169,6 +177,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about-us': typeof AboutUsRoute
   '/brand-strategy': typeof BrandStrategyRoute
+  '/careers': typeof CareersRoute
   '/contact-us': typeof ContactUsRoute
   '/packages': typeof PackagesRoute
   '/portfolio': typeof PortfolioRouteWithChildren
@@ -191,6 +200,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/brand-strategy'
+    | '/careers'
     | '/contact-us'
     | '/packages'
     | '/portfolio'
@@ -211,6 +221,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/brand-strategy'
+    | '/careers'
     | '/contact-us'
     | '/packages'
     | '/portfolio'
@@ -231,6 +242,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-us'
     | '/brand-strategy'
+    | '/careers'
     | '/contact-us'
     | '/packages'
     | '/portfolio'
@@ -252,6 +264,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutUsRoute: typeof AboutUsRoute
   BrandStrategyRoute: typeof BrandStrategyRoute
+  CareersRoute: typeof CareersRoute
   ContactUsRoute: typeof ContactUsRoute
   PackagesRoute: typeof PackagesRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
@@ -310,6 +323,13 @@ declare module '@tanstack/react-router' {
       path: '/contact-us'
       fullPath: '/contact-us'
       preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/brand-strategy': {
@@ -434,6 +454,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutUsRoute: AboutUsRoute,
   BrandStrategyRoute: BrandStrategyRoute,
+  CareersRoute: CareersRoute,
   ContactUsRoute: ContactUsRoute,
   PackagesRoute: PackagesRoute,
   PortfolioRoute: PortfolioRouteWithChildren,

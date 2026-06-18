@@ -29,6 +29,7 @@ import {
 
 import { submitContactForm } from "../lib/api/contact.functions";
 import { fetchIpGeolocation } from "../lib/ip-geolocation";
+import { RecaptchaCheckbox } from "@/components/ui/recaptcha";
 
 import lionUrl from "@/assets/lion-roar.png";
 import lionChildUrl from "@/assets/lion-child-image.png";
@@ -272,10 +273,15 @@ function PackagesPage() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!recaptchaToken) {
+      setError("Please complete the reCAPTCHA verification.");
+      return;
+    }
     setSending(true);
     setError(null);
     try {
@@ -291,6 +297,7 @@ function PackagesPage() {
           service: (fd.get("package") as string) || "Packages Inquiry",
           message: (fd.get("message") as string) || "Packages inquiry",
           ...geo,
+          recaptchaToken,
         },
       });
       window.location.href = "/thank-you";
@@ -522,81 +529,56 @@ function PackagesPage() {
         </div>
       </section>
 
-      {/* ===================== TRUST SIGNALS ===================== */}
-      <section className="relative bg-white py-16 border-t border-navy-deep/5">
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold"><DotMark /> Trusted by industry leaders</p>
-          <div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4">
-            {trustStats.map((s) => (
-              <div key={s.l}>
-                <p className="font-display text-4xl font-black text-gold md:text-5xl">{s.n}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.2em] text-navy-deep/60">{s.l}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            {trustLogos.map((l) => (
-              <span key={l} className="font-display text-lg font-bold uppercase tracking-[0.15em] text-navy-deep/30 md:text-xl">{l}</span>
-            ))}
-          </div>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <span className="inline-flex items-center gap-2 rounded-full bg-navy-deep/[0.04] px-4 py-2 text-xs font-bold uppercase tracking-wider text-navy-deep"><ShieldCheck className="h-3.5 w-3.5 text-gold" /> 30-minute free strategy call</span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-navy-deep/[0.04] px-4 py-2 text-xs font-bold uppercase tracking-wider text-navy-deep"><Star className="h-3.5 w-3.5 text-gold" /> 4.9 / 5 client rating</span>
-            <span className="inline-flex items-center gap-2 rounded-full bg-navy-deep/[0.04] px-4 py-2 text-xs font-bold uppercase tracking-wider text-navy-deep"><Volume2 className="h-3.5 w-3.5 text-gold" /> Response within 24 hours</span>
-          </div>
-        </div>
-      </section>
-
       {/* ===================== LEAD FORM ===================== */}
-      <section id="roar-lead" className="relative overflow-hidden bg-navy-deep py-20 text-cream">
+      <section id="roar-lead" className="relative overflow-hidden bg-white py-20 text-navy-deep">
         <div aria-hidden className="absolute inset-0 bg-icon-pattern-lg" style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties} />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <MouthMark className="mb-5 h-10 w-10" />
             <h2 className="font-display text-4xl font-black uppercase tracking-tight md:text-5xl">Ready to <span className="text-gold italic">roar?</span></h2>
-            <p className="mt-5 text-base text-cream/75">Tell us which package fits and we'll come back within one business day with a scoped proposal — or jump on a discovery call.</p>
+            <p className="mt-5 text-base text-navy-deep/65">Tell us which package fits and we'll come back within one business day with a scoped proposal — or jump on a discovery call.</p>
             <div className="mt-8 space-y-3 text-sm">
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/20 text-gold"><Phone className="h-4 w-4" /></span>
-                <span className="text-cream/85">Discovery call — 30 minutes, no fluff</span>
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/10 text-gold"><Phone className="h-4 w-4" /></span>
+                <span className="text-navy-deep/75">Discovery call — 30 minutes, no fluff</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/20 text-gold"><Mail className="h-4 w-4" /></span>
-                <span className="text-cream/85">Scoped proposal within 1 business day</span>
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gold/10 text-gold"><Mail className="h-4 w-4" /></span>
+                <span className="text-navy-deep/75">Scoped proposal within 1 business day</span>
               </div>
             </div>
 
             {/* Trust signals inline */}
             <div className="mt-8 flex flex-wrap gap-4">
               {trustStats.map((s) => (
-                <span key={s.l} className="inline-flex items-center gap-2 rounded-full bg-cream/5 px-3 py-1.5 text-[11px] text-cream/75">
+                <span key={s.l} className="inline-flex items-center gap-2 rounded-full bg-navy-deep/[0.04] px-3 py-1.5 text-[11px] text-navy-deep/60">
                   <span className="font-bold text-gold">{s.n}</span> {s.l}
                 </span>
               ))}
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="rounded-3xl bg-cream p-8 text-navy-deep shadow-luxe">
+          <form onSubmit={handleSubmit} className="rounded-3xl bg-navy-deep p-8 text-cream shadow-luxe">
             {submitted ? (
               <div className="flex h-full flex-col items-center justify-center py-10 text-center">
                 <Sparkles className="h-10 w-10 text-gold" />
-                <h3 className="mt-4 font-display text-2xl font-black uppercase">Roar received</h3>
-                <p className="mt-2 max-w-sm text-sm text-navy-deep/70">We've got it. A senior strategist will be in touch within one business day.</p>
+                <h3 className="mt-4 font-display text-2xl font-black uppercase text-cream">Roar received</h3>
+                <p className="mt-2 max-w-sm text-sm text-cream/70">We've got it. A senior strategist will be in touch within one business day.</p>
               </div>
             ) : (
               <>
                 <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-gold">Start your roar</p>
-                <h3 className="mt-1 font-display text-2xl font-black uppercase">Tell us about you</h3>
+                <h3 className="mt-1 font-display text-2xl font-black uppercase text-cream">Tell us about you</h3>
 
-                {error && <p className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>}
+                {error && <p className="mt-4 rounded-xl bg-red-500/20 px-4 py-3 text-sm text-red-200">{error}</p>}
 
                 <div className="mt-6 grid gap-4">
                   <label className="block">
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">Which package?</span>
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Which package?</span>
                     <div className="mt-2 grid grid-cols-3 gap-2">
                       {packages.map((p) => (
                         <button type="button" key={p.id} onClick={() => setSelected(p.id)}
-                          className={`rounded-xl border px-3 py-2 text-xs font-bold uppercase tracking-wider transition ${selected === p.id ? "border-gold bg-gold text-white" : "border-navy-deep/15 bg-white text-navy-deep/70 hover:border-navy-deep/40"}`}>
+                          className={`rounded-xl border px-3 py-2 text-xs font-bold uppercase tracking-wider transition ${selected === p.id ? "border-gold bg-gold text-navy-deep" : "border-cream/15 bg-cream/5 text-cream/70 hover:border-cream/40"}`}>
                           {p.name}
                         </button>
                       ))}
@@ -605,31 +587,39 @@ function PackagesPage() {
                   </label>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="block">
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">Full name</span>
-                      <input required name="name" type="text" className="mt-1.5 w-full rounded-xl border border-navy-deep/15 bg-white px-3 py-2.5 text-sm outline-none focus:border-gold" />
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Full name</span>
+                      <input required name="name" type="text" className="mt-1.5 w-full rounded-xl border border-cream/15 bg-white px-3 py-2.5 text-sm text-navy-deep outline-none focus:border-gold" />
                     </label>
                     <label className="block">
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">Company</span>
-                      <input name="company" type="text" className="mt-1.5 w-full rounded-xl border border-navy-deep/15 bg-white px-3 py-2.5 text-sm outline-none focus:border-gold" />
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Company</span>
+                      <input name="company" type="text" className="mt-1.5 w-full rounded-xl border border-cream/15 bg-white px-3 py-2.5 text-sm text-navy-deep outline-none focus:border-gold" />
                     </label>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="block">
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">Email</span>
-                      <input required name="email" type="email" className="mt-1.5 w-full rounded-xl border border-navy-deep/15 bg-white px-3 py-2.5 text-sm outline-none focus:border-gold" />
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Email</span>
+                      <input required name="email" type="email" className="mt-1.5 w-full rounded-xl border border-cream/15 bg-white px-3 py-2.5 text-sm text-navy-deep outline-none focus:border-gold" />
                     </label>
                     <label className="block">
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">Phone</span>
-                      <input name="phone" type="tel" className="mt-1.5 w-full rounded-xl border border-navy-deep/15 bg-white px-3 py-2.5 text-sm outline-none focus:border-gold" />
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Phone</span>
+                      <input name="phone" type="tel" className="mt-1.5 w-full rounded-xl border border-cream/15 bg-white px-3 py-2.5 text-sm text-navy-deep outline-none focus:border-gold" />
                     </label>
                   </div>
                   <label className="block">
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">What do you want the world to hear?</span>
-                    <textarea name="message" rows={4} className="mt-1.5 w-full rounded-xl border border-navy-deep/15 bg-white px-3 py-2.5 text-sm outline-none focus:border-gold" />
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">What do you want the world to hear?</span>
+                    <textarea name="message" rows={4} className="mt-1.5 w-full rounded-xl border border-cream/15 bg-white px-3 py-2.5 text-sm text-navy-deep outline-none focus:border-gold" />
                   </label>
                 </div>
 
-                <button type="submit" disabled={sending}
+                <div className="mt-4">
+                  <RecaptchaCheckbox
+                    sitekey="6LdjRCYtAAAAAL_LVN-5pju1WIlHi0eyE8deiZO-"
+                    onVerify={(token) => setRecaptchaToken(token)}
+                    onExpired={() => setRecaptchaToken(null)}
+                  />
+                </div>
+
+                <button type="submit" disabled={sending || !recaptchaToken}
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-5 py-3.5 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:bg-gold-soft disabled:opacity-60">
                   {sending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending...</> : <>Send my roar <ArrowRight className="h-4 w-4" /></>}
                 </button>
@@ -650,6 +640,15 @@ function PackagesPage() {
             <Link to="/services/executive-personal-branding" className="rounded-full bg-navy-deep px-5 py-3 text-sm font-bold uppercase tracking-wider text-cream transition hover:bg-navy">Executive & Personal Branding</Link>
             <Link to="/about-us" className="rounded-full bg-white px-5 py-3 text-sm font-bold uppercase tracking-wider text-navy-deep transition hover:bg-cream">About The Big Mouth PR</Link>
           </div>
+        </div>
+      </section>
+
+      {/* Independence Day Offer */}
+      <section className="sticky bottom-0 z-50 bg-navy-deep py-4">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.15em] text-gold md:text-base">
+            Independence Day Offer — <span className="underline decoration-gold/50">Valid Only Till July Ends</span>
+          </p>
         </div>
       </section>
 

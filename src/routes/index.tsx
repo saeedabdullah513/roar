@@ -68,6 +68,10 @@ import caseTerraSquare from "@/assets/case-study-portfolio/Terra Securities Time
 import caseUsaToday from "@/assets/case-study-portfolio/screencapture-usatoday-press-release-story-34497-as-women-led-businesses-hit-record-numbers-media-entrepreneur-keri-murphy-launches-new-network-focused-on-visibility-2026-06-11-22_00_37.png";
 import caseForbes from "@/assets/case-study-portfolio/Forbes Jessica.jpg";
 import caseBrandBook from "@/assets/case-study-portfolio/Brand Book.png";
+import leader1 from "@/assets/leader-1.png";
+import leader2 from "@/assets/leader-2.png";
+import leader3 from "@/assets/leader-3.jpeg";
+import leader4 from "@/assets/leader-4.png";
 import indFnb from "@/assets/ind-fnb.jpg";
 import indTech from "@/assets/ind-tech.jpg";
 import indFinance from "@/assets/ind-finance.jpg";
@@ -218,11 +222,11 @@ export function SiteHeader() {
     { href: "/about-us", label: "About Us" },
     { href: "/packages", label: "Packages" },
     { href: "/contact-us", label: "Contact Us" },
-    { href: "/#faq", label: "FAQ" },
+    { href: "/careers", label: "Careers" },
   ];
 
   const navItemClass =
-    "rounded-full px-4 py-2 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream cursor-pointer";
+    "rounded-full px-3 py-2 text-xs font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream cursor-pointer";
 
   return (
     <div
@@ -253,20 +257,21 @@ export function SiteHeader() {
         {/* White panel — nav links */}
         <NavigationMenu className="hidden max-w-none flex-1 items-center justify-center rounded-full bg-white px-3 py-2 shadow-luxe lg:flex">
           <NavigationMenuList className="flex-1 items-center justify-center gap-1">
-            <div className="relative group">
-              <Link
-                to="/services"
-                className={cn(
-                  navItemClass,
-                  "inline-flex items-center",
-                )}
-              >
-                Services
-                <ChevronDown className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-hover:rotate-180" />
-              </Link>
-              <div className="absolute left-0 top-full z-50 rounded-md border bg-white p-3 shadow-lg opacity-0 pointer-events-none transition-all duration-150 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:delay-75">
-                <div className="grid w-[260px] gap-0.5 md:w-[460px] md:grid-cols-2">
-                  {serviceLinks.map((s) => {
+            <NavigationMenuItem>
+              <div className="relative group">
+                <Link
+                  to="/services"
+                  className={cn(
+                    navItemClass,
+                    "inline-flex items-center",
+                  )}
+                >
+                  Services
+                  <ChevronDown className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-hover:rotate-180" />
+                </Link>
+                <div className="absolute left-0 top-full z-50 rounded-md border bg-white p-3 shadow-lg opacity-0 pointer-events-none transition-all duration-150 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:delay-75">
+                  <div className="grid w-[260px] gap-0.5 md:w-[460px] md:grid-cols-2">
+                    {serviceLinks.map((s) => {
                       const Icon = s.icon;
                       return (
                         <Link
@@ -279,9 +284,10 @@ export function SiteHeader() {
                         </Link>
                       );
                     })}
+                  </div>
                 </div>
               </div>
-            </div>
+            </NavigationMenuItem>
             {links.map((l) => (
               <NavigationMenuItem key={l.href}>
                 <NavigationMenuLink
@@ -996,10 +1002,10 @@ function Portfolio() {
    6. INDUSTRIES
 ===================================================================== */
 const cases = [
-  { client: "Maya R.", role: "Fintech Founder", metric: "+340%", label: "Inbound opportunities", note: "Featured in Forbes & WSJ in 6 months.", img: reel1 },
-  { client: "Daniel K.", role: "Healthcare CEO", metric: "12x", label: "LinkedIn impressions", note: "Keynote-circuit ready in 90 days.", img: reel2 },
-  { client: "Anika S.", role: "Bestselling Author", metric: "700+", label: "Distribution platforms", note: "Audiobook + Kirkus Review launch.", img: reel3 },
-  { client: "Marcus T.", role: "Real Estate Executive", metric: "#1", label: "Google search result", note: "Reputation cleanup + Wikipedia.", img: reel4 },
+  { img: leader1 },
+  { img: leader2 },
+  { img: leader3 },
+  { img: leader4 },
 ];
 
 function CaseStudies() {
@@ -1014,21 +1020,11 @@ function CaseStudies() {
           Real leaders. <span className="text-gold italic">Real noise.</span>
         </h2>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {cases.map((c) => (
-            <article key={c.client} className="group relative overflow-hidden rounded-2xl border border-navy-deep/10 bg-navy-deep text-cream transition hover:border-gold hover:-translate-y-1 hover:shadow-luxe">
-              <div className="relative h-56 overflow-hidden">
+            <article key={c.img} className="group relative overflow-hidden rounded-2xl bg-navy-deep transition hover:-translate-y-1 hover:shadow-luxe">
+              <div className="relative h-72 overflow-hidden sm:h-80">
                 <img src={c.img} alt={c.client} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent" />
-                <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between">
-                  <p className="font-display text-5xl font-black text-gold leading-none drop-shadow">{c.metric}</p>
-                  <p className="text-right text-[10px] uppercase tracking-[0.2em] text-cream/75">{c.label}</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="font-display text-xl font-bold text-cream">{c.client}</p>
-                <p className="text-xs text-cream/60">{c.role}</p>
-                <p className="mt-4 text-sm text-cream/80">{c.note}</p>
               </div>
             </article>
           ))}
@@ -1263,7 +1259,7 @@ export function Footer() {
             A loud, fearless personal branding & PR studio. Serving leaders who'd rather be talked about than tip-toed around.
           </p>
         </div>
-        <FooterCol title="Studio" items={[{ label: "Our Story", href: "/#story" }, { label: "About Us", href: "/about-us" }, { label: "Services", href: "/services" }, { label: "Packages", href: "/packages" }, { label: "Portfolio", href: "/portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
+        <FooterCol title="Studio" items={[{ label: "About Us", href: "/about-us" }, { label: "Services", href: "/services" }, { label: "Packages", href: "/packages" }, { label: "Portfolio", href: "/portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
         <FooterCol title="Services" items={[{ label: "Executive & Personal Branding", href: "/services/executive-personal-branding" }, { label: "Reputation & Media", href: "/services/reputation-media" }, { label: "Content & Social", href: "/services/content-social" }, { label: "Creative Production", href: "/services/creative-production" }, { label: "Author & Publishing", href: "/services/author-publishing" }, { label: "Digital & Public Affairs", href: "/services/digital-public-affairs" }, { label: "Events & Experiential Marketing", href: "/services/events-experiential-marketing" }]} />
         <FooterCol title="Get loud" items={[{ label: "Book a Call", href: "/contact-us#form" }, { label: "sales@thebigmouthpr.com", href: "mailto:sales@thebigmouthpr.com" }, { label: "+1 (332) 258-7873", href: "tel:+15550100420" }, { label: "2626 E 82nd St Ste#230, Bloomington, MN 55425", href: "#" }]} />
       </div>

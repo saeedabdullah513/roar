@@ -98,6 +98,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
+        src: "https://www.google.com/recaptcha/api.js?render=explicit",
+        async: true,
+        defer: true,
+      },
+      {
         async: true,
         src: "https://www.googletagmanager.com/gtag/js?id=AW-18245037953",
       },

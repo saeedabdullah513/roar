@@ -320,8 +320,7 @@ function ServicePillars() {
             02 — Everything for Those That Want to Be on Top
           </p>
           <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
-            Six service pillars.{" "}
-            <span className="text-gold">One unified</span> studio.
+            Multiple Services. <span className="text-gold">Roar Louder. Soar Higher.</span>
           </h2>
           <p className="mt-4 text-base text-navy-deep/70 md:text-lg">
             Pick where you need the loudest push, and we will show you exactly how we get you there.

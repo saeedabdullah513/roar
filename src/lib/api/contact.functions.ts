@@ -13,6 +13,7 @@ const contactSchema = z.object({
   ipAddress: z.string().optional(),
   ipCity: z.string().optional(),
   ipCountry: z.string().optional(),
+  recaptchaToken: z.string().optional(),
 });
 
 export type ContactData = z.infer<typeof contactSchema>;
@@ -27,7 +28,19 @@ const recipients = [
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator(contactSchema)
   .handler(async ({ data }) => {
-    const { name, email, company, role, phone, service, message, ipAddress, ipCity, ipCountry } = data;
+    const { name, email, company, role, phone, service, message, ipAddress, ipCity, ipCountry, recaptchaToken } = data;
+
+    if (recaptchaToken) {
+      const verify = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `secret=6LdjRCYtAAAAAD9gh4qFsXwB0BMz2Z3NcFT4sV_x&response=${encodeURIComponent(recaptchaToken)}`,
+      });
+      const result = await verify.json() as { success: boolean; score?: number; action?: string };
+      if (!result.success) {
+        return { success: false, error: "reCAPTCHA verification failed. Please try again." };
+      }
+    }
 
     const smtpHost = "smtp.titan.email";
     const smtpPort = 587;

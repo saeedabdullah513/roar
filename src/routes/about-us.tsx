@@ -31,6 +31,8 @@ import {
 import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
 import storyThumb from "@/assets/story-video-thumb.jpg";
+import storyThumbVideo from "@/assets/video/thumb-our-story.jpg";
+import storyVideo from "@/assets/video/the-big-mouth-pr-final-cut.mp4";
 import happiness1 from "@/assets/cheif-happiness-officer-1.png";
 import happiness2 from "@/assets/cheif-happiness-officer-2.png";
 import happiness3 from "@/assets/cheif-happiness-officer-3.png";
@@ -149,7 +151,7 @@ function Story() {
             aria-label="Play our story"
           >
             <img
-              src={storyThumb}
+              src={storyThumbVideo}
               alt="The Big Mouth PR story"
               loading="lazy"
               className="h-[520px] w-full object-cover transition duration-700 group-hover:scale-105"
@@ -213,15 +215,15 @@ function Story() {
             className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-black shadow-luxe"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="aspect-video w-full">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="The Big Mouth PR — Our Story"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+            <video
+              src={storyVideo}
+              className="w-full"
+              controls
+              playsInline
+              poster={storyThumbVideo}
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       )}
