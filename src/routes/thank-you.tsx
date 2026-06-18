@@ -30,6 +30,11 @@ export const Route = createFileRoute("/thank-you")({
           "Your message has been received. Our team will respond shortly.",
       },
     ],
+    scripts: [
+      {
+        children: `gtag('event', 'conversion', {'send_to': 'AW-18245037953/uW_-CNi1jsEcEIHf9PtD'});`,
+      },
+    ],
   }),
   component: ThankYouPage,
 });

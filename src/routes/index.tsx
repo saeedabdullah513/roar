@@ -51,10 +51,15 @@ import iconUrl from "@/assets/favicon.png";
 import lionUrl from "@/assets/lion-roar.png";
 import roarSfx from "@/assets/lion-roaring-sfx.mp3";
 import storyVideo from "@/assets/video/the-big-mouth-pr-final-cut.mp4";
+import storyThumbVideo from "@/assets/video/thumb-our-story.jpg";
 import testimonial1 from "@/assets/video/testimonia-1.mp4";
 import testimonial2 from "@/assets/video/testimonial-2.mp4";
 import testimonial3 from "@/assets/video/testimonial-3.mp4";
 import testimonial4 from "@/assets/video/testimonial-4.mp4";
+import thumb1 from "@/assets/video/thumb-testimonial-1.jpg";
+import thumb2 from "@/assets/video/thumb-testimonial-2.jpg";
+import thumb3 from "@/assets/video/thumb-testimonial-3.jpg";
+import thumb4 from "@/assets/video/thumb-testimonial-4.jpg";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -613,39 +618,10 @@ export function ClientsRibbon() {
 ===================================================================== */
 function Story() {
   const [open, setOpen] = useState(false);
-  const [posterThumb, setPosterThumb] = useState(storyThumb);
   const storyVideoRef = useRef<HTMLVideoElement>(null);
-  const captureRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const v = captureRef.current;
-    if (!v) return;
-    const capture = () => {
-      if (v.videoWidth) {
-        const c = document.createElement("canvas");
-        c.width = v.videoWidth;
-        c.height = v.videoHeight;
-        const ctx = c.getContext("2d");
-        if (ctx) { ctx.drawImage(v, 0, 0, c.width, c.height); setPosterThumb(c.toDataURL("image/jpeg", 0.8)); }
-      }
-    };
-    v.addEventListener("loadeddata", capture);
-    v.load();
-    return () => { v.removeEventListener("loadeddata", capture); };
-  }, []);
 
   const onStoryOpen = () => {
     setOpen(true);
-    setTimeout(() => {
-      const video = storyVideoRef.current;
-      if (video && video.readyState >= 2) {
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth || 1280;
-        canvas.height = video.videoHeight || 720;
-        const ctx = canvas.getContext("2d");
-        if (ctx) { ctx.drawImage(video, 0, 0, canvas.width, canvas.height); video.poster = canvas.toDataURL("image/jpeg", 0.7); }
-      }
-    }, 200);
   };
   return (
     <section id="story" className="relative bg-white py-24 md:py-28 xl:py-20">
@@ -659,7 +635,7 @@ function Story() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
         <div className="flex justify-center">
           <button onClick={onStoryOpen} className="group relative block w-full max-w-lg overflow-hidden rounded-2xl shadow-luxe lg:max-w-[600px]" aria-label="Play our story">
-            <img src={posterThumb} alt="The Big Mouth PR story" loading="lazy" className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105 md:h-[400px] lg:h-[520px]" />
+            <img src={storyThumbVideo} alt="The Big Mouth PR story" loading="lazy" className="h-[300px] w-full object-cover transition duration-700 group-hover:scale-105 md:h-[400px] lg:h-[520px]" />
             <div className="absolute inset-0 bg-gradient-to-tr from-navy-deep/70 via-navy-deep/20 to-transparent" />
             <span className="absolute inset-0 flex items-center justify-center">
               <span className="relative">
@@ -712,13 +688,13 @@ function Story() {
               className="w-full"
               controls
               playsInline
+              poster={storyThumbVideo}
             >
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
       )}
-      <video ref={captureRef} src={storyVideo} className="hidden" preload="auto" playsInline muted />
     </section>
   );
 }
@@ -859,6 +835,14 @@ function Services() {
             );
           })}
         </div>
+      </div>
+      <div className="mt-10 text-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03]"
+          >
+            Explore All Services <ArrowRight className="h-4 w-4" />
+        </Link>
       </div>
     </section>
   );
@@ -1002,14 +986,7 @@ function Portfolio() {
           ))}
         </div>
 
-        <div className="mt-10 text-center">
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03]"
-          >
-            Explore All Services <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+        
       </div>
     </section>
   );
@@ -1065,10 +1042,10 @@ function CaseStudies() {
    9. TESTIMONIALS — reel format (vertical cards with video/image + text above)
 ===================================================================== */
 const testimonials = [
-  { name: "Sarah Lin", role: "VP, BlackRock", quote: "I went from invisible to invited to the keynote stage. The Big Mouth PR just gets it.", img: reel1, video: testimonial1 },
-  { name: "Jordan Pierce", role: "Tech Founder", quote: "They built a personal brand that closes deals while I sleep. Worth every penny.", img: reel2, video: testimonial2 },
-  { name: "Priya Anand", role: "Author & Speaker", quote: "Kirkus review, audiobook, Times Square — I felt the literal noise.", img: reel3, video: testimonial3 },
-  { name: "Marcus Webb", role: "CMO", quote: "Sophisticated, witty, ruthlessly strategic. The studio I tell every CEO friend about.", img: reel4, video: testimonial4 },
+  { name: "Sarah Lin", role: "VP, BlackRock", quote: "I went from invisible to invited to the keynote stage. The Big Mouth PR just gets it.", img: thumb1, video: testimonial1 },
+  { name: "Jordan Pierce", role: "Tech Founder", quote: "They built a personal brand that closes deals while I sleep. Worth every penny.", img: thumb2, video: testimonial2 },
+  { name: "Priya Anand", role: "Author & Speaker", quote: "Kirkus review, audiobook, Times Square — I felt the literal noise.", img: thumb3, video: testimonial3 },
+  { name: "Marcus Webb", role: "CMO", quote: "Sophisticated, witty, ruthlessly strategic. The studio I tell every CEO friend about.", img: thumb4, video: testimonial4 },
 ];
 
 function Testimonials() {
@@ -1081,30 +1058,6 @@ function Testimonials() {
     const video = videoRefs.current[index];
     if (video) {
       video.paused ? video.play() : video.pause();
-    }
-  };
-
-  const capturePoster = (video: HTMLVideoElement, index: number) => {
-    if (video.poster && video.poster.startsWith("data:")) return;
-    const seekAndCapture = () => {
-      video.currentTime = 1;
-      video.onseeked = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth || 640;
-        canvas.height = video.videoHeight || 1138;
-        const ctx = canvas.getContext("2d");
-        if (ctx) {
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-          video.poster = canvas.toDataURL("image/jpeg", 0.7);
-        }
-        video.onseeked = null;
-        video.pause();
-      };
-    };
-    if (video.readyState >= 2) {
-      seekAndCapture();
-    } else {
-      video.onloadedmetadata = () => seekAndCapture();
     }
   };
 
@@ -1135,7 +1088,7 @@ function Testimonials() {
           {testimonials.map((t, i) => (
             <article key={t.name} className="group relative aspect-[9/16] overflow-hidden rounded-3xl bg-black shadow-luxe">
               <video
-                ref={(el) => { videoRefs.current[i] = el; if (el) capturePoster(el, i); }}
+                ref={(el) => { videoRefs.current[i] = el; }}
                 src={t.video}
                 playsInline
                 preload="metadata"
