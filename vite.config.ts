@@ -13,11 +13,5 @@ export default defineConfig({
   vite: {
     server: { host: "0.0.0.0", historyApiFallback: true },
   },
-  nitro: {
-    preset: "vercel",
-    prerender: {
-      crawlLinks: true,
-      routes: ["/"],
-    },
-  },
+  nitro: { preset: "vercel" },
 });
