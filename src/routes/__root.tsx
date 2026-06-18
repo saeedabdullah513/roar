@@ -89,6 +89,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://www.googletagmanager.com" },
+      { rel: "preconnect", href: "https://www.google.com" },
+      { rel: "dns-prefetch", href: "https://www.googletagmanager.com" },
+      { rel: "dns-prefetch", href: "https://www.google.com" },
       { rel: "icon", type: "image/png", href: faviconUrl },
       { rel: "apple-touch-icon", href: faviconUrl },
       {
