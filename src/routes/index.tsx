@@ -95,17 +95,17 @@ import reel4 from "@/assets/reel-4.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Big Mouth PR — We Don't Whisper. We Roar." },
+      { title: "Top Personal Branding & Marketing Agency in the US" },
       {
         name: "description",
         content:
-          "The Big Mouth PR is a loud, fearless personal branding & PR studio for founders, executives and disruptors who refuse to be ignored.",
+          "The Big Mouth PR is a loud, fearless personal branding & PR agency in the US for founders, executives & disruptors who refuse to be ignored.",
       },
-      { property: "og:title", content: "The Big Mouth PR — We Don't Whisper. We Roar." },
+      { property: "og:title", content: "Top Personal Branding & Marketing Agency in the US" },
       {
         property: "og:description",
         content:
-          "Personal branding, reputation & media for leaders who'd rather be talked about than tip-toed around.",
+          "The Big Mouth PR is a loud, fearless personal branding & PR agency in the US for founders, executives & disruptors who refuse to be ignored.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
