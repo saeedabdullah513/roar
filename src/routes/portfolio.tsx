@@ -3,15 +3,15 @@ import { useState } from "react";
 import { ArrowRight, ArrowUpRight, Eye } from "lucide-react";
 import { SiteHeader, Footer, FloatingCTA, LionInteractions, DotMark } from "./index";
 
-import brandBook from "@/assets/case-study-portfolio/Brand Book.png";
-import branding2 from "@/assets/case-study-portfolio/Branding 2.png";
-import branding from "@/assets/case-study-portfolio/Branding.png";
-import corporateHeadshot from "@/assets/case-study-portfolio/Corporate headshot.png";
+import brandBook from "@/assets/case-study-portfolio/Brand Book.jpg";
+import branding2 from "@/assets/case-study-portfolio/Branding 2.jpg";
+import branding from "@/assets/case-study-portfolio/Branding.jpg";
+import corporateHeadshot from "@/assets/case-study-portfolio/Corporate headshot.jpg";
 import forbesJessica from "@/assets/case-study-portfolio/Forbes Jessica.jpg";
 import forbes from "@/assets/case-study-portfolio/Forbes.jpg";
 import usatoday from "@/assets/case-study-portfolio/screencapture-usatoday-press-release-story-34497-as-women-led-businesses-hit-record-numbers-media-entrepreneur-keri-murphy-launches-new-network-focused-on-visibility-2026-06-11-22_00_37.png";
 import terraSecurities from "@/assets/case-study-portfolio/Terra Securities Time Square by TheBigMouthPR.jpg";
-import website from "@/assets/case-study-portfolio/Website.png";
+import website from "@/assets/case-study-portfolio/Website.jpg";
 
 const projects = [
   {

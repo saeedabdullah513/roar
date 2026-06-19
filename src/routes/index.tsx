@@ -67,11 +67,11 @@ import portfolio4 from "@/assets/portfolio-4.jpg";
 import caseTerraSquare from "@/assets/case-study-portfolio/Terra Securities Time Square by TheBigMouthPR.jpg";
 import caseUsaToday from "@/assets/case-study-portfolio/screencapture-usatoday-press-release-story-34497-as-women-led-businesses-hit-record-numbers-media-entrepreneur-keri-murphy-launches-new-network-focused-on-visibility-2026-06-11-22_00_37.png";
 import caseForbes from "@/assets/case-study-portfolio/Forbes Jessica.jpg";
-import caseBrandBook from "@/assets/case-study-portfolio/Brand Book.png";
-import leader1 from "@/assets/leader-1.png";
-import leader2 from "@/assets/leader-2.png";
+import caseBrandBook from "@/assets/case-study-portfolio/Brand Book.jpg";
+import leader1 from "@/assets/leader-1.jpg";
+import leader2 from "@/assets/leader-2.jpg";
 import leader3 from "@/assets/leader-3.jpeg";
-import leader4 from "@/assets/leader-4.png";
+import leader4 from "@/assets/leader-4.jpg";
 import indFnb from "@/assets/ind-fnb.jpg";
 import indTech from "@/assets/ind-tech.jpg";
 import indFinance from "@/assets/ind-finance.jpg";
@@ -109,6 +109,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: logoUrl },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: logoUrl },
     ],
     links: [
       { rel: "canonical", href: "/" },
@@ -432,7 +435,9 @@ function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt=""
+          alt="The Big Mouth PR — Personal Branding & PR Studio"
+          fetchpriority="high"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover opacity-25 animate-ken-burns"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-navy-deep via-navy-deep/85 to-navy-deep/95" />

@@ -53,10 +53,10 @@ import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
-import leader1 from "@/assets/leader-1.png";
-import leader2 from "@/assets/leader-2.png";
+import leader1 from "@/assets/leader-1.jpg";
+import leader2 from "@/assets/leader-2.jpg";
 import leader3 from "@/assets/leader-3.jpeg";
-import leader4 from "@/assets/leader-4.png";
+import leader4 from "@/assets/leader-4.jpg";
 
 const LION_URL = lionUrl;
 const ICON_URL = iconUrl;
