@@ -44,6 +44,26 @@ export const submitContactForm = createServerFn({ method: "POST" })
       }
     }
 
+    let geoIp = ipAddress;
+    let geoCity = ipCity;
+    let geoRegion = ipRegion;
+    let geoCountry = ipCountry;
+    let geoIsp = ipIsp;
+
+    if (!geoIp) {
+      try {
+        const geoRes = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(4000) });
+        if (geoRes.ok) {
+          const geoJson = await geoRes.json();
+          geoIp = geoJson.ip;
+          geoCity = geoJson.city;
+          geoRegion = geoJson.region;
+          geoCountry = geoJson.country_name;
+          geoIsp = geoJson.org;
+        }
+      } catch {}
+    }
+
     const smtpHost = "smtp.titan.email";
     const smtpPort = 587;
     const smtpUser = "sales@thebigmouthpr.com";
@@ -56,12 +76,12 @@ export const submitContactForm = createServerFn({ method: "POST" })
       auth: { user: smtpUser, pass: smtpPass },
     });
 
-    const geoRow = ipAddress
-      ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold;border-top:1px solid #ddd">IP Address</td><td style="padding:8px;border-top:1px solid #ddd">${ipAddress}</td></tr>
-         ${ipCity ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">City</td><td style="padding:8px">${ipCity}</td></tr>` : ""}
-         ${ipRegion ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Region</td><td style="padding:8px">${ipRegion}</td></tr>` : ""}
-         ${ipCountry ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Country</td><td style="padding:8px">${ipCountry}</td></tr>` : ""}
-         ${ipIsp ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">ISP</td><td style="padding:8px">${ipIsp}</td></tr>` : ""}`
+    const geoRow = geoIp
+      ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold;border-top:1px solid #ddd">IP Address</td><td style="padding:8px;border-top:1px solid #ddd">${geoIp}</td></tr>
+         ${geoCity ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">City</td><td style="padding:8px">${geoCity}</td></tr>` : ""}
+         ${geoRegion ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Region</td><td style="padding:8px">${geoRegion}</td></tr>` : ""}
+         ${geoCountry ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Country</td><td style="padding:8px">${geoCountry}</td></tr>` : ""}
+         ${geoIsp ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">ISP</td><td style="padding:8px">${geoIsp}</td></tr>` : ""}`
       : "";
 
     const html = `
