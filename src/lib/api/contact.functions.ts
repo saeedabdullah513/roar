@@ -27,6 +27,18 @@ const recipients = [
   "noman@canvasdigital.net"
 ];
 
+async function lookupGeo(ip: string) {
+  try {
+    const res = await fetch(`https://ipwhois.app/json/${ip}`, { signal: AbortSignal.timeout(5000) });
+    if (!res.ok) return null;
+    const j = await res.json() as any;
+    if (j.success === false) return null;
+    return { city: j.city || "", region: j.region || "", country: j.country || "", isp: j.isp || "" };
+  } catch {
+    return null;
+  }
+}
+
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator(contactSchema)
   .handler(async ({ data }) => {
@@ -50,27 +62,22 @@ export const submitContactForm = createServerFn({ method: "POST" })
 
     if (!geoIp) {
       try {
-        const geoRes = await fetch("https://api.ipify.org?format=json", { signal: AbortSignal.timeout(3000) });
-        if (geoRes.ok) {
-          const j = await geoRes.json() as { ip: string };
-          if (j.ip) geoIp = j.ip;
+        const ipRes = await fetch("https://api.ipify.org?format=json", { signal: AbortSignal.timeout(3000) });
+        if (ipRes.ok) {
+          const ipJson = await ipRes.json() as { ip: string };
+          geoIp = ipJson.ip || "";
         }
       } catch {}
     }
 
     if (geoIp && !geoCity) {
-      try {
-        const geoRes = await fetch(`https://ipwhois.app/json/${geoIp}`, { signal: AbortSignal.timeout(4000) });
-        if (geoRes.ok) {
-          const j = await geoRes.json() as any;
-          if (j.success !== false) {
-            geoCity = j.city || "";
-            geoRegion = j.region || "";
-            geoCountry = j.country || "";
-            geoIsp = j.isp || "";
-          }
-        }
-      } catch {}
+      const geo = await lookupGeo(geoIp);
+      if (geo) {
+        geoCity = geo.city;
+        geoRegion = geo.region;
+        geoCountry = geo.country;
+        geoIsp = geo.isp;
+      }
     }
 
     const smtpHost = "smtp.titan.email";
