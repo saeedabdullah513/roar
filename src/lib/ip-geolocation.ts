@@ -8,15 +8,15 @@ export interface IpGeoData {
 
 export async function fetchIpGeolocation(): Promise<IpGeoData> {
   try {
-    const res = await fetch("http://ip-api.com/json/?fields=query,country,regionName,city,isp", { signal: AbortSignal.timeout(5000) });
+    const res = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(5000) });
     if (!res.ok) return {};
     const json = await res.json();
     return {
-      ipAddress: json.query || undefined,
+      ipAddress: json.ip || undefined,
       ipCity: json.city || undefined,
-      ipRegion: json.regionName || undefined,
-      ipCountry: json.country || undefined,
-      ipIsp: json.isp || undefined,
+      ipRegion: json.region || undefined,
+      ipCountry: json.country_name || undefined,
+      ipIsp: json.org || undefined,
     };
   } catch {
     return {};
