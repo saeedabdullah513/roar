@@ -44,6 +44,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { submitContactForm } from "../lib/api/contact.functions";
+import { fetchIpGeolocation } from "../lib/ip-geolocation";
 
 import heroImg from "@/assets/hero-executive.jpg";
 import logoUrl from "@/assets/roar-logo.png";
@@ -411,6 +412,7 @@ function Hero() {
     setHeroSending(true);
     setHeroError(null);
     try {
+      const geo = await fetchIpGeolocation();
       await submitContactForm({
         data: {
           name: heroForm.name,
@@ -420,6 +422,7 @@ function Hero() {
           phone: "",
           service: "Strategy Call",
           message: heroForm.message,
+          ...geo,
         },
       });
       window.location.href = "/thank-you";
