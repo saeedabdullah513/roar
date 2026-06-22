@@ -66,7 +66,7 @@ import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
 import caseTerraSquare from "@/assets/case-study-portfolio/Terra Securities Time Square by TheBigMouthPR.jpg";
-import caseUsaToday from "@/assets/case-study-portfolio/screencapture-usatoday-press-release-story-34497-as-women-led-businesses-hit-record-numbers-media-entrepreneur-keri-murphy-launches-new-network-focused-on-visibility-2026-06-11-22_00_37.png";
+import caseUsaToday from "@/assets/case-study-portfolio/screencapture-usatoday-press-release-story-34497-as-women-led-businesses-hit-record-numbers-media-entrepreneur-keri-murphy-launches-new-network-focused-on-visibility-2026-06-11-22_00_37-BoC8V-Zl.png";
 import caseForbes from "@/assets/case-study-portfolio/Forbes Jessica.jpg";
 import caseBrandBook from "@/assets/case-study-portfolio/Brand Book.jpg";
 import leader1 from "@/assets/leader-1.jpg";
