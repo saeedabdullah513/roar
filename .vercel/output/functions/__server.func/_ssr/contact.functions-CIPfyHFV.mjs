@@ -1,4 +1,4 @@
-import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-Ds_X2RPp.mjs";
+import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-B9lz2OrR.mjs";
 import { n as nodemailer } from "../_libs/nodemailer.mjs";
 import "../_libs/seroval.mjs";
 import "../_libs/react.mjs";
@@ -139,14 +139,14 @@ const submitContactForm = createServerFn({
       geoIsp = geo.isp;
     }
   }
-  const smtpHost = "smtp.titan.email";
-  const smtpPort = 587;
+  const smtpHost = "smtppro.zoho.com";
+  const smtpPort = 465;
   const smtpUser = "sales@thebigmouthpr.com";
-  const smtpPass = "QSXCR2!1cxv";
+  const smtpPass = "v@qla2cS";
   const transporter = nodemailer.createTransport({
     host: smtpHost,
     port: smtpPort,
-    secure: false,
+    secure: true,
     auth: {
       user: smtpUser,
       pass: smtpPass

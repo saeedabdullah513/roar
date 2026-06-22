@@ -1,7 +1,7 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { S as SiteHeader, C as ClientsRibbon, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark, M as MouthMark } from "./router-B2NJM4_l.mjs";
-import { f as fetchIpGeolocation, s as submitContactForm } from "./ip-geolocation-BjHic2WA.mjs";
+import { S as SiteHeader, C as ClientsRibbon, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark, M as MouthMark } from "./router-B2q96Aj0.mjs";
+import { f as fetchIpGeolocation, s as submitContactForm } from "./ip-geolocation-CKB3OsgM.mjs";
 import { l as lionUrl } from "./lion-roar-IYwTvOU2.mjs";
 import { p as portfolio1, a as portfolio3 } from "./portfolio-3-BFHJ6BRp.mjs";
 import "../_libs/seroval.mjs";
@@ -40,7 +40,7 @@ import "../_libs/@radix-ui/react-visually-hidden+[...].mjs";
 import "../_libs/class-variance-authority.mjs";
 import "../_libs/clsx.mjs";
 import "../_libs/tailwind-merge.mjs";
-import "./server-Ds_X2RPp.mjs";
+import "./server-B9lz2OrR.mjs";
 import "node:async_hooks";
 import "../_libs/h3-v2.mjs";
 import "../_libs/rou3.mjs";

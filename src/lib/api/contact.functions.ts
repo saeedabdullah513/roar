@@ -80,15 +80,15 @@ export const submitContactForm = createServerFn({ method: "POST" })
       }
     }
 
-    const smtpHost = "smtp.titan.email";
-    const smtpPort = 587;
+    const smtpHost = "smtppro.zoho.com";
+    const smtpPort = 465;
     const smtpUser = "sales@thebigmouthpr.com";
-    const smtpPass = "QSXCR2!1cxv";
+    const smtpPass = "v@qla2cS";
 
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: false,
+      secure: true,
       auth: { user: smtpUser, pass: smtpPass },
     });
 
