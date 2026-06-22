@@ -32,7 +32,7 @@ import lionUrl from "@/assets/lion-roar.png";
 import iconUrl from "@/assets/favicon.png";
 import storyThumb from "@/assets/story-video-thumb.jpg";
 import storyThumbVideo from "@/assets/video/thumb-our-story.jpg";
-import storyVideo from "@/assets/video/the-big-mouth-pr-final-cut.mp4";
+import storyVideo from "@/assets/video/the-big-mouth-pr-final-cut.webm";
 import happiness1 from "@/assets/cheif-happiness-officer-1.jpg";
 import happiness2 from "@/assets/cheif-happiness-officer-2.jpg";
 import happiness3 from "@/assets/cheif-happiness-officer-3.jpg";

@@ -7,7 +7,7 @@ const videos = [
   { input: "src/assets/video/testimonial-2.mp4", output: "src/assets/video/thumb-testimonial-2.jpg" },
   { input: "src/assets/video/testimonial-3.mp4", output: "src/assets/video/thumb-testimonial-3.jpg" },
   { input: "src/assets/video/testimonial-4.mp4", output: "src/assets/video/thumb-testimonial-4.jpg" },
-  { input: "src/assets/video/the-big-mouth-pr-final-cut.mp4", output: "src/assets/video/thumb-our-story.jpg" },
+  { input: "src/assets/video/the-big-mouth-pr-final-cut.webm", output: "src/assets/video/thumb-our-story.jpg" },
 ];
 
 videos.forEach(({ input, output }) => {

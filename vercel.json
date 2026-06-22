@@ -9,6 +9,14 @@
       "maxDuration": 10
     }
   },
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.thebigmouthpr.com" }],
+      "destination": "https://thebigmouthpr.com/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

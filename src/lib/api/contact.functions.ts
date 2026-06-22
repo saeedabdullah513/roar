@@ -12,7 +12,9 @@ const contactSchema = z.object({
   message: z.string().min(1, "Message is required"),
   ipAddress: z.string().optional(),
   ipCity: z.string().optional(),
+  ipRegion: z.string().optional(),
   ipCountry: z.string().optional(),
+  ipIsp: z.string().optional(),
   recaptchaToken: z.string().optional(),
 });
 
@@ -20,15 +22,15 @@ export type ContactData = z.infer<typeof contactSchema>;
 
 const recipients = [
   "sales@thebigmouthpr.com",
-  "abdullah.saeed@canvasdigital.org",
-  "arsalan.mustafa@canvasdigital.org",
-  "noman@canvasdigital.net"
+  "abdullah.saeed@canvasdigital.org"
+  // "arsalan.mustafa@canvasdigital.org",
+  // "noman@canvasdigital.net"
 ];
 
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator(contactSchema)
   .handler(async ({ data }) => {
-    const { name, email, company, role, phone, service, message, ipAddress, ipCity, ipCountry, recaptchaToken } = data;
+    const { name, email, company, role, phone, service, message, ipAddress, ipCity, ipRegion, ipCountry, ipIsp, recaptchaToken } = data;
 
     if (recaptchaToken) {
       const verify = await fetch("https://www.google.com/recaptcha/api/siteverify", {
@@ -57,7 +59,9 @@ export const submitContactForm = createServerFn({ method: "POST" })
     const geoRow = ipAddress
       ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold;border-top:1px solid #ddd">IP Address</td><td style="padding:8px;border-top:1px solid #ddd">${ipAddress}</td></tr>
          ${ipCity ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">City</td><td style="padding:8px">${ipCity}</td></tr>` : ""}
-         ${ipCountry ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Country</td><td style="padding:8px">${ipCountry}</td></tr>` : ""}`
+         ${ipRegion ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Region</td><td style="padding:8px">${ipRegion}</td></tr>` : ""}
+         ${ipCountry ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Country</td><td style="padding:8px">${ipCountry}</td></tr>` : ""}
+         ${ipIsp ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">ISP</td><td style="padding:8px">${ipIsp}</td></tr>` : ""}`
       : "";
 
     const html = `

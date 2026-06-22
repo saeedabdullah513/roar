@@ -1,1 +1,0 @@
-async function o(){try{const i=await fetch("https://ipapi.co/json/",{signal:AbortSignal.timeout(5e3)});if(!i.ok)return{};const t=await i.json();return{ipAddress:t.ip||void 0,ipCity:t.city||void 0,ipCountry:t.country_name||void 0}}catch{return{}}}export{o as f};

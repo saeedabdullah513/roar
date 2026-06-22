@@ -50,7 +50,7 @@ import logoUrl from "@/assets/roar-logo.png";
 import iconUrl from "@/assets/favicon.png";
 import lionUrl from "@/assets/lion-roar.png";
 import roarSfx from "@/assets/lion-roaring-sfx.mp3";
-import storyVideo from "@/assets/video/the-big-mouth-pr-final-cut.mp4";
+import storyVideo from "@/assets/video/the-big-mouth-pr-final-cut.webm";
 import storyThumbVideo from "@/assets/video/thumb-our-story.jpg";
 import testimonial1 from "@/assets/video/testimonia-1.mp4";
 import testimonial2 from "@/assets/video/testimonial-2.mp4";

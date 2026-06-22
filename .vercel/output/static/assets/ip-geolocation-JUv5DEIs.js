@@ -1,0 +1,1 @@
+async function t(){try{const o=await fetch("http://ip-api.com/json/?fields=query,country,regionName,city,isp",{signal:AbortSignal.timeout(5e3)});if(!o.ok)return{};const i=await o.json();return{ipAddress:i.query||void 0,ipCity:i.city||void 0,ipRegion:i.regionName||void 0,ipCountry:i.country||void 0,ipIsp:i.isp||void 0}}catch{return{}}}export{t as f};
