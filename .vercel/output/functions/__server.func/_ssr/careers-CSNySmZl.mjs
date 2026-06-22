@@ -1,6 +1,6 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { S as SiteHeader, D as DotMark, F as Footer, a as FloatingCTA, L as LionInteractions } from "./router-XAygO64m.mjs";
+import { S as SiteHeader, D as DotMark, F as Footer, a as FloatingCTA, L as LionInteractions } from "./router-CnaTrQwo.mjs";
 import { S as Sparkles, A as ArrowRight, U as Upload, L as LoaderCircle } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";

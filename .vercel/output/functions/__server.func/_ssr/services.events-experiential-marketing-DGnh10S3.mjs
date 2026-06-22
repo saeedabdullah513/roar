@@ -1,12 +1,12 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
 import { u as useEmblaCarousel } from "../_libs/embla-carousel-react.mjs";
-import { S as SiteHeader, C as ClientsRibbon, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark, M as MouthMark } from "./router-XAygO64m.mjs";
-import { f as fetchIpGeolocation, s as submitContactForm } from "./ip-geolocation-C5dWLOnh.mjs";
+import { S as SiteHeader, C as ClientsRibbon, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark, M as MouthMark } from "./router-CnaTrQwo.mjs";
+import { f as fetchIpGeolocation, s as submitContactForm } from "./ip-geolocation-C-g3jdbl.mjs";
 import { l as lionUrl } from "./lion-roar-IYwTvOU2.mjs";
 import { l as leader1, a as leader2, b as leader3, c as leader4 } from "./leader-4-vZurwnLd.mjs";
 import "../_libs/seroval.mjs";
-import { V as Volume2, A as ArrowRight, Q as ShieldCheck, N as Newspaper, T as TrendingUp, M as Megaphone, a as Crown, Z as MicVocal, e as Minus, P as Plus, d as Check, g as ArrowUpRight, h as Phone, w as ClipboardList, x as FilePenLine, n as Users, y as Map, R as Rocket, v as ChartLine, $ as Trophy, k as MessageSquareHeart, J as ChevronLeft, K as ChevronRight, L as LoaderCircle } from "../_libs/lucide-react.mjs";
+import { V as Volume2, A as ArrowRight, S as Sparkles, Z as MicVocal, j as MapPin, a0 as Gift, a1 as Music, b as Camera, e as Minus, P as Plus, d as Check, g as ArrowUpRight, h as Phone, w as ClipboardList, x as FilePenLine, n as Users, y as Map, R as Rocket, v as ChartLine, $ as Trophy, k as MessageSquareHeart, J as ChevronLeft, K as ChevronRight, L as LoaderCircle } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -43,7 +43,7 @@ import "../_libs/@radix-ui/react-visually-hidden+[...].mjs";
 import "../_libs/class-variance-authority.mjs";
 import "../_libs/clsx.mjs";
 import "../_libs/tailwind-merge.mjs";
-import "./server-DuBOblra.mjs";
+import "./server-emlf-Mdc.mjs";
 import "node:async_hooks";
 import "../_libs/h3-v2.mjs";
 import "../_libs/rou3.mjs";
@@ -61,20 +61,18 @@ function Hero() {
         /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.4em] text-cream/60 hover:text-gold", children: "← Back to The Big Mouth PR" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 inline-flex items-center gap-3 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(DotMark, {}),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75", children: "Service · Reputation & Media" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75", children: "Service · Events & Experiential Marketing" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl", children: [
-          "Your reputation ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/60", children: "should" }),
+          "Your brand ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/60", children: "lived" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "open ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "every door." })
+          "is your brand ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "remembered." })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-6 max-w-xl text-lg text-cream/75 md:text-xl", children: [
-          "We manage what the world sees — press, Wikipedia, reviews, crisis and visibility — so your name means ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold font-semibold", children: "trust" }),
-          " ",
-          "before you even walk in the room."
+          "Pop-ups, product launches, immersive installations, touring activations and conference takeovers — we build in-person and hybrid experiences that don't just attract crowds, they create ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold font-semibold", children: "memories." })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-9 flex flex-wrap gap-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03]", children: [
@@ -87,14 +85,14 @@ function Hero() {
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 grid max-w-md grid-cols-1 gap-6 sm:grid-cols-3", children: [{
-          k: "+400%",
-          v: "Avg. press pickup rate"
+          k: "200+",
+          v: "Events produced"
         }, {
-          k: "1,400+",
-          v: "Media placements secured"
+          k: "50K+",
+          v: "Attendees engaged"
         }, {
-          k: "72h",
-          v: "Crisis response window"
+          k: "15+",
+          v: "Cities activated"
         }].map((s) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-3xl font-black text-gold", children: s.k }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px] uppercase tracking-[0.18em] text-cream/55", children: s.v })
@@ -103,39 +101,39 @@ function Hero() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-10 rounded-full bg-gold/20 blur-3xl", "aria-hidden": true }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, alt: "Roaring lion — The Big Mouth PR", className: "relative mx-auto w-full max-w-[280px] animate-lion-roar drop-shadow-[0_30px_60px_rgba(253,95,8,0.35)] sm:max-w-[400px] lg:max-w-[520px]" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe", children: "Trust at scale." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe", children: "Create the moment." })
       ] })
     ] })
   ] });
 }
 function Overview() {
   const pillars = [{
-    icon: ShieldCheck,
-    t: "Trust",
-    d: "Build credibility that every stakeholder, partner and investor instantly recognises."
+    icon: Sparkles,
+    t: "Pop-Ups",
+    d: "Temporary retail, brand installations and takeovers that create urgency and buzz."
   }, {
-    icon: Newspaper,
-    t: "Visibility",
-    d: "Command the front page, Wikipedia and every search result that matters."
+    icon: MicVocal,
+    t: "Product Launches",
+    d: "Show-stopping launch events that turn your next release into a cultural moment."
   }, {
-    icon: TrendingUp,
-    t: "Resilience",
-    d: "A reputation engineered to withstand scrutiny and emerge stronger."
+    icon: MapPin,
+    t: "Touring Activations",
+    d: "Multi-city roadshows that bring your brand to the people who matter most."
   }, {
-    icon: Megaphone,
-    t: "Amplification",
-    d: "Every win turns into a story. Every story turns into momentum."
+    icon: Gift,
+    t: "VIP Experiences",
+    d: "Exclusive, invite-only moments for top clients, partners and stakeholders."
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative bg-white py-20 md:py-24 xl:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-7xl px-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "01 — What it is" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-          "Reputation engineered like a ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "fortress." })
+          "Experiences engineered to ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "stop traffic." })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-navy-deep/70 md:text-lg", children: "Reputation & Media isn't just press releases. It's a 360° system — media relations, crisis preparedness, Wikipedia authority, review management and Times Square visibility — built so your name stands for something unshakable." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-navy-deep/70 md:text-lg", children: "Events & Experiential Marketing at The Big Mouth PR turns your brand into something people line up for. From intimate VIP dinners to stadium-scale activations, we concept, produce and measure moments that compound into earned media and lasting loyalty." })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4", children: pillars.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group relative overflow-hidden rounded-2xl border border-navy-deep/10 bg-white p-7 transition hover:-translate-y-1 hover:border-gold hover:shadow-luxe", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: ICON_URL, "aria-hidden": true, alt: "", className: "absolute -right-6 -top-6 h-24 opacity-[0.06] transition group-hover:opacity-[0.12]" }),
@@ -146,35 +144,35 @@ function Overview() {
   ] }) });
 }
 const subServices = [{
-  icon: Newspaper,
-  title: "PR & Press Distribution",
-  short: "More on PR & Press Distribution.",
-  details: ["Media list build & journalist targeting", "Press release writing & distribution", "Exclusive pitches & embargo plays", "Op-ed placement & bylined articles"]
+  icon: Sparkles,
+  title: "Pop-Up Activations",
+  short: "Find out more about Pop-Up Activations.",
+  details: ["Venue scouting & pop-up design", "Brand environment & set design", "Product display & sampling stations", "Staff training & on-day management", "Measurement & post-event reporting"]
 }, {
-  icon: Crown,
-  title: "Wikipedia Profiles",
-  short: "See how we build Wikipedia Profiles that last.",
-  details: ["Notability assessment & draft preparation", "Neutral point-of-view copywriting", "Citation sourcing from tier-1 media", "Submission, mediation & dispute handling"]
+  icon: Music,
+  title: "Product Launch Events",
+  short: "Explore how we launch products with impact.",
+  details: ["Concept development & creative direction", "Venue sourcing & production management", "Guest list curation & VIP hospitality", "Entertainment, catering & run-of-show", "Media & influencer integration"]
 }, {
-  icon: ShieldCheck,
-  title: "Crisis Communications",
-  short: "Read more on Crisis Communications.",
-  details: ["Crisis risk audit & scenario planning", "Rapid response protocol & dark-site prep", "Spokesperson media training", "Post-crisis reputation rebuild"]
+  icon: MapPin,
+  title: "Touring Activations",
+  short: "See how our touring activations travel.",
+  details: ["Multi-city route planning & logistics", "Modular activation build & transport", "Local partnerships & grassroots marketing", "Permitting, insurance & compliance", "Real-time performance tracking per city"]
 }, {
-  icon: Megaphone,
-  title: "Times Square Features",
-  short: "Find out how to land a Times Square Feature.",
-  details: ["Billboard & digital screen bookings", "Creative concept & production", "Campaign timing & launch coordination", "Social media amplification package"]
-}, {
-  icon: TrendingUp,
-  title: "Review Management",
-  short: "Get the full picture on Review Management.",
-  details: ["Google, Trustpilot, Yelp & G2 monitoring", "Review response strategy & templates", "Sentiment analysis & reputation scoring", "Review generation & advocacy programmes"]
+  icon: Camera,
+  title: "Immersive Installations",
+  short: "Read more about Immersive Installations.",
+  details: ["Interactive & digital installation design", "Multi-sensory experience production", "AR/VR integration & digital layers", "Photogenic moment engineering", "Social media amplification strategy"]
 }, {
   icon: MicVocal,
-  title: "Executive Thought Leadership",
-  short: "See where Executive Thought Leadership can place you.",
-  details: ["Byline placement strategy & topic selection", "Ghostwritten op-eds, essays & interviews", "Forbes, Bloomberg, WSJ & HBR pipelines", "Thought leadership amplification plan"]
+  title: "Conference Takeovers",
+  short: "Discover what a Conference Takeover looks like.",
+  details: ["Booth design & on-site brand presence", "Speaking stage & panel curation", "VIP dinner & after-party production", "Swag & merch distribution strategy", "Lead capture & post-conference follow-up"]
+}, {
+  icon: Gift,
+  title: "VIP & Private Events",
+  short: "Get the details on VIP & Private Events.",
+  details: ["Intimate dinner series & salon events", "Private client entertainment", "Corporate retreats & milestone celebrations", "Red-carpet & gala production", "Security, privacy & NDA management"]
 }];
 function SubServices() {
   const [open, setOpen] = reactExports.useState(0);
@@ -182,7 +180,10 @@ function SubServices() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "02 — Inside the package" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: "Six Ways to Build a Name That Doesn't Wash Off." })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
+          "Six ways to make ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "memories." })
+        ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-sm text-sm text-navy-deep/65", children: "Pick à la carte or take the full package. Each sub-service is a future Big Mouth page of its own — preview them below." })
     ] }),
@@ -221,28 +222,28 @@ function SubServices() {
 function WhyUs() {
   const reasons = [{
     n: "01",
-    t: "Real journalists on the team.",
-    d: "We don't pitch from a script. We've been in newsrooms — we know what lands and what gets deleted."
+    t: "End-to-end production.",
+    d: "Concept to strike — we handle venue, build, talent, catering, permits and strike ourselves."
   }, {
     n: "02",
-    t: "Relationships, not databases.",
-    d: "Editors at Forbes, Bloomberg, WSJ and TechCrunch know our byline. That cuts the queue."
+    t: "Creative that stops crowds.",
+    d: "Our installations are designed to be photographed, shared and covered. Every detail is Instagram-optimised."
   }, {
     n: "03",
-    t: "Crisis-ready, not crisis-reactive.",
-    d: "We build your reputation protocol before you need it — scenario plans, dark sites, trained spokespeople."
+    t: "National & international reach.",
+    d: "Multi-city touring is our specialty. We coordinate logistics, vendors and permits across markets seamlessly."
   }, {
     n: "04",
-    t: "Wikipedia that sticks.",
-    d: "We understand notability guidelines, citation requirements and the review process inside out."
+    t: "Measured ROI, not vanity metrics.",
+    d: "Footfall, dwell time, media impressions, social amplification and lead capture — we measure what matters."
   }, {
     n: "05",
-    t: "Times Square, not tick-box.",
-    d: "We book and produce Times Square features that generate earned media, social buzz and genuine brand lift."
+    t: "VIP-grade hospitality.",
+    d: "White-glove service for your most important guests — from red carpets to private dining experiences."
   }, {
     n: "06",
-    t: "Measured impact, always.",
-    d: "Share of voice, sentiment, placement value and crisis response time — we report what matters."
+    t: "Legacy content built in.",
+    d: "Every activation is filmed, photographed and documented. You get a content library that lives long after the event."
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative overflow-hidden bg-navy-deep py-16 text-cream md:py-20 xl:py-16", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, "aria-hidden": true, alt: "", className: "pointer-events-none absolute -right-20 -top-10 w-[380px] opacity-[0.07] md:w-[520px]" }),
@@ -252,12 +253,10 @@ function WhyUs() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "03 — Why The Big Mouth PR" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl", children: [
             "Other agencies ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/55", children: "hope" }),
-            " for",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/55", children: "plan." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "coverage. We ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "command" }),
-            " it."
+            "We ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "produce." })
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold", children: [
@@ -315,8 +314,8 @@ function Process() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-14 max-w-3xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "04 — The Process" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-        "From first hello to ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "front page." })
+        "From concept to ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "curtain call." })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 text-base text-navy-deep/70 md:text-lg", children: "A nine-step system that's repeatable, transparent and obsessed with measurable outcomes." })
     ] }),
@@ -360,8 +359,8 @@ function Portfolio() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "05 — Receipts" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-          "Reputations we ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "fortified." })
+          "Moments we ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "made." })
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
@@ -376,7 +375,7 @@ function CTAStrip() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative overflow-hidden bg-gold py-10 text-navy-deep", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 md:flex-row", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "flex items-center gap-4 text-center font-display text-2xl font-black md:text-left md:text-3xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(MouthMark, { className: "h-7 w-7" }),
-      "Ready to control what the world says about you?"
+      "Ready to create something people will talk about?"
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-navy-deep px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-cream transition hover:scale-[1.03]", children: [
       "Book a call ",
@@ -385,23 +384,23 @@ function CTAStrip() {
   ] }) });
 }
 const faqs = [{
-  q: "Who is Reputation & Media for?",
-  a: "Executives, founders, investors and public figures who want to control their narrative — across press, Wikipedia, reviews and crisis moments."
+  q: "What types of events do you produce?",
+  a: "Pop-up activations, product launches, immersive installations, conference takeovers, touring roadshows, VIP dinners, corporate retreats and gala productions — from intimate to stadium-scale."
 }, {
-  q: "How long does a Wikipedia page take?",
-  a: "A well-sourced Wikipedia page typically takes 6–12 weeks from draft to approval. We handle the entire process including notability论证 and citation sourcing."
+  q: "Do you handle international events?",
+  a: "Yes. We've produced activations across North America, Europe, the Middle East and Asia. Our team coordinates local vendors, permits and cultural considerations in every market."
 }, {
-  q: "What if I'm already in a crisis?",
-  a: "We can deploy a rapid response team within 24 hours. Our crisis protocol covers dark sites, press statements, spokesperson training and stakeholder communication."
+  q: "How far in advance do we need to book?",
+  a: "For standard activations, 8–12 weeks is ideal. Large-scale or multi-city tours benefit from 16–20 weeks of lead time. We can fast-track certain projects in 4–6 weeks."
 }, {
-  q: "How is this different from a traditional PR retainer?",
-  a: "Traditional PR pitches broadly. We build a targeted media strategy with tier-1 outlets, owned content and Wikipedia permanence — measured weekly, not monthly."
-}, {
-  q: "Do you guarantee press coverage?",
-  a: "We never guarantee specific outlets — that's against ethics guidelines. But our placement rate across tier-1 media consistently exceeds 40%."
+  q: "Can you tie the event back to measurable business outcomes?",
+  a: "Absolutely. Every activation includes footfall tracking, lead capture, media impressions, social amplification and sentiment analysis — tied directly to your KPIs."
 }, {
   q: "What's the investment?",
-  a: "Reputation & Media engagements start in the low five-figures per month. We'll scope and price transparently after the discovery call."
+  a: "Single activations start at $15,000. Multi-city tours and large-scale events are scoped individually. We provide transparent pricing after the discovery call."
+}, {
+  q: "Do you provide post-event content too?",
+  a: "Yes. Every event is professionally photographed, filmed and documented. You receive a full content library — highlight reels, social edits, testimonials and a case study report."
 }];
 function FAQ() {
   const [open, setOpen] = reactExports.useState(0);
@@ -409,8 +408,8 @@ function FAQ() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "06 — Questions" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-        "Honest answers to ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "tough questions." })
+        "Answers before ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "you ask." })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 text-sm text-navy-deep/65", children: "Didn't find what you needed? Ask us directly — we reply within one business day." }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "mt-6 inline-flex items-center gap-2 rounded-full border border-navy-deep/20 px-5 py-3 text-xs font-bold uppercase tracking-wider text-navy-deep hover:border-gold hover:text-gold", children: [
@@ -443,13 +442,13 @@ function Consult() {
       const geo = await fetchIpGeolocation();
       await submitContactForm({
         data: {
-          name: fd.get("name"),
+          name: fd.get("name") || fd.get("fullname"),
           email: fd.get("email"),
           company: fd.get("company"),
           role: fd.get("role"),
           phone: "",
-          service: "Strategy Call",
-          message: fd.get("goal") || fd.get("project") || fd.get("book") || fd.get("opportunity") || "",
+          service: "Events & Experiential Marketing",
+          message: fd.get("goal") || "Events consultation request",
           ...geo
         }
       });
@@ -467,19 +466,18 @@ function Consult() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, "aria-hidden": true, alt: "", className: "pointer-events-none absolute -left-16 bottom-0 w-[320px] opacity-20 md:w-[440px]" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "07 — Let's roar" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "07 — Let's produce" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl", children: [
-          "Your reputation ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "speaks" }),
+          "Your next moment ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "starts" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "before ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "you" }),
-          " do."
+          "with a single ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "conversation." })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-md text-cream/75", children: "Drop your details. A senior strategist (not a chatbot) replies within 24 hours with a tailored game plan." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-md text-cream/75", children: "Drop your details. A senior producer (not a chatbot) replies within 24 hours with a tailored concept." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em] text-cream/55", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(DotMark, {}),
-          " No spam · No interns · No whispers"
+          " No spam · No interns · No boring events"
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("form", { onSubmit: handleConsultSubmit, className: "rounded-3xl border border-cream/10 bg-cream/[0.04] p-7 shadow-luxe backdrop-blur md:p-9", children: submitted ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "py-10 text-center", children: [
@@ -487,17 +485,17 @@ function Consult() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 font-display text-3xl font-black", children: "Roar received." }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-cream/70", children: "We'll be in your inbox within one business day with next steps." })
       ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-2xl font-bold", children: "Book your strategy call" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-2xl font-bold", children: "Book your events consultation" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-sm text-cream/65", children: "Takes 45 seconds." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 grid gap-4 md:grid-cols-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Full name", name: "name", placeholder: "Jane Roar" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Work email", name: "email", type: "email", placeholder: "jane@company.com" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Company", name: "company", placeholder: "Atlas Ventures" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Role", name: "role", placeholder: "CEO / Founder" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Role", name: "role", placeholder: "Marketing Director" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60", children: "What does your reputation need most?" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { name: "goal", rows: 4, placeholder: "Press, Wikipedia, crisis prep…", className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60", children: "Tell us about the experience you want to create" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { name: "goal", rows: 4, placeholder: "Pop-up, product launch, tour, activation, VIP event…", className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
         ] }),
         error && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 rounded-xl bg-red-500/20 px-4 py-3 text-sm text-red-200", children: error }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", disabled: sending, className: "mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02] disabled:opacity-60", children: sending ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -505,7 +503,7 @@ function Consult() {
           " Sending..."
         ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { className: "h-4 w-4" }),
-          " Make me unmissable"
+          " Let's create it"
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-center text-[11px] text-cream/50", children: "By submitting, you agree to a follow-up from The Big Mouth PR team." })
       ] }) })
@@ -523,7 +521,7 @@ function Field({
     /* @__PURE__ */ jsxRuntimeExports.jsx("input", { name, type, required: true, placeholder, className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
   ] });
 }
-function ReputationMediaPage() {
+function EventsExperientialPage() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "lion-cursor bg-white text-navy-deep", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(SiteHeader, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Hero, {}),
@@ -542,5 +540,5 @@ function ReputationMediaPage() {
   ] });
 }
 export {
-  ReputationMediaPage as component
+  EventsExperientialPage as component
 };

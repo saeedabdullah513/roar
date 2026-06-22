@@ -50,11 +50,20 @@ export const submitContactForm = createServerFn({ method: "POST" })
 
     if (!geoIp) {
       try {
-        const geoRes = await fetch("https://ipwhois.app/json/");
+        const geoRes = await fetch("https://api.ipify.org?format=json", { signal: AbortSignal.timeout(3000) });
+        if (geoRes.ok) {
+          const j = await geoRes.json() as { ip: string };
+          if (j.ip) geoIp = j.ip;
+        }
+      } catch {}
+    }
+
+    if (geoIp && !geoCity) {
+      try {
+        const geoRes = await fetch(`https://ipwhois.app/json/${geoIp}`, { signal: AbortSignal.timeout(4000) });
         if (geoRes.ok) {
           const j = await geoRes.json() as any;
-          if (j.ip) {
-            geoIp = j.ip || "";
+          if (j.success !== false) {
             geoCity = j.city || "";
             geoRegion = j.region || "";
             geoCountry = j.country || "";

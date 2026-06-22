@@ -1,4 +1,4 @@
-import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-DuBOblra.mjs";
+import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-emlf-Mdc.mjs";
 import { n as nodemailer } from "../_libs/nodemailer.mjs";
 import "../_libs/seroval.mjs";
 import "../_libs/react.mjs";
@@ -102,11 +102,24 @@ const submitContactForm = createServerFn({
   let geoIsp = ipIsp || "";
   if (!geoIp) {
     try {
-      const geoRes = await fetch("https://ipwhois.app/json/");
+      const geoRes = await fetch("https://api.ipify.org?format=json", {
+        signal: AbortSignal.timeout(3e3)
+      });
       if (geoRes.ok) {
         const j = await geoRes.json();
-        if (j.ip) {
-          geoIp = j.ip || "";
+        if (j.ip) geoIp = j.ip;
+      }
+    } catch {
+    }
+  }
+  if (geoIp && !geoCity) {
+    try {
+      const geoRes = await fetch(`https://ipwhois.app/json/${geoIp}`, {
+        signal: AbortSignal.timeout(4e3)
+      });
+      if (geoRes.ok) {
+        const j = await geoRes.json();
+        if (j.success !== false) {
           geoCity = j.city || "";
           geoRegion = j.region || "";
           geoCountry = j.country || "";
