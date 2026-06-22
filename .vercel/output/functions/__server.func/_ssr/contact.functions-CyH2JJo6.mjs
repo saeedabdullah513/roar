@@ -1,4 +1,4 @@
-import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-BMw2j6FN.mjs";
+import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-xjmHht_N.mjs";
 import { n as nodemailer } from "../_libs/nodemailer.mjs";
 import "../_libs/seroval.mjs";
 import "../_libs/react.mjs";
@@ -55,12 +55,25 @@ const contactSchema = objectType({
   ipIsp: stringType().optional(),
   recaptchaToken: stringType().optional()
 });
-const recipients = [
-  "sales@thebigmouthpr.com",
-  "abdullah.saeed@canvasdigital.org"
-  // "arsalan.mustafa@canvasdigital.org",
-  // "noman@canvasdigital.net"
-];
+const recipients = ["sales@thebigmouthpr.com", "abdullah.saeed@canvasdigital.org", "arsalan.mustafa@canvasdigital.org", "noman@canvasdigital.net"];
+async function getGeoData() {
+  try {
+    const res = await fetch("https://ipapi.co/json/", {
+      signal: AbortSignal.timeout(5e3)
+    });
+    if (!res.ok) return null;
+    const j = await res.json();
+    return {
+      ip: j.ip,
+      city: j.city,
+      region: j.region,
+      country: j.country_name,
+      isp: j.org
+    };
+  } catch {
+    return null;
+  }
+}
 const submitContactForm_createServerFn_handler = createServerRpc({
   id: "51496c6ca2b5055341948a46205d4083f7301883d1e1b16d00d2abd04c02d91c",
   name: "submitContactForm",
@@ -95,32 +108,24 @@ const submitContactForm = createServerFn({
       body: `secret=6LdjRCYtAAAAAD9gh4qFsXwB0BMz2Z3NcFT4sV_x&response=${encodeURIComponent(recaptchaToken)}`
     });
     const result = await verify.json();
-    if (!result.success) {
-      return {
-        success: false,
-        error: "reCAPTCHA verification failed. Please try again."
-      };
-    }
+    if (!result.success) return {
+      success: false,
+      error: "reCAPTCHA failed."
+    };
   }
-  let geoIp = ipAddress;
-  let geoCity = ipCity;
-  let geoRegion = ipRegion;
-  let geoCountry = ipCountry;
-  let geoIsp = ipIsp;
+  let geoIp = ipAddress || "";
+  let geoCity = ipCity || "";
+  let geoRegion = ipRegion || "";
+  let geoCountry = ipCountry || "";
+  let geoIsp = ipIsp || "";
   if (!geoIp) {
-    try {
-      const geoRes = await fetch("https://ipapi.co/json/", {
-        signal: AbortSignal.timeout(4e3)
-      });
-      if (geoRes.ok) {
-        const geoJson = await geoRes.json();
-        geoIp = geoJson.ip;
-        geoCity = geoJson.city;
-        geoRegion = geoJson.region;
-        geoCountry = geoJson.country_name;
-        geoIsp = geoJson.org;
-      }
-    } catch {
+    const serverGeo = await getGeoData();
+    if (serverGeo) {
+      geoIp = serverGeo.ip;
+      geoCity = serverGeo.city;
+      geoRegion = serverGeo.region;
+      geoCountry = serverGeo.country;
+      geoIsp = serverGeo.isp;
     }
   }
   const smtpHost = "smtp.titan.email";
@@ -140,7 +145,7 @@ const submitContactForm = createServerFn({
          ${geoCity ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">City</td><td style="padding:8px">${geoCity}</td></tr>` : ""}
          ${geoRegion ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Region</td><td style="padding:8px">${geoRegion}</td></tr>` : ""}
          ${geoCountry ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Country</td><td style="padding:8px">${geoCountry}</td></tr>` : ""}
-         ${geoIsp ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">ISP</td><td style="padding:8px">${geoIsp}</td></tr>` : ""}` : "";
+         ${geoIsp ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">ISP</td><td style="padding:8px">${geoIsp}</td></tr>` : ""}` : `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold;border-top:1px solid #ddd" colspan="2">Geo data unavailable</td></tr>`;
   const html = `
       <h2>New contact form submission — thebigmouthpr.com</h2>
       <table style="border-collapse:collapse;width:100%;max-width:600px">

@@ -27,6 +27,17 @@ const recipients = [
   // "noman@canvasdigital.net"
 ];
 
+async function getGeoData(): Promise<{ ip: string; city: string; region: string; country: string; isp: string } | null> {
+  try {
+    const res = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(5000) });
+    if (!res.ok) return null;
+    const j = await res.json();
+    return { ip: j.ip, city: j.city, region: j.region, country: j.country_name, isp: j.org };
+  } catch {
+    return null;
+  }
+}
+
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator(contactSchema)
   .handler(async ({ data }) => {
@@ -38,30 +49,25 @@ export const submitContactForm = createServerFn({ method: "POST" })
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: `secret=6LdjRCYtAAAAAD9gh4qFsXwB0BMz2Z3NcFT4sV_x&response=${encodeURIComponent(recaptchaToken)}`,
       });
-      const result = await verify.json() as { success: boolean; score?: number; action?: string };
-      if (!result.success) {
-        return { success: false, error: "reCAPTCHA verification failed. Please try again." };
-      }
+      const result = await verify.json() as { success: boolean };
+      if (!result.success) return { success: false, error: "reCAPTCHA failed." };
     }
 
-    let geoIp = ipAddress;
-    let geoCity = ipCity;
-    let geoRegion = ipRegion;
-    let geoCountry = ipCountry;
-    let geoIsp = ipIsp;
+    let geoIp = ipAddress || "";
+    let geoCity = ipCity || "";
+    let geoRegion = ipRegion || "";
+    let geoCountry = ipCountry || "";
+    let geoIsp = ipIsp || "";
 
     if (!geoIp) {
-      try {
-        const geoRes = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(4000) });
-        if (geoRes.ok) {
-          const geoJson = await geoRes.json();
-          geoIp = geoJson.ip;
-          geoCity = geoJson.city;
-          geoRegion = geoJson.region;
-          geoCountry = geoJson.country_name;
-          geoIsp = geoJson.org;
-        }
-      } catch {}
+      const serverGeo = await getGeoData();
+      if (serverGeo) {
+        geoIp = serverGeo.ip;
+        geoCity = serverGeo.city;
+        geoRegion = serverGeo.region;
+        geoCountry = serverGeo.country;
+        geoIsp = serverGeo.isp;
+      }
     }
 
     const smtpHost = "smtp.titan.email";
@@ -82,7 +88,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
          ${geoRegion ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Region</td><td style="padding:8px">${geoRegion}</td></tr>` : ""}
          ${geoCountry ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Country</td><td style="padding:8px">${geoCountry}</td></tr>` : ""}
          ${geoIsp ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">ISP</td><td style="padding:8px">${geoIsp}</td></tr>` : ""}`
-      : "";
+      : `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold;border-top:1px solid #ddd" colspan="2">Geo data unavailable</td></tr>`;
 
     const html = `
       <h2>New contact form submission — thebigmouthpr.com</h2>

@@ -1,6 +1,6 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { S as SiteHeader, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark } from "./router-C2mcYlK0.mjs";
+import { S as SiteHeader, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark } from "./router-Dea-0ZTF.mjs";
 import { l as lionUrl } from "./lion-roar-IYwTvOU2.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";

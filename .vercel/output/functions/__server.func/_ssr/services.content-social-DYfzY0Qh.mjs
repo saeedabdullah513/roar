@@ -1,12 +1,12 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
 import { u as useEmblaCarousel } from "../_libs/embla-carousel-react.mjs";
-import { S as SiteHeader, C as ClientsRibbon, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark, M as MouthMark } from "./router-C2mcYlK0.mjs";
-import { f as fetchIpGeolocation, s as submitContactForm } from "./ip-geolocation-IGezZHge.mjs";
+import { S as SiteHeader, C as ClientsRibbon, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark, M as MouthMark } from "./router-Dea-0ZTF.mjs";
+import { f as fetchIpGeolocation, s as submitContactForm } from "./ip-geolocation-CEfo17Zi.mjs";
 import { l as lionUrl } from "./lion-roar-IYwTvOU2.mjs";
 import { l as leader1, a as leader2, b as leader3, c as leader4 } from "./leader-4-vZurwnLd.mjs";
 import "../_libs/seroval.mjs";
-import { V as Volume2, A as ArrowRight, B as BookOpen, a9 as Headphones, a3 as Globe, M as Megaphone, aa as Library, G as Star, ab as BookMarked, e as Minus, P as Plus, d as Check, g as ArrowUpRight, h as Phone, w as ClipboardList, x as FilePenLine, n as Users, y as Map, R as Rocket, v as ChartLine, $ as Trophy, k as MessageSquareHeart, J as ChevronLeft, K as ChevronRight, L as LoaderCircle } from "../_libs/lucide-react.mjs";
+import { V as Volume2, A as ArrowRight, M as Megaphone, b as Camera, Z as MicVocal, T as TrendingUp, a as Crown, I as Instagram, _ as Youtube, e as Minus, P as Plus, d as Check, g as ArrowUpRight, h as Phone, w as ClipboardList, x as FilePenLine, n as Users, y as Map, R as Rocket, v as ChartLine, $ as Trophy, k as MessageSquareHeart, J as ChevronLeft, K as ChevronRight, L as LoaderCircle } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -43,7 +43,7 @@ import "../_libs/@radix-ui/react-visually-hidden+[...].mjs";
 import "../_libs/class-variance-authority.mjs";
 import "../_libs/clsx.mjs";
 import "../_libs/tailwind-merge.mjs";
-import "./server-BMw2j6FN.mjs";
+import "./server-xjmHht_N.mjs";
 import "node:async_hooks";
 import "../_libs/h3-v2.mjs";
 import "../_libs/rou3.mjs";
@@ -61,24 +61,25 @@ function Hero() {
         /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.4em] text-cream/60 hover:text-gold", children: "← Back to The Big Mouth PR" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 inline-flex items-center gap-3 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(DotMark, {}),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75", children: "Service · Author & Publishing" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75", children: "Service · Content & Social" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl", children: [
-          "Every author needs ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "a publisher." }),
+          "Your feed ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/60", children: "should" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "Every message needs ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/60", children: "a platform." })
+          "be your ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "best salesperson." })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-6 max-w-xl text-lg text-cream/75 md:text-xl", children: [
-          "We turn manuscripts into ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold font-semibold", children: "movements." }),
-          " From audiobook production and Kirkus reviews to 700+ distribution platforms, book fairs and signing tours — your story deserves more than a shelf."
+          "We build content engines that don't sleep — LinkedIn, Instagram, YouTube, podcasts, UGC and influencer campaigns engineered to turn ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold font-semibold", children: "followers into fans" }),
+          " ",
+          "and fans into revenue."
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-9 flex flex-wrap gap-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03]", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { className: "h-4 w-4" }),
-            " Book a publishing call"
+            " Book a strategy call"
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#process", className: "inline-flex items-center gap-2 rounded-full border border-cream/25 px-7 py-4 text-sm font-bold uppercase tracking-wider text-cream hover:border-gold hover:text-gold", children: [
             "See how we work ",
@@ -86,14 +87,14 @@ function Hero() {
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 grid max-w-md grid-cols-1 gap-6 sm:grid-cols-3", children: [{
-          k: "700+",
-          v: "Distribution platforms"
+          k: "12M+",
+          v: "LinkedIn impressions generated"
         }, {
-          k: "120+",
-          v: "Titles published"
+          k: "4x",
+          v: "Avg. engagement rate lift"
         }, {
-          k: "30+",
-          v: "Audiobooks produced"
+          k: "30d",
+          v: "From zero to consistent output"
         }].map((s) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-3xl font-black text-gold", children: s.k }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px] uppercase tracking-[0.18em] text-cream/55", children: s.v })
@@ -102,40 +103,39 @@ function Hero() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-10 rounded-full bg-gold/20 blur-3xl", "aria-hidden": true }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, alt: "Roaring lion — The Big Mouth PR", className: "relative mx-auto w-full max-w-[280px] animate-lion-roar drop-shadow-[0_30px_60px_rgba(253,95,8,0.35)] sm:max-w-[400px] lg:max-w-[520px]" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe", children: "Write your legacy." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe", children: "Never go quiet." })
       ] })
     ] })
   ] });
 }
 function Overview() {
   const pillars = [{
-    icon: BookOpen,
-    t: "Publishing",
-    d: "ISBN registration, copyright protection and global distribution in print, digital and audio."
-  }, {
-    icon: Headphones,
-    t: "Audiobooks",
-    d: "Professional narration, studio recording, editing and mastering for Audible, Spotify and more."
-  }, {
-    icon: Globe,
-    t: "Distribution",
-    d: "Your book live on 700+ platforms — Amazon, Barnes & Noble, Apple Books and every major retailer."
-  }, {
     icon: Megaphone,
-    t: "Book Marketing",
-    d: "Kirkus reviews, press outreach, book fair placement and signing tour logistics."
+    t: "Authority",
+    d: "Position you as the go-to voice in your space on every platform."
+  }, {
+    icon: Camera,
+    t: "Volume",
+    d: "A relentless content cadence that keeps you top-of-feed and top-of-mind."
+  }, {
+    icon: MicVocal,
+    t: "Connection",
+    d: "Content that sparks conversations and builds real community."
+  }, {
+    icon: TrendingUp,
+    t: "Conversion",
+    d: "Social activity engineered to drive inbound, deals and opportunities."
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative bg-white py-20 md:py-24 xl:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-7xl px-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "01 — What it is" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-          "A publishing partner that ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "doesn't stop" }),
-          " at the press."
+          "A content engine that ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "never sleeps." })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-navy-deep/70 md:text-lg", children: "Author & Publishing at The Big Mouth PR takes your manuscript and turns it into a multi-format, globally distributed, professionally marketed product — audiobook, print, ebook and beyond. We handle the parts you didn't know existed." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-navy-deep/70 md:text-lg", children: "Content & Social isn't sporadic posting. It's a 360° system — LinkedIn authority, Instagram reach, YouTube depth, podcast presence, UGC amplification and influencer partnerships — engineered for perpetual visibility." })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4", children: pillars.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group relative overflow-hidden rounded-2xl border border-navy-deep/10 bg-white p-7 transition hover:-translate-y-1 hover:border-gold hover:shadow-luxe", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: ICON_URL, "aria-hidden": true, alt: "", className: "absolute -right-6 -top-6 h-24 opacity-[0.06] transition group-hover:opacity-[0.12]" }),
@@ -146,35 +146,35 @@ function Overview() {
   ] }) });
 }
 const subServices = [{
-  icon: Headphones,
-  title: "Audiobook Production",
-  short: "More on Audiobook Production.",
-  details: ["Professional voice talent casting", "In-studio & remote recording options", "Audio editing, proofing & mastering", "ACX / Audible, Spotify, Apple Books upload", "Multi-language narration support"]
+  icon: Crown,
+  title: "LinkedIn Authority",
+  short: "More on LinkedIn Authority.",
+  details: ["Profile optimization & content strategy", "Ghostwritten posts, carousels & threads", "Engagement & DM conversion playbook", "LinkedIn newsletter setup & growth"]
 }, {
-  icon: Library,
-  title: "ISBN & Copyright",
-  short: "See how ISBN & Copyright are handled.",
-  details: ["ISBN assignment (print & digital)", "Copyright registration with Library of Congress", "CIP block & catalogue data management", "Barcode generation & metadata setup", "International ISBN coordination"]
+  icon: MicVocal,
+  title: "Podcast Production",
+  short: "Get the full story on Podcast Production.",
+  details: ["Show concept, naming & branding", "Episode research, scripting & guest booking", "Recording, editing & post-production", "Distribution to all major platforms"]
 }, {
-  icon: Star,
-  title: "Kirkus Reviews",
-  short: "Read more on Kirkus Reviews.",
-  details: ["Kirkus Indie review submission & management", "Editorial selection & follow-up strategy", "Kirkus catalogue inclusion & marketing", "Starred review coaching & positioning", "Media leveraging for cover quotes & blurbs"]
+  icon: Camera,
+  title: "UGC & Influencer",
+  short: "See how UGC & Influencer works in detail.",
+  details: ["UGC strategy & campaign design", "Creator identification & outreach", "Content rights & licensing management", "Influencer programme build & optimisation"]
 }, {
-  icon: Globe,
-  title: "Book Fairs",
-  short: "Find out where Book Fairs can take you.",
-  details: ["Exhibitor registration & booth procurement", "Title catalogue & promotional materials", "Rights-negotiation support & pitch decks", "Author appearance scheduling", "Post-fair lead follow-up & reporting"]
+  icon: Instagram,
+  title: "Instagram & Visual Content",
+  short: "Dig into Instagram & Visual Content.",
+  details: ["Content pillars & monthly calendar", "Reel & short-form video production", "Storytelling templates & frameworks", "Growth & analytics tracking"]
 }, {
-  icon: BookMarked,
-  title: "Book Signings & Tours",
-  short: "Get the details on Book Signings & Tours.",
-  details: ["Venue booking & itinerary planning", "Local media & press outreach per city", "Bookstore & indie shop partnerships", "Livestream & hybrid event production", "Merchandise & book inventory management"]
+  icon: Youtube,
+  title: "YouTube Strategy",
+  short: "Read more about YouTube Strategy.",
+  details: ["Channel strategy & content pillars", "Scripting, filming & editing", "SEO optimisation & thumbnail design", "Community management & growth tactics"]
 }, {
   icon: Megaphone,
-  title: "Distribution (700+ Platforms)",
-  short: "See the full reach of our Distribution network.",
-  details: ["Amazon, Barnes & Noble, Apple Books, Kobo", "IngramSpark & Baker & Taylor wholesale", "Library channels: OverDrive, Hoopla, Bibliotheca", "International retailers across EU, APAC & LATAM", "Sales tracking & royalty reporting dashboard"]
+  title: "Always-On Content Engine",
+  short: "Find out what the Always-On Content Engine can do.",
+  details: ["Monthly shoot days (photo + video)", "Multi-platform content repurposing", "Cross-channel distribution & scheduling", "Weekly analytics & optimisation reviews"]
 }];
 function SubServices() {
   const [open, setOpen] = reactExports.useState(0);
@@ -182,9 +182,13 @@ function SubServices() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "02 — Inside the package" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: "Six Pillars Between You and a Published Author Bio." })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
+          "Six Channels. ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "One Voice That Doesn't Shut" }),
+          " Up."
+        ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-sm text-sm text-navy-deep/65", children: "Pick à la carte or take the full publishing package. Each pillar is a future Big Mouth page of its own — preview them below." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-sm text-sm text-navy-deep/65", children: "Content & Social isn't sporadic posting. It's a 360° system — LinkedIn authority, Instagram reach, YouTube depth, podcast presence, UGC amplification, and influencer partnerships — engineered for perpetual visibility." })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid gap-4", children: subServices.map((s, i) => {
       const isOpen = open === i;
@@ -221,28 +225,28 @@ function SubServices() {
 function WhyUs() {
   const reasons = [{
     n: "01",
-    t: "End-to-end publishing.",
-    d: "Manuscript to audiobook to global distribution — we do it all under one roof."
+    t: "We write in your voice, not ours.",
+    d: "Every post, script and caption sounds unmistakably like you — because we study how you think, not just what you say."
   }, {
     n: "02",
-    t: "700+ platform reach.",
-    d: "Your book appears on every major retailer and library worldwide — not just Amazon."
+    t: "Volume without burnout.",
+    d: "We produce at scale so you never worry about 'what to post.' A consistent cadence that compounds without draining you."
   }, {
     n: "03",
-    t: "Professional audiobook production.",
-    d: "Studio-grade narration, editing and mastering that meets Audible's strictest specs."
+    t: "Platform-native, always.",
+    d: "We know what works on LinkedIn vs Instagram vs YouTube. Every piece of content is optimised for its platform."
   }, {
     n: "04",
-    t: "Kirkus-savvy team.",
-    d: "We know how to position your book for review success — including starred reviews."
+    t: "UGC that converts.",
+    d: "We don't just collect content — we engineer campaigns that generate authentic material your audience trusts."
   }, {
     n: "05",
-    t: "Global book fair access.",
-    d: "Frankfurt, Bologna, ALA, Sharjah — we get your title seen by the right rights buyers."
+    t: "Influencer partnerships that work.",
+    d: "We identify creators whose audiences match your ICP and build campaigns that drive measurable ROI."
   }, {
     n: "06",
-    t: "Marketing that sells.",
-    d: "Press outreach, signing tours and promotional campaigns that put eyes on pages."
+    t: "Weekly optimisation.",
+    d: "Content isn't 'set and forget.' We review performance weekly and pivot fast based on real data."
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative overflow-hidden bg-navy-deep py-16 text-cream md:py-20 xl:py-16", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, "aria-hidden": true, alt: "", className: "pointer-events-none absolute -right-20 -top-10 w-[380px] opacity-[0.07] md:w-[520px]" }),
@@ -251,11 +255,13 @@ function WhyUs() {
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "03 — Why The Big Mouth PR" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl", children: [
-            "Some publishers ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/55", children: "just print." }),
+            "Other agencies ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/55", children: "post" }),
+            " and",
             /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "We put you ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "on every shelf." })
+            "pray. We ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "engineer" }),
+            " attention."
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold", children: [
@@ -313,8 +319,8 @@ function Process() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-14 max-w-3xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "04 — The Process" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-        "From manuscript to ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "worldwide." })
+        "From first idea to ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "consistent roar." })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 text-base text-navy-deep/70 md:text-lg", children: "A nine-step system that's repeatable, transparent and obsessed with measurable outcomes." })
     ] }),
@@ -358,8 +364,8 @@ function Portfolio() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "05 — Receipts" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-          "Books we helped ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "tell." })
+          "Feeds we turned ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "into fortunes." })
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
@@ -374,7 +380,7 @@ function CTAStrip() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative overflow-hidden bg-gold py-10 text-navy-deep", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 md:flex-row", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "flex items-center gap-4 text-center font-display text-2xl font-black md:text-left md:text-3xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(MouthMark, { className: "h-7 w-7" }),
-      "Ready to share your story with the world?"
+      "Tired of shouting into the algorithmic void?"
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-navy-deep px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-cream transition hover:scale-[1.03]", children: [
       "Book a call ",
@@ -383,23 +389,23 @@ function CTAStrip() {
   ] }) });
 }
 const faqs = [{
-  q: "Do I need a finished manuscript to get started?",
-  a: "Not at all. We work with authors at every stage — from rough draft to polished final. We can also connect you with developmental editors if your manuscript needs work before publication."
+  q: "Who is Content & Social for?",
+  a: "CEOs, founders, investors, authors and experts who want to build authority at scale through consistent, high-quality content across every platform."
 }, {
-  q: "Which distribution platforms do you use?",
-  a: "700+ including Amazon, Barnes & Noble, Apple Books, Kobo, Audible, Libro.fm, OverDrive, Hoopla, Baker & Taylor and regional retailers across Europe, Asia and Latin America."
+  q: "How much time do I need to invest?",
+  a: "As little as 30 minutes per week. We handle production, distribution and optimisation — you provide the insights and approve the output."
 }, {
-  q: "How long does the publishing process take?",
-  a: "Typically 8–16 weeks from final manuscript to live on all platforms. Audiobook production adds 4–6 weeks depending on length and narration requirements."
+  q: "What platforms do you cover?",
+  a: "LinkedIn, Instagram, YouTube, X (Twitter), TikTok, podcasts and newsletters. We focus on the platforms that matter most to your audience."
 }, {
-  q: "Can you help me get a Kirkus review?",
-  a: "Yes. We handle the full submission process, coach your positioning and follow up strategically. Starred reviews are never guaranteed, but our track record is strong."
+  q: "How is this different from a content agency?",
+  a: "Most agencies batch generic content. We build a custom voice, study your industry and engineer each piece for specific business outcomes."
+}, {
+  q: "Do you work with existing content teams?",
+  a: "Yes. We can augment your in-house team, take over specific channels or build your entire content function from scratch."
 }, {
   q: "What's the investment?",
-  a: "Publishing packages start at $7,500 for a standard print + digital + distribution bundle. Audiobook production is $3,000–$6,000 depending on length. Full-scope proposals are provided after the discovery call."
-}, {
-  q: "Do you work with debut authors?",
-  a: "Absolutely. We love launching first-time authors. Our end-to-end service is specifically designed to handle everything a new author doesn't know they need."
+  a: "Content & Social engagements start in the low five-figures per month. We'll scope and price transparently after the discovery call."
 }];
 function FAQ() {
   const [open, setOpen] = reactExports.useState(0);
@@ -407,9 +413,8 @@ function FAQ() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "06 — Questions" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-        "Answers for ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "every page" }),
-        " of your journey."
+        "Direct answers to ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "algorithm questions." })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 text-sm text-navy-deep/65", children: "Didn't find what you needed? Ask us directly — we reply within one business day." }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "mt-6 inline-flex items-center gap-2 rounded-full border border-navy-deep/20 px-5 py-3 text-xs font-bold uppercase tracking-wider text-navy-deep hover:border-gold hover:text-gold", children: [
@@ -442,13 +447,13 @@ function Consult() {
       const geo = await fetchIpGeolocation();
       await submitContactForm({
         data: {
-          name: fd.get("name"),
+          name: fd.get("name") || fd.get("fullname"),
           email: fd.get("email"),
           company: fd.get("company"),
           role: fd.get("role"),
           phone: "",
-          service: "Author & Publishing",
-          message: fd.get("book") || "",
+          service: "Strategy Call",
+          message: fd.get("goal") || "Strategy call request",
           ...geo
         }
       });
@@ -466,20 +471,18 @@ function Consult() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, "aria-hidden": true, alt: "", className: "pointer-events-none absolute -left-16 bottom-0 w-[320px] opacity-20 md:w-[440px]" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "07 — Let's publish" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "07 — Let's roar" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl", children: [
-          "Your story deserves ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "more" }),
-          " than",
+          "Your industry already ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "talks." }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "a drawer. Put it on ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "every" }),
-          " shelf."
+          "Time it talked about ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "you." })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-md text-cream/75", children: "Drop your details. A senior publishing strategist (not a chatbot) replies within 24 hours with a tailored plan." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-md text-cream/75", children: "Drop your details. A senior strategist (not a chatbot) replies within 24 hours with a tailored game plan." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em] text-cream/55", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(DotMark, {}),
-          " No spam · No vanity fees · No gatekeeping"
+          " No spam · No interns · No whispers"
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("form", { onSubmit: handleConsultSubmit, className: "rounded-3xl border border-cream/10 bg-cream/[0.04] p-7 shadow-luxe backdrop-blur md:p-9", children: submitted ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "py-10 text-center", children: [
@@ -487,17 +490,17 @@ function Consult() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 font-display text-3xl font-black", children: "Roar received." }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-cream/70", children: "We'll be in your inbox within one business day with next steps." })
       ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-2xl font-bold", children: "Book your publishing consultation" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-2xl font-bold", children: "Book your strategy call" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-sm text-cream/65", children: "Takes 45 seconds." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 grid gap-4 md:grid-cols-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Full name", name: "name", placeholder: "Jane Roar" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Work email", name: "email", type: "email", placeholder: "jane@company.com" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Company", name: "company", placeholder: "Atlas Ventures" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Role", name: "role", placeholder: "Author / Publisher" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Role", name: "role", placeholder: "CEO / Founder" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60", children: "Tell us about your book" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { name: "book", rows: 4, placeholder: "Title, genre, current stage — manuscript ready? Describe your project…", className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60", children: "What do you want to be known for?" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { name: "goal", rows: 4, placeholder: "The category I want to own…", className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
         ] }),
         error && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 rounded-xl bg-red-500/20 px-4 py-3 text-sm text-red-200", children: error }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", disabled: sending, className: "mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02] disabled:opacity-60", children: sending ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -505,7 +508,7 @@ function Consult() {
           " Sending..."
         ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { className: "h-4 w-4" }),
-          " Publish my story"
+          " Make me unmissable"
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-center text-[11px] text-cream/50", children: "By submitting, you agree to a follow-up from The Big Mouth PR team." })
       ] }) })
@@ -523,7 +526,7 @@ function Field({
     /* @__PURE__ */ jsxRuntimeExports.jsx("input", { name, type, required: true, placeholder, className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
   ] });
 }
-function AuthorPublishingPage() {
+function ContentSocialPage() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "lion-cursor bg-white text-navy-deep", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(SiteHeader, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Hero, {}),
@@ -542,5 +545,5 @@ function AuthorPublishingPage() {
   ] });
 }
 export {
-  AuthorPublishingPage as component
+  ContentSocialPage as component
 };
