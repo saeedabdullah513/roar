@@ -22,21 +22,10 @@ export type ContactData = z.infer<typeof contactSchema>;
 
 const recipients = [
   "sales@thebigmouthpr.com",
-  "abdullah.saeed@canvasdigital.org"
-  // "arsalan.mustafa@canvasdigital.org",
-  // "noman@canvasdigital.net"
+  "abdullah.saeed@canvasdigital.org",
+  "arsalan.mustafa@canvasdigital.org",
+  "noman@canvasdigital.net"
 ];
-
-async function getGeoData(): Promise<{ ip: string; city: string; region: string; country: string; isp: string } | null> {
-  try {
-    const res = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(5000) });
-    if (!res.ok) return null;
-    const j = await res.json();
-    return { ip: j.ip, city: j.city, region: j.region, country: j.country_name, isp: j.org };
-  } catch {
-    return null;
-  }
-}
 
 export const submitContactForm = createServerFn({ method: "POST" })
   .inputValidator(contactSchema)
@@ -60,14 +49,19 @@ export const submitContactForm = createServerFn({ method: "POST" })
     let geoIsp = ipIsp || "";
 
     if (!geoIp) {
-      const serverGeo = await getGeoData();
-      if (serverGeo) {
-        geoIp = serverGeo.ip;
-        geoCity = serverGeo.city;
-        geoRegion = serverGeo.region;
-        geoCountry = serverGeo.country;
-        geoIsp = serverGeo.isp;
-      }
+      try {
+        const geoRes = await fetch("https://ipwhois.app/json/");
+        if (geoRes.ok) {
+          const j = await geoRes.json() as any;
+          if (j.ip) {
+            geoIp = j.ip || "";
+            geoCity = j.city || "";
+            geoRegion = j.region || "";
+            geoCountry = j.country || "";
+            geoIsp = j.isp || "";
+          }
+        }
+      } catch {}
     }
 
     const smtpHost = "smtp.titan.email";
@@ -88,7 +82,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
          ${geoRegion ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Region</td><td style="padding:8px">${geoRegion}</td></tr>` : ""}
          ${geoCountry ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">Country</td><td style="padding:8px">${geoCountry}</td></tr>` : ""}
          ${geoIsp ? `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold">ISP</td><td style="padding:8px">${geoIsp}</td></tr>` : ""}`
-      : `<tr style="background:#f8f9fa"><td style="padding:8px;font-weight:bold;border-top:1px solid #ddd" colspan="2">Geo data unavailable</td></tr>`;
+      : "";
 
     const html = `
       <h2>New contact form submission — thebigmouthpr.com</h2>
