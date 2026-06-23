@@ -91,9 +91,7 @@ function AboutHero() {
             </span>
           </div>
           <h1 className="mt-6 font-display text-5xl font-black uppercase leading-[0.95] tracking-tight md:text-7xl">
-            We don't do <span className="italic text-cream/60">whisper.</span>
-            <br />
-            We do <span className="text-gold">roar.</span>
+            We don't <span className="text-gold">Whisper.</span> We <span className="text-gold">Roar.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
             The Big Mouth PR is a loud-by-design brand &amp; PR studio for the

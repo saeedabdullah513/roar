@@ -487,7 +487,7 @@ function Hero() {
               </svg>
             </span>
             <br />
-            We <span className="text-gold italic">ROAR.</span>
+            We <span className="text-gold italic relative z-10">ROAR.</span>
           </h1>
 
           {/* BIG lion */}
@@ -495,7 +495,7 @@ function Hero() {
             src={lionUrl}
             alt=""
             aria-hidden
-            className="pointer-events-none absolute right-0 hidden h-[220px] w-auto animate-lion-roar drop-shadow-[0_20px_50px_rgba(253,95,8,0.45)] md:block md:top-16 md:h-[200px] lg:-right-8 lg:top-12 lg:h-[280px] xl:-right-12 xl:h-[340px]"
+            className="pointer-events-none absolute right-0 hidden h-[220px] w-auto animate-lion-roar opacity-70 drop-shadow-[0_20px_50px_rgba(253,95,8,0.45)] md:block md:-right-8 md:top-16 md:h-[200px] lg:-right-16 lg:top-12 lg:h-[280px] xl:-right-20 xl:h-[340px]"
           />
 
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/90 md:text-xl">
