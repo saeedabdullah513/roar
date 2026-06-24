@@ -29,7 +29,6 @@ import {
 
 import { submitContactForm } from "../lib/api/contact.functions";
 import { fetchIpGeolocation } from "../lib/ip-geolocation";
-import { RecaptchaCheckbox } from "@/components/ui/recaptcha";
 
 import lionUrl from "@/assets/lion-roar.png";
 import lionChildUrl from "@/assets/lion-child-image.png";
@@ -273,15 +272,10 @@ function PackagesPage() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [faqOpen, setFaqOpen] = useState<number | null>(0);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!recaptchaToken) {
-      setError("Please complete the reCAPTCHA verification.");
-      return;
-    }
     setSending(true);
     setError(null);
     try {
@@ -297,7 +291,6 @@ function PackagesPage() {
           service: (fd.get("package") as string) || "Packages Inquiry",
           message: (fd.get("message") as string) || "Packages inquiry",
           ...geo,
-          recaptchaToken,
         },
       });
       window.location.href = "/thank-you";
@@ -612,14 +605,9 @@ function PackagesPage() {
                 </div>
 
                 <div className="mt-4">
-                  <RecaptchaCheckbox
-                    sitekey="6LdjRCYtAAAAAL_LVN-5pju1WIlHi0eyE8deiZO-"
-                    onVerify={(token) => setRecaptchaToken(token)}
-                    onExpired={() => setRecaptchaToken(null)}
-                  />
                 </div>
 
-                <button type="submit" disabled={sending || !recaptchaToken}
+                <button type="submit" disabled={sending}
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-5 py-3.5 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:bg-gold-soft disabled:opacity-60">
                   {sending ? <><Loader2 className="h-4 w-4 animate-spin" /> Sending...</> : <>Send my roar <ArrowRight className="h-4 w-4" /></>}
                 </button>
