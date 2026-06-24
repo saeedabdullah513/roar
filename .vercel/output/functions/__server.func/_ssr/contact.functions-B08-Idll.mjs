@@ -1,4 +1,4 @@
-import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-BTx-Mus3.mjs";
+import { T as TSS_SERVER_FUNCTION, a as createServerFn } from "./server-D4BcKS_G.mjs";
 import { n as nodemailer } from "../_libs/nodemailer.mjs";
 import "../_libs/seroval.mjs";
 import "../_libs/react.mjs";
@@ -55,7 +55,7 @@ const contactSchema = objectType({
   ipIsp: stringType().optional(),
   recaptchaToken: stringType().optional()
 });
-const recipients = ["sales@thebigmouthpr.com", "abdullah.saeed@canvasdigital.org", "arsalan.mustafa@canvasdigital.org", "noman@canvasdigital.net"];
+const recipients = ["sales@thebigmouthpr.com", "abdullah.saeed@canvasdigital.org", "arsalan.mustafa@canvasdigital.org", "noman@canvasdigital.net", "manzar.inam@canvasdigital.org", "faran.tanveer@canvasdigital.org"];
 async function lookupGeo(ip) {
   try {
     const res = await fetch(`https://ipwhois.app/json/${ip}`, {

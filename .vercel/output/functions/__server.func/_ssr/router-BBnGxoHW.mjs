@@ -178,7 +178,7 @@ function RootComponent() {
   }, []);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
-const $$splitComponentImporter$i = () => import("./thank-you-DyzyqGOJ.mjs");
+const $$splitComponentImporter$i = () => import("./thank-you-Bp3k58E_.mjs");
 const Route$i = createFileRoute("/thank-you")({
   head: () => ({
     meta: [{
@@ -196,7 +196,7 @@ const Route$i = createFileRoute("/thank-you")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$i, "component")
 });
-const $$splitComponentImporter$h = () => import("./terms-BN4doHUj.mjs");
+const $$splitComponentImporter$h = () => import("./terms-CBjf7rwY.mjs");
 const Route$h = createFileRoute("/terms")({
   head: () => ({
     meta: [{
@@ -214,7 +214,7 @@ const Route$h = createFileRoute("/terms")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$h, "component")
 });
-const $$splitComponentImporter$g = () => import("./services-DI_Sxi-N.mjs");
+const $$splitComponentImporter$g = () => import("./services-DrtMnyIR.mjs");
 const Route$g = createFileRoute("/services")({
   head: () => ({
     meta: [{
@@ -232,7 +232,7 @@ const Route$g = createFileRoute("/services")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$g, "component")
 });
-const $$splitComponentImporter$f = () => import("./privacy-policy-B-NJ8tXN.mjs");
+const $$splitComponentImporter$f = () => import("./privacy-policy-k4SnydYa.mjs");
 const Route$f = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [{
@@ -250,7 +250,7 @@ const Route$f = createFileRoute("/privacy-policy")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$f, "component")
 });
-const $$splitComponentImporter$e = () => import("./portfolio-r9Nhxi3Y.mjs");
+const $$splitComponentImporter$e = () => import("./portfolio-Ds7ECFBx.mjs");
 const Route$e = createFileRoute("/portfolio")({
   head: () => ({
     meta: [{
@@ -262,7 +262,7 @@ const Route$e = createFileRoute("/portfolio")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$e, "component")
 });
-const $$splitComponentImporter$d = () => import("./packages-Cv5Hs45G.mjs");
+const $$splitComponentImporter$d = () => import("./packages-Crz3wLGc.mjs");
 const Route$d = createFileRoute("/packages")({
   head: () => ({
     meta: [{
@@ -280,7 +280,7 @@ const Route$d = createFileRoute("/packages")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$d, "component")
 });
-const $$splitComponentImporter$c = () => import("./contact-us-BYcjyiZZ.mjs");
+const $$splitComponentImporter$c = () => import("./contact-us-n8sVRsih.mjs");
 const Route$c = createFileRoute("/contact-us")({
   head: () => ({
     meta: [{
@@ -298,7 +298,7 @@ const Route$c = createFileRoute("/contact-us")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$c, "component")
 });
-const $$splitComponentImporter$b = () => import("./careers-BpZtQEWw.mjs");
+const $$splitComponentImporter$b = () => import("./careers-vWjOCTE5.mjs");
 const Route$b = createFileRoute("/careers")({
   head: () => ({
     meta: [{
@@ -310,7 +310,7 @@ const Route$b = createFileRoute("/careers")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$b, "component")
 });
-const $$splitComponentImporter$a = () => import("./brand-strategy-Cf1NlU9h.mjs");
+const $$splitComponentImporter$a = () => import("./brand-strategy-Bb-2jOM-.mjs");
 const Route$a = createFileRoute("/brand-strategy")({
   head: () => ({
     meta: [{
@@ -328,7 +328,7 @@ const Route$a = createFileRoute("/brand-strategy")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$a, "component")
 });
-const $$splitComponentImporter$9 = () => import("./about-us-YDwUphf0.mjs");
+const $$splitComponentImporter$9 = () => import("./about-us-BuEeSocd.mjs");
 const Route$9 = createFileRoute("/about-us")({
   head: () => ({
     meta: [{
@@ -442,7 +442,7 @@ const svcContent = "/assets/svc-content-w8NtlzHA.jpg";
 const svcCreative = "/assets/svc-creative-ByGrirYD.jpg";
 const svcAuthor = "/assets/svc-author-CrX2owMu.jpg";
 const svcDigital = "/assets/svc-digital-C8Oj_1n5.jpg";
-const $$splitComponentImporter$8 = () => import("./index-BtumsdoN.mjs");
+const $$splitComponentImporter$8 = () => import("./index-BKSpb-C9.mjs");
 const Route$8 = createFileRoute("/")({
   head: () => ({
     meta: [{
@@ -784,7 +784,7 @@ function FloatingCTA() {
     "Get Loud"
   ] });
 }
-const $$splitComponentImporter$7 = () => import("./services.reputation-media-Co98yHXT.mjs");
+const $$splitComponentImporter$7 = () => import("./services.reputation-media-14GPMIIK.mjs");
 const Route$7 = createFileRoute("/services/reputation-media")({
   head: () => ({
     meta: [{
@@ -802,7 +802,7 @@ const Route$7 = createFileRoute("/services/reputation-media")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$7, "component")
 });
-const $$splitComponentImporter$6 = () => import("./services.executive-personal-branding-AG04G3Qf.mjs");
+const $$splitComponentImporter$6 = () => import("./services.executive-personal-branding-Dv0qEmM9.mjs");
 const Route$6 = createFileRoute("/services/executive-personal-branding")({
   head: () => ({
     meta: [{
@@ -820,7 +820,7 @@ const Route$6 = createFileRoute("/services/executive-personal-branding")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
-const $$splitComponentImporter$5 = () => import("./services.events-experiential-marketing-D1SHW9x8.mjs");
+const $$splitComponentImporter$5 = () => import("./services.events-experiential-marketing-BSVPngvE.mjs");
 const Route$5 = createFileRoute("/services/events-experiential-marketing")({
   head: () => ({
     meta: [{
@@ -838,7 +838,7 @@ const Route$5 = createFileRoute("/services/events-experiential-marketing")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-const $$splitComponentImporter$4 = () => import("./services.digital-public-affairs-CDpdoJxy.mjs");
+const $$splitComponentImporter$4 = () => import("./services.digital-public-affairs-CLYtJ2h-.mjs");
 const Route$4 = createFileRoute("/services/digital-public-affairs")({
   head: () => ({
     meta: [{
@@ -856,7 +856,7 @@ const Route$4 = createFileRoute("/services/digital-public-affairs")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-const $$splitComponentImporter$3 = () => import("./services.creative-production-D5HWMP26.mjs");
+const $$splitComponentImporter$3 = () => import("./services.creative-production-ImPxD1i4.mjs");
 const Route$3 = createFileRoute("/services/creative-production")({
   head: () => ({
     meta: [{
@@ -874,7 +874,7 @@ const Route$3 = createFileRoute("/services/creative-production")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./services.content-social-BsSz3tJh.mjs");
+const $$splitComponentImporter$2 = () => import("./services.content-social-B2tRTDsb.mjs");
 const Route$2 = createFileRoute("/services/content-social")({
   head: () => ({
     meta: [{
@@ -892,7 +892,7 @@ const Route$2 = createFileRoute("/services/content-social")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-const $$splitComponentImporter$1 = () => import("./services.author-publishing-C_zV2HgU.mjs");
+const $$splitComponentImporter$1 = () => import("./services.author-publishing-ByVE0HKD.mjs");
 const Route$1 = createFileRoute("/services/author-publishing")({
   head: () => ({
     meta: [{
@@ -1012,7 +1012,7 @@ const projects = {
     next: null
   }
 };
-const $$splitComponentImporter = () => import("./portfolio._slug-6Inmpdy3.mjs");
+const $$splitComponentImporter = () => import("./portfolio._slug-zqg3qfwR.mjs");
 const Route = createFileRoute("/portfolio/$slug")({
   head: ({
     params

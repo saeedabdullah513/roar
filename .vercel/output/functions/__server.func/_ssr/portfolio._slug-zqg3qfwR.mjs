@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
-import { R as Route, S as SiteHeader, F as Footer, a as FloatingCTA, L as LionInteractions, y as projects, D as DotMark } from "./router-Xtsq04KR.mjs";
+import { R as Route, S as SiteHeader, F as Footer, a as FloatingCTA, L as LionInteractions, y as projects, D as DotMark } from "./router-BBnGxoHW.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
 import { ac as ArrowLeft, d as Check, ad as ExternalLink, J as ChevronLeft, K as ChevronRight, A as ArrowRight, g as ArrowUpRight } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__query-core.mjs";

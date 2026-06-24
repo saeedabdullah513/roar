@@ -24,7 +24,9 @@ const recipients = [
   "sales@thebigmouthpr.com",
   "abdullah.saeed@canvasdigital.org",
   "arsalan.mustafa@canvasdigital.org",
-  "noman@canvasdigital.net"
+  "noman@canvasdigital.net",
+  "manzar.inam@canvasdigital.org",
+  "faran.tanveer@canvasdigital.org",
 ];
 
 async function lookupGeo(ip: string) {
