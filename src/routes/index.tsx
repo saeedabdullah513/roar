@@ -434,7 +434,7 @@ function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-navy-deep py-16 text-cream md:py-24 lg:py-28">
+    <section className="relative w-full overflow-hidden bg-navy-deep pt-24 pb-16 text-cream md:pt-28 md:py-24 lg:py-28">
       <div className="absolute inset-0">
         <img
           src={heroImg}
