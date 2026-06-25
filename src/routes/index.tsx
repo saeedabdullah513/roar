@@ -1282,8 +1282,10 @@ export function Footer() {
         <div className="flex gap-6">
           <a href="/privacy-policy" className="hover:text-gold">Privacy</a>
           <a href="/terms" className="hover:text-gold">Terms</a>
-          <a href="https://linkedin.com/company/thebigmouthpr" target="_blank" rel="noopener noreferrer" className="hover:text-gold">LinkedIn</a>
-          <a href="https://instagram.com/thebigmouthpr" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Instagram</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-gold">LinkedIn</a>
+          <a href="https://www.instagram.com/the_big_mouth_pr/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Instagram</a>
+          <a href="https://x.com/TheBigMouthpr" target="_blank" rel="noopener noreferrer" className="hover:text-gold">X</a>
+          <a href="https://www.pinterest.com/thebigmouthpr/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Pinterest</a>
         </div>
       </div>
     </footer>

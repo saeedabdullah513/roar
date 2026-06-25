@@ -17,6 +17,7 @@ import {
   ArrowRight,
   Linkedin,
   Instagram,
+  Twitter,
 } from "lucide-react";
 
 import {
@@ -391,7 +392,7 @@ const team = [
     bio: "The voice behind the roar. Alvin leads strategy and vision — louder than any competitor dares.",
     img: happiness3,
     imgFull: happiness4,
-    socials: { linkedin: "#", instagram: "#" },
+    socials: { linkedin: "#", instagram: "https://www.instagram.com/the_big_mouth_pr/", x: "https://x.com/TheBigMouthpr" },
   },
   {
     name: "Emma Baker",
@@ -399,7 +400,7 @@ const team = [
     bio: "Keeps the team, clients, and culture smiling. Emma ensures every client feels like the center of the universe.",
     img: happiness1,
     imgFull: happiness2,
-    socials: { linkedin: "#", instagram: "#" },
+    socials: { linkedin: "#", instagram: "https://www.instagram.com/the_big_mouth_pr/", x: "https://x.com/TheBigMouthpr" },
   },
   {
     name: "Chris James",
@@ -407,7 +408,7 @@ const team = [
     bio: "Turns handshakes into partnerships. Chris leads the sales engine with charm and strategic firepower.",
     img: viceRoarCorporate,
     imgFull: viceRoarFull,
-    socials: { linkedin: "#", instagram: "#" },
+    socials: { linkedin: "#", instagram: "https://www.instagram.com/the_big_mouth_pr/", x: "https://x.com/TheBigMouthpr" },
   },
   {
     name: "Nikita Johnson",
@@ -415,7 +416,7 @@ const team = [
     bio: "Seasoned strategist who maps the route from unseen to undeniable. Nikita builds brands that dominate their categories.",
     img: srConsultantCorporate,
     imgFull: srConsultantFull,
-    socials: { linkedin: "#", instagram: "#" },
+    socials: { linkedin: "#", instagram: "https://www.instagram.com/the_big_mouth_pr/", x: "https://x.com/TheBigMouthpr" },
   },
   {
     name: "Gavin",
@@ -423,7 +424,7 @@ const team = [
     bio: "Owns every pixel and platform. Gavin engineers digital dominance that leaves competitors scrambling.",
     img: digitalRoarCorporate,
     imgFull: digitalRoarFull,
-    socials: { linkedin: "#", instagram: "#" },
+    socials: { linkedin: "#", instagram: "https://www.instagram.com/the_big_mouth_pr/", x: "https://x.com/TheBigMouthpr" },
   },
 ];
 
@@ -476,6 +477,13 @@ function TeamCard({ member }: { member: (typeof team)[number] }) {
             className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-navy-deep hover:scale-110"
           >
             <Instagram className="h-4 w-4" />
+          </a>
+          <a
+            href={member.socials.x}
+            aria-label={`${member.name} on X`}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-navy-deep hover:scale-110"
+          >
+            <Twitter className="h-4 w-4" />
           </a>
         </div>
       </div>
