@@ -1,1 +1,0 @@
-import{x as u,r as n,y as a,z as c}from"./index-BqVs43S6.js";function l(i){const e=u(),r=n.useRef(void 0);return a(e.stores.location,s=>{const t=s;if(e.options.defaultStructuralSharing){const o=c(r.current,t);return r.current=o,o}return t})}export{l as u};

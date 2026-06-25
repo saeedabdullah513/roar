@@ -1058,6 +1058,7 @@ const testimonials = [
 
 function Testimonials() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
   const handlePlay = (index: number) => {
     videoRefs.current.forEach((v, i) => {
@@ -1065,7 +1066,13 @@ function Testimonials() {
     });
     const video = videoRefs.current[index];
     if (video) {
-      video.paused ? video.play() : video.pause();
+      if (video.paused) {
+        video.play();
+        setPlayingIndex(index);
+      } else {
+        video.pause();
+        setPlayingIndex(null);
+      }
     }
   };
 
@@ -1101,11 +1108,13 @@ function Testimonials() {
                 playsInline
                 preload="metadata"
                 poster={t.img}
+                onEnded={() => setPlayingIndex(null)}
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
               {/* Play */}
+              {playingIndex !== i && (
               <button
                 onClick={() => handlePlay(i)}
                 className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 grid h-14 w-14 place-items-center rounded-full bg-gold/95 text-navy-deep transition group-hover:scale-110"
@@ -1113,6 +1122,7 @@ function Testimonials() {
               >
                 <Play className="ml-0.5 h-6 w-6 fill-current" />
               </button>
+              )}
             </article>
           ))}
         </div>
