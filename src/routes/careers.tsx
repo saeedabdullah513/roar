@@ -56,7 +56,7 @@ function CareersPage() {
           <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
             <DotMark /> Join the pride
           </p>
-          <h1 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] md:text-7xl">
+          <h1 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] md:text-7xl">
             Match our <span className="text-gold italic">roar.</span>
           </h1>
           <p className="mt-6 text-lg text-cream/70 max-w-xl mx-auto">

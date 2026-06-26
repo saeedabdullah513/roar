@@ -57,7 +57,7 @@ function Hero() {
           </span>
         </div>
 
-        <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+        <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-7xl">
           Terms & <span className="text-gold">Conditions.</span>
         </h1>
         <p className="mt-2 font-display text-lg italic text-cream/60">
@@ -339,7 +339,7 @@ function FinalCTA() {
       <img src={LION_URL} aria-hidden alt="" className="pointer-events-none absolute -left-16 bottom-0 w-[320px] opacity-20 md:w-[440px]" />
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <img src={LION_URL} alt="" aria-hidden className="mx-auto h-20 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.45)]" />
-        <h2 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
+        <h2 className="mt-6 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-6xl">
           Still have <span className="text-gold">questions?</span>
         </h2>
         <p className="mx-auto mt-6 max-w-md text-cream/75">

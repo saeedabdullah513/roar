@@ -642,7 +642,7 @@ function Story() {
     setOpen(true);
   };
   return (
-    <section id="story" className="relative bg-white py-24 md:py-28 xl:py-20">
+    <section id="story" className="relative bg-white py-14 md:py-24 md:py-28 xl:py-20">
       {/* Icon pattern accent */}
       <img
         src={iconUrl}
@@ -673,7 +673,7 @@ function Story() {
           <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
             <DotMark /> Our story
           </p>
-          <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
             You're the story, <br />
             we're made to read <em>you</em> <br />
             <span className="text-gold italic">out loud.</span>
@@ -720,7 +720,7 @@ function Story() {
 function Stat({ n, label }: { n: string; label: string }) {
   return (
     <div>
-      <p className="font-display text-4xl font-bold text-navy-deep">{n}</p>
+      <p className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-navy-deep">{n}</p>
       <p className="mt-2 text-xs uppercase tracking-[0.2em] text-navy/60">{label}</p>
     </div>
   );
@@ -796,7 +796,7 @@ const serviceLinks = [
 
 function Services() {
   return (
-    <section id="services" className="relative overflow-hidden bg-white py-20 text-navy-deep md:py-24 xl:py-20">
+    <section id="services" className="relative overflow-hidden bg-white py-12 md:py-20 text-navy-deep md:py-24 xl:py-20">
       <img src={iconUrl} alt="" aria-hidden className="pointer-events-none absolute -right-20 top-10 hidden h-[560px] w-auto opacity-[0.04] lg:block" />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -804,7 +804,7 @@ function Services() {
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
               <DotMark /> What we shout from the rooftops
             </p>
-            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
               Every channel. <br />
               <span className="text-gold italic">Every megaphone.</span>
             </h2>
@@ -885,14 +885,14 @@ function Industries() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="industries" className="relative bg-white py-20 text-navy-deep md:py-24 xl:py-20 border-t border-navy-deep/5">
+    <section id="industries" className="relative bg-white py-12 md:py-20 text-navy-deep md:py-24 xl:py-20 border-t border-navy-deep/5">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
               <DotMark /> Industries we make loud
             </p>
-            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
               Built for the <br />
               <span className="text-gold italic">loud leads.</span>
             </h2>
@@ -964,14 +964,14 @@ function Portfolio() {
     { img: caseBrandBook, title: "Brand Book Design", tag: "Creative Production", slug: "brand-book-design" },
   ];
   return (
-    <section id="portfolio" className="bg-white py-24 md:py-28 xl:py-20 border-t border-navy-deep/5">
+    <section id="portfolio" className="bg-white py-14 md:py-24 md:py-28 xl:py-20 border-t border-navy-deep/5">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
               <DotMark /> Portfolio
             </p>
-            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
               Don't confuse us with <br />
               <span className="text-gold italic">loudmouths.</span>
               <br />
@@ -1022,13 +1022,13 @@ const cases = [
 
 function CaseStudies() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 text-navy-deep md:py-24 xl:py-20 border-t border-navy-deep/5">
+    <section className="relative overflow-hidden bg-white py-12 md:py-20 text-navy-deep md:py-24 xl:py-20 border-t border-navy-deep/5">
       <img src={iconUrl} alt="" aria-hidden className="pointer-events-none absolute -left-20 top-20 hidden h-[360px] w-auto opacity-[0.05] lg:block" />
       <div className="relative mx-auto max-w-7xl px-6">
         <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
           <DotMark /> Case studies
         </p>
-        <h2 className="mt-5 max-w-3xl font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+        <h2 className="mt-5 max-w-3xl font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
           Real leaders. <span className="text-gold italic">Real noise.</span>
         </h2>
 
@@ -1077,7 +1077,7 @@ function Testimonials() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-navy-deep py-24 text-cream md:py-28 xl:py-20">
+    <section className="relative overflow-hidden bg-navy-deep py-14 md:py-24 text-cream md:py-28 xl:py-20">
       {/* Icon pattern */}
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-icon-pattern-xl" style={{ "--icon-url": `url(${iconUrl})` } as React.CSSProperties} />
       <div className="relative mx-auto max-w-7xl px-6">
@@ -1086,7 +1086,7 @@ function Testimonials() {
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
               <DotMark /> Client love
             </p>
-            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-cream md:text-6xl">
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-cream md:text-6xl">
               They <span className="text-gold italic">said it</span> better.
             </h2>
           </div>
@@ -1145,13 +1145,13 @@ const faqs = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-white py-24 md:py-28 xl:py-20">
+    <section id="faq" className="bg-white py-14 md:py-24 md:py-28 xl:py-20">
       <div className="mx-auto grid max-w-6xl gap-16 px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
             <DotMark /> FAQ
           </p>
-          <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep">
             Loud questions, <span className="text-gold italic">louder answers.</span>
           </h2>
           <p className="mt-6 text-navy/70">Bring the rest to your free strategy call.</p>
@@ -1181,14 +1181,13 @@ function FAQ() {
 const socialPosts = [
   { img: portfolio1, platform: "instagram", caption: "Editorial day. Loud light. Louder leader.", likes: "2.4k" },
   { img: reel2, platform: "instagram", caption: "Backstage at the keynote. He brought the thunder.", likes: "5.1k" },
-  { img: portfolio3, platform: "linkedin", caption: "Speaker kit drop — feat. a fintech founder we love.", likes: "1.8k" },
+  { img: portfolio3, platform: "pinterest", caption: "Speaker kit drop — feat. a fintech founder we love.", likes: "1.8k" },
   { img: svcMedia, platform: "instagram", caption: "Press hits this month: WSJ, Forbes, Inc. 🦁", likes: "3.7k" },
   { img: reel3, platform: "youtube", caption: "Book tour stop #4 — sold out room, sold out hearts.", likes: "9.2k" },
   { img: svcContent, platform: "instagram", caption: "Your phone is your stage. We hand you the mic.", likes: "4.0k" },
 ];
 
 function platformIcon(p: string) {
-  if (p === "linkedin") return <Linkedin className="h-4 w-4" />;
   if (p === "youtube") return <Youtube className="h-4 w-4" />;
   return <Instagram className="h-4 w-4" />;
 }
@@ -1202,23 +1201,23 @@ function SocialFeed() {
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
               <DotMark /> Live from the studio
             </p>
-            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
               Follow the <span className="text-gold italic">noise.</span>
             </h2>
           </div>
           <div className="flex gap-3">
-            <a href="#" className="inline-flex items-center gap-2 rounded-full border border-navy-deep/15 px-5 py-2.5 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream">
+            <a href="https://www.instagram.com/the_big_mouth_pr/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-navy-deep/15 px-5 py-2.5 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream">
               <Instagram className="h-4 w-4" /> @thebigmouthpr
             </a>
-            <a href="#" className="inline-flex items-center gap-2 rounded-full border border-navy-deep/15 px-5 py-2.5 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream">
-              <Linkedin className="h-4 w-4" /> LinkedIn
+            <a href="https://www.pinterest.com/thebigmouthpr/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-navy-deep/15 px-5 py-2.5 text-sm font-semibold text-navy-deep transition hover:bg-navy-deep hover:text-cream">
+              Pinterest
             </a>
           </div>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
           {socialPosts.map((p, i) => (
-            <a key={i} href="#" className="group relative aspect-square overflow-hidden rounded-2xl bg-navy-deep">
+            <a key={i} href="https://www.instagram.com/the_big_mouth_pr/" target="_blank" rel="noopener noreferrer" className="group relative aspect-square overflow-hidden rounded-2xl bg-navy-deep">
               <img src={p.img} alt="" loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/30 to-transparent opacity-0 transition group-hover:opacity-100" />
               <div className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-cream/90 text-navy-deep shadow">
@@ -1243,7 +1242,7 @@ function SocialFeed() {
 ===================================================================== */
 function FinalCTA() {
   return (
-    <section id="consult" className="relative overflow-hidden bg-navy-deep py-24 text-cream md:py-28 xl:py-20">
+    <section id="consult" className="relative overflow-hidden bg-navy-deep py-14 md:py-24 text-cream md:py-28 xl:py-20">
       <img src={lionUrl} alt="" aria-hidden className="pointer-events-none absolute -left-20 bottom-0 hidden h-[420px] w-auto opacity-[0.10] md:block" />
       <img src={iconUrl} alt="" aria-hidden className="pointer-events-none absolute -right-16 top-10 hidden h-[420px] w-auto opacity-[0.08] md:block" />
       <div className="pointer-events-none absolute -bottom-10 left-1/2 -translate-x-1/2 select-none font-display text-[20vw] font-black uppercase leading-none text-cream/[0.04]">
@@ -1252,7 +1251,7 @@ function FinalCTA() {
 
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         <img src={lionUrl} alt="" aria-hidden className="mx-auto h-32 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.45)]" />
-        <h2 className="mt-6 font-display text-6xl font-black uppercase leading-[0.95] md:text-8xl">
+        <h2 className="mt-6 font-display text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-[0.95] md:text-8xl">
           Ready to be <br />
           <span className="text-gold italic">impossible to ignore?</span>
         </h2>

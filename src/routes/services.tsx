@@ -92,7 +92,7 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+          <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-7xl">
             Stand Out with Our <span className="text-gold">Loud</span> Services
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
@@ -155,7 +155,7 @@ function WhyMatters() {
         <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — The problem</p>
-            <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+            <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
               Scattered Efforts Get <span className="text-gold">Scattered</span> Results.
             </h2>
           </div>
@@ -319,7 +319,7 @@ function ServicePillars() {
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">
             02 — Everything for Those That Want to Be on Top
           </p>
-          <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
             Multiple Services. <span className="text-gold">Roar Louder. Soar Higher.</span>
           </h2>
           <p className="mt-4 text-base text-navy-deep/70 md:text-lg">
@@ -411,7 +411,7 @@ function WhyLoud() {
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">
               03 — Why a Loud Team Works
             </p>
-            <h2 className="mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl">
+            <h2 className="mt-3 max-w-3xl font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight md:text-5xl">
               Instead of Agencies <span className="italic text-cream/55">that Whisper</span>
             </h2>
           </div>
@@ -471,7 +471,7 @@ function FAQ() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — Questions</p>
-          <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
             Loud Questions.{" "}
             <span className="text-gold">Even Louder</span> Answers.
           </h2>
@@ -570,7 +570,7 @@ function Consult() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">05 — Let's talk</p>
-          <h2 className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-6xl">
             Ready to Make Every Channel
             <br />
             Say the Same <span className="text-gold">Loud</span> Thing?

@@ -91,7 +91,7 @@ function AboutHero() {
               About · The Big Mouth PR
             </span>
           </div>
-          <h1 className="mt-6 font-display text-5xl font-black uppercase leading-[0.95] tracking-tight md:text-7xl">
+          <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] tracking-tight md:text-7xl">
             We don't <span className="text-gold">Whisper.</span> We <span className="text-gold">Roar.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
@@ -174,7 +174,7 @@ function Story() {
           <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
             <DotMark /> Our story
           </p>
-          <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
             Built for the ones <br />
             who refuse to be the <br />
             <span className="text-gold italic">best-kept secret.</span>
@@ -233,7 +233,7 @@ function Story() {
 function Stat({ n, label }: { n: string; label: string }) {
   return (
     <div>
-      <p className="font-display text-4xl font-black text-navy-deep">{n}</p>
+      <p className="font-display text-2xl sm:text-3xl md:text-5xl font-black text-navy-deep">{n}</p>
       <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-navy/55">
         {label}
       </p>
@@ -267,7 +267,7 @@ function MissionVision() {
           <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
             <DotMark /> Why we exist
           </p>
-          <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
             Mission &amp; <span className="text-gold italic">vision.</span>
           </h2>
         </div>
@@ -352,7 +352,7 @@ function Values() {
           <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
             <DotMark /> Core values
           </p>
-          <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
             What we <span className="text-gold italic">stand on.</span>
           </h2>
           <p className="mt-5 text-navy/70">
@@ -516,7 +516,7 @@ function Team() {
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
               <DotMark /> The pride
             </p>
-            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] md:text-6xl">
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] md:text-6xl">
               Meet the <span className="text-gold italic">roar makers.</span>
             </h2>
           </div>
@@ -622,7 +622,7 @@ function FAQ() {
           <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold">
             <DotMark /> FAQ
           </p>
-          <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-navy-deep md:text-6xl">
             Loud questions, <span className="text-gold italic">louder answers.</span>
           </h2>
           <p className="mt-5 text-navy/70">
@@ -686,7 +686,7 @@ function CTAStrip() {
         style={{ "--icon-url": `url(${ICON_URL})` } as React.CSSProperties}
       />
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
-        <h2 className="font-display text-4xl font-black uppercase leading-[0.95] md:text-6xl">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase leading-[0.95] md:text-6xl">
           Ready to make some noise?
         </h2>
         <p className="max-w-2xl text-lg text-navy-deep/80">

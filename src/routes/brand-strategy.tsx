@@ -101,7 +101,7 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-6 font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
+          <h1 className="mt-6 font-display text-2xl sm:text-3xl md:text-5xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-7xl">
             Your brand shouldn't
             <br />
             <span className="italic text-cream/60">blend in.</span>
@@ -535,7 +535,7 @@ function WhyUs() {
               key={r.n}
               className="group relative bg-navy-deep p-6 transition hover:bg-navy md:p-8"
             >
-              <span className="font-display text-5xl font-black text-gold/30 transition group-hover:text-gold">
+              <span className="font-display text-3xl sm:text-4xl md:text-6xl font-black text-gold/30 transition group-hover:text-gold">
                 {r.n}
               </span>
               <p className="mt-4 font-display text-xl font-bold text-cream">{r.t}</p>
@@ -835,7 +835,7 @@ function Consult() {
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">
             07 — Let's build
           </p>
-          <h2 className="mt-3 font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-6xl">
+          <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-6xl">
             Your category is waiting.
             <br />
             Let's <span className="text-gold">claim it.</span>

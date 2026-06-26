@@ -78,7 +78,7 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+          <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-7xl">
             Let's make some <span className="text-gold">noise.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-cream/75 md:text-xl">
@@ -159,7 +159,7 @@ function ContactSection() {
           {/* LEFT: contact details */}
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — Reach us</p>
-            <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+            <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
               We're here. <span className="text-gold">Loud and clear.</span>
             </h2>
             <p className="mt-5 text-base text-navy-deep/70 md:text-lg">
@@ -241,7 +241,7 @@ function ContactSection() {
               {submitted ? (
                 <div className="py-14 text-center">
                   <MouthMark className="mx-auto h-16 w-16 text-gold" />
-                  <p className="mt-6 font-display text-4xl font-black text-navy-deep">Roar received.</p>
+                  <p className="mt-6 font-display text-2xl sm:text-3xl md:text-5xl font-black text-navy-deep">Roar received.</p>
                   <p className="mt-3 text-navy-deep/70">
                     We'll be in your inbox within one business day with next steps.
                   </p>
@@ -408,7 +408,7 @@ function Location() {
         <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Studio</p>
-            <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+            <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
               2626 E 82nd St Ste#230, Bloomington, MN 55425 energy. <span className="text-gold">Global reach.</span>
             </h2>
           </div>
@@ -511,7 +511,7 @@ function FAQ() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">03 — Questions</p>
-          <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
             Before you <span className="text-gold">reach out.</span>
           </h2>
           <p className="mt-5 text-sm text-navy-deep/65">
@@ -573,7 +573,7 @@ function FinalCTA() {
           aria-hidden
           className="mx-auto h-24 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.45)]"
         />
-        <h2 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
+        <h2 className="mt-6 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-6xl">
           Don't be the best-kept secret.
           <br />
           <span className="text-gold">Be the noise.</span>

@@ -373,7 +373,7 @@ function PackagesPage() {
                 <div className="mt-6 rounded-2xl bg-navy-deep/[0.04] p-5">
                   <p className="text-[11px] font-bold uppercase tracking-widest text-navy-deep/60">{p.priceNote}</p>
                   <div className="mt-1 flex items-baseline gap-3">
-                    <span className={`font-display text-4xl font-black ${p.accent}`}>{p.price}</span>
+                    <span className={`font-display text-2xl sm:text-3xl md:text-5xl font-black ${p.accent}`}>{p.price}</span>
                     {!isPride && <span className="text-sm font-semibold text-navy-deep/40 line-through">{p.original}</span>}
                   </div>
                   {!isPride && (
@@ -418,7 +418,7 @@ function PackagesPage() {
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold">Compare the roars</p>
-              <h2 className="mt-3 font-display text-4xl font-black uppercase tracking-tight md:text-5xl">What's in <span className="text-gold italic">every</span> package</h2>
+              <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight md:text-5xl">What's in <span className="text-gold italic">every</span> package</h2>
             </div>
             <p className="max-w-md text-sm text-navy-deep/70">A side-by-side look at scope. Final scope of work is confirmed at contract.</p>
           </div>
@@ -476,7 +476,7 @@ function PackagesPage() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-gold"><DotMark /> Package FAQ</p>
-            <h2 className="mt-5 font-display text-5xl font-black uppercase leading-[0.95] text-cream">Which roar is <span className="text-gold italic">right</span> for you?</h2>
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-6xl font-black uppercase leading-[0.95] text-cream">Which roar is <span className="text-gold italic">right</span> for you?</h2>
             <p className="mt-6 text-cream/70">Detailed breakdown of who each package serves and what you can expect.</p>
           </div>
           <div className="space-y-3">
@@ -528,7 +528,7 @@ function PackagesPage() {
         <div className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <MouthMark className="mb-5 h-10 w-10" />
-            <h2 className="font-display text-4xl font-black uppercase tracking-tight md:text-5xl">Ready to <span className="text-gold italic">roar?</span></h2>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase tracking-tight md:text-5xl">Ready to <span className="text-gold italic">roar?</span></h2>
             <p className="mt-5 text-base text-navy-deep/65">Tell us which package fits and we'll come back within one business day with a scoped proposal — or jump on a discovery call.</p>
             <div className="mt-8 space-y-3 text-sm">
               <div className="flex items-center gap-3">

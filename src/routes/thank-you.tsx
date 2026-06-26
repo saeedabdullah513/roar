@@ -58,7 +58,7 @@ function Hero() {
             Message Received
           </span>
         </div>
-        <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+        <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-4xl sm:text-5xl md:text-7xl font-black leading-[0.95] tracking-tight md:text-7xl">
           Thank you for
           <br />
           reaching <span className="text-gold">out.</span>
@@ -93,7 +93,7 @@ function Content() {
     <section className="relative overflow-hidden bg-white py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-4xl font-black leading-[0.95] tracking-tight text-navy-deep md:text-5xl">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black leading-[0.95] tracking-tight text-navy-deep md:text-5xl">
             What happens <span className="text-gold">next?</span>
           </h2>
           <p className="mt-4 text-lg text-navy-deep/65">
@@ -107,7 +107,7 @@ function Content() {
               key={step.title}
               className="group relative overflow-hidden rounded-2xl border border-navy-deep/8 bg-white p-8 shadow-luxe transition hover:-translate-y-1 hover:shadow-gold"
             >
-              <span className="font-display text-6xl font-black leading-none text-gold/15 md:text-7xl">
+              <span className="font-display text-4xl sm:text-5xl md:text-7xl font-black leading-none text-gold/15 md:text-7xl">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-4 font-display text-xl font-bold text-navy-deep">
@@ -163,7 +163,7 @@ function FinalCTA() {
           aria-hidden
           className="mx-auto h-20 w-auto animate-lion-roar drop-shadow-[0_10px_30px_rgba(253,95,8,0.45)]"
         />
-        <h2 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
+        <h2 className="mt-6 font-display text-3xl sm:text-4xl md:text-4xl sm:text-5xl md:text-7xl font-black leading-[0.95] tracking-tight md:text-6xl">
           Ready to make some{" "}
           <span className="text-gold">noise?</span>
         </h2>

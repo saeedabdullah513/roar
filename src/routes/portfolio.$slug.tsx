@@ -181,7 +181,7 @@ function ProjectDetail() {
         <SiteHeader />
         <section className="flex min-h-[60vh] items-center justify-center pt-24">
           <div className="text-center">
-            <h1 className="font-display text-4xl font-black">Project not found</h1>
+            <h1 className="font-display text-2xl sm:text-3xl md:text-5xl font-black">Project not found</h1>
             <Link to="/portfolio" className="mt-6 inline-flex items-center gap-2 text-gold hover:underline">
               <ArrowLeft className="h-4 w-4" /> Back to portfolio
             </Link>
@@ -229,7 +229,7 @@ function HeroImage({ project }: { project: (typeof projects)[string] }) {
             <ArrowLeft className="h-4 w-4" /> Back to portfolio
           </Link>
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-gold">{project.category}</p>
-          <h1 className="mt-3 font-display text-4xl font-black uppercase leading-[1.05] text-cream md:text-6xl">
+          <h1 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black uppercase leading-[1.05] text-cream md:text-6xl">
             {project.title}
           </h1>
         </div>
@@ -408,7 +408,7 @@ function CTA() {
   return (
     <section className="bg-navy-deep py-20 text-center">
       <div className="mx-auto max-w-2xl px-6">
-        <h2 className="font-display text-4xl font-black text-cream md:text-5xl">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-black text-cream md:text-5xl">
           Ready to make <span className="text-gold italic">your noise?</span>
         </h2>
         <p className="mt-4 text-cream/65">

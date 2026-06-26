@@ -102,7 +102,7 @@ function Hero() {
             </span>
           </div>
 
-          <h1 className="mt-6 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-7xl">
+          <h1 className="mt-6 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-7xl">
             Your brand <span className="italic text-cream/60">lived</span>
             <br />
             is your brand <span className="text-gold">remembered.</span>
@@ -172,7 +172,7 @@ function Overview() {
         <div className="grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">01 — What it is</p>
-            <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+            <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
               Experiences engineered to <span className="text-gold">stop traffic.</span>
             </h2>
           </div>
@@ -285,7 +285,7 @@ function SubServices() {
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">02 — Inside the package</p>
-            <h2 className="mt-3 max-w-2xl font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+            <h2 className="mt-3 max-w-2xl font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
               Six ways to make <span className="text-gold">memories.</span>
             </h2>
           </div>
@@ -408,7 +408,7 @@ function WhyUs() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">03 — Why The Big Mouth PR</p>
-            <h2 className="mt-3 max-w-3xl font-display text-4xl font-black tracking-tight md:text-5xl">
+            <h2 className="mt-3 max-w-3xl font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight md:text-5xl">
               Other agencies <span className="italic text-cream/55">plan.</span>
               <br />
               We <span className="text-gold">produce.</span>
@@ -425,7 +425,7 @@ function WhyUs() {
         <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-cream/10 bg-cream/10 md:grid-cols-2 lg:grid-cols-3">
           {reasons.map((r) => (
             <div key={r.n} className="group relative bg-navy-deep p-8 transition hover:bg-navy">
-              <span className="font-display text-5xl font-black text-gold/30 transition group-hover:text-gold">
+              <span className="font-display text-3xl sm:text-4xl md:text-6xl font-black text-gold/30 transition group-hover:text-gold">
                 {r.n}
               </span>
               <p className="mt-4 font-display text-xl font-bold text-cream">{r.t}</p>
@@ -456,7 +456,7 @@ function Process() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-3xl">
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">04 — The Process</p>
-          <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
             From concept to <span className="text-gold">curtain call.</span>
           </h2>
           <p className="mt-5 text-base text-navy-deep/70 md:text-lg">
@@ -525,7 +525,7 @@ function Portfolio() {
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">05 — Receipts</p>
-            <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+            <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
               Moments we <span className="text-gold">made.</span>
             </h2>
           </div>
@@ -610,7 +610,7 @@ function FAQ() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">06 — Questions</p>
-          <h2 className="mt-3 font-display text-4xl font-black tracking-tight text-navy-deep md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl">
             Answers before <span className="text-gold">you ask.</span>
           </h2>
           <p className="mt-5 text-sm text-navy-deep/65">
@@ -699,7 +699,7 @@ function Consult() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold">07 — Let's produce</p>
-          <h2 className="mt-3 font-display text-5xl font-black leading-[0.95] tracking-tight md:text-6xl">
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-6xl">
             Your next moment <span className="text-gold">starts</span>
             <br />
             with a single <em>conversation.</em>
