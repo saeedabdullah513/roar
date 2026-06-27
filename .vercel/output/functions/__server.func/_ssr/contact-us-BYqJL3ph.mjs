@@ -147,7 +147,7 @@ function ContactSection() {
         label: "Call the studio",
         desc: "+1 (332) 258-7873 — Mon–Fri, 9am–6pm EST.",
         action: "Call now →",
-        href: "tel:+15550100420"
+        href: "tel:+13322587873"
       }, {
         icon: MapPin,
         label: "Visit us",

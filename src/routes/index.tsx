@@ -1285,7 +1285,7 @@ export function Footer() {
         </div>
         <FooterCol title="Studio" items={[{ label: "About Us", href: "/about-us" }, { label: "Services", href: "/services" }, { label: "Packages", href: "/packages" }, { label: "Portfolio", href: "/portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
         <FooterCol title="Services" items={[{ label: "Executive & Personal Branding", href: "/services/executive-personal-branding" }, { label: "Reputation & Media", href: "/services/reputation-media" }, { label: "Content & Social", href: "/services/content-social" }, { label: "Creative Production", href: "/services/creative-production" }, { label: "Author & Publishing", href: "/services/author-publishing" }, { label: "Digital & Public Affairs", href: "/services/digital-public-affairs" }, { label: "Events & Experiential Marketing", href: "/services/events-experiential-marketing" }]} />
-        <FooterCol title="Get loud" items={[{ label: "Book a Call", href: "/contact-us#form" }, { label: "sales@thebigmouthpr.com", href: "mailto:sales@thebigmouthpr.com" }, { label: "+1 (332) 258-7873", href: "tel:+15550100420" }, { label: "2626 E 82nd St Ste#230, Bloomington, MN 55425", href: "#" }]} />
+        <FooterCol title="Get loud" items={[{ label: "Book a Call", href: "/contact-us#form" }, { label: "sales@thebigmouthpr.com", href: "mailto:sales@thebigmouthpr.com" }, { label: "+1 (332) 258-7873", href: "tel:+13322587873" }, { label: "2626 E 82nd St Ste#230, Bloomington, MN 55425", href: "#" }]} />
       </div>
       <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-cream/10 px-6 pt-8 text-xs text-cream/55 md:flex-row">
         <p className="flex items-center gap-3">
