@@ -321,9 +321,10 @@ function ContactSection() {
 
                   <div className="mt-5">
                     <label className="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-deep/60">
-                      Phone (optional)
+                      Phone
                     </label>
                     <input
+                      required
                       type="tel"
                       value={formData.phone}
                       onChange={update("phone")}

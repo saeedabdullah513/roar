@@ -7,7 +7,7 @@ const contactSchema = z.object({
   email: z.string().email("Valid email is required"),
   company: z.string().min(1, "Company is required"),
   role: z.string().min(1, "Role is required"),
-  phone: z.string().optional(),
+  phone: z.string().min(1, "Phone number is required"),
   service: z.string().min(1, "Service is required"),
   message: z.string().min(1, "Message is required"),
   ipAddress: z.string().optional(),

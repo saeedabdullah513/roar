@@ -399,7 +399,7 @@ export function SiteHeader() {
    1. HERO
 ===================================================================== */
 function Hero() {
-  const [heroForm, setHeroForm] = useState({ name: "", email: "", company: "", title: "", message: "" });
+  const [heroForm, setHeroForm] = useState({ name: "", email: "", company: "", title: "", phone: "", message: "" });
   const [heroSending, setHeroSending] = useState(false);
   const [heroDone, setHeroDone] = useState(false);
   const [heroError, setHeroError] = useState<string | null>(null);
@@ -419,7 +419,7 @@ function Hero() {
           email: heroForm.email,
           company: heroForm.company,
           role: heroForm.title,
-          phone: "",
+          phone: heroForm.phone,
           service: "Strategy Call",
           message: heroForm.message,
           ...geo,
@@ -557,10 +557,13 @@ function Hero() {
 
             <div className="mt-6 grid gap-3">
               <input type="text" required value={heroForm.name} onChange={heroUpdate("name")} placeholder="Your name" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
-              <input type="email" required value={heroForm.email} onChange={heroUpdate("email")} placeholder="Work email" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+              <div className="grid grid-cols-2 gap-3">
+                <input type="email" required value={heroForm.email} onChange={heroUpdate("email")} placeholder="Work email" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+                <input type="tel" required value={heroForm.phone} onChange={heroUpdate("phone")} placeholder="Phone" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+              </div>
               <div className="grid grid-cols-2 gap-3">
                 <input type="text" required value={heroForm.company} onChange={heroUpdate("company")} placeholder="Company" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
-                <input type="text" required value={heroForm.title} onChange={heroUpdate("title")} placeholder="Title" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+                <input type="text" value={heroForm.title} onChange={heroUpdate("title")} placeholder="Title" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
               </div>
               <textarea rows={2} required value={heroForm.message} onChange={heroUpdate("message")} placeholder="What do you want the world to hear?" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
               <button type="submit" disabled={heroSending} className="group mt-1 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep transition hover:bg-gold-soft hover:scale-[1.01] disabled:opacity-60">

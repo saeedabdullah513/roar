@@ -96,7 +96,7 @@ function CareersPage() {
                 </div>
                 <label className="block">
                   <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Phone</span>
-                  <input name="phone" type="tel" className="mt-1.5 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" placeholder="+1 (555) 000-0000" />
+                  <input required name="phone" type="tel" className="mt-1.5 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" placeholder="+1 (555) 000-0000" />
                 </label>
                 <label className="block">
                   <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">What do you bring to the table?</span>

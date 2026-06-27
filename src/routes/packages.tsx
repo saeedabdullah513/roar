@@ -595,7 +595,7 @@ function PackagesPage() {
                     </label>
                     <label className="block">
                       <span className="text-[11px] font-bold uppercase tracking-widest text-cream/60">Phone</span>
-                      <input name="phone" type="tel" className="mt-1.5 w-full rounded-xl border border-cream/15 bg-white px-3 py-2.5 text-sm text-navy-deep outline-none focus:border-gold" />
+                      <input required name="phone" type="tel" className="mt-1.5 w-full rounded-xl border border-cream/15 bg-white px-3 py-2.5 text-sm text-navy-deep outline-none focus:border-gold" />
                     </label>
                   </div>
                   <label className="block">
