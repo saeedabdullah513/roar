@@ -676,7 +676,7 @@ function Consult() {
           email: fd.get("email") as string,
           company: fd.get("company") as string,
           role: fd.get("role") as string,
-          phone: "",
+          phone: (fd.get("phone") as string) || "",
           service: "Author & Publishing",
           message: (fd.get("book") || "") as string,
           ...geo,
@@ -735,6 +735,7 @@ function Consult() {
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 <Field label="Full name" name="name" placeholder="Jane Roar" />
                 <Field label="Work email" name="email" type="email" placeholder="jane@company.com" />
+                <Field label="Phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" />
                 <Field label="Company" name="company" placeholder="Atlas Ventures" />
                 <Field label="Role" name="role" placeholder="Author / Publisher" />
               </div>
