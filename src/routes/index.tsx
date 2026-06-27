@@ -559,7 +559,7 @@ function Hero() {
               <input type="text" required value={heroForm.name} onChange={heroUpdate("name")} placeholder="Your name" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
               <div className="grid grid-cols-2 gap-3">
                 <input type="email" required value={heroForm.email} onChange={heroUpdate("email")} placeholder="Work email" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
-                <input type="tel" required value={heroForm.phone} onChange={heroUpdate("phone")} placeholder="Phone" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
+                <input type="tel" required value={heroForm.phone} onChange={heroUpdate("phone")} onInput={(e) => { (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.replace(/[^\d+]/g, ""); }} placeholder="Phone" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <input type="text" required value={heroForm.company} onChange={heroUpdate("company")} placeholder="Company" className="w-full rounded-xl border border-cream/20 bg-cream/10 px-5 py-3.5 text-sm text-cream placeholder:text-cream/65 focus:border-gold focus:outline-none focus:bg-cream/15" />

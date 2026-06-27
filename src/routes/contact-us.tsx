@@ -327,6 +327,11 @@ function ContactSection() {
                       required
                       type="tel"
                       value={formData.phone}
+                      onInput={(e) => {
+                        const val = (e.target as HTMLInputElement).value.replace(/[^\d+]/g, "");
+                        (e.target as HTMLInputElement).value = val;
+                        setFormData(p => ({ ...p, phone: val }));
+                      }}
                       onChange={update("phone")}
                       placeholder="+1 (555) 000-0000"
                       className="mt-2 w-full rounded-xl border border-navy-deep/15 bg-white px-4 py-3.5 text-sm text-navy-deep placeholder:text-navy-deep/35 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20"

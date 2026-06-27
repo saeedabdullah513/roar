@@ -793,6 +793,7 @@ function Field({
         type={type}
         required
         placeholder={placeholder}
+        onInput={type === "tel" ? (e) => { (e.target as HTMLInputElement).value = (e.target as HTMLInputElement).value.replace(/[^\d+]/g, ""); } : undefined}
         className="mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none"
       />
     </div>
