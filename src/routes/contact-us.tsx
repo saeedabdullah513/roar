@@ -88,17 +88,18 @@ function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             {[
-              { icon: Phone, label: "+1 (332) 258-7873" },
-              { icon: Mail, label: "sales@thebigmouthpr.com" },
-              { icon: MapPin, label: "2626 E 82nd St Ste#230, Bloomington, MN 55425" },
+              { icon: Phone, label: "+1 (332) 258-7873", href: "tel:+13322587873" },
+              { icon: Mail, label: "sales@thebigmouthpr.com", href: "mailto:sales@thebigmouthpr.com" },
+              { icon: MapPin, label: "2626 E 82nd St Ste#230, Bloomington, MN 55425", href: "https://maps.google.com/?q=2626+E+82nd+St+Ste+230+Bloomington+MN+55425" },
             ].map((c) => (
-              <span
+              <a
                 key={c.label}
-                className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/5 px-4 py-2 text-sm text-cream/75"
+                href={c.href}
+                className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/5 px-4 py-2 text-sm text-cream/75 transition hover:border-gold hover:text-cream"
               >
                 <c.icon className="h-3.5 w-3.5 text-gold" />
                 {c.label}
-              </span>
+              </a>
             ))}
           </div>
         </div>
@@ -195,7 +196,7 @@ function ContactSection() {
                   label: "Visit us",
                   desc: "2626 E 82nd St Ste#230, Bloomington, MN 55425 City (by appointment) · Remote everywhere.",
                   action: "Get directions →",
-                  href: "#",
+                  href: "https://maps.google.com/?q=2626+E+82nd+St+Ste+230+Bloomington+MN+55425",
                 },
               ].map((c) => (
                 <a

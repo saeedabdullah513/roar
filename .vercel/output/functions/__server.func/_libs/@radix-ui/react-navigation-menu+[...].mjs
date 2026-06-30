@@ -773,7 +773,6 @@ var Root2 = NavigationMenu;
 var List = NavigationMenuList;
 var Item = NavigationMenuItem;
 var Trigger = NavigationMenuTrigger;
-var Link = NavigationMenuLink;
 var Indicator = NavigationMenuIndicator;
 var Content = NavigationMenuContent;
 var Viewport = NavigationMenuViewport;
@@ -784,6 +783,5 @@ export {
   Root2 as R,
   Trigger as T,
   Viewport as V,
-  Item as a,
-  Link as b
+  Item as a
 };

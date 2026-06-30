@@ -632,13 +632,13 @@ function PackagesPage() {
       </section>
 
       {/* Independence Day Offer */}
-      <section className="sticky bottom-0 z-50 bg-navy-deep py-4">
+      <a href="/contact-us#form" className="sticky bottom-0 z-50 block bg-navy-deep py-4 transition hover:bg-navy">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <p className="text-sm font-bold uppercase tracking-[0.15em] text-gold md:text-base">
             Independence Day Offer — <span className="underline decoration-gold/50">Valid Only Till July Ends</span>
           </p>
         </div>
-      </section>
+      </a>
 
       <ClientsRibbon />
       <Footer />

@@ -133,7 +133,7 @@ const steps = [
   {
     title: "We reach out personally",
     description:
-      "You'll receive a personalised email or call from our team within one business day.",
+      "You'll receive a personalized email or call from our team within one business day.",
   },
   {
     title: "We craft your strategy",

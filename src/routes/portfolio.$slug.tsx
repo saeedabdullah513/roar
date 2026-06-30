@@ -42,7 +42,6 @@ const projects: Record<string, {
     title: "USA Today — Keri Murphy Feature",
     category: "PR & Media Placement",
     img: usatoday,
-    articleUrl: "https://www.usatoday.com/story/money/business/2026/06/11/women-led-businesses-record-numbers-keri-murphy/34497/",
     tools: ["Press Outreach", "Story Pitching", "Media Relations", "Executive Branding"],
     result: "USA Today front-page business section feature, 120K+ article reads, 3 podcast invitations.",
     detail: [

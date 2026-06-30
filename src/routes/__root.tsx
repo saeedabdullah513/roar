@@ -151,9 +151,9 @@ function RootComponent() {
     const hasOpened = sessionStorage.getItem("ze_opened");
     if (!hasOpened) {
       const timer = setTimeout(() => {
-        window.zE?.("webWidget", "open");
+        window.zE?.("webWidget", "show");
         sessionStorage.setItem("ze_opened", "1");
-      }, 2000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, []);

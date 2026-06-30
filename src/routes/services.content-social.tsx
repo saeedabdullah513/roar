@@ -236,7 +236,7 @@ const subServices = [
       "UGC strategy & campaign design",
       "Creator identification & outreach",
       "Content rights & licensing management",
-      "Influencer programme build & optimisation",
+      "Influencer program build & optimization",
     ],
   },
   {
@@ -257,7 +257,7 @@ const subServices = [
     details: [
       "Channel strategy & content pillars",
       "Scripting, filming & editing",
-      "SEO optimisation & thumbnail design",
+      "SEO optimization & thumbnail design",
       "Community management & growth tactics",
     ],
   },
@@ -269,7 +269,7 @@ const subServices = [
       "Monthly shoot days (photo + video)",
       "Multi-platform content repurposing",
       "Cross-channel distribution & scheduling",
-      "Weekly analytics & optimisation reviews",
+      "Weekly analytics & optimization reviews",
     ],
   },
 ];
@@ -395,7 +395,7 @@ function WhyUs() {
     },
     {
       n: "06",
-      t: "Weekly optimisation.",
+      t: "Weekly optimization.",
       d: "Content isn't 'set and forget.' We review performance weekly and pivot fast based on real data.",
     },
   ];
@@ -581,7 +581,7 @@ const faqs = [
   },
   {
     q: "How much time do I need to invest?",
-    a: "As little as 30 minutes per week. We handle production, distribution and optimisation — you provide the insights and approve the output.",
+    a: "As little as 30 minutes per week. We handle production, distribution and optimization — you provide the insights and approve the output.",
   },
   {
     q: "What platforms do you cover?",

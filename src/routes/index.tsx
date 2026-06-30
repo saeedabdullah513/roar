@@ -263,8 +263,8 @@ export function SiteHeader() {
         </div>
 
         {/* White panel — nav links */}
-        <NavigationMenu className="hidden max-w-none flex-1 items-center justify-center rounded-full bg-white px-3 py-2 shadow-luxe lg:flex">
-          <NavigationMenuList className="flex-1 items-center justify-center gap-1">
+        <div className="hidden max-w-none flex-1 items-center justify-center rounded-full bg-white px-3 py-2 shadow-luxe lg:flex">
+          <div className="flex items-center justify-center gap-1">
             <NavigationMenuItem>
               <div className="relative group">
                 <Link
@@ -297,21 +297,20 @@ export function SiteHeader() {
               </div>
             </NavigationMenuItem>
             {links.map((l) => (
-              <NavigationMenuItem key={l.href}>
-                <NavigationMenuLink
-                  href={l.href}
-                  className={navItemClass}
-                >
-                  {l.label}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+              <a
+                key={l.href}
+                href={l.href}
+                className={navItemClass}
+              >
+                {l.label}
+              </a>
             ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+          </div>
+        </div>
 
         {/* Orange CTA panel */}
         <a
-          href="#consult"
+          href="/contact-us#form"
           className="hidden items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03] hover:bg-gold-soft md:inline-flex"
         >
           <Volume2 className="h-4 w-4" /> Get Loud
@@ -382,7 +381,7 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              href="#consult"
+              href="/contact-us#form"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3 text-sm font-bold uppercase tracking-wider text-navy-deep"
             >
@@ -775,6 +774,13 @@ const serviceGroups = [
     tags: ["Media Buying", "Web Design", "Public Affairs", "Translation"],
     img: svcDigital,
   },
+  {
+    icon: Sparkles,
+    title: "Events & Experiential Marketing",
+    desc: "Experiential marketing, book fair participation, book signings, Times Square features, photography, videography and custom merchandise.",
+    tags: ["Experiential", "Book Fairs", "Times Square", "Merch"],
+    img: svcCreative,
+  },
 ];
 
 const slugOverrides: Record<string, string> = {
@@ -818,7 +824,7 @@ function Services() {
         </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {serviceGroups.map((s) => {
+          {serviceGroups.filter(s => s.title !== "Events & Experiential Marketing").map((s) => {
             const Icon = s.icon;
             return (
               <Link
@@ -1138,7 +1144,7 @@ function Testimonials() {
    10. FAQ
 ===================================================================== */
 const faqs = [
-  { q: "Who do you typically work with?", a: "Founders, C-level executives, authors, and high-profile professionals ready to be seen and aren't shy." },
+  { q: "Who do you typically work with?", a: "Leaders who are tired of being overlooked. Founders, executives, authors, public figures, and people who have earned their reputation and are ready to make sure the right rooms know it." },
   { q: "How long until I see results?", a: "Most clients see meaningful media presence in 60–90 days. Results are more dependent on strategy. Wikipedia and audiobooks take longer by design." },
   { q: "Do you offer one-off services or only retainers?", a: "Both. We offer what you want. Pick a single service (LinkedIn build, ISBN registration) or a full personal-brand management." },
   { q: "Is the 30-minute call really free?", a: "Yes. Zero obligation. You leave with a custom 90-day roadmap, whether or not we work together (which is highly unlikely after the call)." },
@@ -1285,7 +1291,7 @@ export function Footer() {
         </div>
         <FooterCol title="Studio" items={[{ label: "About Us", href: "/about-us" }, { label: "Services", href: "/services" }, { label: "Packages", href: "/packages" }, { label: "Portfolio", href: "/portfolio" }, { label: "Contact Us", href: "/contact-us" }]} />
         <FooterCol title="Services" items={[{ label: "Executive & Personal Branding", href: "/services/executive-personal-branding" }, { label: "Reputation & Media", href: "/services/reputation-media" }, { label: "Content & Social", href: "/services/content-social" }, { label: "Creative Production", href: "/services/creative-production" }, { label: "Author & Publishing", href: "/services/author-publishing" }, { label: "Digital & Public Affairs", href: "/services/digital-public-affairs" }, { label: "Events & Experiential Marketing", href: "/services/events-experiential-marketing" }]} />
-        <FooterCol title="Get loud" items={[{ label: "Book a Call", href: "/contact-us#form" }, { label: "sales@thebigmouthpr.com", href: "mailto:sales@thebigmouthpr.com" }, { label: "+1 (332) 258-7873", href: "tel:+13322587873" }, { label: "2626 E 82nd St Ste#230, Bloomington, MN 55425", href: "#" }]} />
+        <FooterCol title="Get loud" items={[{ label: "Book a Call", href: "/contact-us#form" }, { label: "sales@thebigmouthpr.com", href: "mailto:sales@thebigmouthpr.com" }, { label: "+1 (332) 258-7873", href: "tel:+13322587873" }, { label: "2626 E 82nd St Ste#230, Bloomington, MN 55425", href: "https://maps.google.com/?q=2626+E+82nd+St+Ste+230+Bloomington+MN+55425" }]} />
       </div>
       <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-cream/10 px-6 pt-8 text-xs text-cream/55 md:flex-row">
         <p className="flex items-center gap-3">

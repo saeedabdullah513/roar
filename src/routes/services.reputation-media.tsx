@@ -19,6 +19,7 @@ import {
   Users,
   Map as MapIcon,
   Rocket,
+  Search,
   LineChart,
   Trophy,
   MessageSquareHeart,
@@ -163,7 +164,7 @@ function Hero() {
 /* ===================== OVERVIEW ===================== */
 function Overview() {
   const pillars = [
-    { icon: ShieldCheck, t: "Trust", d: "Build credibility that every stakeholder, partner and investor instantly recognises." },
+    { icon: ShieldCheck, t: "Trust", d: "Build credibility that every stakeholder, partner and investor instantly recognizes." },
     { icon: Newspaper, t: "Visibility", d: "Command the front page, Wikipedia and every search result that matters." },
     { icon: TrendingUp, t: "Resilience", d: "A reputation engineered to withstand scrutiny and emerge stronger." },
     { icon: Megaphone, t: "Amplification", d: "Every win turns into a story. Every story turns into momentum." },
@@ -257,7 +258,7 @@ const subServices = [
       "Google, Trustpilot, Yelp & G2 monitoring",
       "Review response strategy & templates",
       "Sentiment analysis & reputation scoring",
-      "Review generation & advocacy programmes",
+      "Review generation & advocacy programs",
     ],
   },
   {
@@ -437,15 +438,15 @@ function WhyUs() {
 /* ===================== PROCESS MAP ===================== */
 function Process() {
   const steps = [
-    { icon: Phone, t: "Discovery Call", d: "60-min strategy kickoff. We listen, you roar." },
-    { icon: ClipboardList, t: "Onboarding", d: "Brand audit, asset intake, stakeholder interviews." },
-    { icon: FileSignature, t: "Scope Finalized", d: "Crystal-clear SOW, deliverables and timelines." },
-    { icon: Users, t: "Team Assigned", d: "Senior pod — strategist, writer, designer, publicist." },
-    { icon: MapIcon, t: "Plan Built", d: "12-month brand roadmap with monthly KPIs." },
-    { icon: Rocket, t: "Execute", d: "Content, pitches, shoots, posts, placements — live." },
-    { icon: LineChart, t: "Optimize in Real Time", d: "Weekly data reviews. Pivot fast, scale what works." },
-    { icon: Trophy, t: "Complete & Report", d: "Quarterly impact report. Wins, learnings, next bets." },
-    { icon: MessageSquareHeart, t: "Feedback Loop", d: "NPS, candid debrief, renewal & expansion." },
+    { icon: Phone, t: "The Intake Call", d: "We dig into where your reputation stands today — search results, press history, Wikipedia eligibility, any skeletons. Sixty minutes, no filter." },
+    { icon: Search, t: "Audit & Intelligence", d: "We pull a full media audit: what's being said, where, by whom. Sentiment mapping, competitor share of voice, gap analysis." },
+    { icon: MapIcon, t: "Strategy Session", d: "You get a reputation roadmap — which publications to target, what narrative to build, what to suppress or correct, and in what order." },
+    { icon: Users, t: "Your Team, Introduced", d: "A senior publicist, a media writer, and a crisis-ready strategist. Real names, direct lines. No account manager middlemen." },
+    { icon: Megaphone, t: "Outreach Begins", d: "Journalist pitches go out. Wikipedia drafts go in. Review responses get written. Press releases hit the wire. All coordinated, never scattershot." },
+    { icon: Trophy, t: "Placements Land", d: "You start appearing. Forbes. Bloomberg. Local anchors. Industry trades. We send you the links, not just the promises." },
+    { icon: ShieldCheck, t: "Monitor & Protect", d: "We watch your name daily. A bad review, a negative article, a Wikipedia edit — we're on it before you even see it." },
+    { icon: LineChart, t: "Monthly Report", d: "Not a deck full of vanity metrics. Placement count, domain authority gains, sentiment shift, share of voice. Real numbers." },
+    { icon: TrendingUp, t: "What's Next", d: "We debrief, adjust the strategy, and map the next quarter. Most clients expand here. Some rest on the results. Either way, you're in control." },
   ];
   return (
     <section id="process" className="relative bg-white py-20 md:py-24 xl:py-20">

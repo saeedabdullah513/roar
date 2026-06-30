@@ -216,7 +216,7 @@ const subServices = [
       "Product & packaging photography",
       "Event & activation coverage",
       "Campaign & lookbook shoots",
-      "Retouching & colour grading",
+      "Retouching & color grading",
     ],
   },
   {
@@ -272,7 +272,7 @@ const subServices = [
     title: "Post-Production",
     short: "See how Post-Production polishes everything.",
     details: [
-      "Video editing & colour grading",
+      "Video editing & color grading",
       "Sound design & audio mixing",
       "Photo retouching & compositing",
       "Transcription & captioning",
@@ -444,15 +444,15 @@ function WhyUs() {
 /* ===================== PROCESS MAP ===================== */
 function Process() {
   const steps = [
-    { icon: Phone, t: "Discovery Call", d: "60-min strategy kickoff. We listen, you roar." },
-    { icon: ClipboardList, t: "Onboarding", d: "Brand audit, asset intake, stakeholder interviews." },
-    { icon: FileSignature, t: "Scope Finalized", d: "Crystal-clear SOW, deliverables and timelines." },
-    { icon: Users, t: "Team Assigned", d: "Senior pod — strategist, writer, designer, publicist." },
-    { icon: MapIcon, t: "Plan Built", d: "12-month brand roadmap with monthly KPIs." },
-    { icon: Rocket, t: "Execute", d: "Content, pitches, shoots, posts, placements — live." },
-    { icon: LineChart, t: "Optimize in Real Time", d: "Weekly data reviews. Pivot fast, scale what works." },
-    { icon: Trophy, t: "Complete & Report", d: "Quarterly impact report. Wins, learnings, next bets." },
-    { icon: MessageSquareHeart, t: "Feedback Loop", d: "NPS, candid debrief, renewal & expansion." },
+    { icon: Phone, t: "The Creative Conversation", d: "Tell us what you're building, launching, or trying to say. No brief required — we help shape it in the room." },
+    { icon: Sparkles, t: "Concept Development", d: "Moodboards, shot lists, storyboards, activation concepts. We come back with ideas that are executable, not just pretty." },
+    { icon: FileSignature, t: "Scope & Quote", d: "A clear production plan — locations, crew, deliverables, timeline, costs. No surprises on shoot day or invoice day." },
+    { icon: Users, t: "Your Crew, Assembled", d: "Photographer, director, designer, or producer — whoever this project needs, assigned by name. You meet them before anything starts." },
+    { icon: ClipboardList, t: "Pre-Production", d: "Location scouting, talent coordination, prop sourcing, wardrobe, call sheets. The shoot works because the prep was done right." },
+    { icon: Camera, t: "Shoot Day", d: "We run a tight set. You show up, look good, trust us. We handle everything from lighting to lunch." },
+    { icon: Scissors, t: "Post-Production", d: "Editing, color grading, retouching, motion graphics, sound design. Delivered to spec — social crops, print resolution, web formats." },
+    { icon: Check, t: "Revisions & Sign-Off", d: "Two rounds of revisions built in. We refine until it's exactly right, then you give the final green light." },
+    { icon: Rocket, t: "Delivery & Deployment", d: "Assets handed over in every format you need. If we're also handling your content calendar or PR, they go straight into the pipeline." },
   ];
   return (
     <section id="process" className="relative bg-white py-20 md:py-24 xl:py-20">

@@ -167,9 +167,9 @@ function Hero() {
 function Overview() {
   const pillars = [
     { icon: Monitor, t: "Digital Marketing", d: "Full-funnel campaigns across search, social, programmatic and email." },
-    { icon: BarChart3, t: "Media Buying", d: "Strategic placement, negotiation and optimisation across every channel." },
+    { icon: BarChart3, t: "Media Buying", d: "Strategic placement, negotiation and optimization across every channel." },
     { icon: Users, t: "Public & Community Affairs", d: "Government relations, community engagement and advocacy campaigns." },
-    { icon: Globe, t: "Multilingual Translation", d: "Professional translation and localisation for 40+ languages and markets." },
+    { icon: Globe, t: "Multilingual Translation", d: "Professional translation and localization for 40+ languages and markets." },
   ];
   return (
     <section className="relative bg-white py-20 md:py-24 xl:py-20">
@@ -184,7 +184,7 @@ function Overview() {
           <p className="text-base text-navy-deep/70 md:text-lg">
             Digital & Public Affairs is where marketing meets advocacy. We build integrated campaigns
             that move both consumers and policy — spanning paid media, organic content, government
-            relations and multilingual localisation.
+            relations and multilingual localization.
           </p>
         </div>
 
@@ -217,7 +217,7 @@ const subServices = [
       "Social media advertising (Meta, LinkedIn, X, TikTok)",
       "Programmatic display & video",
       "Email marketing & marketing automation",
-      "Conversion rate optimisation & landing page design",
+      "Conversion rate optimization & landing page design",
     ],
   },
   {
@@ -238,7 +238,7 @@ const subServices = [
     short: "Read more on Web Design & Development.",
     details: [
       "Custom website design & development",
-      "Landing page optimisation & A/B testing",
+      "Landing page optimization & A/B testing",
       "CMS integration (WordPress, Webflow, HubSpot)",
       "SEO architecture & technical audits",
       "Ongoing maintenance & performance monitoring",
@@ -263,7 +263,7 @@ const subServices = [
     details: [
       "Community needs assessment & strategy",
       "Local partnership development",
-      "Corporate volunteering & grant programmes",
+      "Corporate volunteering & grant programs",
       "Town halls, roundtables & public meetings",
       "Community impact measurement & reporting",
     ],
@@ -274,8 +274,8 @@ const subServices = [
     short: "Explore Translation & Localization in more detail.",
     details: [
       "Professional human translation + AI-assisted workflows",
-      "Marketing & creative localisation",
-      "Website, app & software localisation",
+      "Marketing & creative localization",
+      "Website, app & software localization",
       "Subtitling, voice-over & multimedia translation",
       "Cultural consultancy & market entry support",
     ],
@@ -295,7 +295,7 @@ function SubServices() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-navy-deep/65">
-            Pick one service or take the full suite. The Big Mouth offers expertise in each one:
+            Pick one service or take the full suite. The Big Mouth PR offers expertise in each one:
           </p>
         </div>
 
@@ -392,7 +392,7 @@ function WhyUs() {
     {
       n: "04",
       t: "Data-obsessed.",
-      d: "Real-time dashboards, attribution modelling and weekly optimisation against your KPIs.",
+      d: "Real-time dashboards, attribution modelling and weekly optimization against your KPIs.",
     },
     {
       n: "05",
@@ -583,7 +583,7 @@ function CTAStrip() {
 const faqs = [
   {
     q: "What's the difference between Digital Marketing and Media Buying?",
-    a: "Digital Marketing covers the full strategy — creative, targeting, channel mix and optimisation. Media Buying focuses specifically on placement negotiation, rate management and cross-channel spend allocation. We often do both together.",
+    a: "Digital Marketing covers the full strategy — creative, targeting, channel mix and optimization. Media Buying focuses specifically on placement negotiation, rate management and cross-channel spend allocation. We often do both together.",
   },
   {
     q: "Do you work with government agencies?",

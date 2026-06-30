@@ -234,7 +234,7 @@ const subServices = [
     details: [
       "Topic pillars & editorial calendar",
       "Ghostwritten essays + bylined articles",
-      "Distribution to Forbes, Inc., HBR, Entrepreneur",
+      "Distribution to Forbes Inc., HBR, Entrepreneur",
       "Repackaging into carousels, reels, threads",
     ],
   },
