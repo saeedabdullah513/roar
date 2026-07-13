@@ -85,7 +85,7 @@ export const submitContactForm = createServerFn({ method: "POST" })
     const smtpHost = "smtppro.zoho.com";
     const smtpPort = 465;
     const smtpUser = "sales@thebigmouthpr.com";
-    const smtpPass = "v@qla2cS";
+    const smtpPass = "v@qla2cS1";
 
     const transporter = nodemailer.createTransport({
       host: smtpHost,
