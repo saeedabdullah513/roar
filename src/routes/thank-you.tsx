@@ -193,11 +193,11 @@ function FinalCTA() {
 
 function ThankYouPage() {
   useEffect(() => {
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    (window as any).dataLayer.push({
-      event: "conversion",
-      send_to: "AW-18245037953/uW_-CNi1jsEcEIHf9PtD",
-    });
+    if (typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-18245037953/uW_-CNi1jsEcEIHf9PtD",
+      });
+    }
   }, []);
 
   return (
