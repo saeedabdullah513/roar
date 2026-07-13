@@ -1,12 +1,12 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
 import { u as useEmblaCarousel } from "../_libs/embla-carousel-react.mjs";
-import { S as SiteHeader, C as ClientsRibbon, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark, M as MouthMark } from "./router-BDpAQETN.mjs";
-import { f as fetchIpGeolocation, s as submitContactForm } from "./ip-geolocation-DRXO4Oxp.mjs";
+import { S as SiteHeader, C as ClientsRibbon, F as Footer, a as FloatingCTA, L as LionInteractions, i as iconUrl, D as DotMark, M as MouthMark } from "./router-Be2m9_kr.mjs";
+import { f as fetchIpGeolocation, s as submitContactForm } from "./ip-geolocation-E2c1poDA.mjs";
 import { l as lionUrl } from "./lion-roar-IYwTvOU2.mjs";
 import { l as leader1, a as leader2, b as leader3, c as leader4 } from "./leader-4-vZurwnLd.mjs";
 import "../_libs/seroval.mjs";
-import { V as Volume2, A as ArrowRight, S as Sparkles, _ as MicVocal, j as MapPin, a2 as Gift, a3 as Music, b as Camera, e as Minus, P as Plus, d as Check, g as ArrowUpRight, h as Phone, w as ClipboardList, x as FilePenLine, n as Users, y as Map, R as Rocket, v as ChartLine, a1 as Trophy, k as MessageSquareHeart, K as ChevronLeft, O as ChevronRight, L as LoaderCircle } from "../_libs/lucide-react.mjs";
+import { V as Volume2, A as ArrowRight, a4 as Monitor, t as ChartColumn, n as Users, a5 as Globe, M as Megaphone, a6 as Languages, e as Minus, P as Plus, d as Check, g as ArrowUpRight, h as Phone, w as ClipboardList, x as FilePenLine, y as Map, R as Rocket, v as ChartLine, a1 as Trophy, k as MessageSquareHeart, K as ChevronLeft, O as ChevronRight, L as LoaderCircle } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -43,7 +43,7 @@ import "../_libs/@radix-ui/react-visually-hidden+[...].mjs";
 import "../_libs/class-variance-authority.mjs";
 import "../_libs/clsx.mjs";
 import "../_libs/tailwind-merge.mjs";
-import "./server-BMmTtAF8.mjs";
+import "./server-DLAR_Iky.mjs";
 import "node:async_hooks";
 import "../_libs/h3-v2.mjs";
 import "../_libs/rou3.mjs";
@@ -61,18 +61,23 @@ function Hero() {
         /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/", className: "inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.4em] text-cream/60 hover:text-gold", children: "← Back to The Big Mouth PR" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 inline-flex items-center gap-3 rounded-full border border-cream/15 bg-cream/5 px-4 py-1.5", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(DotMark, {}),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75", children: "Service · Events & Experiential Marketing" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-bold uppercase tracking-[0.35em] text-cream/75", children: "Service · Digital & Public Affairs" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "mt-6 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-7xl", children: [
-          "Your brand ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/60", children: "lived" }),
+          "Digital is the new ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "public square." }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "is your brand ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "remembered." })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/60", children: "We" }),
+          " command it."
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-6 max-w-xl text-lg text-cream/75 md:text-xl", children: [
-          "Pop-ups, product launches, immersive installations, touring activations and conference takeovers — we build in-person and hybrid experiences that don't just attract crowds, they create ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold font-semibold", children: "memories." })
+          "Digital marketing, media buying, web design, public affairs, community engagement and multilingual translation — built for brands that need to win ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold font-semibold", children: "every" }),
+          " audience,",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold font-semibold", children: " every" }),
+          " platform,",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold font-semibold", children: " every" }),
+          " language."
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-9 flex flex-wrap gap-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.03]", children: [
@@ -86,13 +91,13 @@ function Hero() {
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 grid max-w-md grid-cols-1 gap-6 sm:grid-cols-3", children: [{
           k: "200+",
-          v: "Events produced"
+          v: "Campaigns deployed"
         }, {
-          k: "50K+",
-          v: "Attendees engaged"
+          k: "40+",
+          v: "Markets reached"
         }, {
-          k: "15+",
-          v: "Cities activated"
+          k: "14x",
+          v: "Avg. ROAS delivered"
         }].map((s) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-3xl font-black text-gold", children: s.k }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-[11px] uppercase tracking-[0.18em] text-cream/55", children: s.v })
@@ -101,39 +106,41 @@ function Hero() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-10 rounded-full bg-gold/20 blur-3xl", "aria-hidden": true }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, alt: "Roaring lion — The Big Mouth PR", className: "relative mx-auto w-full max-w-[280px] animate-lion-roar drop-shadow-[0_30px_60px_rgba(253,95,8,0.35)] sm:max-w-[400px] lg:max-w-[520px]" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe", children: "Create the moment." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-navy-deep shadow-luxe", children: "Every channel." })
       ] })
     ] })
   ] });
 }
 function Overview() {
   const pillars = [{
-    icon: Sparkles,
-    t: "Pop-Ups",
-    d: "Temporary retail, brand installations and takeovers that create urgency and buzz."
+    icon: Monitor,
+    t: "Digital Marketing",
+    d: "Full-funnel campaigns across search, social, programmatic and email."
   }, {
-    icon: MicVocal,
-    t: "Product Launches",
-    d: "Show-stopping launch events that turn your next release into a cultural moment."
+    icon: ChartColumn,
+    t: "Media Buying",
+    d: "Strategic placement, negotiation and optimization across every channel."
   }, {
-    icon: MapPin,
-    t: "Touring Activations",
-    d: "Multi-city roadshows that bring your brand to the people who matter most."
+    icon: Users,
+    t: "Public & Community Affairs",
+    d: "Government relations, community engagement and advocacy campaigns."
   }, {
-    icon: Gift,
-    t: "VIP Experiences",
-    d: "Exclusive, invite-only moments for top clients, partners and stakeholders."
+    icon: Globe,
+    t: "Multilingual Translation",
+    d: "Professional translation and localization for 40+ languages and markets."
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative bg-white py-20 md:py-24 xl:py-20", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto max-w-7xl px-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid items-end gap-10 lg:grid-cols-[1.2fr_1fr]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "01 — What it is" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-          "Experiences engineered to ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "stop traffic." })
+          "The intersection of digital ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "reach" }),
+          " and public ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "influence." })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-navy-deep/70 md:text-lg", children: "Events & Experiential Marketing at The Big Mouth PR turns your brand into something people line up for. From intimate VIP dinners to stadium-scale activations, we concept, produce and measure moments that compound into earned media and lasting loyalty." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-base text-navy-deep/70 md:text-lg", children: "Digital & Public Affairs is where marketing meets advocacy. We build integrated campaigns that move both consumers and policy — spanning paid media, organic content, government relations and multilingual localization." })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4", children: pillars.map((p) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group relative overflow-hidden rounded-2xl border border-navy-deep/10 bg-white p-7 transition hover:-translate-y-1 hover:border-gold hover:shadow-luxe", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: ICON_URL, "aria-hidden": true, alt: "", className: "absolute -right-6 -top-6 h-24 opacity-[0.06] transition group-hover:opacity-[0.12]" }),
@@ -144,35 +151,35 @@ function Overview() {
   ] }) });
 }
 const subServices = [{
-  icon: Sparkles,
-  title: "Pop-Up Activations",
-  short: "Find out more about Pop-Up Activations.",
-  details: ["Venue scouting & pop-up design", "Brand environment & set design", "Product display & sampling stations", "Staff training & on-day management", "Measurement & post-event reporting"]
+  icon: Monitor,
+  title: "Digital Marketing",
+  short: "More on Digital Marketing.",
+  details: ["Paid search & SEO strategy", "Social media advertising (Meta, LinkedIn, X, TikTok)", "Programmatic display & video", "Email marketing & marketing automation", "Conversion rate optimization & landing page design"]
 }, {
-  icon: Music,
-  title: "Product Launch Events",
-  short: "Explore how we launch products with impact.",
-  details: ["Concept development & creative direction", "Venue sourcing & production management", "Guest list curation & VIP hospitality", "Entertainment, catering & run-of-show", "Media & influencer integration"]
+  icon: ChartColumn,
+  title: "Media Buying",
+  short: "See how Media Buying works for you.",
+  details: ["Media strategy & audience planning", "Rate negotiation & insertion orders", "Cross-channel campaign management", "Attribution modelling & incrementality testing", "Weekly pacing & performance reporting"]
 }, {
-  icon: MapPin,
-  title: "Touring Activations",
-  short: "See how our touring activations travel.",
-  details: ["Multi-city route planning & logistics", "Modular activation build & transport", "Local partnerships & grassroots marketing", "Permitting, insurance & compliance", "Real-time performance tracking per city"]
+  icon: Globe,
+  title: "Web Design & Development",
+  short: "Read more on Web Design & Development.",
+  details: ["Custom website design & development", "Landing page optimization & A/B testing", "CMS integration (WordPress, Webflow, HubSpot)", "SEO architecture & technical audits", "Ongoing maintenance & performance monitoring"]
 }, {
-  icon: Camera,
-  title: "Immersive Installations",
-  short: "Read more about Immersive Installations.",
-  details: ["Interactive & digital installation design", "Multi-sensory experience production", "AR/VR integration & digital layers", "Photogenic moment engineering", "Social media amplification strategy"]
+  icon: Users,
+  title: "Public Affairs",
+  short: "Find out more about Public Affairs.",
+  details: ["Legislative monitoring & policy analysis", "Coalition building & stakeholder mapping", "Grassroots advocacy & digital organising", "Hill briefings & testimony preparation", "Issue campaign creative & messaging"]
 }, {
-  icon: MicVocal,
-  title: "Conference Takeovers",
-  short: "Discover what a Conference Takeover looks like.",
-  details: ["Booth design & on-site brand presence", "Speaking stage & panel curation", "VIP dinner & after-party production", "Swag & merch distribution strategy", "Lead capture & post-conference follow-up"]
+  icon: Megaphone,
+  title: "Community Affairs",
+  short: "See what Community Affairs looks like in action.",
+  details: ["Community needs assessment & strategy", "Local partnership development", "Corporate volunteering & grant programs", "Town halls, roundtables & public meetings", "Community impact measurement & reporting"]
 }, {
-  icon: Gift,
-  title: "VIP & Private Events",
-  short: "Get the details on VIP & Private Events.",
-  details: ["Intimate dinner series & salon events", "Private client entertainment", "Corporate retreats & milestone celebrations", "Red-carpet & gala production", "Security, privacy & NDA management"]
+  icon: Languages,
+  title: "Translation & Localisation",
+  short: "Explore Translation & Localization in more detail.",
+  details: ["Professional human translation + AI-assisted workflows", "Marketing & creative localization", "Website, app & software localization", "Subtitling, voice-over & multimedia translation", "Cultural consultancy & market entry support"]
 }];
 function SubServices() {
   const [open, setOpen] = reactExports.useState(0);
@@ -180,12 +187,9 @@ function SubServices() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "02 — Inside the package" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 max-w-2xl font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-          "Six ways to make ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "memories." })
-        ] })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "mt-3 max-w-2xl font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl", children: "Your Only Team to Handle it All." })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-sm text-sm text-navy-deep/65", children: "Pick à la carte or take the full package. Each sub-service is a future Big Mouth page of its own — preview them below." })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-sm text-sm text-navy-deep/65", children: "Pick one service or take the full suite. The Big Mouth PR offers expertise in each one:" })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid gap-4", children: subServices.map((s, i) => {
       const isOpen = open === i;
@@ -222,28 +226,28 @@ function SubServices() {
 function WhyUs() {
   const reasons = [{
     n: "01",
-    t: "End-to-end production.",
-    d: "Concept to strike — we handle venue, build, talent, catering, permits and strike ourselves."
+    t: "Full-funnel fluency.",
+    d: "Awareness to advocacy — we cover every stage of the digital and public affairs funnel."
   }, {
     n: "02",
-    t: "Creative that stops crowds.",
-    d: "Our installations are designed to be photographed, shared and covered. Every detail is Instagram-optimised."
+    t: "40+ market capability.",
+    d: "Campaigns, content and communications adapted and delivered across 40+ languages and regions."
   }, {
     n: "03",
-    t: "National & international reach.",
-    d: "Multi-city touring is our specialty. We coordinate logistics, vendors and permits across markets seamlessly."
+    t: "Paid + earned + owned.",
+    d: "We don't just buy media. We earn it through public affairs and own it through web design and content."
   }, {
     n: "04",
-    t: "Measured ROI, not vanity metrics.",
-    d: "Footfall, dwell time, media impressions, social amplification and lead capture — we measure what matters."
+    t: "Data-obsessed.",
+    d: "Real-time dashboards, attribution modelling and weekly optimization against your KPIs."
   }, {
     n: "05",
-    t: "VIP-grade hospitality.",
-    d: "White-glove service for your most important guests — from red carpets to private dining experiences."
+    t: "Policy + digital together.",
+    d: "We bridge the gap between government relations and digital marketing — a rare combination."
   }, {
     n: "06",
-    t: "Legacy content built in.",
-    d: "Every activation is filmed, photographed and documented. You get a content library that lives long after the event."
+    t: "14x average ROAS.",
+    d: "Proven returns across industries. We only keep spending if the numbers work."
   }];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative overflow-hidden bg-navy-deep py-16 text-cream md:py-20 xl:py-16", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, "aria-hidden": true, alt: "", className: "pointer-events-none absolute -right-20 -top-10 w-[380px] opacity-[0.07] md:w-[520px]" }),
@@ -252,11 +256,11 @@ function WhyUs() {
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "03 — Why The Big Mouth PR" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 max-w-3xl font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight md:text-5xl", children: [
-            "Other agencies ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/55", children: "plan." }),
+            "Most agencies ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "italic text-cream/55", children: "post." }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-            "We ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "produce." })
+            "We build ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "movements." })
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold", children: [
@@ -314,8 +318,8 @@ function Process() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-14 max-w-3xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "04 — The Process" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-        "From concept to ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "curtain call." })
+        "From brief to ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "omnipresence." })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 text-base text-navy-deep/70 md:text-lg", children: "A nine-step system that's repeatable, transparent and obsessed with measurable outcomes." })
     ] }),
@@ -359,8 +363,9 @@ function Portfolio() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "05 — Receipts" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-          "Moments we ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "made." })
+          "Campaigns that ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "moved" }),
+          " people."
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
@@ -375,7 +380,7 @@ function CTAStrip() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative overflow-hidden bg-gold py-10 text-navy-deep", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 md:flex-row", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "flex items-center gap-4 text-center font-display text-2xl font-black md:text-left md:text-3xl", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(MouthMark, { className: "h-7 w-7" }),
-      "Ready to create something people will talk about?"
+      "Ready to own every channel that matters?"
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "inline-flex items-center gap-2 rounded-full bg-navy-deep px-7 py-3.5 text-sm font-bold uppercase tracking-wider text-cream transition hover:scale-[1.03]", children: [
       "Book a call ",
@@ -384,23 +389,23 @@ function CTAStrip() {
   ] }) });
 }
 const faqs = [{
-  q: "What types of events do you produce?",
-  a: "Pop-up activations, product launches, immersive installations, conference takeovers, touring roadshows, VIP dinners, corporate retreats and gala productions — from intimate to stadium-scale."
+  q: "What's the difference between Digital Marketing and Media Buying?",
+  a: "Digital Marketing covers the full strategy — creative, targeting, channel mix and optimization. Media Buying focuses specifically on placement negotiation, rate management and cross-channel spend allocation. We often do both together."
 }, {
-  q: "Do you handle international events?",
-  a: "Yes. We've produced activations across North America, Europe, the Middle East and Asia. Our team coordinates local vendors, permits and cultural considerations in every market."
+  q: "Do you work with government agencies?",
+  a: "Yes. Our Public Affairs practice works with municipal, state and federal agencies on communications, community engagement and advocacy campaigns. We understand procurement, compliance and stakeholder sensitivity."
 }, {
-  q: "How far in advance do we need to book?",
-  a: "For standard activations, 8–12 weeks is ideal. Large-scale or multi-city tours benefit from 16–20 weeks of lead time. We can fast-track certain projects in 4–6 weeks."
+  q: "How many languages can you translate into?",
+  a: "Over 40 languages, including European, Asian, Middle Eastern and African language pairs. We use professional human translators combined with AI-assisted workflows for speed and consistency."
 }, {
-  q: "Can you tie the event back to measurable business outcomes?",
-  a: "Absolutely. Every activation includes footfall tracking, lead capture, media impressions, social amplification and sentiment analysis — tied directly to your KPIs."
+  q: "What's your minimum media spend?",
+  a: "We manage campaigns from $10K/month to $1M+/month. Our approach scales with your budget — we focus on efficiency first, then scale what works."
+}, {
+  q: "Can you help with a specific market entry?",
+  a: "Absolutely. Our Translation & Localisation team, combined with digital marketing and public affairs, is designed to help brands enter new markets with cultural competence and strategic positioning."
 }, {
   q: "What's the investment?",
-  a: "Single activations start at $15,000. Multi-city tours and large-scale events are scoped individually. We provide transparent pricing after the discovery call."
-}, {
-  q: "Do you provide post-event content too?",
-  a: "Yes. Every event is professionally photographed, filmed and documented. You receive a full content library — highlight reels, social edits, testimonials and a case study report."
+  a: "Digital marketing retainers start at $8,500/month. Media buying engagements are scoped based on ad spend. Public affairs and translation projects are quoted per scope. We provide transparent pricing after the discovery call."
 }];
 function FAQ() {
   const [open, setOpen] = reactExports.useState(0);
@@ -408,8 +413,9 @@ function FAQ() {
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "06 — Questions" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-navy-deep md:text-5xl", children: [
-        "Answers before ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "you ask." })
+        "Clear answers for a ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "connected" }),
+        " world."
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 text-sm text-navy-deep/65", children: "Didn't find what you needed? Ask us directly — we reply within one business day." }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "#consult", className: "mt-6 inline-flex items-center gap-2 rounded-full border border-navy-deep/20 px-5 py-3 text-xs font-bold uppercase tracking-wider text-navy-deep hover:border-gold hover:text-gold", children: [
@@ -442,13 +448,13 @@ function Consult() {
       const geo = await fetchIpGeolocation();
       await submitContactForm({
         data: {
-          name: fd.get("name") || fd.get("fullname"),
+          name: fd.get("name"),
           email: fd.get("email"),
           company: fd.get("company"),
           role: fd.get("role"),
           phone: fd.get("phone") || "",
-          service: "Events & Experiential Marketing",
-          message: fd.get("goal") || "Events consultation request",
+          service: "Digital & Public Affairs",
+          message: fd.get("opportunity") || "",
           ...geo
         }
       });
@@ -466,18 +472,19 @@ function Consult() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: LION_URL, "aria-hidden": true, alt: "", className: "pointer-events-none absolute -left-16 bottom-0 w-[320px] opacity-20 md:w-[440px]" }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1fr_1.1fr]", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "07 — Let's produce" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-bold uppercase tracking-[0.4em] text-gold", children: "07 — Let's connect" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "mt-3 font-display text-3xl sm:text-4xl md:text-6xl font-black leading-[0.95] tracking-tight md:text-6xl", children: [
-          "Your next moment ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "starts" }),
+          "The digital world is ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-gold", children: "loud." }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-          "with a single ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "conversation." })
+          "Let's make sure ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "you're" }),
+          " heard."
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-md text-cream/75", children: "Drop your details. A senior producer (not a chatbot) replies within 24 hours with a tailored concept." }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-md text-cream/75", children: "Drop your details. A senior strategist (not a chatbot) replies within 24 hours with a tailored game plan." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-8 flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em] text-cream/55", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(DotMark, {}),
-          " No spam · No interns · No boring events"
+          " No spam · No hidden fees · No generic playbooks"
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("form", { onSubmit: handleConsultSubmit, className: "rounded-3xl border border-cream/10 bg-cream/[0.04] p-7 shadow-luxe backdrop-blur md:p-9", children: submitted ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "py-10 text-center", children: [
@@ -485,18 +492,18 @@ function Consult() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-5 font-display text-3xl font-black", children: "Roar received." }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-cream/70", children: "We'll be in your inbox within one business day with next steps." })
       ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-2xl font-bold", children: "Book your events consultation" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display text-2xl font-bold", children: "Book your digital strategy call" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-1 text-sm text-cream/65", children: "Takes 45 seconds." }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 grid gap-4 md:grid-cols-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Full name", name: "name", placeholder: "Jane Roar" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Work email", name: "email", type: "email", placeholder: "jane@company.com" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Phone", name: "phone", type: "tel", placeholder: "+1 (555) 000-0000" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Company", name: "company", placeholder: "Atlas Ventures" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Role", name: "role", placeholder: "Marketing Director" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Field, { label: "Role", name: "role", placeholder: "CMO / Director" })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60", children: "Tell us about the experience you want to create" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { name: "goal", rows: 4, placeholder: "Pop-up, product launch, tour, activation, VIP event…", className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-[11px] font-bold uppercase tracking-[0.25em] text-cream/60", children: "What's your biggest opportunity?" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("textarea", { name: "opportunity", rows: 4, placeholder: "Digital marketing, media buying, public affairs, translation — describe your goal…", className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
         ] }),
         error && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 rounded-xl bg-red-500/20 px-4 py-3 text-sm text-red-200", children: error }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("button", { type: "submit", disabled: sending, className: "mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold uppercase tracking-wider text-navy-deep shadow-gold transition hover:scale-[1.02] disabled:opacity-60", children: sending ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -504,7 +511,7 @@ function Consult() {
           " Sending..."
         ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Volume2, { className: "h-4 w-4" }),
-          " Let's create it"
+          " Make me heard"
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-3 text-center text-[11px] text-cream/50", children: "By submitting, you agree to a follow-up from The Big Mouth PR team." })
       ] }) })
@@ -524,7 +531,7 @@ function Field({
     } : void 0, className: "mt-2 w-full rounded-xl border border-cream/15 bg-navy-deep/40 px-4 py-3 text-sm text-cream placeholder:text-cream/45 focus:border-gold focus:outline-none" })
   ] });
 }
-function EventsExperientialPage() {
+function DigitalPublicAffairsPage() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("main", { className: "lion-cursor bg-white text-navy-deep", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(SiteHeader, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Hero, {}),
@@ -543,5 +550,5 @@ function EventsExperientialPage() {
   ] });
 }
 export {
-  EventsExperientialPage as component
+  DigitalPublicAffairsPage as component
 };
