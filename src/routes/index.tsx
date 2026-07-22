@@ -143,38 +143,10 @@ function playRoar() {
 }
 
 /* =====================================================================
-   Lion cursor + click roar wrapper
+   Lion cursor + click roar wrapper — DISABLED
 ===================================================================== */
 export function LionInteractions() {
-  const [bursts, setBursts] = useState<{ id: number; x: number; y: number }[]>([]);
-  const idRef = useRef(0);
-  useEffect(() => {
-    const onClick = (e: MouseEvent) => {
-      // Ignore clicks on inputs/textareas/selects
-      const t = e.target as HTMLElement;
-      if (t.closest("input, textarea, select")) return;
-      playRoar();
-      const id = ++idRef.current;
-      setBursts((b) => [...b, { id, x: e.clientX, y: e.clientY }]);
-      setTimeout(() => setBursts((b) => b.filter((x) => x.id !== id)), 700);
-    };
-    window.addEventListener("click", onClick);
-    return () => window.removeEventListener("click", onClick);
-  }, []);
-
-  return (
-    <div className="pointer-events-none fixed inset-0 z-[200]" aria-hidden>
-      {bursts.map((b) => (
-        <span
-          key={b.id}
-          className="absolute -translate-x-1/2 -translate-y-1/2 select-none font-display text-[3rem] font-black text-gold animate-roar-burst"
-          style={{ left: b.x, top: b.y }}
-        >
-          ROAR!
-        </span>
-      ))}
-    </div>
-  );
+  return null;
 }
 
 /* =====================================================================
@@ -1281,7 +1253,7 @@ function FinalCTA() {
 ===================================================================== */
 export function Footer() {
   return (
-    <footer className="bg-navy-deep pb-10 pt-20 text-cream/70">
+    <footer className="bg-navy-deep pb-24 pt-20 text-cream/70 md:pb-10">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-4">
         <div>
           <BrandLockupDark />
@@ -1298,13 +1270,16 @@ export function Footer() {
           © {new Date().getFullYear()} The Big Mouth PR. <DotMark /> Loud on purpose.
         </p>
         <div className="flex gap-6">
-          <a href="/privacy-policy" className="hover:text-gold">Privacy</a>
-          <a href="/terms" className="hover:text-gold">Terms</a>
           <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-gold">LinkedIn</a>
+          <a href="https://www.facebook.com/thebigmouthpr" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Facebook</a>
           <a href="https://www.instagram.com/the_big_mouth_pr/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Instagram</a>
           <a href="https://x.com/TheBigMouthpr" target="_blank" rel="noopener noreferrer" className="hover:text-gold">X</a>
           <a href="https://www.pinterest.com/thebigmouthpr/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Pinterest</a>
         </div>
+      </div>
+      <div className="mx-auto flex max-w-7xl justify-center gap-6 px-6 pb-6 text-xs text-cream/40">
+        <a href="/privacy-policy" className="hover:text-gold">Privacy Policy</a>
+        <a href="/terms" className="hover:text-gold">Terms & Conditions</a>
       </div>
     </footer>
   );

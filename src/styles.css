@@ -207,14 +207,10 @@
   }
   .animate-roar-burst { animation: roar-burst 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; text-shadow: 0 6px 20px rgba(253,95,8,0.6); }
 
-  /* Lion face cursor — site's lion theme */
-  .lion-cursor, .lion-cursor * {
-    cursor: url("./assets/lion-cursor.png") 32 32, auto;
-  }
-  .lion-cursor input, .lion-cursor textarea, .lion-cursor select { cursor: text; }
-  .lion-cursor a, .lion-cursor button, .lion-cursor [role="button"] {
-    cursor: url("./assets/lion-cursor.png") 32 32, pointer;
-  }
+  /* Lion face cursor — disabled, using default browser cursor */
+  /* .lion-cursor, .lion-cursor * { cursor: url("./assets/lion-cursor.png") 32 32, auto; } */
+  /* .lion-cursor input, .lion-cursor textarea, .lion-cursor select { cursor: text; } */
+  /* .lion-cursor a, .lion-cursor button, .lion-cursor [role="button"] { cursor: url("./assets/lion-cursor.png") 32 32, pointer; } */
 
   /* ─── Animation delays (in tenths of seconds) ─── */
   .delay-15 { animation-delay: 0.15s; }
