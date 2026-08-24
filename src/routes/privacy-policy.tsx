@@ -292,8 +292,8 @@ function Content() {
               </a>
               <br />
               Phone:{" "}
-              <a href="tel:+13322587873" className="text-gold underline hover:text-gold/80">
-                +1 (332) 258-7873
+              <a href="tel:+13325871425" className="text-gold underline hover:text-gold/80">
+                +1 (332) 587-1425
               </a>
               <br />
               Address: 2626 E 82nd St, Ste #230, Bloomington, MN 55425

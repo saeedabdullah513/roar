@@ -921,8 +921,8 @@ function Footer() {
         label: "sales@thebigmouthpr.com",
         href: "mailto:sales@thebigmouthpr.com"
       }, {
-        label: "+1 (332) 258-7873",
-        href: "tel:+13322587873"
+        label: "+1 (332) 587-1425",
+        href: "tel:+13325871425"
       }, {
         label: "2626 E 82nd St Ste#230, Bloomington, MN 55425",
         href: "https://maps.google.com/?q=2626+E+82nd+St+Ste+230+Bloomington+MN+55425"

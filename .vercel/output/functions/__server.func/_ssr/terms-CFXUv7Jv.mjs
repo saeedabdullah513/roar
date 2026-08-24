@@ -138,7 +138,7 @@ function Content() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
           "Phone:",
           " ",
-          /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "tel:+13322587873", className: "text-gold underline hover:text-gold/80", children: "+1 (332) 258-7873" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "tel:+13325871425", className: "text-gold underline hover:text-gold/80", children: "+1 (332) 587-1425" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
           "Address: 2626 E 82nd St, Ste #230, Bloomington, MN 55425"
         ] })

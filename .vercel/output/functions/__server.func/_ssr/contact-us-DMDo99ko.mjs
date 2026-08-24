@@ -66,8 +66,8 @@ function Hero() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-6 max-w-xl text-lg text-cream/75 md:text-xl", children: "One conversation away from a brand the world can't shut up about. Reach out and a senior strategist replies within 24 hours." }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-10 flex flex-wrap gap-4", children: [{
           icon: Phone,
-          label: "+1 (332) 258-7873",
-          href: "tel:+13322587873"
+          label: "+1 (332) 587-1425",
+          href: "tel:+13325871425"
         }, {
           icon: Mail,
           label: "sales@thebigmouthpr.com",
@@ -148,9 +148,9 @@ function ContactSection() {
       }, {
         icon: Phone,
         label: "Call the studio",
-        desc: "+1 (332) 258-7873 — Mon–Fri, 9am–6pm EST.",
+        desc: "+1 (332) 587-1425 — Mon–Fri, 9am–6pm EST.",
         action: "Call now →",
-        href: "tel:+13322587873"
+        href: "tel:+13325871425"
       }, {
         icon: MapPin,
         label: "Visit us",
@@ -285,7 +285,7 @@ function Location() {
     }, {
       icon: Phone,
       title: "Quick contact",
-      lines: ["+1 (332) 258-7873", "sales@thebigmouthpr.com", "Response: <24 hours"]
+      lines: ["+1 (332) 587-1425", "sales@thebigmouthpr.com", "Response: <24 hours"]
     }].map((loc) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group rounded-2xl border border-navy-deep/10 bg-white p-8 transition hover:border-gold hover:shadow-luxe", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(loc.icon, { className: "h-6 w-6 text-gold" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "mt-4 font-display text-xl font-bold text-navy-deep", children: loc.title }),

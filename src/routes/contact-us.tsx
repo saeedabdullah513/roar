@@ -88,7 +88,7 @@ function Hero() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             {[
-              { icon: Phone, label: "+1 (332) 258-7873", href: "tel:+13322587873" },
+              { icon: Phone, label: "+1 (332) 587-1425", href: "tel:+13325871425" },
               { icon: Mail, label: "sales@thebigmouthpr.com", href: "mailto:sales@thebigmouthpr.com" },
               { icon: MapPin, label: "2626 E 82nd St Ste#230, Bloomington, MN 55425", href: "https://maps.google.com/?q=2626+E+82nd+St+Ste+230+Bloomington+MN+55425" },
             ].map((c) => (
@@ -187,9 +187,9 @@ function ContactSection() {
                 {
                   icon: Phone,
                   label: "Call the studio",
-                  desc: "+1 (332) 258-7873 — Mon–Fri, 9am–6pm EST.",
+                  desc: "+1 (332) 587-1425 — Mon–Fri, 9am–6pm EST.",
                   action: "Call now →",
-                  href: "tel:+13322587873",
+                  href: "tel:+13325871425",
                 },
                 {
                   icon: MapPin,
@@ -441,7 +441,7 @@ function Location() {
             {
               icon: Phone,
               title: "Quick contact",
-              lines: ["+1 (332) 258-7873", "sales@thebigmouthpr.com", "Response: <24 hours"],
+              lines: ["+1 (332) 587-1425", "sales@thebigmouthpr.com", "Response: <24 hours"],
             },
           ].map((loc) => (
             <div
